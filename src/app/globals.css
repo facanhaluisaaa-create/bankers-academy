@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/* ============================================================
+   BANKERS ACADEMY — DESIGN TOKENS
+   Single source of truth for the visual system.
+   Colours sampled directly from the official logo files in
+   /public/brand (lime #c4ef78 + black) and from the SP Advisors
+   mark (#118336). Change values here, not in components.
+   ============================================================ */
+@theme {
+  /* Brand ------------------------------------------------- */
+  --color-brand: #c4ef78;          /* Bankers Academy lime */
+  --color-brand-strong: #a5dc47;   /* hover / pressed */
+  --color-brand-deep: #5c7433;     /* AA on white (5.2:1) and on surface-alt (4.8:1) */
+  --color-spa: #118336;            /* SP Advisors green */
+  --color-spa-deep: #0d5a30;
+
+  /* Neutrals ---------------------------------------------- */
+  --color-ink: #0a0a0a;            /* primary text / dark sections */
+  --color-ink-soft: #1a1a1a;
+  --color-ink-muted: #52525b;
+  --color-line: #e5e5e5;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f6f7f5;
+
+  /* Certificate palette (from the real diploma) ----------- */
+  --color-cert-paper: #f4efe1;
+  --color-cert-paper-edge: #e8e0cb;
+  --color-cert-ink: #4a4a38;
+  --color-cert-rule: #8a8b6d;
+
+  /* Type -------------------------------------------------- */
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+
+  /* Layout ------------------------------------------------ */
+  --spacing-section: 5.5rem;
+}
+
+/* Base ---------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  /* Guard against any single element forcing a horizontal scrollbar */
+  overflow-x: hidden;
+}
+
+/* Visible, on-brand focus ring for keyboard users only ----- */
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.on-dark :focus-visible,
+[data-dark] :focus-visible {
+  outline-color: var(--color-brand);
+}
+
+/* Reveal-on-scroll ---------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
