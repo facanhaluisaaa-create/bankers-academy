@@ -5,6 +5,7 @@ import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import Reveal from "@/components/ui/Reveal";
 import AssetPlaceholder from "@/components/ui/AssetPlaceholder";
+import BrandMark from "@/components/ui/BrandMark";
 import Timeline from "./_components/Timeline";
 
 import {
@@ -127,7 +128,8 @@ export default function QuemSomosPage() {
         <section aria-labelledby="porque-t" className="bg-surface">
           <div className={`${shell} py-20 lg:py-28`}>
             <Reveal>
-              <p className={eyeLight}>Por que existimos</p>
+              <BrandMark className="h-12 w-12" />
+              <p className={`mt-8 ${eyeLight}`}>Por que existimos</p>
               <h2
                 id="porque-t"
                 className="mt-4 max-w-4xl text-balance text-3xl font-semibold leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl"
