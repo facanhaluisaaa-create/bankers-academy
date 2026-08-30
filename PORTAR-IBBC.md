@@ -63,74 +63,42 @@ src/components/ui/*           Usar os primitivos REAIS, se existirem
 package.json / tsconfig / next.config / eslint / postcss   Descartar
 ```
 
-## Tokens — o ponto de atenção
+## Tokens — extraídos do site no ar
 
-`src/app/globals.css` define os tokens num bloco `@theme`. As cores foram
-**amostradas dos PNGs oficiais de logo**, não escolhidas à mão:
+As cores e a tipografia **não** foram escolhidas aqui. Vieram do CSS
+publicado em `bankersacademy.com.br/assets/styles-*.css`:
 
-| Token | Valor | Origem |
+| Token | Valor | Papel no site real |
 |---|---|---|
-| `--color-brand` | `#c4ef78` | verde do logo Bankers Academy |
-| `--color-brand-strong` | `#a5dc47` | hover |
-| `--color-brand-deep` | `#5c7433` | verde escuro, AA em texto pequeno |
-| `--color-spa` | `#118336` | logo SP Advisors |
-| `--color-ink` | `#0a0a0a` | preto das seções escuras |
+| `--color-brand` | `#6FDF11` | acento vívido — só em seção escura |
+| `--color-brand-soft` | `#C4EF7C` | fundo do botão primário |
+| `--color-brand-deep` | `#437E12` | derivado, para acento em seção clara |
+| `--color-ink` | `oklch(20% .005 260)` | `#151618` — fundo escuro e texto |
+| `--color-line` | `oklch(92% .01 255)` | bordas |
+| `--color-surface-alt` | `#F6F7F5` | seção clara alternada |
+| tipografia | **Mulish** | `--font-sans` e `--font-display` |
 
-**Se o site real já tiver tokens equivalentes, use os dele.** Os componentes
-do bootcamp referenciam os nomes acima (`bg-brand`, `text-ink-muted`,
-`border-line`…) — o mais rápido é mapear nome-a-nome para o sistema real.
+⚠️ **`#6FDF11` só funciona sobre fundo escuro** — 10,5:1 sobre o ink, mas
+1,7:1 sobre branco. Por isso existe o `--color-brand-deep` (`#437E12`),
+de mesmo matiz 93°, que passa AA em texto pequeno sobre fundo claro.
+Não troque um pelo outro sem checar o fundo.
 
-`--color-brand-deep` merece cuidado: o verde original do logo reprova
-contraste em texto pequeno (3,87:1). O `#5c7433` existe justamente para isso
-(5,25:1 no branco). **Não troque de volta pelo verde claro em texto.**
+O certificado usa paleta própria (`--color-cert-*`), tirada do diploma
+físico. Essa não deve seguir o site — é a cor do papel e da tinta reais.
 
-O certificado usa uma paleta própria (`--color-cert-*`), tirada do diploma.
-Essa não deve ser alinhada ao site — é a cor do papel e da tinta reais.
+## Ritmo das seções
 
-## Componentes do bootcamp
+Copiado da página irmã `/investmentbanking` do site real, que alterna:
 
-Em `src/components/bootcamp/`. Cada um tem a estrutura semântica, a copy e o
-comportamento prontos; o que muda é a classe visual.
+```
+bg-ink text-white     ← hero
+bg-neutral-50 / bg-white  ← miolo, alternando
+bg-ink text-white     ← CTA final
+```
 
-| Componente | Observação ao portar |
-|---|---|
-| `BootcampHero` | Stats de 5 semanas / 9 etapas / Pitchbook / Certificado |
-| `BootcampExperience` | ANALISAR · MODELAR · AVALIAR · APRESENTAR |
-| `BootcampJourney` | Timeline alternada. **Marcadores sem número** — ver "Regras" |
-| `BootcampOutcomes` | Grid de 8 entregas |
-| `BootcampCertificate` + `CertificateArtwork` | **Portar praticamente intacto** |
-| `BootcampAlumni` + `AlumniCard` | Filtro por ano, paginação incremental |
-| `BootcampTestimonials` | **Não renderiza sem `quote`** — ver "Regras" |
-| `BootcampEditions` | 16 edições, conecta campers por turma |
-| `BootcampMentors` | Securato Jr. + mentores creditados por edição |
-| `BootcampFaq` | `<details>` nativo, acessível sem JS |
-| `BootcampCta` | CTA para WhatsApp |
-
-`CertificateArtwork` é o único que **não** deve ser redesenhado: é uma
-reprodução do diploma físico (borda guilhoché, cartelas "Class No." e
-"250 hours", texto do documento, selo, assinatura). Ele tem paleta própria e
-não deve seguir o visual do site. Só garanta que `--color-cert-*` continue
-definido.
-
-## Regras que não podem se perder no port
-
-Foram decisões deliberadas, não acidentes:
-
-1. **Nada de dado inventado.** Todo número e nome vem de material oficial da
-   Bankers Academy / SP Advisors ou do próprio diploma. Campo não confirmado
-   fica vazio e o componente **oculta** — nunca exibir "a confirmar".
-2. **Depoimentos não renderizam sem texto autorizado.** A seção inteira some
-   se nenhum item tiver `quote`. É proposital: evita subir uma parede de
-   depoimentos vazia. Não "conserte" isso com texto de exemplo.
-3. **Links do LinkedIn dos depoimentos estão quebrados de origem.** As URLs
-   recebidas são `/feed/?highlightedUpdateUrn=…`, que só abrem para a conta
-   que recebeu a notificação. Só renderizam com `linkVerified: true`.
-4. **A timeline não numera as etapas.** O material confirma que são 9 etapas,
-   mas não publica o nome de cada uma. A timeline mostra a *progressão*; se
-   numerasse, afirmaria conhecer as 9 etapas oficiais. Ao receber os nomes
-   reais, substituir o array em `journey.ts`.
-5. **Um único `<h1>`** na página.
-6. **`target="_blank"` sempre com `rel="noopener noreferrer"`.**
+A página do Boot Camp segue o mesmo padrão, com uma exceição deliberada:
+a seção do **certificado também é escura**, para o papel creme do diploma
+saltar. Hero e CTA escuros, miolo claro.
 
 ## Menu principal
 
