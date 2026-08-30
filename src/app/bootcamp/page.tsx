@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import Header from "@/components/site/Header";
+import Footer from "@/components/site/Footer";
+
 import AlumniBrowser from "./_components/AlumniBrowser";
 import Certificate from "./_components/Certificate";
 import { ibbcAlumni } from "./_data/alumni";
@@ -107,8 +110,16 @@ export default function BootcampPage() {
   ).sort((a, b) => a.localeCompare(b, "pt-BR"));
 
   return (
-    <main className="bg-black text-white">
-      <StructuredData />
+    <>
+      {/*
+        Neste projeto o layout não injeta Header/Footer — cada página inclui
+        os seus. Ao portar para um site cujo layout já os fornece, remova
+        estas duas linhas para não duplicá-los.
+      */}
+      <Header />
+
+      <main className="bg-black text-white">
+        <StructuredData />
 
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-white/10">
@@ -263,7 +274,7 @@ export default function BootcampPage() {
       </section>
 
       {/* CERTIFICADO */}
-      <section aria-labelledby="certificado-t" className="border-y border-white/10 bg-white/[0.02]">
+      <section id="certificado" aria-labelledby="certificado-t" className="scroll-mt-8 border-y border-white/10 bg-white/[0.02]">
         <div className={`${shell} py-24`}>
           <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
             <div>
@@ -521,6 +532,9 @@ export default function BootcampPage() {
           Ou fale direto no WhatsApp {BA_WHATSAPP_DISPLAY}
         </p>
       </section>
-    </main>
+      </main>
+
+      <Footer />
+    </>
   );
 }

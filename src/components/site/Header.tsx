@@ -5,13 +5,17 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import { ibbcLinks, IBBC_PATH } from "@/data/bootcamp/config";
+import { ibbcLinks } from "@/data/bootcamp/config";
+
+/** Rota curta do Boot Camp, usada no menu principal. */
+const BOOTCAMP_PATH = "/bootcamp";
 
 const nav = [
-  { href: IBBC_PATH, label: "Boot Camp" },
-  { href: `${IBBC_PATH}#jornada`, label: "Jornada" },
-  { href: `${IBBC_PATH}#alumni`, label: "Alumni" },
-  { href: `${IBBC_PATH}#faq`, label: "FAQ" },
+  { href: BOOTCAMP_PATH, label: "BOOTCAMP" },
+  { href: `${BOOTCAMP_PATH}#experiencia`, label: "Experiência" },
+  { href: `${BOOTCAMP_PATH}#certificado`, label: "Certificado" },
+  { href: `${BOOTCAMP_PATH}#alumni`, label: "Alumni" },
+  { href: `${BOOTCAMP_PATH}#faq`, label: "FAQ" },
 ];
 
 export default function Header() {
