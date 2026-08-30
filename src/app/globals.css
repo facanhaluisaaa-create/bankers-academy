@@ -88,3 +88,40 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============================================================
+   Prévia interativa do certificado (/bootcamp)
+   Cores literais do diploma físico — não seguem o tema do site.
+   ============================================================ */
+.cert-name-btn {
+  border-bottom: 1px solid #4a4a38;
+}
+.cert-name {
+  font-size: clamp(0.34rem, 2.5cqw, 1.8rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8a8b6d;
+  transition: color 0.2s ease;
+}
+.cert-name--filled { color: #4a4a38; }
+.cert-name-btn:hover .cert-name,
+.cert-name-btn:focus-visible .cert-name { color: #4a4a38; }
+
+.cert-name--swap { animation: cert-swap 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+@keyframes cert-swap {
+  from { opacity: 0; transform: translateY(0.25em); }
+  to   { opacity: 1; transform: none; }
+}
+
+.cert-panel { animation: panel-in 0.28s cubic-bezier(0.22, 1, 0.36, 1); }
+/* O painel é uma superfície clara dentro de uma seção escura: o anel de
+   foco volta ao ink, em vez de herdar o verde do contexto escuro. */
+.cert-panel :focus-visible { outline-color: var(--color-ink); }
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.985); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-name--swap, .cert-panel { animation: none; }
+}

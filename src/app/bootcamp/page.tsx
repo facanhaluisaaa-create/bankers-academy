@@ -5,7 +5,7 @@ import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 
 import AlumniBrowser from "./_components/AlumniBrowser";
-import Certificate from "./_components/Certificate";
+import InteractiveCertificate from "./_components/InteractiveCertificate";
 import { ibbcAlumni } from "./_data/alumni";
 import { ibbcEditions } from "./_data/editions";
 import { ibbcFaq } from "./_data/faq";
@@ -198,7 +198,7 @@ export default function BootcampPage() {
       </section>
 
       {/* EXPERIÊNCIA */}
-      <section id="experiencia" aria-labelledby="experiencia-t" className="scroll-mt-8 bg-surface-alt py-24">
+      <section id="experiencia" aria-labelledby="experiencia-t" className="scroll-mt-20 bg-surface-alt py-24">
         <div className={shell}>
         <p className={eyebrowLight}>A experiência</p>
 
@@ -283,52 +283,77 @@ export default function BootcampPage() {
       </section>
 
       {/* CERTIFICADO */}
-      <section id="certificado" aria-labelledby="certificado-t" className="on-dark scroll-mt-8 bg-ink py-4 text-white">
-        <div className={`${shell} py-24`}>
-          <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className={eyebrow}>Certificação</p>
+      <section
+        id="certificado"
+        aria-labelledby="certificado-t"
+        className="on-dark scroll-mt-20 bg-ink py-24 text-white"
+      >
+        <div className={shell}>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className={eyebrow}>Certificação IBBC</p>
 
-              <h2 id="certificado-t" className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-                Leve sua experiência
-                <span className="block text-white/45">com você.</span>
-              </h2>
+            <h2
+              id="certificado-t"
+              className="mt-4 text-balance text-4xl font-semibold tracking-tight sm:text-5xl"
+            >
+              Imagine seu nome aqui.
+            </h2>
 
-              <p className="mt-6 max-w-xl text-lg leading-8 text-white/60">
-                A jornada termina com a apresentação do Pitchbook — e com um documento
-                que registra o que você construiu. O certificado atesta {ibbcFacts.hours}{" "}
-                horas de Practical Investment Banking Training e é assinado por José Securato.
-              </p>
+            <p className="mt-6 text-pretty text-lg leading-8 text-white/70">
+              Complete a experiência do Investment Banking Boot Camp e leve com
+              você o marco de uma jornada construída na prática.
+            </p>
+          </div>
 
-              <ul className="mt-9 flex flex-wrap gap-3">
-                {[
-                  `${ibbcFacts.weeks} semanas`,
-                  `${ibbcFacts.stages} etapas`,
-                  "Pitchbook final",
-                  `${ibbcFacts.hours} horas`,
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-full border border-white/15 px-4 py-2 text-sm text-white/70"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* O diploma é o protagonista da seção */}
+          <div className="mx-auto mt-14 max-w-5xl">
+            <InteractiveCertificate />
+          </div>
 
-            <figure className="lg:rotate-[-1.1deg]">
-              <Certificate />
-              <figcaption className="mt-5 text-center text-xs text-white/55">
-                Representação do certificado entregue ao final do Investment Banking Boot Camp.
-              </figcaption>
-            </figure>
+          <p className="mx-auto mt-8 max-w-xl text-center text-xs leading-relaxed text-white/55">
+            Prévia ilustrativa. O certificado oficial é concedido após a
+            conclusão do Investment Banking Boot Camp.
+          </p>
+
+          <dl className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-8 border-t border-white/15 pt-10 sm:grid-cols-4">
+            {[
+              { v: `${ibbcFacts.weeks} semanas`, l: "de imersão" },
+              { v: `${ibbcFacts.stages} etapas`, l: "com entregas diárias" },
+              { v: "Pitchbook", l: "final apresentado" },
+              { v: "Certificado", l: "de conclusão" },
+            ].map((m) => (
+              <div key={m.v} className="text-center">
+                <dt className="sr-only">{m.l}</dt>
+                <dd>
+                  <span className="block text-lg font-semibold tracking-tight text-brand sm:text-xl">
+                    {m.v}
+                  </span>
+                  <span className="mt-1 block text-[13px] leading-tight text-white/60">
+                    {m.l}
+                  </span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+
+          <div className="mt-16 border-t border-white/15 pt-12 text-center">
+            <p className="mx-auto max-w-xl text-balance text-xl font-semibold leading-snug sm:text-2xl">
+              Seu nome pode estar aqui. Sua jornada começa antes.
+            </p>
+            <a
+              href={ibbcLinks.apply}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex rounded-full bg-brand-soft px-8 py-4 text-sm font-bold uppercase tracking-[0.08em] text-ink transition hover:brightness-95"
+            >
+              Quero participar do IBBC
+            </a>
           </div>
         </div>
       </section>
 
       {/* ALUMNI */}
-      <section id="alumni" aria-labelledby="alumni-t" className="scroll-mt-8 bg-surface py-24">
+      <section id="alumni" aria-labelledby="alumni-t" className="scroll-mt-20 bg-surface py-24">
         <div className={shell}>
         <p className={eyebrowLight}>Alumni</p>
 
@@ -492,7 +517,7 @@ export default function BootcampPage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" aria-labelledby="faq-t" className="scroll-mt-8 bg-surface py-24">
+      <section id="faq" aria-labelledby="faq-t" className="scroll-mt-20 bg-surface py-24">
         <div className={shell}>
         <p className={eyebrowLight}>Perguntas frequentes</p>
 
@@ -521,7 +546,7 @@ export default function BootcampPage() {
       </section>
 
       {/* CTA FINAL */}
-      <section id="participar" aria-labelledby="cta-t" className="on-dark scroll-mt-8 bg-ink py-28 text-center text-white">
+      <section id="participar" aria-labelledby="cta-t" className="on-dark scroll-mt-20 bg-ink py-28 text-center text-white">
         <div className={shell}>
         <p className={eyebrow}>Investment Banking Boot Camp</p>
 

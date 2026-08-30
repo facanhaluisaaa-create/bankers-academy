@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import type { ReactNode } from "react";
 
 /**
  * Reprodução do diploma físico do Investment Banking Boot Camp.
@@ -16,12 +17,15 @@
  * nenhum token do projeto e pode ser colado em qualquer codebase.
  */
 
+export const CERT_INK = "#4a4a38";
+export const CERT_RULE = "#8a8b6d";
+
 const PAPER = "#f4efe1";
 const PAPER_EDGE = "#e8e0cb";
 const INK = "#4a4a38";
 const RULE = "#8a8b6d";
 
-export default function Certificate() {
+export default function Certificate({ nameSlot }: { nameSlot?: ReactNode }) {
   return (
     <div
       className="relative w-full overflow-hidden rounded-[3px] shadow-2xl"
@@ -95,7 +99,7 @@ export default function Certificate() {
             }}
           >
             <h3
-              className="font-serif text-[clamp(0.55rem,3.8cqw,2.2rem)] font-bold uppercase leading-none tracking-[0.03em]"
+              className="font-serif text-[clamp(0.55rem,3.8cqw,3.1rem)] font-bold uppercase leading-none tracking-[0.03em]"
               style={{ color: INK }}
             >
               Investment Banking Boot Camp
@@ -104,13 +108,15 @@ export default function Certificate() {
         </div>
 
         {/* Texto do documento, literal do diploma */}
-        <div className="mt-[3.5%] font-serif text-[clamp(0.34rem,2.36cqw,0.82rem)] leading-[1.55]">
+        <div className="mt-[3.5%] font-serif text-[clamp(0.34rem,2.36cqw,1.7rem)] leading-[1.55]">
           <p>
             This certifies that{" "}
-            <span
-              className="mx-1 inline-block w-[38%] translate-y-[-0.15em]"
-              style={{ borderBottom: `1px solid ${INK}` }}
-            />{" "}
+            {nameSlot ?? (
+              <span
+                className="mx-1 inline-block w-[38%] translate-y-[-0.15em]"
+                style={{ borderBottom: `1px solid ${INK}` }}
+              />
+            )}{" "}
             is the owner of 250 hours of Practical Investment Banking Training,
             transferable only on the books of the Corporation by the holder
             hereof, in person or by a duly authorized attorney, upon surrender
@@ -125,7 +131,7 @@ export default function Certificate() {
 
         {/* Data · selo · assinatura */}
         <div className="relative mt-auto flex items-end justify-between gap-4 pt-[3%]">
-          <p className="font-serif text-[clamp(0.34rem,2.36cqw,0.82rem)] leading-none">
+          <p className="font-serif text-[clamp(0.34rem,2.36cqw,1.7rem)] leading-none">
             This <Rule w="2.2em" /> day of <Rule w="6em" /> , A.D. <Rule w="3.2em" />
           </p>
 
@@ -136,7 +142,7 @@ export default function Certificate() {
               className="mb-1 w-[clamp(5rem,37cqw,12rem)]"
               style={{ borderBottom: `1px solid ${INK}` }}
             />
-            <p className="font-serif text-[clamp(0.28rem,1.9cqw,0.66rem)] uppercase leading-tight tracking-[0.06em]">
+            <p className="font-serif text-[clamp(0.28rem,1.9cqw,1.4rem)] uppercase leading-tight tracking-[0.06em]">
               Jose Securato
               <br />
               Bankers Academy
@@ -161,7 +167,7 @@ function Rule({ w }: { w: string }) {
 function Cartouche({ children }: { children: string }) {
   return (
     <div
-      className="shrink-0 rounded-[2px] px-[0.9em] py-[0.45em] font-serif text-[clamp(0.32rem,2.2cqw,0.78rem)] font-semibold leading-none"
+      className="shrink-0 rounded-[2px] px-[0.9em] py-[0.45em] font-serif text-[clamp(0.32rem,2.2cqw,1.6rem)] font-semibold leading-none"
       style={{ border: `1px solid ${RULE}`, background: "rgba(255,255,255,0.45)" }}
     >
       {children}
