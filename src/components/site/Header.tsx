@@ -7,16 +7,25 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { ibbcLinks } from "@/data/bootcamp/config";
 
-/** Rota curta do Boot Camp, usada no menu principal. */
-const BOOTCAMP_PATH = "/bootcamp";
-
-const nav = [
-  { href: BOOTCAMP_PATH, label: "BOOTCAMP" },
-  { href: `${BOOTCAMP_PATH}#experiencia`, label: "Experiência" },
-  { href: `${BOOTCAMP_PATH}#certificado`, label: "Certificado" },
-  { href: `${BOOTCAMP_PATH}#alumni`, label: "Alumni" },
-  { href: `${BOOTCAMP_PATH}#faq`, label: "FAQ" },
-];
+/**
+ * Menu principal do site (desktop e mobile leem deste mesmo array).
+ *
+ * ► PARA O SITE REAL: não substitua o array de lá. Adicione APENAS a linha
+ *   do BOOTCAMP ao menu existente, na posição que fizer sentido:
+ *
+ *     { href: "/programas",  label: "PROGRAMAS" },
+ *     { href: "/bootcamp",   label: "BOOTCAMP" },   // ← só esta linha
+ *     { href: "/agenda",     label: "AGENDA" },
+ *     { href: "/quem-somos", label: "QUEM SOMOS" },
+ *
+ *   O item herda automaticamente fonte, tamanho, espaçamento e o
+ *   comportamento do menu mobile, porque tudo é renderizado pelo mesmo
+ *   map() abaixo — não há estilo próprio para o BOOTCAMP.
+ *
+ * Neste projeto existem apenas a home e a página do Boot Camp, então o
+ * menu lista só o que tem página de verdade. Links mortos seriam pior.
+ */
+const nav = [{ href: "/bootcamp", label: "BOOTCAMP" }];
 
 export default function Header() {
   const [open, setOpen] = useState(false);

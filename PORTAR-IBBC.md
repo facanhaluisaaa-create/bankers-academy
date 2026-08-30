@@ -132,6 +132,27 @@ Foram decisões deliberadas, não acidentes:
 5. **Um único `<h1>`** na página.
 6. **`target="_blank"` sempre com `rel="noopener noreferrer"`.**
 
+## Menu principal
+
+No site real, **não substitua** o array do menu. Adicione **uma linha** ao
+array existente, na posição que fizer sentido visualmente:
+
+```tsx
+const nav = [
+  { href: "/programas",  label: "PROGRAMAS" },
+  { href: "/bootcamp",   label: "BOOTCAMP" },   // ← só esta linha
+  { href: "/agenda",     label: "AGENDA" },
+  { href: "/quem-somos", label: "QUEM SOMOS" },
+];
+```
+
+O item herda fonte, tamanho, espaçamento, hover e o comportamento do menu
+mobile automaticamente, porque desktop e mobile renderizam do mesmo array —
+não crie estilo próprio para o BOOTCAMP.
+
+Verificado neste projeto: o item aparece no menu desktop e dentro do menu
+sanduíche no mobile, e em ambos o clique abre `/bootcamp`.
+
 ## Rota
 
 Canônica: `/programas/investment-banking-bootcamp`
