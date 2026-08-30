@@ -1,5 +1,10 @@
 # Portar a página do IBBC para o site real
 
+> ⚡ **Atalho:** a pasta `src/app/bootcamp/` já é a versão pronta para o site
+> real — colocada, com imports relativos e só classes Tailwind de estoque.
+> Mova-a para `app/bootcamp/` e leve `public/images/bootcamp/`. Sem alias,
+> sem token, sem config. O resto deste guia é para entender as decisões.
+
 > **Para a sessão que abrir `leticia011/Bankers-Academy`.**
 > Este documento é auto-suficiente: não depende do histórico da conversa
 > em que a página foi construída.
