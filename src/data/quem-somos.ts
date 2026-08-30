@@ -36,14 +36,17 @@ export type Programa = {
   destaque?: boolean;
 };
 
-export type Mentor = {
+export type Membro = {
   id: string;
-  nome?: string;
-  cargo?: string;
-  instituicao?: string;
-  especialidade?: string;
+  nome: string;
+  cargo: string;
+  grupo: "lideranca" | "execucao";
   foto?: string;
   linkedin?: string;
+  /** Turma do IBBC, quando a pessoa passou pelo boot camp antes de entrar. */
+  ibbcTurma?: number;
+  /** Voltou como mentor de uma edição seguinte. */
+  ibbcMentor?: boolean;
 };
 
 export type Depoimento = {
@@ -103,14 +106,14 @@ export const historia: Marco[] = [
     periodo: "1995–2018",
     titulo: "Trajetória de mercado, ensino e mentoria",
     texto:
-      "A atuação de JR Securato Jr como professor, executivo e mentor construiu a base da metodologia que orienta os programas até hoje.",
+      "JR Securato Jr começa como educador na FIA e na Saint Paul, e conduz treinamentos em bancos como o Deutsche Bank em Nova Iorque. É essa base que vira a metodologia dos programas.",
   },
   {
     id: "ibbc",
     periodo: "2018",
     titulo: "Nasce o Investment Banking Boot Camp",
     texto:
-      "A primeira edição do IBBC aproximou jovens talentos da rotina prática do mercado financeiro e virou uma das bases da escola.",
+      "A primeira edição nasce com 5 alunos, voltada à formação interna da SP Advisors. Vira uma das bases da escola — e, mais tarde, a porta de entrada de parte do próprio time.",
     destaque: true,
     href: "/bootcamp",
   },
@@ -119,20 +122,18 @@ export const historia: Marco[] = [
     periodo: "2019",
     titulo: "Investment Banking Brasil",
     texto:
-      "Conteúdos, treinamentos e informações sobre o mercado reunidos em um só lugar, tornando o tema mais acessível e organizado.",
+      "Nasce o investmentbanking.com.br, reunindo conteúdos voltados a universitários interessados em Investment Banking.",
   },
   {
     id: "digital",
     periodo: "2021",
     titulo: "Expansão digital e comunidade",
     texto:
-      "A presença nas redes ampliou o alcance dos conteúdos e permitiu entender de perto as dores dos universitários brasileiros.",
+      "A presença digital se expande e a base salta de 800 para mais de 12 mil seguidores — e passa a mostrar de perto as dores dos universitários brasileiros.",
   },
   {
     id: "ba",
-    // ⚠️ A CONFIRMAR: o site publica 2022; o briefing indica 2022/2023.
     periodo: "2022",
-    periodoAConfirmar: true,
     titulo: "Bankers Academy",
     texto:
       "A escola nasce dedicada a colocar universitários e jovens profissionais no mercado, unindo conteúdo técnico, prática e orientação de carreira.",
@@ -150,7 +151,7 @@ export const historia: Marco[] = [
     periodo: "2024 → hoje",
     titulo: "Expansão do ecossistema",
     texto:
-      "Novas iniciativas, conteúdos e programas consolidam a Bankers Academy como referência em educação financeira aplicada ao mercado.",
+      "Inauguração de auditório próprio e publicação do livro “De cabeça no Mercado Financeiro”, com os conteúdos integrados ao site oficial.",
   },
 ];
 
@@ -164,36 +165,49 @@ export const securatoResumo =
 export const securatoCredenciais: Credencial[] = [
   { id: "financas", valor: "+20 anos", rotulo: "em finanças corporativas" },
   { id: "ib", valor: "14 anos", rotulo: "em Investment Banking", aConfirmar: true },
-  {
-    id: "db",
-    valor: "Deutsche Bank",
-    rotulo: "São Paulo e Nova Iorque",
-    aConfirmar: true, // ⚠️ o site confirma o banco, não as praças
-  },
+  { id: "db", valor: "Deutsche Bank", rotulo: "São Paulo e Nova Iorque" },
   { id: "bnp", valor: "BNP Paribas", rotulo: "Investment Banking" },
-  { id: "spa", valor: "SP Advisors", rotulo: "e SP Capital Partners — sócio fundador" },
-  { id: "phd", valor: "PhD", rotulo: "em Finanças", aConfirmar: true },
+  { id: "spa", valor: "SP Advisors", rotulo: "M&A — e SP Capital Partners, capital de risco" },
+  { id: "professor", valor: "FIA e Saint Paul", rotulo: "professor desde os anos 2000" },
+  { id: "phd", valor: "PhD", rotulo: "em Finanças" },
+];
+
+/** Conselhos de administração, conforme o mapa de conteúdo. */
+export const securatoConselhos = [
+  { nome: "Brasilata", desde: 2014, o_que: "indústria de embalagens de aço" },
+  { nome: "Super Rico", desde: 2023, o_que: "planejamento financeiro" },
 ];
 
 export const securatoPonte =
   "Em 2018, essa combinação de mercado e educação deu origem ao Investment Banking Boot Camp.";
 
-/* ─────────────────── 5. PROFESSORES / MENTORES ─────────────── */
+/* ─────────────────────── 5. NOSSO TIME ────────────────────── */
 
 /**
- * Grid preparado, sem nomes inventados.
+ * Time da Bankers Academy, conforme o mapa de conteúdo do cliente.
  *
- * Existem quatro perfis do LinkedIn no acervo enviado (Alexandre Paixão,
- * Marcus Piellusch, Walter Eclache e Tatiana Tafarello), mas nada no
- * material confirma cargo, instituição ou especialidade de cada um — nem
- * que atuem como professores. Preencher só depois de validar.
+ * `ibbcTurma` foi cruzado com o arquivo oficial de edições anteriores
+ * (src/data/bootcamp/alumni.ts): três pessoas do time de execução são
+ * ex-campers do próprio boot camp, e uma delas voltou como mentora.
+ * Nada aqui é inferido — os dois lados vêm de fonte documentada.
+ *
+ * `foto` e `linkedin` ficam vazios até chegarem; o card se adapta.
  */
-export const mentores: Mentor[] = [
-  { id: "mentor-1" },
-  { id: "mentor-2" },
-  { id: "mentor-3" },
-  { id: "mentor-4" },
+export const time: Membro[] = [
+  { id: "securato", nome: "JR Securato Jr", cargo: "Founder", grupo: "lideranca", foto: "/images/quem-somos/securato-jr.jpg" },
+  { id: "andrea", nome: "Andrea Securato", cargo: "Co-founder", grupo: "lideranca" },
+  { id: "arnaldo", nome: "Arnaldo Mello", cargo: "Partner (Tabula)", grupo: "lideranca" },
+  { id: "jaqueline", nome: "Jaqueline Sanches", cargo: "Partner", grupo: "lideranca" },
+
+  { id: "giovanna", nome: "Giovanna Giorgio", cargo: "Execution Team", grupo: "execucao", ibbcTurma: 11, ibbcMentor: true },
+  { id: "nayarah", nome: "Nayarah Aiko", cargo: "Execution Team", grupo: "execucao", ibbcTurma: 13 },
+  { id: "sophia", nome: "Sophia Torrezan", cargo: "Execution Team", grupo: "execucao" },
+  { id: "rayara", nome: "Rayara Rodrigues", cargo: "Execution Team", grupo: "execucao" },
+  { id: "anaclara", nome: "Ana Clara Dezorzi", cargo: "Execution Team", grupo: "execucao", ibbcTurma: 11 },
 ];
+
+/** Quantos do time entraram pela porta do próprio boot camp. */
+export const timeExCampers = time.filter((m) => m.ibbcTurma !== undefined).length;
 
 /* ──────────────────── 6. APRENDER FAZENDO ─────────────────── */
 

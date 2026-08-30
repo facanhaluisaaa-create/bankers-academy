@@ -16,7 +16,8 @@ import {
   heroTexto,
   heroTitulo,
   historia,
-  mentores,
+  time,
+  timeExCampers,
   missao,
   parceiros,
   pilares,
@@ -258,61 +259,75 @@ export default function QuemSomosPage() {
           </div>
         </section>
 
-        {/* ─────────── 5. QUEM ENSINA ─────────── */}
-        <section aria-labelledby="ensina-t" className="bg-surface">
+        {/* ─────────── 5. NOSSO TIME ─────────── */}
+        <section aria-labelledby="time-t" className="bg-surface">
           <div className={`${shell} py-20 lg:py-28`}>
             <Reveal>
-              <p className={eyeLight}>Quem ensina</p>
+              <p className={eyeLight}>Nosso time</p>
               <h2
-                id="ensina-t"
+                id="time-t"
                 className="mt-4 max-w-3xl text-balance text-3xl font-semibold leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl"
               >
                 Aprenda com quem conhece o outro lado da mesa.
               </h2>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/70">
+                {timeExCampers} das pessoas que hoje tocam a escola entraram
+                pela porta do próprio Investment Banking Boot Camp.
+              </p>
             </Reveal>
 
             <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {mentores.map((m, i) => (
-                <Reveal as="li" key={m.id} delay={i * 60} className="block">
+              {time.map((m, i) => (
+                <Reveal as="li" key={m.id} delay={Math.min(i, 7) * 50} className="block">
                   <article className="h-full">
-                    <AssetPlaceholder
-                      label="Retrato do professor"
-                      ratio="aspect-[3/4]"
-                      className="w-full"
-                    />
+                    {m.foto ? (
+                      <Image
+                        src={m.foto}
+                        alt={`Retrato de ${m.nome}`}
+                        width={600}
+                        height={800}
+                        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 22vw"
+                        className="h-auto w-full rounded-2xl"
+                      />
+                    ) : (
+                      <AssetPlaceholder
+                        label={`Retrato de ${m.nome}`}
+                        ratio="aspect-[3/4]"
+                        className="w-full"
+                      />
+                    )}
+
                     <div className="mt-5">
-                      {m.nome ? (
-                        <>
-                          <h3 className="text-lg font-semibold tracking-tight">
-                            {m.nome}
-                          </h3>
-                          <p className="mt-1 text-sm text-ink/70">
-                            {m.cargo}
-                            {m.instituicao ? ` · ${m.instituicao}` : ""}
-                          </p>
-                          {m.especialidade ? (
-                            <p className="mt-2 text-sm text-ink/70">
-                              {m.especialidade}
-                            </p>
-                          ) : null}
-                        </>
-                      ) : (
-                        /* Sem nome confirmado, o card mostra os campos que
-                           serão preenchidos — nunca um nome inventado. */
-                        <p className="text-sm leading-6 text-ink/65">
-                          Nome · cargo · instituição · especialidade
+                      <h3 className="text-lg font-semibold tracking-tight">
+                        {m.nome}
+                      </h3>
+                      <p className="mt-1 text-sm text-ink/70">{m.cargo}</p>
+
+                      {/* O vínculo com o boot camp é o ponto da seção */}
+                      {m.ibbcTurma ? (
+                        <p className="mt-3 inline-flex rounded-full bg-surface-alt px-3 py-1.5 text-xs font-semibold text-brand-deep">
+                          {m.ibbcMentor
+                            ? `IBBC turma ${m.ibbcTurma} · voltou como mentora`
+                            : `IBBC turma ${m.ibbcTurma}`}
                         </p>
-                      )}
+                      ) : null}
+
+                      {m.linkedin ? (
+                        <a
+                          href={m.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-3 block py-1 text-sm font-semibold text-brand-deep hover:underline"
+                        >
+                          LinkedIn ↗
+                          <span className="sr-only"> de {m.nome} (abre em nova aba)</span>
+                        </a>
+                      ) : null}
                     </div>
                   </article>
                 </Reveal>
               ))}
             </ul>
-
-            <p className="mt-10 text-sm text-ink/70">
-              Grid preparado para foto, nome, cargo, instituição e
-              especialidade. Nomes e credenciais entram depois da validação.
-            </p>
           </div>
         </section>
 
