@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import Header from "@/components/site/Header";
@@ -93,10 +94,14 @@ export default function QuemSomosPage() {
               </div>
 
               <div className="lg:col-span-6">
-                <AssetPlaceholder
-                  label="Fotografia institucional da Bankers Academy — equipe ou sala em aula"
-                  ratio="aspect-[4/3]"
-                  className="w-full border-ink/30 bg-ink/[0.06]"
+                <Image
+                  src="/images/quem-somos/equipe.jpg"
+                  alt="Time da Bankers Academy reunido no escritório"
+                  width={2000}
+                  height={1333}
+                  priority
+                  sizes="(max-width: 1024px) 92vw, 46vw"
+                  className="h-auto w-full rounded-2xl"
                 />
               </div>
             </div>
@@ -188,11 +193,13 @@ export default function QuemSomosPage() {
           <div className={`${shell} py-20 lg:py-28`}>
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <Reveal className="lg:col-span-5">
-                <AssetPlaceholder
-                  tone="dark"
-                  label={`Retrato de ${securatoNome}`}
-                  ratio="aspect-[4/5]"
-                  className="w-full"
+                <Image
+                  src="/images/quem-somos/securato-jr.jpg"
+                  alt={`Retrato de ${securatoNome}, fundador da Bankers Academy`}
+                  width={1400}
+                  height={1759}
+                  sizes="(max-width: 1024px) 90vw, 38vw"
+                  className="h-auto w-full rounded-2xl"
                 />
               </Reveal>
 
@@ -473,10 +480,13 @@ export default function QuemSomosPage() {
                   </div>
 
                   <div className="lg:col-span-7">
-                    <AssetPlaceholder
-                      label="Foto de turma ou de encerramento de uma edição"
-                      ratio="aspect-[16/9]"
-                      className="w-full"
+                    <Image
+                      src="/images/quem-somos/turma.jpg"
+                      alt="Turma da Bankers Academy reunida em sala de aula"
+                      width={2000}
+                      height={1095}
+                      sizes="(max-width: 1024px) 90vw, 55vw"
+                      className="h-auto w-full rounded-2xl"
                     />
                   </div>
                 </div>
@@ -527,6 +537,19 @@ export default function QuemSomosPage() {
                 >
                   {missao}
                 </h2>
+
+                {/* O primeiro valor da lista está escrito na parede da foto —
+                    ela comprova o texto ao lado, não decora. */}
+                <figure className="mt-10">
+                  <Image
+                    src="/images/quem-somos/valores.jpg"
+                    alt="Parede do escritório da Bankers Academy com a frase Excellence precedes success"
+                    width={1800}
+                    height={1279}
+                    sizes="(max-width: 1024px) 90vw, 38vw"
+                    className="h-auto w-full rounded-2xl"
+                  />
+                </figure>
               </Reveal>
 
               <Reveal delay={100} className="lg:col-span-7">
