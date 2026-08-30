@@ -31,6 +31,11 @@ mexer em componente. Links e números configuráveis ficam em
 O que ainda falta preencher (fotos, depoimentos, etc.) está em
 [`CONTEUDO-PENDENTE-IBBC.md`](./CONTEUDO-PENDENTE-IBBC.md).
 
+> **Este repositório é um scaffold provisório.** O site real da Bankers
+> Academy vive em outro lugar; a página do IBBC foi construída aqui porque
+> este repositório estava vazio. Para levá-la ao site real, siga
+> [`PORTAR-IBBC.md`](./PORTAR-IBBC.md).
+
 ## Sistema visual
 
 Os tokens (cores, tipografia, espaçamento) estão em `src/app/globals.css`, no
