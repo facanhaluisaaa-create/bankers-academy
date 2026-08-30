@@ -194,14 +194,30 @@ export default function QuemSomosPage() {
           <div className={`${shell} py-20 lg:py-28`}>
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <Reveal className="lg:col-span-5">
-                <Image
-                  src="/images/quem-somos/securato-jr.jpg"
-                  alt={`Retrato de ${securatoNome}, fundador da Bankers Academy`}
-                  width={1400}
-                  height={1759}
-                  sizes="(max-width: 1024px) 90vw, 38vw"
-                  className="h-auto w-full rounded-2xl"
-                />
+                {/* Recorte com fundo transparente: flutua sobre o ink em vez
+                    de ficar preso numa caixa. O halo verde atrás dá o assento. */}
+                <div className="relative">
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-x-6 bottom-0 top-16 rounded-full bg-brand/12 blur-3xl"
+                  />
+                  <Image
+                    src="/images/quem-somos/securato-recorte.png"
+                    alt={`Retrato de ${securatoNome}, fundador da Bankers Academy`}
+                    width={603}
+                    height={1100}
+                    sizes="(max-width: 1024px) 70vw, 34vw"
+                    className="relative mx-auto h-auto w-full max-w-sm"
+                    /* O recorte termina numa linha reta na altura do quadril;
+                       a máscara dissolve essa borda no fundo da seção. */
+                    style={{
+                      maskImage:
+                        "linear-gradient(to bottom, #000 82%, transparent 99%)",
+                      WebkitMaskImage:
+                        "linear-gradient(to bottom, #000 82%, transparent 99%)",
+                    }}
+                  />
+                </div>
               </Reveal>
 
               <Reveal delay={100} className="lg:col-span-7">
@@ -218,9 +234,12 @@ export default function QuemSomosPage() {
                   {securatoResumo}
                 </p>
 
-                <ul className="mt-10 grid gap-px overflow-hidden rounded-2xl bg-white/10 sm:grid-cols-2">
+                <ul className="mt-10 grid gap-3 sm:grid-cols-2">
                   {securatoCredenciais.map((c) => (
-                    <li key={c.id} className="bg-ink p-5">
+                    <li
+                      key={c.id}
+                      className="rounded-xl border border-white/10 bg-white/[0.03] p-5"
+                    >
                       <p className="text-base font-semibold text-brand">
                         {c.valor}
                       </p>
