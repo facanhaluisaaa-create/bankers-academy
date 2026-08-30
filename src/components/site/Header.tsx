@@ -25,7 +25,10 @@ import { ibbcLinks } from "@/data/bootcamp/config";
  * Neste projeto existem apenas a home e a página do Boot Camp, então o
  * menu lista só o que tem página de verdade. Links mortos seriam pior.
  */
-const nav = [{ href: "/bootcamp", label: "BOOTCAMP" }];
+const nav = [
+  { href: "/bootcamp", label: "BOOTCAMP" },
+  { href: "/quem-somos", label: "QUEM SOMOS" },
+];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
