@@ -1,23 +1,35 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import Reveal from "@/components/ui/Reveal";
+import AssetPlaceholder from "@/components/ui/AssetPlaceholder";
+import Timeline from "./_components/Timeline";
+
 import {
+  aprenderFazendo,
+  autoridade,
+  depoimentos,
+  heroTexto,
+  heroTitulo,
   historia,
+  mentores,
   missao,
   parceiros,
   pilares,
-  securatoIniciativas,
-  securatoParagrafos,
+  programas,
+  securatoCredenciais,
+  securatoNome,
+  securatoPonte,
+  securatoResumo,
   valores,
 } from "@/data/quem-somos";
+import { ibbcAlumni } from "@/data/bootcamp/alumni";
 import { ibbcLinks } from "@/data/bootcamp/config";
 
 const description =
-  "A Bankers Academy nasceu para transformar conhecimento financeiro em oportunidade real de carreira. Conheça a missão, os valores, a história e as pessoas por trás da escola.";
+  "A Bankers Academy aproxima universitários e jovens profissionais da realidade do mercado financeiro por meio de formação prática, experiência e orientação de carreira.";
 
 export const metadata: Metadata = {
   title: "Quem Somos | Bankers Academy",
@@ -33,13 +45,10 @@ export const metadata: Metadata = {
 };
 
 const shell = "mx-auto max-w-7xl px-6 lg:px-8";
-const eyebrowDark = "text-sm font-semibold uppercase tracking-[0.3em] text-brand";
-const eyebrowLight =
-  "text-sm font-semibold uppercase tracking-[0.3em] text-brand-deep";
-/* Sobre o verde da marca o texto é sempre ink — o verde é claro demais
-   para carregar texto branco. */
-const eyebrowOnBrand =
-  "text-sm font-semibold uppercase tracking-[0.3em] text-ink/70";
+const eyeDark = "text-sm font-semibold uppercase tracking-[0.3em] text-brand";
+const eyeLight = "text-sm font-semibold uppercase tracking-[0.3em] text-brand-deep";
+/* Sobre o verde da marca o texto é ink — o verde é claro demais para branco. */
+const eyeBrand = "text-sm font-semibold uppercase tracking-[0.3em] text-ink/70";
 
 export default function QuemSomosPage() {
   return (
@@ -47,267 +56,286 @@ export default function QuemSomosPage() {
       <Header />
 
       <main className="bg-surface text-ink">
-        {/* HERO — bloco em verde da marca, como no site */}
+        {/* ─────────────── 1. HERO ─────────────── */}
         <section className="bg-brand text-ink">
           <div className={`${shell} py-20 lg:py-28`}>
-            <div className="grid items-center gap-12 lg:grid-cols-12">
-              <div className="lg:col-span-7">
-                <p className={eyebrowOnBrand}>Bankers Academy</p>
-                <h1 className="mt-4 text-balance text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
-                  Quem somos
+            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+              <div className="lg:col-span-6">
+                <p className={eyeBrand}>Quem somos</p>
+
+                <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+                  {heroTitulo.map((linha) => (
+                    <span key={linha} className="block">
+                      {linha}
+                    </span>
+                  ))}
                 </h1>
-                <p className="mt-8 max-w-2xl text-pretty text-lg leading-8 text-ink/80 sm:text-xl">
-                  A Bankers Academy nasceu para transformar conhecimento
-                  financeiro em oportunidade real de carreira.
+
+                <p className="mt-8 max-w-xl text-pretty text-lg leading-8 text-ink/80">
+                  {heroTexto}
                 </p>
+
+                <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <Link
+                    href="#programas"
+                    className="rounded-full bg-ink px-7 py-4 text-sm font-bold uppercase tracking-[0.08em] text-white transition hover:opacity-90"
+                  >
+                    Conheça nossos programas
+                  </Link>
+                  <Link
+                    href="/bootcamp"
+                    className="rounded-full border border-ink/30 px-7 py-4 text-sm font-bold uppercase tracking-[0.08em] text-ink transition hover:bg-ink hover:text-white"
+                  >
+                    Conheça o Bootcamp
+                  </Link>
+                </div>
               </div>
 
-              <div className="lg:col-span-5">
-                <Image
-                  src="/images/quem-somos/equipe.png"
-                  alt="Equipe da Bankers Academy"
-                  width={685}
-                  height={583}
-                  priority
-                  sizes="(max-width: 1024px) 90vw, 40vw"
-                  className="h-auto w-full"
+              <div className="lg:col-span-6">
+                <AssetPlaceholder
+                  label="Fotografia institucional da Bankers Academy — equipe ou sala em aula"
+                  ratio="aspect-[4/3]"
+                  className="w-full border-ink/30 bg-ink/[0.06]"
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* PROPÓSITO · MISSÃO · VALORES */}
-        <section aria-labelledby="proposito-t" className="on-dark bg-ink text-white">
-          <div className={`${shell} py-20 lg:py-24`}>
-            <Reveal>
-              <p className={eyebrowDark}>Propósito</p>
-              <h2
-                id="proposito-t"
-                className="mt-4 max-w-4xl text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl"
-              >
-                A Bankers Academy é impulsionada por um propósito claro:
-                capacitar indivíduos e transformar vidas através da educação e
-                do conhecimento.
-              </h2>
-            </Reveal>
-
-            <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-16">
-              <Reveal>
-                <div className="space-y-6 text-lg leading-8 text-white/70">
-                  <p>
-                    Ao longo dos anos, a Bankers Academy se consolidou como uma
-                    marca que representa experiência, excelência e compromisso
-                    com a formação de pessoas para o mercado financeiro. Nossa
-                    atuação combina conhecimento técnico, visão prática e uma
-                    comunidade voltada ao desenvolvimento de talentos.
-                  </p>
-                  <p>
-                    Em sua essência, a Bankers Academy se baseia em três pilares
-                    fundamentais: confiança, inovação e comunidade. Buscamos
-                    tornar o aprendizado mais acessível, prático e relevante,
-                    aproximando estudantes e profissionais das competências
-                    exigidas pelo mercado financeiro.
-                  </p>
+        {/* Barra de autoridade */}
+        <section aria-label="Credenciais da Bankers Academy" className="on-dark bg-ink text-white">
+          <div className={shell}>
+            <dl className="grid grid-cols-2 gap-x-8 gap-y-10 py-14 lg:grid-cols-4">
+              {autoridade.map((c) => (
+                <div key={c.id}>
+                  <dt className="sr-only">{c.rotulo}</dt>
+                  <dd>
+                    <span className="block text-2xl font-semibold tracking-tight text-brand sm:text-3xl">
+                      {c.valor}
+                    </span>
+                    <span className="mt-2 block text-sm leading-snug text-white/60">
+                      {c.rotulo}
+                    </span>
+                  </dd>
                 </div>
-
-                <ul className="mt-10 flex flex-wrap gap-3">
-                  {pilares.map((p) => (
-                    <li
-                      key={p}
-                      className="rounded-full border border-white/20 px-5 py-2 text-sm font-semibold"
-                    >
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-
-              <Reveal delay={120}>
-                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
-                  <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
-                    Missão
-                  </h3>
-                  <p className="mt-4 text-balance text-2xl font-semibold leading-snug">
-                    {missao}
-                  </p>
-
-                  <h3 className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-brand">
-                    Valores
-                  </h3>
-                  <ul className="mt-5 grid gap-x-6 gap-y-3 sm:grid-cols-2">
-                    {valores.map((v) => (
-                      <li
-                        key={v}
-                        className="flex gap-3 text-[15px] leading-6 text-white/75"
-                      >
-                        <span
-                          aria-hidden="true"
-                          className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"
-                        />
-                        {v}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            </div>
+              ))}
+            </dl>
           </div>
         </section>
 
-        {/* HISTÓRIA */}
-        <section aria-labelledby="historia-t" className="bg-surface-alt">
-          <div className={`${shell} py-20 lg:py-24`}>
+        {/* ─────────── 2. POR QUE EXISTIMOS ─────────── */}
+        <section aria-labelledby="porque-t" className="bg-surface">
+          <div className={`${shell} py-20 lg:py-28`}>
             <Reveal>
-              <p className={eyebrowLight}>Trajetória</p>
+              <p className={eyeLight}>Por que existimos</p>
+              <h2
+                id="porque-t"
+                className="mt-4 max-w-4xl text-balance text-3xl font-semibold leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl"
+              >
+                Existe uma distância entre estudar finanças e trabalhar com
+                finanças.
+              </h2>
+              <p className="mt-5 text-2xl font-semibold text-brand-deep sm:text-3xl">
+                Nós existimos para diminuir essa distância.
+              </p>
+            </Reveal>
+
+            <ul className="mt-16 grid gap-px overflow-hidden rounded-3xl bg-line lg:grid-cols-3">
+              {pilares.map((p, i) => (
+                <Reveal as="li" key={p.id} delay={i * 80} className="block bg-white">
+                  <div className="h-full p-8 lg:p-10">
+                    <span
+                      aria-hidden="true"
+                      className="block h-1.5 w-10 rounded-full bg-brand-deep"
+                    />
+                    <h3 className="mt-7 text-2xl font-semibold tracking-tight">
+                      {p.titulo}
+                    </h3>
+                    <p className="mt-4 text-pretty leading-7 text-ink/70">
+                      {p.texto}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* ─────────── 3. NOSSA HISTÓRIA ─────────── */}
+        <section aria-labelledby="historia-t" className="bg-surface-alt">
+          <div className={`${shell} py-20 lg:py-28`}>
+            <Reveal>
+              <p className={eyeLight}>Trajetória</p>
               <h2
                 id="historia-t"
                 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl"
               >
-                Nossa História
-                <span className="mt-2 block text-xl font-normal text-ink/55 sm:text-2xl">
-                  Quase três décadas conectando educação, mercado e propósito.
-                </span>
+                Nossa história
               </h2>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/70">
+                Quase três décadas conectando educação, mercado e propósito.
+              </p>
             </Reveal>
 
-            <ol className="mt-14 space-y-px overflow-hidden rounded-3xl bg-line">
-              {historia.map((m, i) => (
-                <Reveal
-                  as="li"
-                  key={m.id}
-                  delay={Math.min(i, 5) * 50}
-                  className="block bg-white"
-                >
-                  <article className="grid gap-4 p-7 sm:grid-cols-12 sm:gap-8 lg:p-8">
-                    <p className="sm:col-span-3 lg:col-span-2">
-                      <span className="text-sm font-bold tabular-nums text-brand-deep">
-                        {m.periodo}
-                      </span>
-                    </p>
-                    <div className="sm:col-span-9 lg:col-span-10">
-                      <h3 className="text-xl font-semibold tracking-tight">
-                        {m.titulo}
-                      </h3>
-                      <p className="mt-3 max-w-3xl text-pretty leading-7 text-ink/70">
-                        {m.texto}
-                      </p>
-                      {m.id === "ibbc" ? (
-                        <Link
-                          href="/bootcamp"
-                          className="mt-4 inline-flex py-1 text-sm font-semibold text-brand-deep transition-colors hover:text-ink"
-                        >
-                          Conheça o Investment Banking Boot Camp →
-                        </Link>
-                      ) : null}
-                    </div>
-                  </article>
-                </Reveal>
-              ))}
-            </ol>
+            <Timeline marcos={historia} />
           </div>
         </section>
 
-        {/* SECURATO JR. */}
-        <section
-          aria-labelledby="securato-t"
-          className="on-dark bg-ink text-white"
-        >
-          <div className={`${shell} py-20 lg:py-24`}>
-            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+        {/* ─────────── 4. SECURATO JR. ─────────── */}
+        <section aria-labelledby="fundador-t" className="on-dark bg-ink text-white">
+          <div className={`${shell} py-20 lg:py-28`}>
+            <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <Reveal className="lg:col-span-5">
-                <Image
-                  src="/images/quem-somos/securato-jr.png"
-                  alt="JR Securato Jr — fundador da Bankers Academy"
-                  width={672}
-                  height={704}
-                  sizes="(max-width: 1024px) 80vw, 38vw"
-                  className="h-auto w-full max-w-md"
+                <AssetPlaceholder
+                  tone="dark"
+                  label={`Retrato de ${securatoNome}`}
+                  ratio="aspect-[4/5]"
+                  className="w-full"
                 />
               </Reveal>
 
               <Reveal delay={100} className="lg:col-span-7">
-                <p className={eyebrowDark}>Fundador</p>
+                <p className={eyeDark}>Fundador</p>
                 <h2
-                  id="securato-t"
-                  className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl"
+                  id="fundador-t"
+                  className="mt-4 text-balance text-3xl font-semibold leading-[1.12] tracking-tight sm:text-4xl lg:text-5xl"
                 >
-                  Conheça melhor o Securato Jr
+                  Experiência de mercado transformada em educação.
                 </h2>
 
-                <div className="mt-8 space-y-5 text-lg leading-8 text-white/70">
-                  {securatoParagrafos.map((p) => (
-                    <p key={p.slice(0, 32)}>{p}</p>
-                  ))}
-                </div>
+                <p className="mt-6 text-lg font-semibold">{securatoNome}</p>
+                <p className="mt-4 max-w-2xl text-pretty text-lg leading-8 text-white/70">
+                  {securatoResumo}
+                </p>
 
-                <h3 className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-brand">
-                  Iniciativas relevantes
-                </h3>
-                <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
-                  {securatoIniciativas.map((item) => (
-                    <li
-                      key={item}
-                      className="flex gap-3 text-[15px] leading-6 text-white/75"
-                    >
-                      <span
-                        aria-hidden="true"
-                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"
-                      />
-                      {item}
+                <ul className="mt-10 grid gap-px overflow-hidden rounded-2xl bg-white/10 sm:grid-cols-2">
+                  {securatoCredenciais.map((c) => (
+                    <li key={c.id} className="bg-ink p-5">
+                      <p className="text-base font-semibold text-brand">
+                        {c.valor}
+                      </p>
+                      <p className="mt-1 text-sm leading-snug text-white/60">
+                        {c.rotulo}
+                      </p>
                     </li>
                   ))}
                 </ul>
 
-                <a
-                  href={ibbcLinks.securatoLinkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-8 inline-flex py-1 text-sm font-semibold text-brand transition-colors hover:text-white"
-                >
-                  LinkedIn ↗
-                  <span className="sr-only"> de JR Securato Jr (abre em nova aba)</span>
-                </a>
+                <div className="mt-10 border-l-2 border-brand pl-6">
+                  <p className="text-pretty text-lg leading-8">
+                    {securatoPonte}
+                  </p>
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Link
+                    href="/bootcamp"
+                    className="rounded-full bg-brand-soft px-7 py-4 text-sm font-bold uppercase tracking-[0.08em] text-ink transition hover:brightness-95"
+                  >
+                    Conheça o IBBC
+                  </Link>
+                  <a
+                    href={ibbcLinks.securatoLinkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full border border-white/25 px-7 py-4 text-sm font-bold uppercase tracking-[0.08em] text-white transition hover:bg-white/10"
+                  >
+                    LinkedIn
+                    <span className="sr-only"> de {securatoNome} (abre em nova aba)</span>
+                  </a>
+                </div>
               </Reveal>
             </div>
           </div>
         </section>
 
-        {/* PARCEIROS */}
-        <section aria-labelledby="parceiros-t" className="bg-surface">
-          <div className={`${shell} py-20 lg:py-24`}>
+        {/* ─────────── 5. QUEM ENSINA ─────────── */}
+        <section aria-labelledby="ensina-t" className="bg-surface">
+          <div className={`${shell} py-20 lg:py-28`}>
             <Reveal>
-              <p className={eyebrowLight}>Parceiros</p>
+              <p className={eyeLight}>Quem ensina</p>
               <h2
-                id="parceiros-t"
-                className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl"
+                id="ensina-t"
+                className="mt-4 max-w-3xl text-balance text-3xl font-semibold leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl"
               >
-                Quem caminha com a gente
+                Aprenda com quem conhece o outro lado da mesa.
               </h2>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/70">
-                Organizações que caminham conosco na missão de transformar a
-                educação financeira no Brasil.
-              </p>
             </Reveal>
 
-            <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {parceiros.map((p, i) => (
-                <Reveal
-                  as="li"
-                  key={p.id}
-                  delay={Math.min(i, 6) * 40}
-                  className="block"
-                >
-                  <article className="h-full rounded-3xl border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-ink/25 hover:shadow-lg hover:shadow-black/5">
-                    <span
-                      aria-hidden="true"
-                      className="block h-1 w-8 rounded-full bg-brand-deep"
+            <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {mentores.map((m, i) => (
+                <Reveal as="li" key={m.id} delay={i * 60} className="block">
+                  <article className="h-full">
+                    <AssetPlaceholder
+                      label="Retrato do professor"
+                      ratio="aspect-[3/4]"
+                      className="w-full"
                     />
-                    <h3 className="mt-5 text-lg font-semibold tracking-tight">
-                      {p.nome}
+                    <div className="mt-5">
+                      {m.nome ? (
+                        <>
+                          <h3 className="text-lg font-semibold tracking-tight">
+                            {m.nome}
+                          </h3>
+                          <p className="mt-1 text-sm text-ink/70">
+                            {m.cargo}
+                            {m.instituicao ? ` · ${m.instituicao}` : ""}
+                          </p>
+                          {m.especialidade ? (
+                            <p className="mt-2 text-sm text-ink/70">
+                              {m.especialidade}
+                            </p>
+                          ) : null}
+                        </>
+                      ) : (
+                        /* Sem nome confirmado, o card mostra os campos que
+                           serão preenchidos — nunca um nome inventado. */
+                        <p className="text-sm leading-6 text-ink/65">
+                          Nome · cargo · instituição · especialidade
+                        </p>
+                      )}
+                    </div>
+                  </article>
+                </Reveal>
+              ))}
+            </ul>
+
+            <p className="mt-10 text-sm text-ink/70">
+              Grid preparado para foto, nome, cargo, instituição e
+              especialidade. Nomes e credenciais entram depois da validação.
+            </p>
+          </div>
+        </section>
+
+        {/* ─────────── 6. APRENDER FAZENDO ─────────── */}
+        <section aria-labelledby="fazendo-t" className="on-dark bg-ink text-white">
+          <div className={`${shell} py-20 lg:py-28`}>
+            <Reveal>
+              <p className={eyeDark}>Aprender fazendo</p>
+              <h2
+                id="fazendo-t"
+                className="mt-4 text-balance text-3xl font-semibold leading-[1.12] tracking-tight sm:text-4xl lg:text-5xl"
+              >
+                Não é só sobre saber.
+                <span className="block text-white/55">É sobre saber fazer.</span>
+              </h2>
+            </Reveal>
+
+            <ul className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {aprenderFazendo.map((b, i) => (
+                <Reveal as="li" key={b.id} delay={i * 70} className="block">
+                  <article className="h-full">
+                    <AssetPlaceholder
+                      tone="dark"
+                      label={`Foto: campers em ${b.titulo.toLowerCase()}`}
+                      ratio="aspect-[4/3]"
+                      className="w-full"
+                    />
+                    <h3 className="mt-6 text-xl font-semibold uppercase tracking-tight">
+                      {b.titulo}
                     </h3>
-                    <p className="mt-2.5 text-sm leading-6 text-ink/70">
-                      {p.descricao}
+                    <p className="mt-3 text-sm leading-6 text-white/65">
+                      {b.texto}
                     </p>
                   </article>
                 </Reveal>
@@ -316,36 +344,237 @@ export default function QuemSomosPage() {
           </div>
         </section>
 
-        {/* CTA — bloco em verde da marca, fechando como no site */}
+        {/* ─────────── 7. ECOSSISTEMA ─────────── */}
+        <section id="programas" aria-labelledby="programas-t" className="scroll-mt-20 bg-surface-alt">
+          <div className={`${shell} py-20 lg:py-28`}>
+            <Reveal>
+              <p className={eyeLight}>Ecossistema</p>
+              <h2
+                id="programas-t"
+                className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl"
+              >
+                Muitas portas. Um mesmo objetivo.
+              </h2>
+              <p className="mt-5 text-xl text-ink/70 sm:text-2xl">
+                Entrar no mercado mais preparado.
+              </p>
+            </Reveal>
+
+            <ul className="mt-14 grid gap-5 lg:grid-cols-3">
+              {programas.map((p, i) => {
+                const conteudo = (
+                  <>
+                    <h3
+                      className={`font-semibold tracking-tight ${
+                        p.destaque ? "text-2xl sm:text-3xl" : "text-lg"
+                      }`}
+                    >
+                      {p.nome}
+                    </h3>
+                    <p
+                      className={`mt-3 text-pretty leading-7 ${
+                        p.destaque ? "text-white/70" : "text-sm text-ink/70"
+                      }`}
+                    >
+                      {p.descricao}
+                    </p>
+                    <span
+                      className={`mt-6 inline-flex text-sm font-semibold ${
+                        p.destaque ? "text-brand" : "text-brand-deep"
+                      }`}
+                    >
+                      {p.externo ? "Ver programa ↗" : "Conhecer →"}
+                    </span>
+                  </>
+                );
+
+                const classe = p.destaque
+                  ? "on-dark flex h-full flex-col rounded-3xl bg-ink p-8 text-white transition hover:opacity-95 lg:p-10"
+                  : "flex h-full flex-col rounded-3xl border border-line bg-white p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-ink/25 hover:shadow-lg hover:shadow-black/5";
+
+                return (
+                  <Reveal
+                    as="li"
+                    key={p.id}
+                    delay={Math.min(i, 5) * 50}
+                    className={`block ${p.destaque ? "lg:col-span-3" : ""}`}
+                  >
+                    {p.externo ? (
+                      <a href={p.href} target="_blank" rel="noopener noreferrer" className={classe}>
+                        {conteudo}
+                      </a>
+                    ) : (
+                      <Link href={p.href} className={classe}>
+                        {conteudo}
+                      </Link>
+                    )}
+                  </Reveal>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+
+        {/* ─────────── 8. PROVA SOCIAL ─────────── */}
+        <section aria-labelledby="prova-t" className="bg-surface">
+          <div className={`${shell} py-20 lg:py-28`}>
+            <Reveal>
+              <p className={eyeLight}>Prova social</p>
+              <h2
+                id="prova-t"
+                className="mt-4 max-w-3xl text-balance text-3xl font-semibold leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl"
+              >
+                Quem passou pela Bankers conta melhor.
+              </h2>
+            </Reveal>
+
+            {depoimentos.length > 0 ? (
+              <ul className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {depoimentos.map((d, i) => (
+                  <Reveal as="li" key={d.id} delay={i * 60} className="block">
+                    <figure className="flex h-full flex-col rounded-3xl border border-line bg-white p-7">
+                      <blockquote className="flex-1 text-pretty leading-7 text-ink/80">
+                        <p>{d.texto}</p>
+                      </blockquote>
+                      <figcaption className="mt-6 border-t border-line pt-5">
+                        <p className="font-semibold">{d.nome}</p>
+                        {d.programa ? (
+                          <p className="mt-1 text-sm text-brand-deep">{d.programa}</p>
+                        ) : null}
+                      </figcaption>
+                    </figure>
+                  </Reveal>
+                ))}
+              </ul>
+            ) : (
+              /* Sem depoimento autorizado, a prova social é o número real de
+                 campers já formados pelo IBBC — dado que já existe no projeto. */
+              <Reveal>
+                <div className="mt-14 grid gap-8 rounded-3xl border border-line bg-surface-alt p-8 lg:grid-cols-12 lg:items-center lg:p-12">
+                  <div className="lg:col-span-5">
+                    <p className="text-5xl font-semibold tracking-tight text-brand-deep sm:text-6xl">
+                      {ibbcAlumni.length}
+                    </p>
+                    <p className="mt-3 text-lg font-semibold">
+                      campers já viveram o Investment Banking Boot Camp
+                    </p>
+                    <p className="mt-2 text-sm text-ink/65">
+                      Desde 2018, ao longo de 16 edições. Vários voltaram depois
+                      como mentores de turmas seguintes.
+                    </p>
+                    <Link
+                      href="/bootcamp#alumni"
+                      className="mt-6 inline-flex py-1 text-sm font-semibold text-brand-deep transition-colors hover:text-ink"
+                    >
+                      Ver todos os alumni →
+                    </Link>
+                  </div>
+
+                  <div className="lg:col-span-7">
+                    <AssetPlaceholder
+                      label="Foto de turma ou de encerramento de uma edição"
+                      ratio="aspect-[16/9]"
+                      className="w-full"
+                    />
+                  </div>
+                </div>
+              </Reveal>
+            )}
+          </div>
+        </section>
+
+        {/* ─────────── 9. PARCEIROS ─────────── */}
+        <section aria-labelledby="parceiros-t" className="bg-surface-alt">
+          <div className={`${shell} py-20 lg:py-24`}>
+            <Reveal>
+              <p className={eyeLight}>Parceiros</p>
+              <h2
+                id="parceiros-t"
+                className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl"
+              >
+                Quem caminha com a gente
+              </h2>
+            </Reveal>
+
+            {/* Estrutura pronta para logo; enquanto não há arquivo, o nome
+                carrega o card — sem selo de "logo em breve". */}
+            <ul className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-line sm:grid-cols-3 lg:grid-cols-5">
+              {parceiros.map((p, i) => (
+                <Reveal as="li" key={p.id} delay={Math.min(i, 9) * 30} className="block bg-white">
+                  <div className="flex h-full min-h-[7.5rem] flex-col justify-center p-6 text-center">
+                    <p className="text-sm font-semibold tracking-tight">{p.nome}</p>
+                    <p className="mt-2 text-xs leading-5 text-ink/55">
+                      {p.descricao}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* ─────────── Missão e valores ─────────── */}
+        <section aria-labelledby="valores-t" className="on-dark bg-ink text-white">
+          <div className={`${shell} py-20 lg:py-24`}>
+            <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+              <Reveal className="lg:col-span-5">
+                <p className={eyeDark}>Missão</p>
+                <h2
+                  id="valores-t"
+                  className="mt-4 text-balance text-2xl font-semibold leading-snug sm:text-3xl"
+                >
+                  {missao}
+                </h2>
+              </Reveal>
+
+              <Reveal delay={100} className="lg:col-span-7">
+                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">
+                  Valores
+                </h3>
+                <ul className="mt-6 grid gap-x-8 gap-y-4 sm:grid-cols-2">
+                  {valores.map((v) => (
+                    <li key={v} className="flex gap-3 text-[15px] leading-6 text-white/75">
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"
+                      />
+                      {v}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* ─────────── 10. CTA FINAL ─────────── */}
         <section aria-labelledby="cta-t" className="bg-brand text-ink">
-          <div className={`${shell} py-20 text-center lg:py-24`}>
+          <div className={`${shell} py-20 text-center lg:py-28`}>
             <Reveal>
               <h2
                 id="cta-t"
-                className="mx-auto max-w-3xl text-balance text-4xl font-semibold tracking-tight sm:text-5xl"
+                className="mx-auto max-w-3xl text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl"
               >
-                Quer fazer parte dessa jornada?
+                Sua carreira pode ser o próximo capítulo.
               </h2>
-              <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-8 text-ink/75">
-                Conheça os cursos, programas e iniciativas da Bankers Academy e
-                dê o próximo passo na sua formação para o mercado financeiro.
+              <p className="mx-auto mt-6 max-w-xl text-pretty text-lg leading-8 text-ink/75">
+                Conheça os programas da Bankers Academy e escolha por onde
+                começar.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Link
-                  href="/bootcamp"
-                  className="rounded-full bg-ink px-8 py-4 font-semibold text-white transition hover:opacity-90"
+                  href="#programas"
+                  className="rounded-full bg-ink px-8 py-4 text-sm font-bold uppercase tracking-[0.08em] text-white transition hover:opacity-90"
                 >
-                  Conhecer o Boot Camp
+                  Conheça os programas
                 </Link>
-                <a
-                  href={ibbcLinks.coursePage}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-ink/25 px-8 py-4 font-semibold text-ink transition hover:bg-ink hover:text-white"
+                <Link
+                  href="/bootcamp"
+                  className="rounded-full border border-ink/30 px-8 py-4 text-sm font-bold uppercase tracking-[0.08em] text-ink transition hover:bg-ink hover:text-white"
                 >
-                  Ver todos os cursos
-                </a>
+                  Conheça o Bootcamp
+                </Link>
               </div>
             </Reveal>
           </div>
