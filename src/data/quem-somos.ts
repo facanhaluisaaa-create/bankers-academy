@@ -373,15 +373,19 @@ export const parceiros = [
  */
 export const galeriaCultura: FotoCultura[] = [
   {
-    id: "time-escritorio",
-    src: "/images/quem-somos/time-grupo.jpg",
-    alt: "Parte do time da Bankers Academy na sala de reuniões",
-    larga: true,
-  },
-  {
     id: "turma",
     src: "/images/quem-somos/turma.jpg",
     alt: "Turma reunida em sala de aula",
+    /* `larga` é do lugar, não da foto: é a primeira célula que ocupa duas
+       colunas. Ao trocar as duas de posição, a marca acompanha a posição —
+       senão o bloco de duas colunas começaria na coluna 2 de 3 e quebraria
+       a linha. */
+    larga: true,
+  },
+  {
+    id: "time-escritorio",
+    src: "/images/quem-somos/time-grupo.jpg",
+    alt: "Parte do time da Bankers Academy na sala de reuniões",
   },
   {
     /* O cliente reprovou a foto que estava aqui (valores.jpg, duas pessoas
