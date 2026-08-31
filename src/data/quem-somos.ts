@@ -215,15 +215,23 @@ export const securatoFotoRecorte = {
 };
 
 /**
- * Demais lideranças, conforme o mapa de conteúdo da Bankers Academy.
+ * Demais lideranças.
  *
- * `foto` fica vazio de propósito: há dois retratos de estúdio em
- * public/images/quem-somos/a-identificar que provavelmente pertencem a
- * pessoas desta lista, mas ninguém confirmou quem é quem — e identificar
- * por aparência não é aceitável. Ver o LEIA-ME daquela pasta.
+ * Fonte: o mapa de conteúdo enviado pela Bankers Academy, seção
+ * "Nosso time", que lista JR Securato JR (Founder), Andrea Securato
+ * (Co-founder), Arnaldo Mello (Partner, Tabula) e Jaqueline Sanches
+ * (Partner).
+ *
+ * ⚠️ Andrea Securato está fora da lista até haver confirmação. O cliente
+ * levantou dúvida sobre o vínculo dela, e as outras duas fontes que
+ * temos não a mencionam: o site no ar não cita nenhum nome além do
+ * Securato, e o pacote de fotos montado pelo próprio cliente descreve o
+ * conteúdo como "Securato, Arnaldo, Jaque e material institucional".
+ * Para reativar, basta devolver a linha abaixo:
+ *
+ *   { id: "andrea", nome: "Andrea Securato", cargo: "Co-founder" },
  */
 export const lideranca: Lider[] = [
-  { id: "andrea", nome: "Andrea Securato", cargo: "Co-founder" },
   {
     id: "arnaldo",
     nome: "Arnaldo Mello",
