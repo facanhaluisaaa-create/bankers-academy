@@ -245,13 +245,15 @@ export const experienciaMedia: MediaSlot[] = [
     ratio: "aspect-[4/3]",
     ratioLabel: "4:3",
   }),
-  slot({
+  {
     slot: "EXP-02",
-    alt: "Modelagem financeira no notebook",
+    /* Campers na mesa de trabalho com notebooks (foto do cliente, 31/08). */
+    src: "/images/bootcamp/exp-modelagem.jpg",
+    alt: "Campers na mesa de trabalho com notebooks durante o boot camp",
     pendente: "Modelagem — notebook, planilha",
     ratio: "aspect-[4/3]",
     ratioLabel: "4:3",
-  }),
+  },
   slot({
     slot: "EXP-03",
     alt: "Mentor acompanhando um participante",
@@ -259,13 +261,16 @@ export const experienciaMedia: MediaSlot[] = [
     ratio: "aspect-[4/3]",
     ratioLabel: "4:3",
   }),
-  slot({
+  {
     slot: "EXP-04",
-    alt: "Apresentação no IBBC",
+    /* Participante em pé apresentando diante da tela, com parte da
+       audiência em primeiro plano (foto do cliente, 31/08). */
+    src: "/images/bootcamp/exp-apresentacao.jpg",
+    alt: "Participante apresenta diante da tela para a turma durante o boot camp",
     pendente: "Apresentação",
     ratio: "aspect-[4/3]",
     ratioLabel: "4:3",
-  }),
+  },
 ];
 
 /* ═══════════════ /bootcamp/jornada ═══════════════ */

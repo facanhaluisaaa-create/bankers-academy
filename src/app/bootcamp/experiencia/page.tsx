@@ -77,25 +77,32 @@ export default function ExperienciaPage() {
           texto="O IBBC coloca o participante dentro de uma jornada prática, com análises, entregas diárias, feedback de mentores e apresentação final."
         />
 
-        {/* O arco da experiência */}
+        {/* O arco da experiência — narrativa editorial, não grade de
+            cards: cada etapa é uma linha FOTO | TEXTO que alterna de
+            lado no desktop; no celular empilha imagem → número + título
+            → texto. [EXP-01…04] vivem em _data/media.ts; os dois ainda
+            pendentes (Analisar e Avaliar) mostram o espaço reservado até
+            chegar fotografia que conte a etapa de verdade. */}
         <section aria-label="As quatro frentes da experiência" className="bg-surface-alt">
           <div className={`${shell} py-20 lg:py-28`}>
-            {/* [EXP-01…04] Cada bloco do arco carrega a sua fotografia
-                real; os slots vivem em _data/media.ts */}
-            <ol className="grid gap-5 md:grid-cols-2">
+            <ol className="space-y-14 lg:space-y-20">
               {etapas.map((item, i) => (
                 <li key={item.number}>
-                  <article className="h-full overflow-hidden rounded-3xl border border-line bg-white">
+                  <article className="grid items-center gap-7 lg:grid-cols-2 lg:gap-16">
                     <Foto
                       slot={experienciaMedia[i]}
-                      sizes="(max-width: 768px) 92vw, 46vw"
-                      rounded="rounded-none"
+                      sizes="(max-width: 1024px) 92vw, 46vw"
+                      className={i % 2 === 1 ? "lg:order-last" : ""}
                     />
-                    <div className="p-8">
-                      <p className="text-sm text-brand-deep">{item.number}</p>
-                      <h2 className="mt-4 text-2xl font-semibold sm:text-3xl">{item.title}</h2>
+                    <div>
+                      <p className="text-sm font-semibold tabular-nums text-brand-deep">
+                        {item.number}
+                      </p>
+                      <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+                        {item.title}
+                      </h2>
                       <p className="mt-4 text-lg leading-8 text-ink/80">{item.text}</p>
-                      <p className="mt-3 leading-7 text-ink/60">{item.detalhe}</p>
+                      <p className="mt-3 max-w-xl leading-7 text-ink/60">{item.detalhe}</p>
                     </div>
                   </article>
                 </li>
