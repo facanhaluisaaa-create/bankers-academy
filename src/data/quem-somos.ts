@@ -224,7 +224,12 @@ export const securatoFotoRecorte = {
  */
 export const lideranca: Lider[] = [
   { id: "andrea", nome: "Andrea Securato", cargo: "Co-founder" },
-  { id: "arnaldo", nome: "Arnaldo Mello", cargo: "Partner — Tabula" },
+  {
+    id: "arnaldo",
+    nome: "Arnaldo Mello",
+    cargo: "Partner — Tabula",
+    foto: "/images/quem-somos/lideranca-arnaldo-mello.jpg",
+  },
   {
     id: "jaqueline",
     nome: "Jaqueline Sanches",
