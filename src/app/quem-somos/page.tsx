@@ -86,7 +86,8 @@ export default function QuemSomosPage() {
               {heroTexto}
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link href="#conheca-t" className={btnSolid}>
+              {/* Rota real, mesma aba — antes era href="#conheca-t" */}
+              <Link href={rotas.historia} className={btnSolid}>
                 Conheça a escola
               </Link>
               <Link href={rotas.lideranca} className={btnOutline}>
