@@ -384,9 +384,14 @@ export const galeriaCultura: FotoCultura[] = [
     alt: "Turma reunida em sala de aula",
   },
   {
+    /* O cliente reprovou a foto que estava aqui (valores.jpg, duas pessoas
+       diante da parede "Excellence precedes success") e vai escolher outra.
+       O arquivo continua em public/images/quem-somos/ — nada foi apagado.
+       Ao receber a substituta: nomear valores.jpg, apontar o `src` e tirar
+       o `pendente`. */
     id: "valores",
-    src: "/images/quem-somos/valores.jpg",
     alt: "Parede do escritório com a frase Excellence precedes success",
+    pendente: "A parede Excellence precedes success — foto a escolher",
   },
   {
     id: "evento",

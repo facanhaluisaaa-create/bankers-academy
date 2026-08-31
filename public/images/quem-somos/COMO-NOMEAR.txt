@@ -38,6 +38,10 @@ Lado maior de 1600px já basta. Não precisa recortar nem tratar.
 4. EQUIPE & CULTURA — foto de grupo/bastidor, ninguém é nomeado
    cultura-evento.jpg      evento, palestra ou aula no auditório
    cultura-bastidores.jpg  gravação, preparação de aula, dia a dia
+   valores.jpg             a parede "Excellence precedes success"
+
+   A valores.jpg atual saiu do ar — o cliente não gostou e vai escolher
+   outra. O arquivo continua na pasta; a substituta pode sobrescrevê-lo.
 
    Pode mandar mais de uma de cada: cultura-evento-2.jpg e assim por diante.
 
