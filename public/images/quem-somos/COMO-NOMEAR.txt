@@ -1,0 +1,59 @@
+COMO NOMEAR AS FOTOS DA PÁGINA QUEM SOMOS
+=========================================
+
+Regra que vale para todo o pacote: as fotos são organizadas pelo NOME DO
+ARQUIVO. Ninguém é identificado por aparência — se o nome do arquivo não
+disser quem é, a foto fica sem nome na página ou vai para a pasta
+a-identificar/.
+
+Formato: JPG para fotografia, PNG só quando houver fundo transparente.
+Lado maior de 1600px já basta. Não precisa recortar nem tratar.
+
+
+1. LIDERANÇA — retrato individual, um arquivo por pessoa
+   lideranca-andrea-securato.jpg
+   lideranca-arnaldo-mello.jpg
+   lideranca-jaqueline-sanches.jpg
+
+   O nome no arquivo é o que define de quem é a foto. Se vier
+   "retrato-1.jpg", ele fica parado até alguém confirmar.
+
+
+2. PROFESSORES & ESPECIALISTAS — retrato individual
+   professor-<nome-sobrenome>.jpg     ex.: professor-maria-lima.jpg
+
+   Junto de cada retrato preciso, em texto: nome completo, especialidade
+   (ex.: "Valuation", "M&A") e uma credencial curta e verificável. Sem
+   isso o retrato não entra — a página não inventa cargo nem vínculo.
+
+
+3. COMO ENSINAMOS — quatro fotos de aula, sem pose
+   ensino-modelar.jpg      aluno construindo o modelo na planilha
+   ensino-avaliar.jpg      discussão de valuation entre professor e aluno
+   ensino-apresentar.jpg   aluno apresentando de pé para a turma
+   ensino-decidir.jpg      turma em debate na sala
+
+
+4. EQUIPE & CULTURA — foto de grupo/bastidor, ninguém é nomeado
+   cultura-evento.jpg      evento, palestra ou aula no auditório
+   cultura-bastidores.jpg  gravação, preparação de aula, dia a dia
+
+   Pode mandar mais de uma de cada: cultura-evento-2.jpg e assim por diante.
+
+
+5. LINHA DO TEMPO (opcional) — uma foto por marco
+   marco-2018.jpg, marco-2022.jpg, marco-2024.jpg ...
+
+   Só entram se forem de época. Foto recente ilustrando ano antigo, não.
+
+
+JÁ RECEBIDAS E NO AR
+   equipe.jpg            time completo, faixa do hero
+   securato-jr.jpg       retrato do fundador
+   securato-recorte.png  fundador recortado, fundo transparente
+   time-grupo.jpg        time na sala de reuniões
+   turma.jpg             turma em sala
+   valores.jpg           parede "Excellence precedes success"
+
+PARADAS EM a-identificar/
+   Ver a-identificar/LEIA-ME.txt.

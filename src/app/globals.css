@@ -15,7 +15,10 @@
    ============================================================ */
 @theme {
   /* Marca -------------------------------------------------- */
-  /* #C4EF7C é o verde da marca: 13,78:1 com o ink, em texto e em fundo.
+  /* 🔒 FECHADO PELO CLIENTE — não altere #C4EF7C. Ele pediu exatamente
+     essa cor e esse estilo visual; nada de substituir ou "ajustar".
+
+     #C4EF7C é o verde da marca: 13,78:1 com o ink, em texto e em fundo.
      Sobre branco ele dá 1,31:1 — ilegível —, por isso todo texto verde em
      seção clara usa brand-deep, o mesmo matiz 82° escurecido até 4,95:1. */
   --color-brand: #c4ef7c;

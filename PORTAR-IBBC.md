@@ -65,23 +65,29 @@ package.json / tsconfig / next.config / eslint / postcss   Descartar
 
 ## Tokens — extraídos do site no ar
 
-As cores e a tipografia **não** foram escolhidas aqui. Vieram do CSS
-publicado em `bankersacademy.com.br/assets/styles-*.css`:
+A tipografia e os neutros vieram do CSS publicado em
+`bankersacademy.com.br/assets/styles-*.css`. O verde da marca foi
+**definido pelo cliente**: `#C4EF7C`.
 
-| Token | Valor | Papel no site real |
+| Token | Valor | Papel |
 |---|---|---|
-| `--color-brand` | `#6FDF11` | acento vívido — só em seção escura |
-| `--color-brand-soft` | `#C4EF7C` | fundo do botão primário |
-| `--color-brand-deep` | `#437E12` | derivado, para acento em seção clara |
+| `--color-brand` | `#C4EF7C` | 🔒 verde da marca — fundo de seção e acento em seção escura |
+| `--color-brand-soft` | `#C4EF7C` | fundo do botão primário (igual ao brand) |
+| `--color-brand-deep` | `#5D792E` | derivado, para texto verde em seção clara |
 | `--color-ink` | `oklch(20% .005 260)` | `#151618` — fundo escuro e texto |
 | `--color-line` | `oklch(92% .01 255)` | bordas |
 | `--color-surface-alt` | `#F6F7F5` | seção clara alternada |
 | tipografia | **Mulish** | `--font-sans` e `--font-display` |
 
-⚠️ **`#6FDF11` só funciona sobre fundo escuro** — 10,5:1 sobre o ink, mas
-1,7:1 sobre branco. Por isso existe o `--color-brand-deep` (`#437E12`),
-de mesmo matiz 93°, que passa AA em texto pequeno sobre fundo claro.
-Não troque um pelo outro sem checar o fundo.
+🔒 **`#C4EF7C` é fechado.** O cliente pediu exatamente essa cor e esse
+estilo visual; não substitua, não "ajuste" e não derive uma variante para
+usar no lugar dela.
+
+⚠️ **Ela não serve como texto sobre branco** — 1,31:1. Sobre o ink dá
+13,78:1 nos dois sentidos (verde no texto ou verde no fundo), e é assim
+que ela deve aparecer. Para texto verde em seção clara existe o
+`--color-brand-deep` (`#5D792E`), de mesmo matiz 82°, com 4,95:1 sobre
+branco. Não troque um pelo outro sem checar o fundo.
 
 O certificado usa paleta própria (`--color-cert-*`), tirada do diploma
 físico. Essa não deve seguir o site — é a cor do papel e da tinta reais.
