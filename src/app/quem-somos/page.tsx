@@ -18,6 +18,7 @@ import {
 
 import {
   autoridade,
+  fundadorTitulo,
   heroFoto,
   heroTexto,
   heroTitulo,
@@ -153,12 +154,10 @@ export default function QuemSomosPage() {
           </div>
         </section>
 
-        {/* ═══════════ AS QUATRO PORTAS ═══════════ */}
-        <HubCards />
-
-        {/* ═══════════ SECURATO JR — APRESENTAÇÃO CURTA ═══════════
-            Só o suficiente para saber quem fundou a escola. O perfil
-            completo, com credenciais e LinkedIn, está em ./lideranca. */}
+        {/* ═══════════ SECURATO JR — A AUTORIDADE DA ESCOLA ═══════════
+            Logo depois do porquê, quem: a lógica da página é Bankers
+            Academy → fundador → as portas (história, liderança…). A
+            seção editorial completa vive em ./lideranca. */}
         <section aria-labelledby="fundador-t" className="on-dark bg-ink text-white">
           <div className={`${shell} py-24 lg:py-28`}>
             <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
@@ -186,14 +185,15 @@ export default function QuemSomosPage() {
               </Reveal>
 
               <Reveal delay={100} className="lg:col-span-7">
-                <p className={eyeDark}>O fundador</p>
+                <p className={eyeDark}>Fundador</p>
                 <h2
                   id="fundador-t"
-                  className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl"
+                  className="mt-5 max-w-xl text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl"
                 >
-                  {securatoNome}
+                  {fundadorTitulo}
                 </h2>
-                <p className="mt-2 text-brand">{securatoCargo}</p>
+                <p className="mt-5 text-lg font-semibold text-brand">{securatoNome}</p>
+                <p className="mt-1 text-sm text-white/60">{securatoCargo}</p>
                 <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-white/70">
                   {securatoResumo}
                 </p>
@@ -213,6 +213,9 @@ export default function QuemSomosPage() {
             </div>
           </div>
         </section>
+
+        {/* ═══════════ AS QUATRO PORTAS ═══════════ */}
+        <HubCards />
 
         {/* ═══════════ MISSÃO ═══════════ */}
         <section aria-labelledby="missao-t" className="bg-surface-alt">

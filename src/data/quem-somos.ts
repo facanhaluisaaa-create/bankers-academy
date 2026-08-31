@@ -291,6 +291,66 @@ export const securatoCredenciais: Credencial[] = [
  * 3648x5472; aqui aparado pelo alpha e reduzido). O recorte anterior,
  * securato-recorte.png, continua na pasta — nada foi apagado.
  */
+/* ───────── Seção editorial do fundador (hub e /lideranca) ───────── */
+
+export const fundadorTitulo = "Experiência de mercado transformada em educação.";
+
+/**
+ * A foto grande do fundador ensinando. Hoje aponta para a aula-securato
+ * enviada pelo cliente (vertical, 1086x1448); se chegar uma fotografia
+ * horizontal dele falando com alunos, é só trocar o src aqui — o layout
+ * usa object-cover e aceita as duas orientações.
+ */
+export const securatoFotoAula = {
+  src: "/images/quem-somos/aula-securato.jpg",
+  alt: "José Roberto Securato Junior dando aula para uma turma na Bankers Academy",
+  width: 1086,
+  height: 1448,
+};
+
+/** Destaques visuais do fundador — todos confirmados no material. */
+export const securatoDestaques: Credencial[] = [
+  { id: "anos", valor: "+20 anos", rotulo: "Mercado financeiro" },
+  { id: "ib", valor: "Investment Banking", rotulo: "Deutsche Bank · BNP Paribas" },
+  { id: "pracas", valor: "São Paulo + Nova Iorque", rotulo: "Transações complexas, inclusive cross-border" },
+  { id: "phd", valor: "PhD", rotulo: "em Finanças" },
+  { id: "empresas", valor: "SP Advisors + SP Capital Partners", rotulo: "Fundador" },
+  { id: "educacao", valor: "Educação", rotulo: "FIA · Saint Paul · Bankers Academy" },
+];
+
+/** Mais do que uma trajetória de mercado — os três pilares. */
+export const securatoPilares = [
+  {
+    id: "executar",
+    palavra: "Executar",
+    texto: "Experiência prática em Investment Banking e transações.",
+  },
+  {
+    id: "ensinar",
+    palavra: "Ensinar",
+    texto: "Experiência combinando mercado e educação.",
+  },
+  {
+    id: "construir",
+    palavra: "Construir",
+    texto: "Empresas, programas e iniciativas educacionais.",
+  },
+] as const;
+
+/**
+ * A ponte para 2018 — o mesmo fato do marco da linha do tempo, contado
+ * do ponto de vista do fundador. Números confirmados: primeira edição
+ * com 5 alunos, voltada à formação interna da SP Advisors.
+ */
+export const ponte2018 = {
+  ano: "2018",
+  titulo: "Da experiência nasceu o Bootcamp.",
+  texto:
+    "O primeiro Investment Banking Boot Camp começou com cinco participantes, voltado à formação interna da SP Advisors — e virou uma das bases da escola.",
+  cta: "Conheça o Investment Banking Boot Camp",
+  href: links.bootcamp,
+} as const;
+
 export const securatoFotoRecorte = {
   src: "/images/quem-somos/securato-em-pe.png",
   width: 900,
@@ -484,9 +544,12 @@ export const galeriaCultura: FotoCultura[] = [
     pendente: "A parede Excellence precedes success — foto a escolher",
   },
   {
-    id: "aula",
-    src: "/images/quem-somos/aula-securato.jpg",
-    alt: "JR Securato Jr dando aula para uma turma na Bankers Academy",
+    /* A aula-securato.jpg subiu para a seção do fundador (securatoFotoAula);
+       este espaço volta a aguardar outra foto de evento/aula para a mesma
+       imagem não aparecer duas vezes na página de Liderança. */
+    id: "evento",
+    alt: "Evento da Bankers Academy",
+    pendente: "Evento, palestra ou aula no auditório",
   },
   {
     id: "bastidores",
