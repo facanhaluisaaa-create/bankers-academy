@@ -13,12 +13,11 @@ Lado maior de 1600px já basta. Não precisa recortar nem tratar.
 1. LIDERANÇA — retrato individual, um arquivo por pessoa
    lideranca-<nome-sobrenome>.jpg
 
-   Já no ar: lideranca-arnaldo-mello.jpg e lideranca-jaqueline-sanches.jpg
+   Já no ar: lideranca-andrea-securato.jpg, lideranca-arnaldo-mello.jpg
+   e lideranca-jaqueline-sanches.jpg
 
    O nome no arquivo é o que define de quem é a foto. Se vier
    "retrato-1.jpg", ele fica parado até alguém confirmar.
-
-   FALTA: lideranca-andrea-securato.jpg
 
 
 2. PROFESSORES & ESPECIALISTAS — retrato individual

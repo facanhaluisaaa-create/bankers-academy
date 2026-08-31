@@ -231,8 +231,7 @@ export const lideranca: Lider[] = [
     id: "andrea",
     nome: "Andrea Securato",
     cargo: "Co-founder",
-    // TODO: foto confirmada pelo cliente, mas o arquivo não chegou ao
-    // repositório. Salvar como lideranca-andrea-securato.jpg e apontar aqui.
+    foto: "/images/quem-somos/lideranca-andrea-securato.jpg",
   },
   {
     id: "arnaldo",
