@@ -344,10 +344,11 @@ export const qsMedia = {
     alt: "JR Securato Jr autografa exemplares de “De cabeça no Mercado Financeiro”",
     arquivoEsperado: "3C39E18F…",
   } as SlotFoto,
-  /** Fechamento/cultura — o cliente indicou 0158.jpg. */
+  /** Fechamento/cultura — a 0158.jpg do cliente, recortada na horizontal
+      aproximando o grupo (todos os rostos preservados, sem filtro). */
   cultura: {
-    src: null,
-    alt: "Cultura da Bankers Academy",
+    src: "/images/quem-somos/cultura-time.jpg",
+    alt: "Time da Bankers Academy reunido no escritório, com José Roberto Securato Junior saltando ao centro",
     arquivoEsperado: "0158.jpg",
   } as SlotFoto,
 };

@@ -446,16 +446,21 @@ export default function QuemSomosPage() {
 
         {/* ═══════════ CTA FINAL ═══════════ */}
         <section aria-labelledby="cta-t" className="bg-brand text-ink">
-          {/* Fechamento/cultura — o cliente indicou 0158.jpg para cá */}
+          {/* Fechamento/cultura — 0158.jpg (cultura-time.jpg): editorial de
+              comunidade na largura do bloco, proporção natural do recorte
+              para nenhum rosto ser cortado de novo, cantos arredondados,
+              sem caixa nem véu por cima. */}
           {qsMedia.cultura.src ? (
-            <Image
-              src={qsMedia.cultura.src}
-              alt={qsMedia.cultura.alt}
-              width={2000}
-              height={1125}
-              sizes="100vw"
-              className="h-[40vw] max-h-[520px] min-h-[220px] w-full object-cover"
-            />
+            <div className={`${shell} pt-16`}>
+              <Image
+                src={qsMedia.cultura.src}
+                alt={qsMedia.cultura.alt}
+                width={2200}
+                height={1455}
+                sizes="(max-width: 1024px) 92vw, 1216px"
+                className="h-auto w-full rounded-3xl"
+              />
+            </div>
           ) : (
             <div className={`${shell} pt-16`}>
               <AssetPlaceholder
