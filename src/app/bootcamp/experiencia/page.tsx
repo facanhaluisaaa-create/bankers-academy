@@ -6,8 +6,8 @@ import Footer from "@/components/site/Footer";
 import SubHero from "../_components/SubHero";
 import Foto from "../_components/Foto";
 import { experienciaMedia } from "../_data/media";
-import { btnApply, ctaSetaLight, eyebrowLight, setaClasse, shell } from "../_components/estilos";
-import { ibbcFacts, ibbcLinks } from "../_data/config";
+import { btnApply, btnGhostDark, ctaSetaLight, eyebrowLight, setaClasse, shell } from "../_components/estilos";
+import { ibbcFacts, ibbcLinks, BA_WHATSAPP_DISPLAY } from "../_data/config";
 
 const description =
   "Como é viver o Investment Banking Boot Camp: analisar um setor, modelar, avaliar e apresentar — com entregas diárias e feedback de mentores da SP Advisors.";
@@ -144,7 +144,9 @@ export default function ExperienciaPage() {
             >
               Pronto para viver isso na prática?
             </h2>
-            <div className="mt-8">
+            {/* Contato E inscrição, lado a lado — mesmo padrão do CTA
+                final da landing */}
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href={ibbcLinks.apply}
                 target="_blank"
@@ -153,7 +155,26 @@ export default function ExperienciaPage() {
               >
                 Quero participar
               </a>
+              <a
+                href={ibbcLinks.coursePage}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={btnGhostDark}
+              >
+                Inscrição pela Tabula ↗
+              </a>
             </div>
+            <p className="mt-6 text-sm text-white/50">
+              WhatsApp da equipe:{" "}
+              <a
+                href={ibbcLinks.apply}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-white/80 underline decoration-white/30 decoration-2 underline-offset-4 transition-colors hover:text-brand hover:decoration-brand"
+              >
+                {BA_WHATSAPP_DISPLAY}
+              </a>
+            </p>
           </div>
         </section>
       </main>

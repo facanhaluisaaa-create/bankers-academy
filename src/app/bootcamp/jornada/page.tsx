@@ -5,10 +5,10 @@ import Footer from "@/components/site/Footer";
 import SubHero from "../_components/SubHero";
 import Foto from "../_components/Foto";
 import { jornadaMedia } from "../_data/media";
-import { btnApply, eyebrowLight, shell } from "../_components/estilos";
+import { btnApply, btnGhostDark, eyebrowLight, shell } from "../_components/estilos";
 import { ibbcJourney } from "../_data/journey";
 import { ibbcOutcomes } from "../_data/outcomes";
-import { ibbcFacts, ibbcLinks } from "../_data/config";
+import { ibbcFacts, ibbcLinks, BA_WHATSAPP_DISPLAY } from "../_data/config";
 
 const description =
   "A jornada do camper no Investment Banking Boot Camp: do Pre-Work de nivelamento à apresentação do Pitchbook final, em 5 semanas e 9 etapas com entregas diárias.";
@@ -132,7 +132,9 @@ export default function JornadaPage() {
               A jornada termina com o seu Pitchbook.
               <span className="block text-brand">Ela começa com uma conversa.</span>
             </h2>
-            <div className="mt-8">
+            {/* Contato E inscrição, lado a lado — mesmo padrão do CTA
+                final da landing */}
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href={ibbcLinks.apply}
                 target="_blank"
@@ -141,7 +143,26 @@ export default function JornadaPage() {
               >
                 Quero participar
               </a>
+              <a
+                href={ibbcLinks.coursePage}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={btnGhostDark}
+              >
+                Inscrição pela Tabula ↗
+              </a>
             </div>
+            <p className="mt-6 text-sm text-white/50">
+              WhatsApp da equipe:{" "}
+              <a
+                href={ibbcLinks.apply}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-white/80 underline decoration-white/30 decoration-2 underline-offset-4 transition-colors hover:text-brand hover:decoration-brand"
+              >
+                {BA_WHATSAPP_DISPLAY}
+              </a>
+            </p>
           </div>
         </section>
       </main>

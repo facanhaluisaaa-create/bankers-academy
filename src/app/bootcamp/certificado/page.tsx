@@ -4,8 +4,8 @@ import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import SubHero from "../_components/SubHero";
 import InteractiveCertificate from "../_components/InteractiveCertificate";
-import { btnApply, shell } from "../_components/estilos";
-import { ibbcFacts, ibbcLinks } from "../_data/config";
+import { btnApply, btnGhostDark, shell } from "../_components/estilos";
+import { ibbcFacts, ibbcLinks, BA_WHATSAPP_DISPLAY } from "../_data/config";
 
 const description =
   "Veja como ficaria o seu nome no certificado de 250 horas do Investment Banking Boot Camp — prévia ilustrativa e interativa do diploma.";
@@ -78,14 +78,37 @@ export default function CertificadoPage() {
               <h2 className="mx-auto max-w-xl text-balance text-xl font-semibold leading-snug sm:text-2xl">
                 Seu nome pode estar aqui. Sua jornada começa antes.
               </h2>
-              <a
-                href={ibbcLinks.apply}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${btnApply} mt-8 text-sm font-bold uppercase tracking-[0.08em]`}
-              >
-                Quero participar do IBBC
-              </a>
+              {/* Contato E inscrição, lado a lado — mesmo padrão do CTA
+                  final da landing */}
+              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <a
+                  href={ibbcLinks.apply}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${btnApply} text-sm font-bold uppercase tracking-[0.08em]`}
+                >
+                  Quero participar do IBBC
+                </a>
+                <a
+                  href={ibbcLinks.coursePage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={btnGhostDark}
+                >
+                  Inscrição pela Tabula ↗
+                </a>
+              </div>
+              <p className="mt-6 text-sm text-white/50">
+                WhatsApp da equipe:{" "}
+                <a
+                  href={ibbcLinks.apply}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-white/80 underline decoration-white/30 decoration-2 underline-offset-4 transition-colors hover:text-brand hover:decoration-brand"
+                >
+                  {BA_WHATSAPP_DISPLAY}
+                </a>
+              </p>
             </div>
           </div>
         </section>
