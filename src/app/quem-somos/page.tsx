@@ -211,7 +211,7 @@ export default function QuemSomosPage() {
                   {securatoResumo}
                 </p>
                 <Link
-                  href={rotas.lideranca}
+                  href={rotas.fundador}
                   className="group mt-7 inline-flex items-center gap-2 py-2 text-sm font-bold uppercase tracking-[0.08em] text-brand underline decoration-brand/40 decoration-2 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
                 >
                   Conheça a trajetória

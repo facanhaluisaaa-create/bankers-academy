@@ -14,16 +14,11 @@ import {
   fundadorTitulo,
   galeriaCultura,
   lideranca,
-  links,
-  ponte2018,
+  qsMedia,
   rotas,
   securatoCargo,
-  securatoDestaques,
-  securatoFotoAula,
   securatoNome,
-  securatoPilares,
   securatoResumo,
-  securatoResumo2,
   valores,
 } from "@/data/quem-somos";
 
@@ -61,131 +56,53 @@ export default function LiderancaPage() {
           texto="Uma escola fundada e conduzida por quem viveu o mercado antes de ensiná-lo."
         />
 
-        {/* ═══════════ FUNDADOR — seção editorial ═══════════
-            A escola apresenta o fundador como a principal autoridade, sem
-            virar site pessoal: fotografia grande dele ensinando, texto
-            curto e os destaques confirmados. Depois vêm os pilares, a
-            ponte para 2018 e — menores — os sócios. */}
+        {/* ═══════════ FUNDADOR — bloco médio ═══════════
+            A liderança apresenta todo mundo; o mergulho detalhado no
+            fundador vive na página própria dele (../fundador). */}
         <section aria-labelledby="fundador-t" className="on-dark bg-ink text-white">
-          <div className={`${shell} py-24 lg:py-32`}>
-            <Reveal>
-              <p className={eyeDark}>Fundador</p>
-              <h2
-                id="fundador-t"
-                className="mt-5 max-w-4xl text-balance text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl"
-              >
-                {fundadorTitulo}
-              </h2>
-              <p className="mt-6 text-xl font-semibold text-brand sm:text-2xl">
-                {securatoNome}
-              </p>
-              <p className="mt-1 text-white/60">{securatoCargo}</p>
-            </Reveal>
+          <div className={`${shell} py-24 lg:py-28`}>
+            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+              <Reveal className="lg:col-span-5">
+                {qsMedia.fundadorAula.src ? (
+                  <Image
+                    src={qsMedia.fundadorAula.src}
+                    alt={qsMedia.fundadorAula.alt}
+                    width={1086}
+                    height={1448}
+                    sizes="(max-width: 1024px) 92vw, 40vw"
+                    className="aspect-[4/3] w-full rounded-3xl object-cover lg:aspect-[4/5]"
+                    style={{ objectPosition: qsMedia.fundadorAula.position ?? "50% 50%" }}
+                  />
+                ) : null}
+              </Reveal>
 
-            {/* A fotografia dele ensinando, com protagonismo — não é card */}
-            <Reveal>
-              <Image
-                src={securatoFotoAula.src}
-                alt={securatoFotoAula.alt}
-                width={securatoFotoAula.width}
-                height={securatoFotoAula.height}
-                sizes="(max-width: 1024px) 92vw, 1216px"
-                className="mt-14 max-h-[720px] w-full rounded-3xl object-cover"
-                style={{ objectPosition: "50% 38%" }}
-              />
-            </Reveal>
-
-            <div className="mt-14 grid gap-12 lg:grid-cols-12 lg:gap-16">
-              <Reveal className="lg:col-span-6">
-                <p className="max-w-xl text-pretty text-lg leading-8 text-white/70">
+              <Reveal delay={100} className="lg:col-span-7">
+                <p className={eyeDark}>Fundador</p>
+                <h2
+                  id="fundador-t"
+                  className="mt-5 max-w-xl text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl"
+                >
+                  {fundadorTitulo}
+                </h2>
+                <p className="mt-5 text-lg font-semibold text-brand">{securatoNome}</p>
+                <p className="mt-1 text-sm text-white/60">{securatoCargo}</p>
+                <p className="mt-6 max-w-xl text-pretty text-lg leading-8 text-white/70">
                   {securatoResumo}
                 </p>
-                <p className="mt-5 max-w-xl text-pretty text-lg leading-8 text-white/70">
-                  {securatoResumo2}
-                </p>
-                <a
-                  href={links.securatoLinkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-7 inline-flex items-center gap-1 py-2 text-sm font-semibold text-brand underline decoration-brand/40 decoration-2 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
+                <Link
+                  href={rotas.fundador}
+                  className="group mt-7 inline-flex items-center gap-2 py-2 text-sm font-bold uppercase tracking-[0.08em] text-brand underline decoration-brand/40 decoration-2 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
                 >
-                  LinkedIn ↗
-                  <span className="sr-only"> de {securatoNome} (abre em nova aba)</span>
-                </a>
-              </Reveal>
-
-              {/* Destaques visuais — só o confirmado no material */}
-              <Reveal delay={100} className="lg:col-span-6">
-                <dl className="grid gap-x-8 gap-y-8 border-t border-white/15 pt-8 sm:grid-cols-2">
-                  {securatoDestaques.map((d) => (
-                    <div key={d.id}>
-                      <dt className="sr-only">{d.rotulo}</dt>
-                      <dd>
-                        <span className="block text-xl font-semibold tracking-tight text-brand">
-                          {d.valor}
-                        </span>
-                        <span className="mt-1 block text-sm leading-snug text-white/60">
-                          {d.rotulo}
-                        </span>
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
+                  Perfil completo do fundador
+                  <span
+                    aria-hidden="true"
+                    className="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </Link>
               </Reveal>
             </div>
-          </div>
-        </section>
-
-        {/* ═══════════ MAIS DO QUE UMA TRAJETÓRIA DE MERCADO ═══════════ */}
-        <section aria-labelledby="pilares-t" className="bg-surface">
-          <div className={`${shell} py-20 lg:py-24`}>
-            <Reveal>
-              <p className={eyeLight}>Mais do que uma trajetória de mercado</p>
-              <h2 id="pilares-t" className="sr-only">
-                Mais do que uma trajetória de mercado
-              </h2>
-            </Reveal>
-            <dl className="mt-10 grid gap-x-10 gap-y-10 border-t border-line pt-10 md:grid-cols-3">
-              {securatoPilares.map((pilar, i) => (
-                <Reveal key={pilar.id} delay={i * 70}>
-                  <dt className="text-2xl font-semibold uppercase tracking-tight">
-                    {pilar.palavra}
-                  </dt>
-                  <dd className="mt-3 leading-7 text-ink/70">{pilar.texto}</dd>
-                </Reveal>
-              ))}
-            </dl>
-          </div>
-        </section>
-
-        {/* ═══════════ PONTE PARA 2018 ═══════════
-            O mesmo fato do marco da linha do tempo, contado do ponto de
-            vista do fundador. Rota real para /bootcamp, sem âncora. */}
-        <section aria-labelledby="ponte-t" className="bg-brand text-ink">
-          <div className={`${shell} py-20 text-center lg:py-24`}>
-            <Reveal>
-              <p className="text-6xl font-semibold tracking-tight sm:text-7xl">
-                {ponte2018.ano}
-              </p>
-              <h2
-                id="ponte-t"
-                className="mx-auto mt-4 max-w-2xl text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl"
-              >
-                {ponte2018.titulo}
-              </h2>
-              <p className="mx-auto mt-5 max-w-xl text-pretty leading-8 text-ink/75">
-                {ponte2018.texto}
-              </p>
-              <div className="mt-9">
-                <Link
-                  href={ponte2018.href}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-bold uppercase tracking-[0.08em] text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-10px_rgba(0,0,0,0.6)] active:translate-y-0 active:shadow-none"
-                >
-                  {ponte2018.cta}
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </Reveal>
           </div>
         </section>
 

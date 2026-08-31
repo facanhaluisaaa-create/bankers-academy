@@ -106,6 +106,8 @@ export const rotas = {
   lideranca: "/quem-somos/lideranca",
   especialistas: "/quem-somos/especialistas",
   ecossistema: "/quem-somos/ecossistema",
+  /** Página dedicada e detalhada do fundador. */
+  fundador: "/quem-somos/fundador",
 } as const;
 
 export type CardHub = {
@@ -397,6 +399,71 @@ export const securatoDestaques: Credencial[] = [
   { id: "empresas", valor: "SP Advisors + SP Capital Partners", rotulo: "Fundador" },
   { id: "educacao", valor: "Educação", rotulo: "FIA · Saint Paul · Bankers Academy" },
 ];
+
+/**
+ * Trajetória detalhada do fundador — cada linha vem da seção "Sobre o
+ * fundador" do mapa de conteúdo. Onde o material não dá ano, a linha
+ * não inventa um.
+ */
+export const securatoTrajetoria = [
+  {
+    id: "professor",
+    periodo: "Desde os anos 2000",
+    titulo: "Professor na FIA e na Saint Paul",
+    texto: "Ensino de finanças em paralelo à carreira no mercado.",
+  },
+  {
+    id: "db",
+    periodo: "Mercado",
+    titulo: "Deutsche Bank — São Paulo e Nova Iorque",
+    texto: "Atuação em Investment Banking nas duas praças.",
+  },
+  {
+    id: "bnp",
+    periodo: "Mercado",
+    titulo: "BNP Paribas",
+    texto: "Investment Banker, com transações complexas em diversos setores e países — inclusive cross-border.",
+  },
+  {
+    id: "spa",
+    periodo: "2013",
+    titulo: "SP Advisors e SP Capital Partners",
+    texto: "Funda a assessoria de M&A e a gestora de capital de risco.",
+  },
+  {
+    id: "ibbc",
+    periodo: "2018",
+    titulo: "Investment Banking Boot Camp",
+    texto: "Cria o boot camp — a primeira edição, com cinco participantes, voltada à formação interna da SP Advisors.",
+  },
+  {
+    id: "ba",
+    periodo: "2022",
+    titulo: "Bankers Academy",
+    texto: "Funda a escola para aproximar estudantes das demandas reais do mercado.",
+  },
+  {
+    id: "livro",
+    periodo: "2024",
+    titulo: "“De cabeça no Mercado Financeiro”",
+    texto: "Publica o livro — 6 passos para se tornar um banker.",
+  },
+] as const;
+
+/** Iniciativas educacionais criadas por ele, conforme o mapa de conteúdo. */
+export const securatoIniciativas = [
+  { id: "ibbc", nome: "Investment Banking Boot Camp", desc: "desde 2018" },
+  { id: "yib", nome: "You, She and Black in Banking", desc: "com o J.P. Morgan" },
+  { id: "cdi", nome: "CDI", desc: "Clube de Investimento para jovens" },
+  { id: "liga", nome: "Liga das Ligas de Finanças", desc: "" },
+  { id: "tabula", nome: "Tabula", desc: "plataforma de treinamento e marketplace educacional" },
+] as const;
+
+/** Conselhos de que é membro, conforme o mapa de conteúdo. */
+export const securatoConselhos = [
+  { id: "brasilata", empresa: "Brasilata", desde: "2014", desc: "indústria de embalagens de aço" },
+  { id: "superrico", empresa: "Super Rico", desde: "2023", desc: "planejamento financeiro" },
+] as const;
 
 /** Mais do que uma trajetória de mercado — os três pilares. */
 export const securatoPilares = [

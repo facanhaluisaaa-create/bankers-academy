@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/bootcamp/edicoes`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/bootcamp/mentores`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/quem-somos`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/quem-somos/fundador`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/quem-somos/historia`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/quem-somos/lideranca`, changeFrequency: "monthly", priority: 0.6 },
     {
