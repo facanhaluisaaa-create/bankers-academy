@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import SubHero from "../_components/SubHero";
+import Foto from "../_components/Foto";
+import { jornadaMedia } from "../_data/media";
 import { btnApply, eyebrowLight, shell } from "../_components/estilos";
 import { ibbcJourney } from "../_data/journey";
 import { ibbcOutcomes } from "../_data/outcomes";
@@ -79,6 +81,16 @@ export default function JornadaPage() {
                     <p className="mt-3 max-w-2xl leading-7 text-ink/70">
                       {stage.description}
                     </p>
+                    {/* Foto da etapa, quando o slot existir no registro —
+                        etapas sem slot seguem só em texto, sem buraco */}
+                    {jornadaMedia[stage.id] ? (
+                      <Foto
+                        slot={jornadaMedia[stage.id]}
+                        sizes="(max-width: 768px) 90vw, 40vw"
+                        rounded="rounded-2xl"
+                        className="mt-6 max-w-lg"
+                      />
+                    ) : null}
                   </div>
                 </li>
               ))}

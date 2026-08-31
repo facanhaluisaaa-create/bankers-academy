@@ -4,6 +4,8 @@ import Link from "next/link";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import SubHero from "../_components/SubHero";
+import Foto from "../_components/Foto";
+import { experienciaMedia } from "../_data/media";
 import { btnApply, ctaSetaLight, eyebrowLight, setaClasse, shell } from "../_components/estilos";
 import { ibbcFacts, ibbcLinks } from "../_data/config";
 
@@ -78,14 +80,23 @@ export default function ExperienciaPage() {
         {/* O arco da experiência */}
         <section aria-label="As quatro frentes da experiência" className="bg-surface-alt">
           <div className={`${shell} py-20 lg:py-28`}>
+            {/* [EXP-01…04] Cada bloco do arco carrega a sua fotografia
+                real; os slots vivem em _data/media.ts */}
             <ol className="grid gap-5 md:grid-cols-2">
-              {etapas.map((item) => (
+              {etapas.map((item, i) => (
                 <li key={item.number}>
-                  <article className="h-full rounded-3xl border border-line bg-white p-8">
-                    <p className="text-sm text-brand-deep">{item.number}</p>
-                    <h2 className="mt-8 text-2xl font-semibold sm:text-3xl">{item.title}</h2>
-                    <p className="mt-4 text-lg leading-8 text-ink/80">{item.text}</p>
-                    <p className="mt-3 leading-7 text-ink/60">{item.detalhe}</p>
+                  <article className="h-full overflow-hidden rounded-3xl border border-line bg-white">
+                    <Foto
+                      slot={experienciaMedia[i]}
+                      sizes="(max-width: 768px) 92vw, 46vw"
+                      rounded="rounded-none"
+                    />
+                    <div className="p-8">
+                      <p className="text-sm text-brand-deep">{item.number}</p>
+                      <h2 className="mt-4 text-2xl font-semibold sm:text-3xl">{item.title}</h2>
+                      <p className="mt-4 text-lg leading-8 text-ink/80">{item.text}</p>
+                      <p className="mt-3 leading-7 text-ink/60">{item.detalhe}</p>
+                    </div>
                   </article>
                 </li>
               ))}

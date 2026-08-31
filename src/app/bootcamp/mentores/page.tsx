@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import SubHero from "../_components/SubHero";
+import Foto from "../_components/Foto";
+import { bootcampMedia } from "../_data/media";
 import { shell } from "../_components/estilos";
 import { ibbcEditions } from "../_data/editions";
 import { ibbcMentors } from "../_data/mentors";
@@ -55,7 +57,16 @@ export default function MentoresPage() {
           <div className={`${shell} py-20 lg:py-28`}>
             <div className="grid gap-10 lg:grid-cols-2">
               {ibbcMentors.map((m) => (
-                <article key={m.id} className="rounded-3xl border border-line bg-white p-7">
+                <article key={m.id} className="overflow-hidden rounded-3xl border border-line bg-white p-7">
+                  {/* [FOTO MENTOR] Retrato 4:5, do registro central */}
+                  {bootcampMedia.mentores[m.id] ? (
+                    <Foto
+                      slot={bootcampMedia.mentores[m.id]}
+                      sizes="(max-width: 1024px) 90vw, 45vw"
+                      rounded="rounded-2xl"
+                      className="mb-7 max-w-xs"
+                    />
+                  ) : null}
                   <h2 className="text-2xl font-semibold">{m.name}</h2>
                   <p className="mt-2 text-sm text-brand-deep">{m.role}</p>
                   {m.bio ? <p className="mt-5 leading-7 text-ink/70">{m.bio}</p> : null}

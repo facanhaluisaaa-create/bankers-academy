@@ -64,12 +64,22 @@ export default function AlumniBrowser() {
           <li key={person.id}>
             <article className="flex h-full flex-col rounded-3xl border border-line bg-white p-6 transition hover:border-ink/25 hover:shadow-lg hover:shadow-black/5">
               <div className="flex items-start gap-4">
-                <span
-                  aria-hidden="true"
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-surface-alt text-sm font-semibold text-ink/60"
-                >
-                  {initials(person.name)}
-                </span>
+                {person.image ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={person.image}
+                    alt={`Retrato de ${person.name}`}
+                    loading="lazy"
+                    className="h-12 w-12 shrink-0 rounded-full object-cover"
+                  />
+                ) : (
+                  <span
+                    aria-hidden="true"
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-surface-alt text-sm font-semibold text-ink/60"
+                  >
+                    {initials(person.name)}
+                  </span>
+                )}
                 <div className="min-w-0">
                   <h3 className="text-lg font-semibold leading-snug">{person.name}</h3>
                   <p className="mt-1 text-sm text-brand-deep">

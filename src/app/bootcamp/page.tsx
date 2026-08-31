@@ -5,6 +5,8 @@ import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 
 import Certificate from "./_components/Certificate";
+import Foto, { VideoDepoimento } from "./_components/Foto";
+import { bootcampMedia } from "./_data/media";
 import { btnApply, btnGhostDark, ctaSetaDark, ctaSetaLight, eyebrow, eyebrowLight, setaClasse, shell } from "./_components/estilos";
 import { ibbcAlumni } from "./_data/alumni";
 import { ibbcEditions } from "./_data/editions";
@@ -113,9 +115,6 @@ function StructuredData() {
 export default function BootcampPage() {
   const proxima = ibbcEditions.find((e) => e.upcoming);
   const realizadas = ibbcEditions.filter((e) => !e.upcoming).length;
-  /* Prévia de alumni: os campers da turma mais recente com gente listada. */
-  const ultimaTurma = Math.max(...ibbcAlumni.map((a) => a.cohort));
-  const amostraAlumni = ibbcAlumni.filter((a) => a.cohort === ultimaTurma).slice(0, 8);
 
   return (
     <>
@@ -174,6 +173,23 @@ export default function BootcampPage() {
               ))}
             </dl>
           </div>
+
+          {/* [FOTO 01] A experiência real fechando o hero, de ponta a
+              ponta. Um véu escuro desce da seção para a foto, mantendo a
+              transição e a legibilidade do bloco de texto acima. */}
+          <div className="relative">
+            <Foto
+              slot={bootcampMedia.hero}
+              sizes="100vw"
+              priority
+              tone="dark"
+              rounded="rounded-none"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-ink to-transparent"
+            />
+          </div>
         </section>
 
         {/* RESUMO — o programa inteiro em um parágrafo, para quem chega e
@@ -202,31 +218,45 @@ export default function BootcampPage() {
           </div>
         </section>
 
-        {/* ═══════════ B. EXPERIÊNCIA (prévia) ═══════════ */}
+        {/* ═══════════ B. EXPERIÊNCIA — texto ao lado de UMA foto ═══════════ */}
         <section aria-labelledby="experiencia-t" className="bg-surface-alt py-20 lg:py-24">
           <div className={shell}>
-            <p className={eyebrowLight}>A experiência</p>
+            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+              <div>
+                <p className={eyebrowLight}>A experiência</p>
 
-            <h2 id="experiencia-t" className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl">
-              Você não vem só assistir.
-            </h2>
+                <h2 id="experiencia-t" className="mt-4 max-w-xl text-4xl font-semibold tracking-tight sm:text-5xl">
+                  Você não vem só assistir.
+                </h2>
 
-            <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {actions.map((item) => (
-                <li key={item.number}>
-                  <article className="h-full rounded-3xl border border-line bg-white p-6">
-                    <p className="text-sm text-brand-deep">{item.number}</p>
-                    <h3 className="mt-5 text-xl font-semibold">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-ink/70">{item.text}</p>
-                  </article>
-                </li>
-              ))}
-            </ul>
+                {/* O arco em lista enxuta — os quatro, sem virar parede
+                    de cards; a explicação completa vive na página. */}
+                <ol className="mt-10 space-y-5 border-t border-line pt-8">
+                  {actions.map((item) => (
+                    <li key={item.number} className="flex gap-5">
+                      <span className="text-sm font-semibold tabular-nums text-brand-deep">
+                        {item.number}
+                      </span>
+                      <div>
+                        <h3 className="font-semibold tracking-tight">{item.title}</h3>
+                        <p className="mt-1 text-sm leading-6 text-ink/65">{item.text}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
 
-            <Link href="/bootcamp/experiencia" className={`${ctaSetaLight} mt-10`}>
-              Conheça a experiência
-              <span aria-hidden="true" className={setaClasse}>→</span>
-            </Link>
+                <Link href="/bootcamp/experiencia" className={`${ctaSetaLight} mt-9`}>
+                  Viva a experiência
+                  <span aria-hidden="true" className={setaClasse}>→</span>
+                </Link>
+              </div>
+
+              {/* [FOTO 02] Uma fotografia forte basta */}
+              <Foto
+                slot={bootcampMedia.experiencia}
+                sizes="(max-width: 1024px) 92vw, 46vw"
+              />
+            </div>
           </div>
         </section>
 
@@ -240,20 +270,33 @@ export default function BootcampPage() {
               <span className="block text-ink/55">Uma experiência completa.</span>
             </h2>
 
-            {/* Só a espinha da progressão; a jornada completa vive em
-                /bootcamp/jornada */}
-            <ol className="mt-12 flex flex-wrap items-center gap-y-3 text-sm font-semibold">
-              {ibbcJourney.map((stage, i) => (
-                <li key={stage.id} className="flex items-center">
-                  {i > 0 ? (
-                    <span aria-hidden="true" className="mx-3 text-ink/30">→</span>
-                  ) : null}
-                  <span className="rounded-full border border-line bg-white px-4 py-2">
-                    {stage.label}
-                  </span>
-                </li>
-              ))}
-            </ol>
+            {/* [FOTO 03A–C] Tríptico editorial: começo → desenvolvimento
+                → Pitchbook final. Se só uma foto for usada depois, as
+                células sem src somem e a que sobrou ocupa a linha. */}
+            {(() => {
+              const tript = [
+                { rotulo: "Começo", foto: bootcampMedia.jornada.inicio },
+                { rotulo: "Desenvolvimento", foto: bootcampMedia.jornada.desenvolvimento },
+                { rotulo: "Pitchbook final", foto: bootcampMedia.jornada.apresentacao },
+              ];
+              const comFoto = tript.filter((t) => t.foto.src);
+              const mostrar = comFoto.length > 0 ? comFoto : tript;
+              return (
+                <ul className={`mt-12 grid gap-4 ${mostrar.length > 1 ? "sm:grid-cols-3" : ""}`}>
+                  {mostrar.map((t, i) => (
+                    <li key={t.rotulo}>
+                      <figure>
+                        <Foto slot={t.foto} sizes="(max-width: 640px) 92vw, 31vw" rounded="rounded-2xl" />
+                        <figcaption className="mt-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-ink/60">
+                          {i > 0 ? <span aria-hidden="true" className="text-brand-deep">→</span> : null}
+                          {t.rotulo}
+                        </figcaption>
+                      </figure>
+                    </li>
+                  ))}
+                </ul>
+              );
+            })()}
 
             <Link href="/bootcamp/jornada" className={`${ctaSetaLight} mt-10`}>
               Conheça a jornada
@@ -262,26 +305,47 @@ export default function BootcampPage() {
           </div>
         </section>
 
-        {/* ═══════════ D. RESULTADO (prévia) ═══════════ */}
+        {/* ═══════════ D. RESULTADO — imagem do material + entregas ═══════════ */}
         <section aria-labelledby="constroi-t" className="bg-surface-alt py-20 lg:py-24">
           <div className={shell}>
-            <p className={eyebrowLight}>O que você constrói</p>
+            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+              {/* [IMAGEM 04] Pitchbook / notebook / material real — nada de
+                  mockup inventado */}
+              <div className="lg:col-span-5">
+                <Foto
+                  slot={bootcampMedia.pitchbook}
+                  sizes="(max-width: 1024px) 80vw, 34vw"
+                  className="mx-auto max-w-sm lg:max-w-none"
+                />
+              </div>
 
-            <h2 id="constroi-t" className="mt-4 text-4xl font-semibold sm:text-5xl">
-              No fim, você tem
-              <span className="block text-ink/55">o trabalho na mão.</span>
-            </h2>
+              <div className="lg:col-span-7">
+                <p className={eyebrowLight}>O que você constrói</p>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/70">
-              Análise setorial, comparáveis, modelagem financeira, valuation — e
-              o Pitchbook final, construído por você e apresentado a
-              profissionais do mercado.
-            </p>
+                <h2 id="constroi-t" className="mt-4 text-4xl font-semibold sm:text-5xl">
+                  No fim, você tem
+                  <span className="block text-ink/55">o trabalho na mão.</span>
+                </h2>
 
-            <Link href="/bootcamp/jornada" className={`${ctaSetaLight} mt-8`}>
-              Veja o que você constrói
-              <span aria-hidden="true" className={setaClasse}>→</span>
-            </Link>
+                <ul className="mt-8 space-y-4 border-t border-line pt-8 text-lg font-semibold tracking-tight">
+                  {["Análise de setor", "Modelagem e valuation", "Pitchbook final"].map((e) => (
+                    <li key={e} className="flex items-center gap-3">
+                      <span aria-hidden="true" className="block h-1 w-8 rounded-full bg-brand-deep" />
+                      {e}
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="mt-6 max-w-xl leading-8 text-ink/70">
+                  Construído por você e apresentado a profissionais do mercado.
+                </p>
+
+                <Link href="/bootcamp/jornada" className={`${ctaSetaLight} mt-8`}>
+                  Veja o que você constrói
+                  <span aria-hidden="true" className={setaClasse}>→</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -356,20 +420,76 @@ export default function BootcampPage() {
               mentores de turmas seguintes.
             </p>
 
-            {/* Amostra da turma mais recente; a comunidade completa, com
-                filtro por ano, vive em /bootcamp/alumni */}
-            <ul className="mt-8 flex flex-wrap gap-2">
-              {amostraAlumni.map((a) => (
-                <li
-                  key={a.name}
-                  className="rounded-full border border-line px-3 py-1.5 text-xs text-ink/75"
-                >
-                  {a.name}
-                </li>
-              ))}
-              <li className="rounded-full bg-brand-soft px-3 py-1.5 text-xs font-semibold text-ink">
-                + {ibbcAlumni.length - amostraAlumni.length} campers
-              </li>
+            {/* [FOTO ALUMNI 01–03] No máximo três em destaque. Quem entra
+                aqui é decisão da Bankers Academy: preencher alumniDestaque
+                em _data/media.ts com o id do alumni + foto confirmada.
+                Enquanto vazio, três espaços reservados neutros — nenhum
+                nome é escolhido por conta própria, nada fictício. */}
+            <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {bootcampMedia.alumniDestaque.length > 0
+                ? bootcampMedia.alumniDestaque.slice(0, 3).map((d) => {
+                    const pessoa = ibbcAlumni.find((a) => a.id === d.alumniId);
+                    if (!pessoa) return null;
+                    return (
+                      <li key={d.alumniId}>
+                        <article className="h-full overflow-hidden rounded-3xl border border-line bg-white">
+                          <Foto
+                            slot={{
+                              slot: "FOTO ALUMNI",
+                              src: d.foto,
+                              alt: `Retrato de ${pessoa.name}`,
+                              pendente: "",
+                              ratio: "aspect-square",
+                              ratioLabel: "1:1",
+                              position: d.position,
+                            }}
+                            sizes="(max-width: 640px) 92vw, 30vw"
+                            rounded="rounded-none"
+                          />
+                          <div className="p-6">
+                            <h3 className="text-lg font-semibold">{pessoa.name}</h3>
+                            <p className="mt-1 text-sm text-brand-deep">
+                              Turma {pessoa.cohort} · {pessoa.term} {pessoa.year}
+                            </p>
+                            {pessoa.winner || pessoa.finalist || pessoa.mentor ? (
+                              <p className="mt-2 text-sm text-ink/70">
+                                {[
+                                  pessoa.winner ? "Winner" : null,
+                                  pessoa.finalist ? "Finalist" : null,
+                                  pessoa.mentor ? "Voltou como mentor" : null,
+                                ]
+                                  .filter(Boolean)
+                                  .join(" · ")}
+                              </p>
+                            ) : null}
+                          </div>
+                        </article>
+                      </li>
+                    );
+                  })
+                : [1, 2, 3].map((n) => (
+                    <li key={n}>
+                      <article className="h-full overflow-hidden rounded-3xl border border-line bg-white">
+                        <Foto
+                          slot={{
+                            slot: `FOTO ALUMNI 0${n}`,
+                            src: null,
+                            alt: "",
+                            pendente: "Alumni em destaque — pessoa a definir pela Bankers Academy",
+                            ratio: "aspect-square",
+                            ratioLabel: "1:1",
+                          }}
+                          sizes="(max-width: 640px) 92vw, 30vw"
+                          rounded="rounded-none"
+                        />
+                        <div className="p-6">
+                          <p className="text-sm leading-6 text-ink/60">
+                            foto · nome · edição · destaque comprovado
+                          </p>
+                        </div>
+                      </article>
+                    </li>
+                  ))}
             </ul>
 
             <Link href="/bootcamp/alumni" className={`${ctaSetaLight} mt-9`}>
@@ -389,7 +509,15 @@ export default function BootcampPage() {
                 Nas palavras de quem viveu.
               </h2>
 
-              <ul className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-14 grid gap-10 lg:grid-cols-[minmax(0,19rem)_1fr] lg:gap-12">
+                {/* [VÍDEO 06] O depoimento em vídeo abre a seção; enquanto
+                    o arquivo não chega, o poster reservado ocupa o lugar. */}
+                <VideoDepoimento
+                  video={bootcampMedia.videoDepoimento}
+                  className="mx-auto w-full max-w-[17rem] lg:mx-0 lg:max-w-none"
+                />
+
+              <ul className="grid content-start gap-5 md:grid-cols-2">
                 {publishableTestimonials.map((t) => (
                   <li key={t.id}>
                     <figure className="flex h-full flex-col rounded-3xl border border-line bg-white p-7">
@@ -430,51 +558,93 @@ export default function BootcampPage() {
                   </li>
                 ))}
               </ul>
+              </div>
             </div>
           </section>
         ) : null}
 
-        {/* ═══════════ G. EDIÇÕES + H. MENTORES (prévias) ═══════════ */}
+        {/* ═══════════ G. DESDE 2018 — collage editorial ═══════════ */}
         <section aria-labelledby="hist-t" className="bg-surface py-20 lg:py-24">
           <div className={shell}>
-            <h2 id="hist-t" className="sr-only">
-              História e mentoria do programa
+            <p className={eyebrowLight}>Desde {ibbcFacts.firstEditionYear}</p>
+            <h2 id="hist-t" className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+              Uma experiência que evolui a cada edição.
             </h2>
-            <div className="grid gap-5 md:grid-cols-2">
-              <article className="rounded-3xl border border-line bg-white p-8">
-                <p className={eyebrowLight}>Desde {ibbcFacts.firstEditionYear}</p>
-                <h3 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-                  Uma história construída edição após edição.
-                </h3>
-                <p className="mt-4 leading-7 text-ink/70">
-                  {realizadas} edições realizadas, duas por ano — em janeiro e em
-                  julho.
-                  {proxima
-                    ? ` A próxima é o IBBC ${proxima.cohort}, em ${proxima.term.toLowerCase()} de ${proxima.year}.`
-                    : ""}
-                </p>
-                <Link href="/bootcamp/edicoes" className={`${ctaSetaLight} mt-7`}>
-                  Veja as edições anteriores
-                  <span aria-hidden="true" className={setaClasse}>→</span>
-                </Link>
-              </article>
+            <p className="mt-5 max-w-2xl text-ink/70">
+              {realizadas} edições realizadas, duas por ano — em janeiro e em
+              julho.
+              {proxima
+                ? ` A próxima é o IBBC ${proxima.cohort}, em ${proxima.term.toLowerCase()} de ${proxima.year}.`
+                : ""}
+            </p>
 
-              <article className="rounded-3xl border border-line bg-white p-8">
-                <p className={eyebrowLight}>Mentoria</p>
-                <h3 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-                  Com quem você vai viver essa experiência.
-                </h3>
-                <p className="mt-4 leading-7 text-ink/70">
-                  {ibbcMentors[0].name} — {ibbcMentors[0].role.toLowerCase()} —
-                  com o apoio de mentores do time da SP Advisors, boa parte deles
-                  ex-campers do próprio programa.
-                </p>
-                <Link href="/bootcamp/mentores" className={`${ctaSetaLight} mt-7`}>
-                  Conheça quem ensina
-                  <span aria-hidden="true" className={setaClasse}>→</span>
-                </Link>
-              </article>
-            </div>
+            {/* [FOTO 08A–C] Da edição mais antiga para a mais recente —
+                a collage deve ler como evolução histórica */}
+            <ul className="mt-10 grid gap-4 sm:grid-cols-3">
+              {[
+                { rotulo: `Primeiras turmas`, foto: bootcampMedia.edicoes.antiga },
+                { rotulo: "O programa crescendo", foto: bootcampMedia.edicoes.meio },
+                { rotulo: "Edição recente", foto: bootcampMedia.edicoes.recente },
+              ].map((e) => (
+                <li key={e.foto.slot}>
+                  <figure>
+                    <Foto slot={e.foto} sizes="(max-width: 640px) 92vw, 31vw" rounded="rounded-2xl" />
+                    <figcaption className="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-ink/60">
+                      {e.rotulo}
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+
+            <Link href="/bootcamp/edicoes" className={`${ctaSetaLight} mt-9`}>
+              Ver edições anteriores
+              <span aria-hidden="true" className={setaClasse}>→</span>
+            </Link>
+          </div>
+        </section>
+
+        {/* ═══════════ H. MENTORES — retratos ═══════════ */}
+        <section aria-labelledby="ment-t" className="border-t border-line bg-surface-alt py-20 lg:py-24">
+          <div className={shell}>
+            <p className={eyebrowLight}>Mentoria</p>
+            <h2 id="ment-t" className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+              Aprenda com quem conhece o outro lado da mesa.
+            </h2>
+
+            {/* [FOTO MENTOR 01–03] Só mentores confirmados viram card —
+                hoje, um. Os outros dois slots existem em _data/media.ts e
+                entram quando a Bankers Academy confirmar as pessoas;
+                nenhum card "a confirmar" vai ao ar. */}
+            <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {ibbcMentors.map((m) => (
+                <li key={m.id}>
+                  <article className="h-full overflow-hidden rounded-3xl border border-line bg-white">
+                    {bootcampMedia.mentores[m.id] ? (
+                      <Foto
+                        slot={bootcampMedia.mentores[m.id]}
+                        sizes="(max-width: 640px) 92vw, 30vw"
+                        rounded="rounded-none"
+                      />
+                    ) : null}
+                    <div className="p-6">
+                      <h3 className="text-lg font-semibold">{m.name}</h3>
+                      <p className="mt-1 text-sm text-brand-deep">{m.role}</p>
+                    </div>
+                  </article>
+                </li>
+              ))}
+            </ul>
+
+            <p className="mt-6 max-w-2xl text-sm leading-6 text-ink/60">
+              Com o apoio de mentores do time da SP Advisors, boa parte deles
+              ex-campers do próprio programa.
+            </p>
+
+            <Link href="/bootcamp/mentores" className={`${ctaSetaLight} mt-7`}>
+              Conheça os mentores
+              <span aria-hidden="true" className={setaClasse}>→</span>
+            </Link>
           </div>
         </section>
 
@@ -507,14 +677,29 @@ export default function BootcampPage() {
           </div>
         </section>
 
-        {/* ═══════════ I. CTA FINAL ═══════════ */}
-        <section aria-labelledby="cta-t" className="on-dark bg-ink py-28 text-center text-white">
-          <div className={shell}>
+        {/* ═══════════ I. CTA FINAL — fechamento emocional ═══════════ */}
+        <section aria-labelledby="cta-t" className="on-dark bg-ink text-center text-white">
+          {/* [FOTO 10] A turma fechando a página; o véu escuro desce para
+              a seção de texto e sobe do topo, integrando a foto ao ink */}
+          <div className="relative">
+            <Foto
+              slot={bootcampMedia.ctaFinal}
+              sizes="100vw"
+              tone="dark"
+              rounded="rounded-none"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink to-transparent"
+            />
+          </div>
+
+          <div className={`${shell} pb-28 pt-16`}>
             <p className={eyebrow}>Investment Banking Boot Camp</p>
 
             <h2 id="cta-t" className="mx-auto mt-5 max-w-4xl text-4xl font-semibold tracking-tight sm:text-6xl">
-              Pronto para viver
-              <span className="block text-brand">sua edição?</span>
+              Você pode assistir de fora.
+              <span className="block text-brand">Ou viver a experiência.</span>
             </h2>
 
             <p className="mx-auto mt-6 max-w-xl text-lg text-white/60">
@@ -531,7 +716,7 @@ export default function BootcampPage() {
                 rel="noopener noreferrer"
                 className={`${btnApply} px-8`}
               >
-                Falar com a equipe
+                Quero participar do IBBC
               </a>
               <a
                 href={ibbcLinks.coursePage}

@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import Image from "next/image";
+
 import SubHero from "../_components/SubHero";
+import { edicoesMedia } from "../_data/media";
 import { shell } from "../_components/estilos";
 import { ibbcAlumni } from "../_data/alumni";
 import { ibbcEditions } from "../_data/editions";
@@ -78,6 +81,25 @@ export default function EdicoesPage() {
                         <p className="mt-3 text-sm text-ink/60">
                           {campers.length} {campers.length === 1 ? "camper" : "campers"}
                         </p>
+                      ) : null}
+
+                      {/* Galeria da edição — só renderiza quando há fotos
+                          registradas em _data/media.ts; foto não é
+                          obrigatória por edição */}
+                      {(edicoesMedia[e.cohort] ?? []).length > 0 ? (
+                        <ul className="mt-5 grid grid-cols-3 gap-2">
+                          {edicoesMedia[e.cohort].map((f) => (
+                            <li key={f.src} className="relative aspect-square overflow-hidden rounded-xl">
+                              <Image
+                                src={f.src}
+                                alt={f.alt}
+                                fill
+                                sizes="120px"
+                                className="object-cover"
+                              />
+                            </li>
+                          ))}
+                        </ul>
                       ) : null}
 
                       {e.mentors && e.mentors.length > 0 ? (
