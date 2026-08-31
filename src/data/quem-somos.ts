@@ -323,10 +323,12 @@ export const qsMedia = {
     arquivoEsperado: "SECURATO_aula_melhorada",
     position: "50% 38%",
   } as SlotFoto,
-  /** Ponte 2018 — aula/treinamento; o cliente indicou o arquivo 3e01846c… */
+  /** Ponte 2018 — preenchida com foto real de aula do pacote
+      "Fotos_Aulas_IBBC"; se o arquivo 3e01846c… indicado antes for outro,
+      é só trocar o src. */
   ponteAula: {
-    src: null,
-    alt: "Aula do Investment Banking Boot Camp",
+    src: "/images/quem-somos/aula-turma.jpg",
+    alt: "Instrutor conduz a aula para a turma do IBBC",
     arquivoEsperado: "3e01846c…",
   } as SlotFoto,
   /** Comunidade — o cliente indicou _M3A1784.jpg; até chegar, a turma.jpg. */

@@ -43,36 +43,39 @@ const slot = (s: Omit<MediaSlot, "src" | "position">): MediaSlot => ({
 
 export const bootcampMedia = {
   /** [FOTO 01] Hero — arquivo sugerido: hero-bootcamp.jpg */
-  hero: slot({
+  hero: {
     slot: "FOTO 01",
-    alt: "Turma do Investment Banking Boot Camp",
+    src: "/images/bootcamp/aula-hero.jpg",
+    alt: "Aula do Investment Banking Boot Camp: instrutor ao púlpito e a turma acompanhando",
     pendente: "Hero — turma, aula ou apresentação do IBBC",
-    /* No desktop a faixa fica mais panorâmica; se o corte atingir rostos,
-       ajuste `position` ao colocar a foto real. */
     ratio: "aspect-[16/9] lg:aspect-[21/9]",
     ratioLabel: "16:9 ou 3:2 horizontal",
-  }),
+    position: "50% 42%",
+  },
 
   /** [FOTO 02] Experiência — arquivo sugerido: experiencia.jpg */
-  experiencia: slot({
+  experiencia: {
     slot: "FOTO 02",
-    alt: "Participante do IBBC trabalhando em análise",
+    src: "/images/bootcamp/aula-experiencia.jpg",
+    alt: "Instrutor conduz a aula para a turma do IBBC na sala da Bankers Academy",
     pendente: "Experiência prática — participante trabalhando, modelagem, mentor acompanhando",
     ratio: "aspect-[4/3]",
     ratioLabel: "4:3",
-  }),
+  },
 
   /** [FOTO 03A–C] Tríptico da jornada — jornada-inicio.jpg / -desenvolvimento.jpg / -apresentacao.jpg.
       Se depois só uma fotografia for usada, preencha uma e deixe as
       outras null: a landing renderiza só as preenchidas sem quebrar. */
   jornada: {
-    inicio: slot({
+    inicio: {
       slot: "FOTO 03A",
-      alt: "Início da jornada no IBBC",
+      src: "/images/bootcamp/aula-inicio.jpg",
+      alt: "Instrutor de pé diante da turma no IBBC",
       pendente: "Começo — primeiros dias, nivelamento",
       ratio: "aspect-[4/3]",
       ratioLabel: "4:3",
-    }),
+      position: "50% 45%",
+    },
     desenvolvimento: slot({
       slot: "FOTO 03B",
       alt: "Desenvolvimento do trabalho no IBBC",
@@ -80,13 +83,15 @@ export const bootcampMedia = {
       ratio: "aspect-[4/3]",
       ratioLabel: "4:3",
     }),
-    apresentacao: slot({
+    apresentacao: {
       slot: "FOTO 03C",
-      alt: "Apresentação final do Pitchbook no IBBC",
+      src: "/images/bootcamp/aula-apresentacao.jpg",
+      alt: "Apresentação diante da turma no IBBC",
       pendente: "Apresentação final do Pitchbook",
       ratio: "aspect-[4/3]",
       ratioLabel: "4:3",
-    }),
+      position: "50% 45%",
+    },
   },
 
   /** [IMAGEM 04] O que você constrói — pitchbook.jpg (pode ser capa do
@@ -163,14 +168,16 @@ export const bootcampMedia = {
     }),
   } as Record<string, MediaSlot>,
 
-  /** [FOTO 10] Fechamento — cta-final.jpg. Overlay escuro por cima. */
-  ctaFinal: slot({
+  /** [FOTO 10] Fechamento — foto panorâmica de sala de aula do IBBC. */
+  ctaFinal: {
     slot: "FOTO 10",
-    alt: "Turma do IBBC reunida no encerramento",
+    src: "/images/bootcamp/aula-panoramica.jpg",
+    alt: "Vista panorâmica de uma turma do IBBC trabalhando em sala",
     pendente: "Fechamento — turma, encerramento ou comunidade",
-    ratio: "aspect-[16/9]",
-    ratioLabel: "16:9 horizontal",
-  }),
+    /* A foto é muito larga (3:1); a faixa acompanha para cortar pouco. */
+    ratio: "aspect-[16/9] lg:aspect-[21/9]",
+    ratioLabel: "16:9 ou mais largo",
+  },
 };
 
 /* ═══════════════ /bootcamp/experiencia ═══════════════ */
