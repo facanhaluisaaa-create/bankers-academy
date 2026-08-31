@@ -97,7 +97,7 @@ export const heroFoto = {
 /** Números da barra de autoridade. Poucos, grandes, verificáveis. */
 export const autoridade: Credencial[] = [
   { id: "anos", valor: "+20", rotulo: "anos de mercado financeiro" },
-  { id: "ib", valor: "14", rotulo: "anos em Investment Banking", aConfirmar: true },
+  { id: "ib", valor: "14", rotulo: "anos em Investment Banking" },
   { id: "desde", valor: "2018", rotulo: "formando universitários" },
   { id: "seguidores", valor: "+12 mil", rotulo: "na comunidade" },
 ];
@@ -162,6 +162,8 @@ export const historia: Marco[] = [
   },
   {
     id: "ba",
+    // ⚠️ CONFLITO DE FONTES: /quem-somos e o mapa de conteúdo dizem 2022;
+    // o texto do fundador na home do site diz 2023. Confirmar antes de publicar.
     periodo: "2022",
     titulo: "Bankers Academy",
     texto:
@@ -190,14 +192,18 @@ export const securatoNome = "José Roberto Securato Junior";
 export const securatoCargo = "Fundador da Bankers Academy";
 
 export const securatoResumo =
-  "Executou e liderou transações complexas — M&A, IPOs, private equity, dívida e capital de risco — e levou a experiência de mesa para a sala de aula.";
+  "Mais de 20 anos em finanças corporativas, com execução de transações complexas, liderança de equipes e assessoria a executivos C-level e conselhos de administração.";
+
+/** Segundo parágrafo, na linha do texto publicado na home do site. */
+export const securatoResumo2 =
+  "Foram 14 anos dedicados a investment banking, com passagens pelo Deutsche Bank em São Paulo e Nova Iorque e pelo BNP Paribas. Em 2013 fundou a SP Advisors (M&A) e a SP Capital Partners (capital de risco).";
 
 export const securatoCredenciais: Credencial[] = [
   { id: "financas", valor: "+20 anos", rotulo: "em finanças corporativas" },
-  { id: "ib", valor: "14 anos", rotulo: "em Investment Banking", aConfirmar: true },
+  { id: "ib", valor: "14 anos", rotulo: "em Investment Banking" },
   { id: "db", valor: "Deutsche Bank", rotulo: "São Paulo e Nova Iorque" },
   { id: "bnp", valor: "BNP Paribas", rotulo: "Investment Banking" },
-  { id: "spa", valor: "SP Advisors", rotulo: "e SP Capital Partners — sócio fundador" },
+  { id: "spa", valor: "SP Advisors", rotulo: "e SP Capital Partners, desde 2013" },
   { id: "professor", valor: "FIA e Saint Paul", rotulo: "professor desde os anos 2000" },
   { id: "phd", valor: "PhD", rotulo: "em Finanças" },
 ];

@@ -33,6 +33,7 @@ import {
   securatoFotoRecorte,
   securatoNome,
   securatoResumo,
+  securatoResumo2,
   valores,
 } from "@/data/quem-somos";
 
@@ -238,16 +239,20 @@ export default function QuemSomosPage() {
                   {securatoResumo}
                 </p>
 
-                <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+                <p className="mt-5 max-w-2xl text-pretty text-lg leading-8 text-white/70">
+                  {securatoResumo2}
+                </p>
+
+                {/* Chips discretos, como os do site: contorno leve, sem peso
+                    de card. Aqui na versão para fundo escuro. */}
+                <ul className="mt-8 flex flex-wrap gap-2">
                   {securatoCredenciais.map((c) => (
                     <li
                       key={c.id}
-                      className="rounded-xl border border-white/10 bg-white/[0.03] p-5"
+                      className="rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-xs font-semibold text-white/80"
                     >
-                      <p className="text-base font-semibold text-brand">{c.valor}</p>
-                      <p className="mt-1 text-sm leading-snug text-white/60">
-                        {c.rotulo}
-                      </p>
+                      {c.valor}
+                      <span className="font-normal text-white/55"> · {c.rotulo}</span>
                     </li>
                   ))}
                 </ul>
