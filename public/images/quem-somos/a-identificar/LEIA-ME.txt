@@ -1,0 +1,17 @@
+Retratos ainda sem identificação confirmada.
+
+Não estão em uso em nenhuma página — de propósito. Colocar o rosto errado
+no card de uma pessoa nomeada é um erro que não se desfaz bem, então eles
+ficam aqui até a Bankers Academy confirmar quem é quem.
+
+  retrato-homem.jpg    provável Arnaldo Mello (Partner, Tabula)
+  retrato-mulher.jpg   provável Jaqueline Sanches (Partner)
+
+A dedução vem do LEIA-ME do pacote enviado pelo cliente, que descreve a
+pasta de fotos como "Securato, Arnaldo, Jaque e material institucional" —
+e Securato já está identificado. Mas há duas mulheres na liderança
+(Andrea Securato e Jaqueline Sanches), então o retrato feminino é
+genuinamente ambíguo.
+
+Ao confirmar: mover para ../ e preencher o campo `foto` do membro
+correspondente em src/data/quem-somos.ts.

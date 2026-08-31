@@ -295,6 +295,17 @@ export default function QuemSomosPage() {
               </p>
             </Reveal>
 
+            <Reveal delay={80}>
+              <Image
+                src="/images/quem-somos/time-grupo.jpg"
+                alt="Parte do time da Bankers Academy reunida na sala de reuniões"
+                width={1536}
+                height={842}
+                sizes="(max-width: 1024px) 92vw, 80vw"
+                className="mt-12 h-auto w-full rounded-2xl"
+              />
+            </Reveal>
+
             <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {time.map((m, i) => (
                 <Reveal as="li" key={m.id} delay={Math.min(i, 7) * 50} className="block">
