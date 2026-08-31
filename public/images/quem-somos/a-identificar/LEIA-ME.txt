@@ -10,10 +10,10 @@ ficam aqui até a Bankers Academy confirmar quem é quem.
 A dedução vem do LEIA-ME do pacote enviado pelo cliente, que descreve a
 pasta de fotos como "Securato, Arnaldo, Jaque e material institucional".
 
-O cliente enviou depois retratos nomeados de Arnaldo Mello e Jaqueline
-Sanches, que são os que estão no ar. São fotos DIFERENTES destas duas —
-outra sessão, outro enquadramento. Estas continuam sem uso porque
-ninguém disse de quem são; podem ser das mesmas pessoas ou não.
+O cliente enviou depois retratos nomeados de Arnaldo Mello, Jaqueline
+Sanches e Andrea Securato, que são os que valem. São fotos DIFERENTES
+destas duas — outra sessão, outro enquadramento. Estas continuam sem uso
+porque ninguém disse de quem são; podem ser das mesmas pessoas ou não.
 
 Ao confirmar: mover para ../ com o nome da pessoa no arquivo e preencher
 o campo `foto` do membro correspondente em src/data/quem-somos.ts.

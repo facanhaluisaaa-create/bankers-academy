@@ -222,16 +222,18 @@ export const securatoFotoRecorte = {
  * (Co-founder), Arnaldo Mello (Partner, Tabula) e Jaqueline Sanches
  * (Partner).
  *
- * ⚠️ Andrea Securato está fora da lista até haver confirmação. O cliente
- * levantou dúvida sobre o vínculo dela, e as outras duas fontes que
- * temos não a mencionam: o site no ar não cita nenhum nome além do
- * Securato, e o pacote de fotos montado pelo próprio cliente descreve o
- * conteúdo como "Securato, Arnaldo, Jaque e material institucional".
- * Para reativar, basta devolver a linha abaixo:
- *
- *   { id: "andrea", nome: "Andrea Securato", cargo: "Co-founder" },
+ * Andrea Securato chegou a sair da lista quando o cliente levantou dúvida
+ * sobre o nome — o mapa de conteúdo era a única fonte que a citava. Ele
+ * confirmou depois, enviando o retrato dela, e ela voltou.
  */
 export const lideranca: Lider[] = [
+  {
+    id: "andrea",
+    nome: "Andrea Securato",
+    cargo: "Co-founder",
+    // TODO: foto confirmada pelo cliente, mas o arquivo não chegou ao
+    // repositório. Salvar como lideranca-andrea-securato.jpg e apontar aqui.
+  },
   {
     id: "arnaldo",
     nome: "Arnaldo Mello",
