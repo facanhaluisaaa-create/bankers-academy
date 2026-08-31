@@ -11,5 +11,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    { url: `${BASE}/quem-somos`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/quem-somos/historia`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE}/quem-somos/lideranca`, changeFrequency: "monthly", priority: 0.6 },
+    {
+      url: `${BASE}/quem-somos/especialistas`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE}/quem-somos/ecossistema`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 }

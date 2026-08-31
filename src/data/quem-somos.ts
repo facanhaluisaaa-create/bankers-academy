@@ -70,6 +70,8 @@ export type FotoCultura = {
   pendente?: string;
   /** Ocupa duas colunas na galeria. */
   larga?: boolean;
+  /** Mostra a foto completa, sem corte por object-cover. */
+  inteira?: boolean;
 };
 
 /* ───────────────────── Links próprios da página ───────────────── */
@@ -79,6 +81,77 @@ export const links = {
   securatoLinkedin: "https://www.linkedin.com/in/josesecurato/",
   site: "https://www.bankersacademy.com.br",
 } as const;
+
+/* ─────────────── Rotas do hub Quem Somos ─────────────── */
+
+/**
+ * O Quem Somos é uma página-hub curta; o conteúdo longo vive nestas
+ * quatro páginas internas.
+ *
+ * ⚠️ Sobre `ecossistema`: o pedido era apontar o quarto card para "a
+ * página existente de Programas". Ela não existe — nem neste projeto
+ * (só há /programas/investment-banking-bootcamp, sem índice) nem no site
+ * no ar, cujo menu leva direto a /modelagemfinanceira, /investmentbanking,
+ * /masterclass, /credito-dcm e /calendario, sem um /programas. Como
+ * apontar para uma rota inexistente daria 404, o ecossistema virou página
+ * interna: cada iniciativa dentro dela continua levando à página própria
+ * no site, então nada é duplicado. Se a Bankers Academy criar /programas,
+ * é só trocar o href deste card.
+ */
+export const rotas = {
+  hub: "/quem-somos",
+  historia: "/quem-somos/historia",
+  lideranca: "/quem-somos/lideranca",
+  especialistas: "/quem-somos/especialistas",
+  ecossistema: "/quem-somos/ecossistema",
+} as const;
+
+export type CardHub = {
+  id: string;
+  titulo: string;
+  descricao: string;
+  cta: string;
+  href: string;
+  /** Imagem de capa do card; sem ela o card usa fundo chapado. */
+  imagem?: string;
+};
+
+export const hubCards: CardHub[] = [
+  {
+    id: "historia",
+    titulo: "Nossa história",
+    descricao:
+      "De uma turma de cinco alunos em 2018 a uma escola com auditório próprio, livro publicado e milhares de universitários formados.",
+    cta: "Conheça nossa história",
+    href: rotas.historia,
+  },
+  {
+    id: "lideranca",
+    titulo: "Liderança",
+    descricao:
+      "O fundador, os sócios e o time que faz a escola acontecer — gente que executou transações antes de ensinar sobre elas.",
+    cta: "Conheça quem está por trás",
+    href: rotas.lideranca,
+    imagem: "/images/quem-somos/time-grupo.jpg",
+  },
+  {
+    id: "especialistas",
+    titulo: "Professores & especialistas",
+    descricao:
+      "Quem ensina, executa. E o método: modelar, avaliar, apresentar e defender uma recomendação.",
+    cta: "Conheça os especialistas",
+    href: rotas.especialistas,
+    imagem: "/images/quem-somos/turma.jpg",
+  },
+  {
+    id: "ecossistema",
+    titulo: "Ecossistema",
+    descricao:
+      "Boot Camp, modelagem, valuation, M&A, crédito e os programas de inclusão. Muitas portas, um mesmo objetivo.",
+    cta: "Explore nossos programas",
+    href: rotas.ecossistema,
+  },
+];
 
 /* ─────────────────────────── 1. HERO ───────────────────────── */
 
@@ -381,6 +454,9 @@ export const galeriaCultura: FotoCultura[] = [
        senão o bloco de duas colunas começaria na coluna 2 de 3 e quebraria
        a linha. */
     larga: true,
+    /* Pedido do cliente: esta aparece completa, sem o corte do
+       object-cover — a turma inteira no quadro. */
+    inteira: true,
   },
   {
     id: "time-escritorio",
