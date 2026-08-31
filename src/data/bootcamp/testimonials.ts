@@ -24,11 +24,11 @@ import type { IbbcTestimonial } from "./types";
  *    page's own og:description — nothing was written or paraphrased
  *    here. Excerpts skip passages with " […] ". Full text at the link.
  *
- *  - Rafael Aguirre has no quote: his link resolves to a post on Jose
- *    Securato's profile that LinkedIn serves behind a login wall, so
- *    there is no public text to quote. The card renders link-only. The
- *    client plans to send the testimonial VIDEOS; when they arrive they
- *    replace/augment these cards.
+ *  - Rafael Aguirre's entry uses the permalink of his OWN post, sent by
+ *    the client afterwards — the asset-pack link pointed to a login-walled
+ *    repost on Jose Securato's profile. The client plans to send the
+ *    testimonial VIDEOS; when they arrive they replace/augment these
+ *    cards.
  *
  *  - `edition` only where the author states it ("T15"); no cohort is
  *    inferred for the others.
@@ -79,10 +79,16 @@ export const ibbcTestimonials: IbbcTestimonial[] = [
   {
     id: "rafael-aguirre",
     name: "Rafael Aguirre",
-    // Sem quote: o post é do perfil do Securato e o LinkedIn o serve
-    // atrás de login — não há texto público para citar. Só o link.
+    quote:
+      "Eu recebi um novo certificado! Finalista do Investment Banking Boot Camp T15 (250h). Programa intensivo em Investment Banking, Financial Modeling e Valuation. Cobri o setor bancário por 1 mês realizando uma análise setorial, comparação por múltiplos e valuation do Banco Pine via (DDM), com apresentação das conclusões para profissionais do mercado.",
+    role: "Finalista da edição",
+    edition: "IBBC T15",
+    // O link do pacote apontava para o repost no perfil do Securato
+    // (atrás de login). O cliente enviou depois o permalink do post do
+    // próprio Rafael — buscado e confirmado público, texto no
+    // og:description.
     linkedin:
-      "https://www.linkedin.com/feed/update/urn:li:activity:7490901588648263680/",
+      "https://www.linkedin.com/feed/update/urn:li:ugcPost:7490260326077075456/",
     linkVerified: true,
   },
 ];
