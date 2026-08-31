@@ -65,9 +65,15 @@ export default function Timeline({ marcos }: { marcos: Marco[] }) {
               {m.href ? (
                 <Link
                   href={m.href}
-                  className="mt-4 inline-flex py-1 text-sm font-semibold text-brand-deep transition-colors hover:text-ink"
+                  className="group mt-3 inline-flex items-center gap-1.5 py-2 text-sm font-semibold text-brand-deep underline decoration-brand-deep/35 decoration-2 underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
                 >
-                  Conhecer o programa →
+                  Conhecer o programa
+                  <span
+                    aria-hidden="true"
+                    className="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
                 </Link>
               ) : null}
             </div>

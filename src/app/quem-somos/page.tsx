@@ -59,6 +59,25 @@ const eyeLight = "text-sm font-semibold uppercase tracking-[0.3em] text-brand-de
 /* Sobre o verde da marca o texto é ink — o verde é claro demais para branco. */
 const eyeBrand = "text-sm font-semibold uppercase tracking-[0.3em] text-ink/70";
 
+/* Botões.
+   O hover antes era `opacity-90`: sobre o verde da marca isso deixava o
+   botão esverdeado em vez de reagir ao ponteiro, e não havia resposta
+   nenhuma ao clique. Agora sobe com sombra no hover e afunda no clique,
+   que é o que faz um botão parecer um botão. */
+const btnBase =
+  "inline-flex items-center justify-center rounded-full px-7 py-4 text-sm font-bold uppercase tracking-[0.08em] transition-all duration-200 active:translate-y-0 active:shadow-none";
+const btnSolid = `${btnBase} bg-ink text-white hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-10px_rgba(0,0,0,0.6)]`;
+const btnOutline = `${btnBase} border border-ink/30 text-ink hover:-translate-y-0.5 hover:border-ink hover:bg-ink hover:text-white hover:shadow-[0_12px_28px_-10px_rgba(0,0,0,0.4)]`;
+
+/* Linha inteira clicável no ecossistema. Antes o único sinal era
+   `hover:bg-white` sobre uma seção quase branca — invisível, e nada
+   indicava que a linha era clicável antes de passar o mouse. Agora a
+   seta fica sempre visível, o título ganha sublinhado no hover e a
+   linha inteira vira branca. Sem deslocar texto: mover a linha no hover
+   fica inquieto quando são seis seguidas. */
+const linhaClicavel =
+  "group block transition-colors duration-200 hover:bg-white active:bg-line/40";
+
 export default function QuemSomosPage() {
   return (
     <>
@@ -80,16 +99,10 @@ export default function QuemSomosPage() {
               {heroTexto}
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href="#ecossistema"
-                className="rounded-full bg-ink px-7 py-4 text-sm font-bold uppercase tracking-[0.08em] text-white transition hover:opacity-90"
-              >
+              <Link href="#ecossistema" className={btnSolid}>
                 Nossas iniciativas
               </Link>
-              <Link
-                href="#lideranca"
-                className="rounded-full border border-ink/30 px-7 py-4 text-sm font-bold uppercase tracking-[0.08em] text-ink transition hover:bg-ink hover:text-white"
-              >
+              <Link href="#lideranca" className={btnOutline}>
                 Quem está por trás
               </Link>
             </div>
@@ -261,7 +274,7 @@ export default function QuemSomosPage() {
                   href={links.securatoLinkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-8 inline-flex py-1 text-sm font-semibold text-brand transition-colors hover:text-white"
+                  className="mt-7 inline-flex items-center gap-1 py-2 text-sm font-semibold text-brand underline decoration-brand/40 decoration-2 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
                 >
                   LinkedIn ↗
                   <span className="sr-only"> de {securatoNome} (abre em nova aba)</span>
@@ -435,9 +448,9 @@ export default function QuemSomosPage() {
             <ul className="mt-16 divide-y divide-line border-y border-line">
               {iniciativas.map((it, i) => {
                 const conteudo = (
-                  <div className="grid items-baseline gap-3 py-8 md:grid-cols-12 md:gap-10">
+                  <div className="grid items-baseline gap-3 px-4 py-8 md:grid-cols-12 md:gap-10">
                     <h3
-                      className={`font-semibold tracking-tight md:col-span-5 ${
+                      className={`font-semibold tracking-tight underline decoration-transparent decoration-2 underline-offset-[6px] transition-colors duration-200 group-hover:decoration-ink md:col-span-5 ${
                         it.destaque ? "text-2xl sm:text-3xl" : "text-xl"
                       }`}
                     >
@@ -452,7 +465,10 @@ export default function QuemSomosPage() {
                       {it.descricao}
                     </p>
                     {it.href ? (
-                      <span className="text-sm font-semibold text-brand-deep md:col-span-1 md:text-right">
+                      <span
+                        aria-hidden="true"
+                        className="inline-block text-base font-bold text-brand-deep transition-transform duration-200 group-hover:translate-x-1 md:col-span-1 md:text-right"
+                      >
                         {it.externo ? "↗" : "→"}
                       </span>
                     ) : null}
@@ -467,12 +483,12 @@ export default function QuemSomosPage() {
                           href={it.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block transition-colors hover:bg-white"
+                          className={linhaClicavel}
                         >
                           {conteudo}
                         </a>
                       ) : (
-                        <Link href={it.href} className="block transition-colors hover:bg-white">
+                        <Link href={it.href} className={linhaClicavel}>
                           {conteudo}
                         </Link>
                       )
@@ -602,16 +618,10 @@ export default function QuemSomosPage() {
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Link
-                  href="#ecossistema"
-                  className="rounded-full bg-ink px-8 py-4 text-sm font-bold uppercase tracking-[0.08em] text-white transition hover:opacity-90"
-                >
+                <Link href="#ecossistema" className={`${btnSolid} px-8`}>
                   Ver as iniciativas
                 </Link>
-                <Link
-                  href={links.bootcamp}
-                  className="rounded-full border border-ink/30 px-8 py-4 text-sm font-bold uppercase tracking-[0.08em] text-ink transition hover:bg-ink hover:text-white"
-                >
+                <Link href={links.bootcamp} className={`${btnOutline} px-8`}>
                   Conheça o Boot Camp
                 </Link>
               </div>
