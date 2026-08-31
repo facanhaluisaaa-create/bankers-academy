@@ -9,7 +9,15 @@ import AssetPlaceholder from "@/components/ui/AssetPlaceholder";
 import SubHero from "../_components/SubHero";
 import { btnSolid, eyeDark, shell } from "../_components/estilos";
 
-import { comoEnsinamos, links, professores } from "@/data/quem-somos";
+import {
+  comoEnsinamos,
+  links,
+  professores,
+  rotas,
+  securatoCargo,
+  securatoMaster,
+  securatoNome,
+} from "@/data/quem-somos";
 
 const description =
   "Professores, mentores e especialistas da Bankers Academy — e o método: modelar, avaliar, apresentar e defender uma recomendação.";
@@ -47,13 +55,111 @@ export default function EspecialistasPage() {
           texto="Professores e mentores que vêm da mesa de trabalho — e um método construído para o aluno fazer, não só assistir."
         />
 
-        {/* ═══════════ GRID DE ESPECIALISTAS ═══════════ */}
+        {/* ═══════════ BLOCO 1 — O FUNDADOR ═══════════
+            Securato Jr. com o destaque maior; o perfil completo vive em
+            /quem-somos/fundador (rota real, mesma aba). */}
+        <section aria-labelledby="esp-jr-t" className="bg-surface">
+          <div className={`${shell} py-20 lg:py-24`}>
+            <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+              <Reveal className="lg:col-span-4">
+                <Image
+                  src="/images/quem-somos/especialistas/jose-securato-jr.jpg"
+                  alt={`Retrato de ${securatoNome}`}
+                  width={1200}
+                  height={1500}
+                  sizes="(max-width: 1024px) 80vw, 30vw"
+                  className="mx-auto w-full max-w-sm rounded-3xl lg:max-w-none"
+                />
+              </Reveal>
+              <Reveal delay={80} className="lg:col-span-8">
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-deep">
+                  Fundador
+                </p>
+                <h2
+                  id="esp-jr-t"
+                  className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl"
+                >
+                  {securatoNome}
+                </h2>
+                <p className="mt-2 text-sm font-medium text-brand-deep">
+                  {securatoCargo}
+                </p>
+                <p className="mt-5 max-w-xl leading-8 text-ink/70">
+                  Idealizador e condutor do Investment Banking Boot Camp e dos
+                  programas da escola — quem ensina aqui, executa.
+                </p>
+                <Link
+                  href={rotas.fundador}
+                  className="group mt-6 inline-flex items-center gap-2 py-2 text-sm font-bold uppercase tracking-[0.08em] text-brand-deep underline decoration-brand-deep/35 decoration-2 underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
+                >
+                  Perfil completo do fundador
+                  <span
+                    aria-hidden="true"
+                    className="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </Link>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════ BLOCO 2 — SECURATO MASTER ═══════════
+            O pai do fundador, referência acadêmica — destaque editorial
+            próprio, nunca só mais um card. Sem retrato em fonte oficial:
+            o espaço fica reservado até o cliente confirmar uma foto. */}
+        <section aria-labelledby="esp-master-t" className="on-dark bg-ink text-white">
+          <div className={`${shell} py-20 lg:py-24`}>
+            <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+              <Reveal className="lg:col-span-4">
+                {securatoMaster.foto ? (
+                  <Image
+                    src={securatoMaster.foto}
+                    alt={`Retrato de ${securatoMaster.nome}`}
+                    width={800}
+                    height={1000}
+                    sizes="(max-width: 1024px) 80vw, 30vw"
+                    className="mx-auto w-full max-w-sm rounded-3xl lg:max-w-none"
+                  />
+                ) : (
+                  <AssetPlaceholder
+                    tone="dark"
+                    label={`Retrato oficial — ${securatoMaster.nome}`}
+                    ratio="aspect-[4/5]"
+                    className="mx-auto w-full max-w-sm lg:max-w-none"
+                  />
+                )}
+              </Reveal>
+              <Reveal delay={80} className="lg:col-span-8">
+                <p className={eyeDark}>{securatoMaster.rotulo}</p>
+                <h2
+                  id="esp-master-t"
+                  className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl"
+                >
+                  {securatoMaster.nome}
+                </h2>
+                <p className="mt-2 text-sm font-medium text-brand">
+                  {securatoMaster.credencial}
+                </p>
+                <p className="mt-5 max-w-xl leading-8 text-white/70">
+                  {securatoMaster.texto}
+                </p>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════ BLOCO 3 — QUEM ENSINA COM A GENTE ═══════════ */}
         <section aria-labelledby="grid-t" className="bg-surface">
           <div className={`${shell} py-24 lg:py-28`}>
-            <h2 id="grid-t" className="sr-only">
-              Professores e especialistas
+            <h2
+              id="grid-t"
+              className="mb-12 max-w-3xl text-balance text-3xl font-semibold tracking-tight sm:text-4xl"
+            >
+              Quem ensina com a gente
             </h2>
-            <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {professores.map((p, i) => (
                 <Reveal as="li" key={p.id} delay={i * 60} className="block">
                   <article className="h-full">
@@ -117,9 +223,10 @@ export default function EspecialistasPage() {
               ))}
             </ul>
 
-            <p className="mt-10 max-w-2xl text-sm leading-6 text-ink/70">
-              Grid pronto para foto, nome, especialidade e credencial. Os nomes
-              entram depois da validação da Bankers Academy.
+            <p className="mt-12 max-w-2xl text-sm leading-6 text-ink/60">
+              Retratos e áreas conforme as páginas oficiais dos programas na
+              Tabula. Os retratos pendentes entram assim que houver fotografia
+              oficial confirmada.
             </p>
           </div>
         </section>

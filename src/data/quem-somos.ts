@@ -617,12 +617,95 @@ export const lideranca: Lider[] = [
  * especialidade, credencial — nem que atuem como professores da escola.
  * Preencher só depois da validação.
  */
+/**
+ * Preenchido em 31/08 SOMENTE com o que páginas oficiais confirmam.
+ * Fotos baixadas para public/images/quem-somos/especialistas/ (sem
+ * hotlink). Proveniência:
+ *
+ * - Marcos Piellusch — perfil de conteudista da Tabula
+ *   (tabula.com.br/conteudista/marcos.piellusch: nome, foto e o próprio
+ *   LinkedIn); no Entrada em IB assina o módulo Fundamentos (Matemática
+ *   Financeira e Contabilidade). Grafia confirmada: MARCOS.
+ * - Walter Eclache — perfil tabula.com.br/conteudista/walter.eclache
+ *   ("Walter Eclache da Silva", com foto); professor de Matemática
+ *   Financeira no Entrada em IB.
+ * - Alexandre Paixão — perfil tabula.com.br/conteudista/alexandre-paixo
+ *   (nome + foto); módulos de Crédito (Comitê, Crédito Corporativo, Do
+ *   Rating ao Spread) no curso de Crédito e masterclasses de Carreiras
+ *   em Tesouraria, Sales & Trading e Renda Fixa.
+ * - Fernando Fegyveres — retrato da página oficial do seu evento na
+ *   Tabula (ead.tabula.com.br/evento-fernando-fegyveres); Cases de
+ *   Crédito no curso de Crédito, cujo texto o descreve como ex-CEO do
+ *   Banco Voiter.
+ * - Agostinho Cavalcanti — SEM foto oficial encontrada (Tabula, BA, FIA
+ *   e LinkedIn verificados); Cases de Crédito no curso de Crédito.
+ * - Tatiana Tafarello — SEM foto oficial; a Tabula confirma "Tatiana"
+ *   (live de Contratos de M&A no IB Avançado, data a definir); o
+ *   sobrenome vem da indicação do cliente com o LinkedIn abaixo.
+ *
+ * Sem foto o card mostra o espaço reservado — nunca foto de terceiro.
+ */
 export const professores: Professor[] = [
-  { id: "prof-1" },
-  { id: "prof-2" },
-  { id: "prof-3" },
-  { id: "prof-4" },
+  {
+    id: "marcos-piellusch",
+    nome: "Marcos Piellusch",
+    especialidade: "Fundamentos · Matemática Financeira e Contabilidade",
+    foto: "/images/quem-somos/especialistas/marcos-piellusch.jpg",
+    linkedin: "https://www.linkedin.com/in/marcospiellusch/",
+  },
+  {
+    id: "walter-eclache",
+    nome: "Walter Eclache",
+    especialidade: "Matemática Financeira",
+    foto: "/images/quem-somos/especialistas/walter-eclache.jpg",
+    linkedin: "https://www.linkedin.com/in/professor-waltereclache/",
+  },
+  {
+    id: "alexandre-paixao",
+    nome: "Alexandre Paixão",
+    especialidade: "Crédito · Tesouraria · Sales & Trading",
+    foto: "/images/quem-somos/especialistas/alexandre-paixao.jpg",
+    linkedin: "https://www.linkedin.com/in/alexandre-paixao/",
+  },
+  {
+    id: "fernando-fegyveres",
+    nome: "Fernando Fegyveres",
+    especialidade: "Cases de Crédito",
+    credencial: "Ex-CEO do Banco Voiter",
+    foto: "/images/quem-somos/especialistas/fernando-fegyveres.jpg",
+  },
+  {
+    id: "agostinho-cavalcanti",
+    nome: "Agostinho Cavalcanti",
+    especialidade: "Cases de Crédito",
+  },
+  {
+    id: "tatiana-tafarello",
+    nome: "Tatiana Tafarello",
+    especialidade: "Contratos de M&A",
+    linkedin: "https://www.linkedin.com/in/tatiana-tafarello-75058715/",
+  },
 ];
+
+/**
+ * Prof. Dr. José Roberto Securato — o "Securato Master", pai do
+ * fundador. Referência acadêmica do ecossistema; NÃO confundir com o
+ * José Roberto Securato Junior. Confirmado em: FIA
+ * (fiaonline.com.br/professores/jose-roberto-securato — "Doutor em
+ * Administração (Finanças) pela FEA/USP"), Entrada em IB da Tabula
+ * (módulos Fundamentos e Mercado Financeiro, "Dr. José Securato") e no
+ * perfil de conteudista "Securato Master" da Tabula. Foto: NENHUMA
+ * fonte oficial traz retrato (Tabula usa avatar padrão; FIA, avatar
+ * genérico) — o slot fica reservado até o cliente confirmar uma.
+ */
+export const securatoMaster = {
+  rotulo: "Securato Master",
+  nome: "Prof. Dr. José Roberto Securato",
+  credencial: "Doutor em Administração (Finanças) pela FEA/USP",
+  texto:
+    "Referência acadêmica do ecossistema educacional da Bankers Academy. Nos programas, assina os módulos de Fundamentos — Matemática Financeira e Contabilidade — e de Mercado Financeiro do Entrada em Investment Banking.",
+  foto: null as string | null,
+};
 
 /* ─────────────── 6. COMO ENSINAMOS ─────────────── */
 
