@@ -26,9 +26,14 @@ import type { IbbcTestimonial } from "./types";
  *
  *  - Rafael Aguirre's entry uses the permalink of his OWN post, sent by
  *    the client afterwards — the asset-pack link pointed to a login-walled
- *    repost on Jose Securato's profile. The client plans to send the
- *    testimonial VIDEOS; when they arrive they replace/augment these
- *    cards.
+ *    repost on Jose Securato's profile.
+ *
+ *  - `pull` is a verbatim contiguous sentence lifted from `quote`, used
+ *    by the landing's compact social-proof cards — never a paraphrase.
+ *
+ *  - Ana Luísa's VIDEO testimonial arrived and leads the landing's
+ *    social-proof section (see bootcampMedia.videoDepoimento); her
+ *    written card stays here for the fuller listing.
  *
  *  - `edition` only where the author states it ("T15"); no cohort is
  *    inferred for the others.
@@ -60,6 +65,7 @@ export const ibbcTestimonials: IbbcTestimonial[] = [
     name: "Gustavo Campoi",
     quote:
       "Durante o programa, cobri o setor de Fintechs, tendo feito uma análise setorial completa, um estudo comparativo de múltiplos, além de um valuation do Nubank, feito a partir do método de Lucros Residuais. Ao fim do programa, tive a felicidade de estar entre os 6 finalistas da edição, realizando uma apresentação final a profissionais do mercado.",
+    pull: "Durante o programa, cobri o setor de Fintechs, tendo feito uma análise setorial completa, um estudo comparativo de múltiplos, além de um valuation do Nubank, feito a partir do método de Lucros Residuais.",
     role: "Finalista da edição",
     linkedin:
       "https://www.linkedin.com/feed/update/urn:li:activity:7492659705790533632/",
@@ -70,6 +76,7 @@ export const ibbcTestimonials: IbbcTestimonial[] = [
     name: "Pedro Henrique Canano",
     quote:
       "Recentemente, concluí o Investment Banking Boot Camp T15 (IBBC), da Bankers Academy. […] Ao final do programa, apresentei o trabalho a profissionais do mercado e tive a satisfação de ser escolhido como vencedor da edição.",
+    pull: "Ao final do programa, apresentei o trabalho a profissionais do mercado e tive a satisfação de ser escolhido como vencedor da edição.",
     role: "Vencedor da edição",
     edition: "IBBC T15",
     linkedin:
@@ -81,6 +88,7 @@ export const ibbcTestimonials: IbbcTestimonial[] = [
     name: "Rafael Aguirre",
     quote:
       "Eu recebi um novo certificado! Finalista do Investment Banking Boot Camp T15 (250h). Programa intensivo em Investment Banking, Financial Modeling e Valuation. Cobri o setor bancário por 1 mês realizando uma análise setorial, comparação por múltiplos e valuation do Banco Pine via (DDM), com apresentação das conclusões para profissionais do mercado.",
+    pull: "Cobri o setor bancário por 1 mês realizando uma análise setorial, comparação por múltiplos e valuation do Banco Pine via (DDM), com apresentação das conclusões para profissionais do mercado.",
     role: "Finalista da edição",
     edition: "IBBC T15",
     // O link do pacote apontava para o repost no perfil do Securato

@@ -48,6 +48,13 @@ export type IbbcTestimonial = {
   name: string;
   /** Verbatim quote. Cards render only once this is filled in. */
   quote?: string;
+  /**
+   * Verbatim SHORT excerpt of `quote` (a contiguous sentence from the
+   * post, never paraphrased) for the compact cards on the landing's
+   * social-proof section. Cards there render only testimonials that
+   * carry one.
+   */
+  pull?: string;
   edition?: string;
   role?: string;
   image?: string;

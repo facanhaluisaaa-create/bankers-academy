@@ -5,7 +5,8 @@ import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 
 import Certificate from "./_components/Certificate";
-import Foto, { VideoDepoimento } from "./_components/Foto";
+import Foto from "./_components/Foto";
+import PlayerDepoimento from "./_components/PlayerDepoimento";
 import { bootcampMedia } from "./_data/media";
 import { btnApply, btnGhostDark, ctaSetaDark, ctaSetaLight, eyebrow, eyebrowLight, setaClasse, shell } from "./_components/estilos";
 import { ibbcAlumni } from "./_data/alumni";
@@ -403,7 +404,139 @@ export default function BootcampPage() {
           </div>
         </section>
 
-        {/* ═══════════ F. ALUMNI (prévia) ═══════════ */}
+        {/* ═══════════ F. PROVA SOCIAL — quem viveu, conta melhor ═══════════
+            Um único bloco: o vídeo da Ana Luísa como protagonista e dois
+            ou três reforços escritos, todos do IBBC (o arquivo de
+            depoimentos separa por programa — Curso Intensivo de Férias e
+            workshops NÃO entram aqui). Continua o arco escuro do
+            certificado: resultado → prova social → alumni. */}
+        {(() => {
+          const video = bootcampMedia.videoDepoimento;
+          const ana = publishableTestimonials.find((t) => t.id === "ana-luisa-teloken");
+          /* Só entram como reforço os que têm frase curta VERBATIM
+             (`pull`) — hoje três; a Ana fica no vídeo, não em card. */
+          const reforcos = publishableTestimonials
+            .filter((t) => t.pull && t.id !== "ana-luisa-teloken")
+            .slice(0, 3);
+          if (!video.src && reforcos.length === 0) return null;
+          return (
+            <section
+              aria-labelledby="prova-t"
+              className="on-dark border-t border-white/10 bg-ink py-20 text-white lg:py-24"
+            >
+              <div className={shell}>
+                {/* lg:grid-rows-[auto_1fr]: a 1ª linha mede só o cabeçalho,
+                    para a identificação encostar nele mesmo com o vídeo
+                    (row-span-2) mais alto que os dois. */}
+                <div className="grid gap-x-16 gap-y-10 lg:grid-cols-12 lg:grid-rows-[auto_1fr]">
+                  {/* Cabeçalho — no celular vem primeiro; no desktop, à
+                      direita do vídeo */}
+                  <div className="lg:col-span-7 lg:col-start-6 lg:row-start-1">
+                    <p className={eyebrow}>Depoimento real</p>
+                    <h2
+                      id="prova-t"
+                      className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl"
+                    >
+                      Quem viveu,
+                      <span className="block text-white/55">conta melhor.</span>
+                    </h2>
+                    <p className="mt-5 max-w-xl text-lg leading-8 text-white/60">
+                      Da teoria para a rotina real de Investment Banking.
+                    </p>
+                  </div>
+
+                  {/* [VÍDEO 06] O vídeo vertical é o protagonista — proporção
+                      9:16 preservada, cantos arredondados, poster do próprio
+                      vídeo, sem moldura de celular */}
+                  <div className="lg:col-span-4 lg:col-start-1 lg:row-span-2 lg:row-start-1">
+                    <PlayerDepoimento
+                      video={video}
+                      className="mx-auto w-full max-w-[17rem] sm:max-w-xs lg:mx-0 lg:max-w-none"
+                    />
+                  </div>
+
+                  {/* Identificação — só o que o próprio material confirma */}
+                  <div className="lg:col-span-7 lg:col-start-6 lg:row-start-2 lg:self-start">
+                    {video.nome ? (
+                      <p className="text-xl font-semibold">{video.nome}</p>
+                    ) : null}
+                    {video.credencial ? (
+                      <p className="mt-1 text-sm font-semibold text-brand">
+                        {video.credencial}
+                      </p>
+                    ) : null}
+                    {video.frase ? (
+                      <p className="mt-4 max-w-xl leading-7 text-white/70">
+                        {video.frase}
+                      </p>
+                    ) : null}
+                    {ana?.linkedin && ana.linkVerified ? (
+                      <a
+                        href={ana.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-1 py-1 text-sm font-semibold text-brand underline decoration-brand/35 decoration-2 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
+                      >
+                        Ver publicação ↗
+                        <span className="sr-only">
+                          {" "}
+                          de {video.nome} no LinkedIn (abre em nova aba)
+                        </span>
+                      </a>
+                    ) : null}
+                  </div>
+                </div>
+
+                {/* Reforços escritos — poucos e discretos, nunca uma parede
+                    de cards; o texto integral de cada um vive no post
+                    verificado do LinkedIn e em /bootcamp/alumni */}
+                {reforcos.length > 0 ? (
+                  <ul className="mt-14 grid gap-4 border-t border-white/10 pt-10 md:grid-cols-3">
+                    {reforcos.map((t) => (
+                      <li key={t.id}>
+                        <figure className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+                          <blockquote className="flex-1 text-sm leading-6 text-white/75">
+                            <p>“{t.pull}”</p>
+                          </blockquote>
+                          <figcaption className="mt-5 border-t border-white/10 pt-4">
+                            <p className="text-sm font-semibold">{t.name}</p>
+                            {t.role || t.edition ? (
+                              <p className="mt-1 text-xs font-semibold text-brand">
+                                {[t.role, t.edition].filter(Boolean).join(" · ")}
+                              </p>
+                            ) : null}
+                            {t.linkedin && t.linkVerified ? (
+                              <a
+                                href={t.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mt-2 inline-flex items-center gap-1 py-1 text-xs font-semibold text-white/55 underline decoration-white/25 decoration-2 underline-offset-4 transition-colors hover:text-brand hover:decoration-brand"
+                              >
+                                Ver publicação ↗
+                                <span className="sr-only">
+                                  {" "}
+                                  de {t.name} no LinkedIn (abre em nova aba)
+                                </span>
+                              </a>
+                            ) : null}
+                          </figcaption>
+                        </figure>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+
+                {/* Rota real — a URL muda para /bootcamp/alumni */}
+                <Link href="/bootcamp/alumni" className={`${ctaSetaDark} mt-12`}>
+                  Conheça nossos alumni
+                  <span aria-hidden="true" className={setaClasse}>→</span>
+                </Link>
+              </div>
+            </section>
+          );
+        })()}
+
+        {/* ═══════════ F2. ALUMNI (prévia) ═══════════ */}
         <section aria-labelledby="alumni-t" className="bg-surface py-20 lg:py-24">
           <div className={shell}>
             <p className={eyebrowLight}>Alumni</p>
@@ -498,70 +631,6 @@ export default function BootcampPage() {
             </Link>
           </div>
         </section>
-
-        {/* DEPOIMENTOS — a prova social fica na landing; só renderiza com
-            texto autorizado */}
-        {publishableTestimonials.length > 0 ? (
-          <section aria-labelledby="depo-t" className="border-y border-line bg-surface-alt">
-            <div className={`${shell} py-20 lg:py-24`}>
-              <p className={eyebrowLight}>Depoimentos</p>
-              <h2 id="depo-t" className="mt-4 text-4xl font-semibold sm:text-5xl">
-                Nas palavras de quem viveu.
-              </h2>
-
-              <div className="mt-14 grid gap-10 lg:grid-cols-[minmax(0,19rem)_1fr] lg:gap-12">
-                {/* [VÍDEO 06] O depoimento em vídeo abre a seção; enquanto
-                    o arquivo não chega, o poster reservado ocupa o lugar. */}
-                <VideoDepoimento
-                  video={bootcampMedia.videoDepoimento}
-                  className="mx-auto w-full max-w-[17rem] lg:mx-0 lg:max-w-none"
-                />
-
-              <ul className="grid content-start gap-5 md:grid-cols-2">
-                {publishableTestimonials.map((t) => (
-                  <li key={t.id}>
-                    <figure className="flex h-full flex-col rounded-3xl border border-line bg-white p-7">
-                      {t.quote ? (
-                        <blockquote className="flex-1 leading-7 text-ink/80">
-                          <p>“{t.quote}”</p>
-                        </blockquote>
-                      ) : (
-                        /* Card só com link: o post existe mas o LinkedIn não
-                           expõe o texto publicamente — nada de inventar fala. */
-                        <p className="flex-1 leading-7 text-ink/60">
-                          Depoimento publicado no LinkedIn.
-                        </p>
-                      )}
-                      <figcaption className="mt-6 border-t border-line pt-5">
-                        <p className="font-semibold">{t.name}</p>
-                        {t.role || t.edition ? (
-                          <p className="mt-1 text-sm text-brand-deep">
-                            {[t.role, t.edition].filter(Boolean).join(" · ")}
-                          </p>
-                        ) : null}
-                        {t.linkedin && t.linkVerified ? (
-                          <a
-                            href={t.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-3 inline-flex items-center gap-1 py-1 text-sm font-semibold text-brand-deep underline decoration-brand-deep/35 decoration-2 underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
-                          >
-                            Ver publicação ↗
-                            <span className="sr-only">
-                              {" "}
-                              de {t.name} no LinkedIn (abre em nova aba)
-                            </span>
-                          </a>
-                        ) : null}
-                      </figcaption>
-                    </figure>
-                  </li>
-                ))}
-              </ul>
-              </div>
-            </div>
-          </section>
-        ) : null}
 
         {/* ═══════════ G. DESDE 2018 — collage editorial ═══════════ */}
         <section aria-labelledby="hist-t" className="bg-surface py-20 lg:py-24">

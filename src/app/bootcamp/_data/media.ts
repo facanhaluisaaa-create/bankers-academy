@@ -109,13 +109,30 @@ export const bootcampMedia = {
      componente <Certificate>, que reproduz o diploma real em HTML. A
      versão interativa vive em /bootcamp/certificado. */
 
-  /** [VÍDEO 06] Depoimento em vídeo — video-depoimento.mp4 + poster
-      video-depoimento-poster.jpg. `nome` só quando confirmado. */
+  /** [VÍDEO 06] Depoimento em vídeo — Ana Luísa Telöken.
+      O arquivo original enviado pelo cliente tem 19,6s e termina numa
+      cartela promocional com carga horária de pre-work ainda NÃO
+      confirmada pela equipe; o vídeo publicado foi cortado em 12,45s
+      (fade rápido), imediatamente antes da transição para essa cartela —
+      só o depoimento vai ao ar. Turma e setor vêm gravados na cartela de
+      identificação do próprio vídeo ("Depoimento de aluna da Turma 15 do
+      IBBC!" / "Setor: Water Utilities"). As legendas são abertas,
+      embutidas na própria imagem do vídeo. Poster: frame dos 5s. */
   videoDepoimento: {
-    src: null as string | null,
-    poster: null as string | null,
-    nome: null as string | null,
-    frase: null as string | null,
+    src: "/videos/bootcamp/depoimento-ana-luisa.mp4" as string | null,
+    /** Variante VP9 do MESMO corte — navegadores que a suportam baixam
+        menos; os demais (Safari antigo etc.) caem no mp4. */
+    srcWebm: "/videos/bootcamp/depoimento-ana-luisa.webm" as string | null,
+    poster: "/images/bootcamp/depoimento-ana-luisa-poster.jpg" as string | null,
+    nome: "Ana Luísa Telöken" as string | null,
+    /** Discreto, só o que o próprio vídeo confirma. */
+    credencial: "Turma 15 do IBBC · Water Utilities" as string | null,
+    frase:
+      "Uma experiência para colocar conhecimento em prática e vivenciar a dinâmica real de um banker." as
+        | string
+        | null,
+    /** Duração exibida (vídeo cortado antes da cartela final). */
+    duracaoSegundos: 12 as number | null,
     ratio: "aspect-[9/16]",
     ratioLabel: "9:16 vertical",
   },
