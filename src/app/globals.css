@@ -7,8 +7,7 @@
 
      --ink        oklch(20% .005 260)   → #151618
      --border     oklch(92% .01 255)    → #e0e5eb
-     verde vívido #6FDF11               (acento em seção escura)
-     lima         #C4EF7C               (fundo de botão primário)
+     lima         #C4EF7C               (verde da marca — escolha do cliente)
      superfícies  #F6F7F5 · #fafafa · #fff
      tipografia   Mulish
 
@@ -16,9 +15,12 @@
    ============================================================ */
 @theme {
   /* Marca -------------------------------------------------- */
-  --color-brand: #6fdf11;          /* acento sobre fundo escuro (10,5:1) */
-  --color-brand-soft: #c4ef7c;     /* fundo do botão primário */
-  --color-brand-deep: #437e12;     /* mesmo matiz 93°, AA em fundo claro */
+  /* #C4EF7C é o verde da marca: 13,78:1 com o ink, em texto e em fundo.
+     Sobre branco ele dá 1,31:1 — ilegível —, por isso todo texto verde em
+     seção clara usa brand-deep, o mesmo matiz 82° escurecido até 4,95:1. */
+  --color-brand: #c4ef7c;
+  --color-brand-soft: #c4ef7c;     /* fundo do botão primário (= brand) */
+  --color-brand-deep: #5d792e;     /* mesmo matiz 82°, AA em fundo claro */
   --color-spa: #118336;            /* verde SP Advisors */
 
   /* Neutros ------------------------------------------------ */
