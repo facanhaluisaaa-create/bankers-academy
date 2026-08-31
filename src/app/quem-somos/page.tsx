@@ -21,11 +21,9 @@ import {
   autoridade,
   comunidadeTexto,
   comunidadeTitulo,
-  ecossistemaPrevia,
   fundadorTitulo,
   heroTexto,
   heroTitulo,
-  missao,
   pilares,
   links,
   ponteHub,
@@ -34,7 +32,6 @@ import {
   qsMedia,
   rotas,
   securatoCargo,
-  securatoDestaques,
   securatoFotoRecorte,
   securatoNome,
   securatoResumo,
@@ -206,52 +203,49 @@ export default function QuemSomosPage() {
           </div>
         </section>
 
-        {/* ═══════════ FUNDADOR — uma das maiores seções da página ═══════════
-            Bankers Academy → Securato Jr. como principal autoridade →
-            história → liderança. Fotografia grande dele ensinando,
-            destaques confirmados e a trajetória completa em ./lideranca. */}
+        {/* ═══════════ FUNDADOR — compacto, foto ao lado do texto ═══════════
+            O hub apresenta e aponta: foto real dele ensinando + resumo +
+            CTA. Os seis destaques, a trajetória, transações e conselhos
+            vivem inteiros em ./fundador — aqui é rolagem essencial. */}
         <section aria-labelledby="fundador-t" className="on-dark bg-ink text-white">
-          <div className={`${shell} py-24 lg:py-28`}>
-            <Reveal>
-              <p className={eyeDark}>Fundador</p>
-              <h2
-                id="fundador-t"
-                className="mt-5 max-w-4xl text-balance text-3xl font-semibold leading-[1.08] tracking-tight sm:text-5xl"
-              >
-                {fundadorTitulo}
-              </h2>
-              <p className="mt-5 text-lg font-semibold text-brand sm:text-xl">
-                {securatoNome}
-              </p>
-              <p className="mt-1 text-sm text-white/60">{securatoCargo}</p>
-            </Reveal>
-
-            {/* A fotografia grande dele ensinando — o cliente indicou
-                SECURATO_aula_melhorada; até chegar, a aula-securato.jpg */}
-            <Reveal>
-              {qsMedia.fundadorAula.src ? (
-                <Image
-                  src={qsMedia.fundadorAula.src}
-                  alt={qsMedia.fundadorAula.alt}
-                  width={1086}
-                  height={1448}
-                  sizes="(max-width: 1024px) 92vw, 1216px"
-                  className="mt-12 max-h-[600px] w-full rounded-3xl object-cover"
-                  style={{ objectPosition: qsMedia.fundadorAula.position ?? "50% 50%" }}
-                />
-              ) : (
-                <AssetPlaceholder
-                  tone="dark"
-                  label={`Securato Jr. ensinando — arquivo ${qsMedia.fundadorAula.arquivoEsperado}`}
-                  ratio="aspect-[21/9]"
-                  className="mt-12 w-full"
-                />
-              )}
-            </Reveal>
-
-            <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className={`${shell} py-20 lg:py-24`}>
+            <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+              {/* Fotografia dele ensinando — o cliente indicou
+                  SECURATO_aula_melhorada; até chegar, a aula-securato.jpg */}
               <Reveal className="lg:col-span-5">
-                <p className="max-w-xl text-pretty text-lg leading-8 text-white/70">
+                {qsMedia.fundadorAula.src ? (
+                  <Image
+                    src={qsMedia.fundadorAula.src}
+                    alt={qsMedia.fundadorAula.alt}
+                    width={1086}
+                    height={1448}
+                    sizes="(max-width: 1024px) 92vw, 38vw"
+                    className="aspect-[4/5] w-full rounded-3xl object-cover"
+                    style={{ objectPosition: qsMedia.fundadorAula.position ?? "50% 50%" }}
+                  />
+                ) : (
+                  <AssetPlaceholder
+                    tone="dark"
+                    label={`Securato Jr. ensinando — arquivo ${qsMedia.fundadorAula.arquivoEsperado}`}
+                    ratio="aspect-[4/5]"
+                    className="w-full"
+                  />
+                )}
+              </Reveal>
+
+              <Reveal delay={80} className="lg:col-span-7">
+                <p className={eyeDark}>Fundador</p>
+                <h2
+                  id="fundador-t"
+                  className="mt-5 max-w-2xl text-balance text-3xl font-semibold leading-[1.08] tracking-tight sm:text-4xl"
+                >
+                  {fundadorTitulo}
+                </h2>
+                <p className="mt-5 text-lg font-semibold text-brand sm:text-xl">
+                  {securatoNome}
+                </p>
+                <p className="mt-1 text-sm text-white/60">{securatoCargo}</p>
+                <p className="mt-6 max-w-xl text-pretty leading-8 text-white/70">
                   {securatoResumo}
                 </p>
                 <Link
@@ -266,25 +260,6 @@ export default function QuemSomosPage() {
                     →
                   </span>
                 </Link>
-              </Reveal>
-
-              {/* Destaques curtos — credenciais já confirmadas no projeto */}
-              <Reveal delay={100} className="lg:col-span-7">
-                <dl className="grid gap-x-8 gap-y-7 border-t border-white/15 pt-7 sm:grid-cols-2 lg:grid-cols-3">
-                  {securatoDestaques.map((d) => (
-                    <div key={d.id}>
-                      <dt className="sr-only">{d.rotulo}</dt>
-                      <dd>
-                        <span className="block font-semibold tracking-tight text-brand">
-                          {d.valor}
-                        </span>
-                        <span className="mt-1 block text-sm leading-snug text-white/60">
-                          {d.rotulo}
-                        </span>
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
               </Reveal>
             </div>
           </div>
@@ -345,6 +320,11 @@ export default function QuemSomosPage() {
           </div>
         </section>
 
+        {/* ═══════════ AS QUATRO PORTAS ═══════════
+            Sobem para logo depois da ponte: o hub apresenta e distribui —
+            quem quer aprofundar entra numa página, não rola mais. */}
+        <HubCards />
+
         {/* ═══════════ COMUNIDADE ═══════════ */}
         <section aria-labelledby="comunidade-t" className="bg-surface">
           <div className={`${shell} py-20 lg:py-24`}>
@@ -388,62 +368,10 @@ export default function QuemSomosPage() {
           </div>
         </section>
 
-        {/* ═══════════ AS QUATRO PORTAS ═══════════ */}
-        <HubCards />
-
-        {/* ═══════════ ECOSSISTEMA (prévia) ═══════════
-            Só alguns nomes confirmados — o catálogo completo, com os
-            links de cada programa, vive em ./ecossistema */}
-        <section aria-labelledby="ecoprev-t" className="border-t border-line bg-surface">
-          <div className={`${shell} py-16 lg:py-20`}>
-            <p className={eyeLight}>Ecossistema</p>
-            <h2
-              id="ecoprev-t"
-              className="mt-4 max-w-2xl text-balance text-2xl font-semibold tracking-tight sm:text-3xl"
-            >
-              Muitas portas. Um mesmo objetivo.
-            </h2>
-            <ul className="mt-8 flex flex-wrap gap-2">
-              {ecossistemaPrevia.map((nome) => (
-                <li
-                  key={nome}
-                  className="rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink/80"
-                >
-                  {nome}
-                </li>
-              ))}
-              <li className="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-ink">
-                e mais
-              </li>
-            </ul>
-            <Link
-              href={rotas.ecossistema}
-              className="group mt-8 inline-flex items-center gap-2 py-2 text-sm font-bold uppercase tracking-[0.08em] text-brand-deep underline decoration-brand-deep/35 decoration-2 underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
-            >
-              Explore o ecossistema
-              <span
-                aria-hidden="true"
-                className="inline-block transition-transform duration-200 group-hover:translate-x-1"
-              >
-                →
-              </span>
-            </Link>
-          </div>
-        </section>
-
-        {/* ═══════════ MISSÃO ═══════════ */}
-        <section aria-labelledby="missao-t" className="bg-surface-alt">
-          <div className={`${shell} py-20 lg:py-24`}>
-            <Reveal>
-              <h2 id="missao-t" className={eyeLight}>
-                Missão
-              </h2>
-              <p className="mt-6 max-w-4xl text-balance text-2xl font-semibold leading-snug sm:text-4xl">
-                {missao}
-              </p>
-            </Reveal>
-          </div>
-        </section>
+        {/* A prévia do ecossistema e a seção Missão saíram do hub para a
+            rolagem ficar no essencial: o catálogo completo vive em
+            ./ecossistema (o card acima leva até lá) e a missão passou
+            para ./historia. Nada foi descartado. */}
 
         {/* ═══════════ CTA FINAL ═══════════ */}
         <section aria-labelledby="cta-t" className="bg-brand text-ink">

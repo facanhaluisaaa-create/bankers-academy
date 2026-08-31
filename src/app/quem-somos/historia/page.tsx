@@ -6,9 +6,9 @@ import Footer from "@/components/site/Footer";
 import Reveal from "@/components/ui/Reveal";
 import Timeline from "../_components/Timeline";
 import SubHero from "../_components/SubHero";
-import { btnOutline, btnSolid, shell } from "../_components/estilos";
+import { btnOutline, btnSolid, eyeLight, shell } from "../_components/estilos";
 
-import { historia, links, rotas } from "@/data/quem-somos";
+import { historia, links, missao, rotas } from "@/data/quem-somos";
 
 const description =
   "Do primeiro Investment Banking Boot Camp com 5 alunos em 2018 à escola com auditório próprio: os marcos da Bankers Academy.";
@@ -46,6 +46,21 @@ export default function HistoriaPage() {
         <section aria-label="Linha do tempo" className="bg-surface-alt">
           <div className={`${shell} py-20 lg:py-28`}>
             <Timeline marcos={historia} />
+          </div>
+        </section>
+
+        {/* ═══════════ MISSÃO ═══════════
+            Veio do hub: a história desemboca no que ela construiu. */}
+        <section aria-labelledby="missao-t" className="bg-surface">
+          <div className={`${shell} py-20 lg:py-24`}>
+            <Reveal>
+              <h2 id="missao-t" className={eyeLight}>
+                Missão
+              </h2>
+              <p className="mt-6 max-w-4xl text-balance text-2xl font-semibold leading-snug sm:text-4xl">
+                {missao}
+              </p>
+            </Reveal>
           </div>
         </section>
 
