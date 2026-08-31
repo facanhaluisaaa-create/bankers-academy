@@ -474,9 +474,9 @@ export const galeriaCultura: FotoCultura[] = [
     pendente: "A parede Excellence precedes success — foto a escolher",
   },
   {
-    id: "evento",
-    alt: "Evento da Bankers Academy",
-    pendente: "Evento, palestra ou aula no auditório",
+    id: "aula",
+    src: "/images/quem-somos/aula-securato.jpg",
+    alt: "JR Securato Jr dando aula para uma turma na Bankers Academy",
   },
   {
     id: "bastidores",

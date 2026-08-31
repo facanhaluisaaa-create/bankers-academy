@@ -36,7 +36,6 @@ Lado maior de 1600px já basta. Não precisa recortar nem tratar.
 
 
 4. EQUIPE & CULTURA — foto de grupo/bastidor, ninguém é nomeado
-   cultura-evento.jpg      evento, palestra ou aula no auditório
    cultura-bastidores.jpg  gravação, preparação de aula, dia a dia
    valores.jpg             a parede "Excellence precedes success"
 
@@ -53,6 +52,7 @@ Lado maior de 1600px já basta. Não precisa recortar nem tratar.
 
 
 JÁ RECEBIDAS E NO AR
+   aula-securato.jpg     Securato dando aula (galeria de cultura)
    equipe.jpg            time completo, faixa do hero
    securato-jr.jpg       retrato do fundador
    securato-recorte.png  fundador recortado, fundo transparente
