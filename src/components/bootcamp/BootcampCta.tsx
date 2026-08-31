@@ -32,20 +32,28 @@ export default function BootcampCta() {
             <p className="mt-6 text-pretty text-base leading-relaxed text-white/65 sm:text-lg">
               A participação no Investment Banking Boot Camp passa por uma
               entrevista online. Fale com a equipe da Bankers Academy para
-              agendar a sua e entender os próximos passos.
+              agendar a sua — ou vá direto para a inscrição na Tabula.
             </p>
 
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button href={ibbcLinks.apply}>Agendar entrevista</Button>
+              <Button href={ibbcLinks.apply}>Falar com a equipe</Button>
               <Button href={ibbcLinks.coursePage} variant="ghost">
-                Ver a página oficial do programa
+                Inscrição pela Tabula ↗
               </Button>
             </div>
 
             <p className="mt-8 text-sm text-white/55">
-              Ou fale direto no WhatsApp {BA_WHATSAPP_DISPLAY} · {ibbcFacts.weeks}{" "}
-              semanas · {ibbcFacts.stages} etapas · certificado de{" "}
-              {ibbcFacts.hours} horas
+              WhatsApp da equipe:{" "}
+              <a
+                href={ibbcLinks.apply}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-white/80 underline decoration-white/30 decoration-2 underline-offset-4 transition-colors hover:text-brand hover:decoration-brand"
+              >
+                {BA_WHATSAPP_DISPLAY}
+              </a>{" "}
+              · {ibbcFacts.weeks} semanas · {ibbcFacts.stages} etapas ·
+              certificado de {ibbcFacts.hours} horas
             </p>
           </div>
         </Reveal>

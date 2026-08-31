@@ -581,20 +581,40 @@ export default function BootcampPage() {
 
         <p className="mx-auto mt-6 max-w-xl text-lg text-white/60">
           A participação passa por uma entrevista online. Fale com a equipe da
-          Bankers Academy para agendar a sua e entender os próximos passos.
+          Bankers Academy para agendar a sua — ou vá direto para a inscrição
+          na Tabula.
         </p>
 
-        <a
-          href={ibbcLinks.apply}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-10 inline-flex rounded-full bg-brand-soft px-8 py-4 font-semibold text-ink transition hover:brightness-95"
-        >
-          Agendar entrevista
-        </a>
+        {/* Dois caminhos, lado a lado: conversa com a equipe e inscrição */}
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href={ibbcLinks.apply}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex rounded-full bg-brand-soft px-8 py-4 font-semibold text-ink transition hover:brightness-95"
+          >
+            Falar com a equipe
+          </a>
+          <a
+            href={ibbcLinks.coursePage}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex rounded-full border border-white/25 px-8 py-4 font-semibold text-white transition hover:border-brand hover:text-brand"
+          >
+            Inscrição pela Tabula ↗
+          </a>
+        </div>
 
         <p className="mt-8 text-sm text-white/50">
-          Ou fale direto no WhatsApp {BA_WHATSAPP_DISPLAY}
+          WhatsApp da equipe:{" "}
+          <a
+            href={ibbcLinks.apply}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-white/80 underline decoration-white/30 decoration-2 underline-offset-4 transition-colors hover:text-brand hover:decoration-brand"
+          >
+            {BA_WHATSAPP_DISPLAY}
+          </a>
         </p>
         </div>
       </section>
