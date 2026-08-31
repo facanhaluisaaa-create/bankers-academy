@@ -76,13 +76,16 @@ export const bootcampMedia = {
       ratioLabel: "4:3",
       position: "50% 45%",
     },
-    desenvolvimento: slot({
+    desenvolvimento: {
       slot: "FOTO 03B",
-      alt: "Desenvolvimento do trabalho no IBBC",
+      /* Sala durante uma atividade do boot camp — participantes
+         trabalhando em notebooks (foto enviada pelo cliente, 31/08). */
+      src: "/images/bootcamp/aula-trabalho.jpg",
+      alt: "Participantes trabalham em notebooks durante uma atividade do IBBC",
       pendente: "Desenvolvimento — análise e modelagem em andamento",
       ratio: "aspect-[4/3]",
       ratioLabel: "4:3",
-    }),
+    },
     apresentacao: {
       slot: "FOTO 03C",
       src: "/images/bootcamp/aula-apresentacao.jpg",
@@ -94,16 +97,45 @@ export const bootcampMedia = {
     },
   },
 
-  /** [IMAGEM 04] O que você constrói — pitchbook.jpg (pode ser capa do
-      Pitchbook, página de apresentação ou notebook com o material real;
-      mockup falso não entra). */
-  pitchbook: slot({
+  /** [IMAGEM 04] O que você constrói / resultado — hoje a foto dos
+      GANHADORES DA 8ª EDIÇÃO com o troféu (conquista, único dado
+      confirmado pelo cliente; sem nomes, sem data). A proporção do slot
+      virou 1:1 porque a foto é quase quadrada e um corte 4:5 tiraria as
+      duas pessoas das pontas. Se um dia chegar foto do Pitchbook/material
+      real, ela pode dividir ou assumir este lugar. */
+  resultado: {
     slot: "IMAGEM 04",
-    alt: "Material final construído no IBBC",
-    pendente: "Pitchbook, notebook ou material final real do programa",
-    ratio: "aspect-[4/5]",
-    ratioLabel: "4:5 vertical (ou 4:3)",
-  }),
+    src: "/images/bootcamp/vencedores-edicao8.jpg",
+    alt: "Ganhadores da 8ª edição do Investment Banking Boot Camp com o troféu",
+    pendente: "Resultado — conquista ou material final real do programa",
+    ratio: "aspect-square",
+    ratioLabel: "1:1",
+  } as MediaSlot,
+
+  /** Legenda confirmada da foto do resultado — nada além disso. */
+  resultadoLegenda: "Ganhadores da 8ª edição do Investment Banking Boot Camp.",
+
+  /** Turma do boot camp (sem número de edição confirmado) — substitui os
+      três cards reservados da prévia de alumni enquanto a Bankers
+      Academy não escolhe pessoas para o alumniDestaque acima. Proporção
+      natural: nenhum rosto cortado. */
+  alumniTurma: {
+    src: "/images/bootcamp/turma-bootcamp.jpg",
+    alt: "Turma do Investment Banking Boot Camp reunida",
+    width: 1114,
+    height: 804,
+  },
+
+  /** Palestra durante o boot camp (panorâmica, sem edição confirmada) —
+      teaser da seção "Desde 2018" no lugar da collage 08A–C, que volta
+      quando houver fotos identificadas por edição. Proporção natural. */
+  edicoesTeaser: {
+    src: "/images/bootcamp/palestra.jpg",
+    alt: "Palestra durante o Investment Banking Boot Camp, com os participantes em sala",
+    legenda: "Palestra durante o boot camp.",
+    width: 999,
+    height: 447,
+  },
 
   /* [IMAGEM 05] Certificado — SEM slot de foto: a prévia usa o próprio
      componente <Certificate>, que reproduz o diploma real em HTML. A
@@ -146,7 +178,9 @@ export const bootcampMedia = {
 
   /** [FOTO 08A–C] Collage "Desde 2018" — edicao-antiga.jpg /
       edicao-meio.jpg / edicao-recente.jpg. Devem ler como evolução
-      histórica: da edição mais antiga para a mais recente. */
+      histórica: da edição mais antiga para a mais recente. Enquanto
+      estes três seguem vazios, a landing mostra o edicoesTeaser acima;
+      preenchendo qualquer um deles, a collage volta no lugar. */
   edicoes: {
     antiga: slot({
       slot: "FOTO 08A",

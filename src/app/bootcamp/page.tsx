@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import Header from "@/components/site/Header";
@@ -310,14 +311,18 @@ export default function BootcampPage() {
         <section aria-labelledby="constroi-t" className="bg-surface-alt py-20 lg:py-24">
           <div className={shell}>
             <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-              {/* [IMAGEM 04] Pitchbook / notebook / material real — nada de
-                  mockup inventado */}
+              {/* [IMAGEM 04] Conquista real: os ganhadores da 8ª edição com
+                  o troféu — a legenda diz só o que está confirmado */}
               <div className="lg:col-span-5">
-                <Foto
-                  slot={bootcampMedia.pitchbook}
-                  sizes="(max-width: 1024px) 80vw, 34vw"
-                  className="mx-auto max-w-sm lg:max-w-none"
-                />
+                <figure className="mx-auto max-w-sm lg:max-w-none">
+                  <Foto
+                    slot={bootcampMedia.resultado}
+                    sizes="(max-width: 1024px) 80vw, 34vw"
+                  />
+                  <figcaption className="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-ink/60">
+                    {bootcampMedia.resultadoLegenda}
+                  </figcaption>
+                </figure>
               </div>
 
               <div className="lg:col-span-7">
@@ -555,12 +560,11 @@ export default function BootcampPage() {
 
             {/* [FOTO ALUMNI 01–03] No máximo três em destaque. Quem entra
                 aqui é decisão da Bankers Academy: preencher alumniDestaque
-                em _data/media.ts com o id do alumni + foto confirmada.
-                Enquanto vazio, três espaços reservados neutros — nenhum
-                nome é escolhido por conta própria, nada fictício. */}
+                em _data/media.ts com o id do alumni + foto confirmada —
+                nenhum nome é escolhido por conta própria, nada fictício. */}
+            {bootcampMedia.alumniDestaque.length > 0 ? (
             <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {bootcampMedia.alumniDestaque.length > 0
-                ? bootcampMedia.alumniDestaque.slice(0, 3).map((d) => {
+              {bootcampMedia.alumniDestaque.slice(0, 3).map((d) => {
                     const pessoa = ibbcAlumni.find((a) => a.id === d.alumniId);
                     if (!pessoa) return null;
                     return (
@@ -599,31 +603,24 @@ export default function BootcampPage() {
                         </article>
                       </li>
                     );
-                  })
-                : [1, 2, 3].map((n) => (
-                    <li key={n}>
-                      <article className="h-full overflow-hidden rounded-3xl border border-line bg-white">
-                        <Foto
-                          slot={{
-                            slot: `FOTO ALUMNI 0${n}`,
-                            src: null,
-                            alt: "",
-                            pendente: "Alumni em destaque — pessoa a definir pela Bankers Academy",
-                            ratio: "aspect-square",
-                            ratioLabel: "1:1",
-                          }}
-                          sizes="(max-width: 640px) 92vw, 30vw"
-                          rounded="rounded-none"
-                        />
-                        <div className="p-6">
-                          <p className="text-sm leading-6 text-ink/60">
-                            foto · nome · edição · destaque comprovado
-                          </p>
-                        </div>
-                      </article>
-                    </li>
-                  ))}
+                  })}
             </ul>
+            ) : null}
+
+            {/* Enquanto o alumniDestaque não é preenchido, quem ocupa o
+                espaço é a turma de verdade — proporção natural da foto,
+                nenhum rosto cortado, sem identificar ninguém. Quando a
+                Bankers Academy escolher os destaques, os cards voltam. */}
+            {bootcampMedia.alumniDestaque.length === 0 ? (
+              <Image
+                src={bootcampMedia.alumniTurma.src}
+                alt={bootcampMedia.alumniTurma.alt}
+                width={bootcampMedia.alumniTurma.width}
+                height={bootcampMedia.alumniTurma.height}
+                sizes="(max-width: 1024px) 92vw, 1216px"
+                className="mt-10 h-auto w-full rounded-3xl"
+              />
+            ) : null}
 
             <Link href="/bootcamp/alumni" className={`${ctaSetaLight} mt-9`}>
               Conheça nossos alumni
@@ -647,24 +644,49 @@ export default function BootcampPage() {
                 : ""}
             </p>
 
-            {/* [FOTO 08A–C] Da edição mais antiga para a mais recente —
-                a collage deve ler como evolução histórica */}
-            <ul className="mt-10 grid gap-4 sm:grid-cols-3">
-              {[
+            {/* [FOTO 08A–C] Da edição mais antiga para a mais recente — a
+                collage volta quando houver fotos identificadas por edição.
+                Até lá, o teaser: a palestra panorâmica em proporção
+                natural, sem cortar ninguém. */}
+            {(() => {
+              const collage = [
                 { rotulo: `Primeiras turmas`, foto: bootcampMedia.edicoes.antiga },
                 { rotulo: "O programa crescendo", foto: bootcampMedia.edicoes.meio },
                 { rotulo: "Edição recente", foto: bootcampMedia.edicoes.recente },
-              ].map((e) => (
-                <li key={e.foto.slot}>
-                  <figure>
-                    <Foto slot={e.foto} sizes="(max-width: 640px) 92vw, 31vw" rounded="rounded-2xl" />
+              ].filter((e) => e.foto.src);
+              if (collage.length === 0) {
+                const teaser = bootcampMedia.edicoesTeaser;
+                return (
+                  <figure className="mt-10">
+                    <Image
+                      src={teaser.src}
+                      alt={teaser.alt}
+                      width={teaser.width}
+                      height={teaser.height}
+                      sizes="(max-width: 1024px) 92vw, 1216px"
+                      className="h-auto w-full rounded-3xl"
+                    />
                     <figcaption className="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-ink/60">
-                      {e.rotulo}
+                      {teaser.legenda}
                     </figcaption>
                   </figure>
-                </li>
-              ))}
-            </ul>
+                );
+              }
+              return (
+                <ul className={`mt-10 grid gap-4 ${collage.length > 1 ? "sm:grid-cols-3" : ""}`}>
+                  {collage.map((e) => (
+                    <li key={e.foto.slot}>
+                      <figure>
+                        <Foto slot={e.foto} sizes="(max-width: 640px) 92vw, 31vw" rounded="rounded-2xl" />
+                        <figcaption className="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-ink/60">
+                          {e.rotulo}
+                        </figcaption>
+                      </figure>
+                    </li>
+                  ))}
+                </ul>
+              );
+            })()}
 
             <Link href="/bootcamp/edicoes" className={`${ctaSetaLight} mt-9`}>
               Ver edições anteriores
