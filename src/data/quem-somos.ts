@@ -225,7 +225,12 @@ export const securatoFotoRecorte = {
 export const lideranca: Lider[] = [
   { id: "andrea", nome: "Andrea Securato", cargo: "Co-founder" },
   { id: "arnaldo", nome: "Arnaldo Mello", cargo: "Partner — Tabula" },
-  { id: "jaqueline", nome: "Jaqueline Sanches", cargo: "Partner" },
+  {
+    id: "jaqueline",
+    nome: "Jaqueline Sanches",
+    cargo: "Partner",
+    foto: "/images/quem-somos/lideranca-jaqueline-sanches.jpg",
+  },
 ];
 
 /* ────────────── 5. PROFESSORES & ESPECIALISTAS ────────────── */

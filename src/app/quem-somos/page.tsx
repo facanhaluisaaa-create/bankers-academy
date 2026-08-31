@@ -284,13 +284,13 @@ export default function QuemSomosPage() {
                           alt={`Retrato de ${l.nome}`}
                           width={200}
                           height={200}
-                          sizes="72px"
-                          className="h-16 w-16 shrink-0 rounded-full object-cover"
+                          sizes="80px"
+                          className="h-20 w-20 shrink-0 rounded-full object-cover"
                         />
                       ) : (
                         <span
                           aria-hidden="true"
-                          className="h-16 w-16 shrink-0 rounded-full border border-dashed border-white/25 bg-white/[0.03]"
+                          className="h-20 w-20 shrink-0 rounded-full border border-dashed border-white/25 bg-white/[0.03]"
                         />
                       )}
                       <div className="min-w-0">
