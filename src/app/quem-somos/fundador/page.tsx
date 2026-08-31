@@ -59,7 +59,7 @@ export default function FundadorPage() {
         <SubHero
           eyebrow="Fundador"
           titulo={fundadorTitulo}
-          texto={`${securatoNome} — ${securatoCargo}.`}
+          texto={`${securatoNome}, ${securatoCargo}.`}
         />
 
         {/* ═══════════ APRESENTAÇÃO ═══════════ */}
@@ -206,7 +206,7 @@ export default function FundadorPage() {
         </section>
 
         {/* ═══════════ TRANSAÇÕES E FORMAÇÃO ═══════════
-            Direto do perfil publicado por ele — a autoridade em números
+            Direto do perfil publicado por ele: a autoridade em números
             e nomes que o mercado reconhece. */}
         <section aria-labelledby="transacoes-t" className="on-dark bg-ink text-white">
           <div className={`${shell} py-20 lg:py-24`}>
@@ -236,7 +236,7 @@ export default function FundadorPage() {
                     <li key={f.id} className="flex flex-wrap items-baseline gap-x-3 py-4">
                       <span className="font-semibold tracking-tight">{f.curso}</span>
                       <span className="text-sm text-white/60">
-                        {f.escola} · {f.periodo}
+                        {f.escola}, {f.periodo}
                       </span>
                     </li>
                   ))}

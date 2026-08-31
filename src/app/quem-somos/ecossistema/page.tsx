@@ -44,7 +44,7 @@ export default function EcossistemaPage() {
         <SubHero
           eyebrow="Ecossistema"
           titulo="Muitas portas. Um mesmo objetivo."
-          texto="Entrar no mercado mais preparado — escolha por onde começar."
+          texto="Entrar no mercado mais preparado. Escolha por onde começar."
         />
 
         <section aria-label="Iniciativas" className="bg-surface-alt">
@@ -111,7 +111,7 @@ export default function EcossistemaPage() {
                     Outras iniciativas
                   </h2>
                   <p className="mt-4 text-pretty leading-7 text-ink/75">
-                    {outrasIniciativas.join(" · ")}
+                    {outrasIniciativas.join(", ")}
                   </p>
                 </div>
                 <div>
@@ -119,7 +119,7 @@ export default function EcossistemaPage() {
                     Parceiros
                   </h2>
                   <p className="mt-4 text-pretty leading-7 text-ink/75">
-                    {parceiros.join(" · ")}
+                    {parceiros.join(", ")}
                   </p>
                 </div>
               </div>

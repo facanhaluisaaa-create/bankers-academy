@@ -23,7 +23,7 @@ import {
 } from "@/data/quem-somos";
 
 const description =
-  "José Roberto Securato Junior, os sócios e o time por trás da Bankers Academy — quem executou transações antes de ensinar sobre elas.";
+  "José Roberto Securato Junior, os sócios e o time por trás da Bankers Academy: quem executou transações antes de ensinar sobre elas.";
 
 export const metadata: Metadata = {
   title: "Liderança | Bankers Academy",
@@ -220,7 +220,7 @@ export default function LiderancaPage() {
                   Time de execução
                 </h3>
                 <p className="mt-4 text-pretty leading-7 text-ink/75">
-                  {equipeExecucao.join(" · ")}
+                  {equipeExecucao.join(", ")}
                 </p>
               </Reveal>
 

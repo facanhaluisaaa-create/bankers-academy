@@ -133,8 +133,9 @@ export default function QuemSomosPage() {
                   {securatoNome}
                 </span>
                 <span className="mt-1 block text-sm leading-snug text-white/60">
-                  PhD em Finanças · +20 anos de mercado · Deutsche Bank e BNP
-                  Paribas · SP Advisors e SP Capital Partners
+                  PhD em Finanças, com mais de 20 anos de mercado entre
+                  Deutsche Bank e BNP Paribas, sócio-fundador da SP Advisors e
+                  da SP Capital Partners
                 </span>
               </span>
               <span className="inline-flex shrink-0 items-center gap-2 text-sm font-bold uppercase tracking-[0.08em] text-brand">

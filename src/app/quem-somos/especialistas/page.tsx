@@ -20,7 +20,7 @@ import {
 } from "@/data/quem-somos";
 
 const description =
-  "Professores, mentores e especialistas da Bankers Academy — e o método: modelar, avaliar, apresentar e defender uma recomendação.";
+  "Professores, mentores e especialistas da Bankers Academy, e o método: modelar, avaliar, apresentar e defender uma recomendação.";
 
 export const metadata: Metadata = {
   title: "Professores & Especialistas | Bankers Academy",
@@ -36,12 +36,11 @@ export const metadata: Metadata = {
 };
 
 /**
- * Quem ensina e como ensina — as seções "Professores & Especialistas" e
- * "Como ensinamos" do /quem-somos antigo, agora em página própria.
- *
- * O grid de professores continua deliberadamente vazio: nomes,
- * especialidades e credenciais só entram validados pela Bankers Academy.
- * Nada de inventar pessoa, cargo ou vínculo.
+ * Quem ensina e como ensina — fundador em destaque, o Securato Master em
+ * bloco editorial próprio e o grid "Quem ensina com a gente". Nomes,
+ * áreas e retratos vêm de fontes oficiais documentadas em
+ * src/data/quem-somos.ts; sem foto confirmada, o card mostra o espaço
+ * reservado. Nada de inventar pessoa, cargo ou vínculo.
  */
 export default function EspecialistasPage() {
   return (
@@ -52,7 +51,7 @@ export default function EspecialistasPage() {
         <SubHero
           eyebrow="Professores &amp; especialistas"
           titulo="Quem ensina, executa."
-          texto="Professores e mentores que vêm da mesa de trabalho — e um método construído para o aluno fazer, não só assistir."
+          texto="Professores e mentores que vêm da mesa de trabalho, e um método construído para o aluno fazer, não só assistir."
         />
 
         {/* ═══════════ BLOCO 1 — O FUNDADOR ═══════════
@@ -86,7 +85,7 @@ export default function EspecialistasPage() {
                 </p>
                 <p className="mt-5 max-w-xl leading-8 text-ink/70">
                   Idealizador e condutor do Investment Banking Boot Camp e dos
-                  programas da escola — quem ensina aqui, executa.
+                  programas da escola. Quem ensina aqui, executa.
                 </p>
                 <Link
                   href={rotas.fundador}
@@ -214,7 +213,7 @@ export default function EspecialistasPage() {
                       ) : (
                         /* Nada de nome inventado: o card mostra os campos. */
                         <p className="text-sm leading-6 text-ink/65">
-                          Nome · especialidade · credencial
+                          Nome, especialidade e credencial
                         </p>
                       )}
                     </div>

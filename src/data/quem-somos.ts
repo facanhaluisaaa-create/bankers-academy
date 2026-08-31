@@ -133,7 +133,7 @@ export const hubCards: CardHub[] = [
     id: "lideranca",
     titulo: "Liderança",
     descricao:
-      "O fundador, os sócios e o time que faz a escola acontecer — gente que executou transações antes de ensinar sobre elas.",
+      "O fundador, os sócios e o time que faz a escola acontecer: gente que executou transações antes de ensinar sobre elas.",
     cta: "Conheça quem está por trás",
     href: rotas.lideranca,
     imagem: "/images/quem-somos/time-grupo.jpg",
@@ -396,11 +396,11 @@ export const securatoFotoAula = {
 /** Destaques visuais do fundador — todos confirmados no material. */
 export const securatoDestaques: Credencial[] = [
   { id: "anos", valor: "+20 anos", rotulo: "Mercado financeiro" },
-  { id: "ib", valor: "Investment Banking", rotulo: "Deutsche Bank · BNP Paribas" },
+  { id: "ib", valor: "Investment Banking", rotulo: "Deutsche Bank e BNP Paribas" },
   { id: "pracas", valor: "São Paulo + Nova Iorque", rotulo: "Transações complexas, inclusive cross-border" },
   { id: "phd", valor: "PhD", rotulo: "em Finanças" },
   { id: "empresas", valor: "SP Advisors + SP Capital Partners", rotulo: "Fundador" },
-  { id: "educacao", valor: "Educação", rotulo: "FIA · Saint Paul · Bankers Academy" },
+  { id: "educacao", valor: "Educação", rotulo: "FIA, Saint Paul e Bankers Academy" },
 ];
 
 /**
@@ -421,7 +421,7 @@ export const securatoTrajetoria = [
   {
     id: "db1",
     periodo: "2000–2003",
-    titulo: "Deutsche Bank — São Paulo e Nova Iorque",
+    titulo: "Deutsche Bank, de São Paulo a Nova Iorque",
     texto:
       "De analyst a associate, executando M&A, mercado de capitais e structured finance.",
   },
@@ -430,12 +430,12 @@ export const securatoTrajetoria = [
     periodo: "2003–2005",
     titulo: "BNP Paribas",
     texto:
-      "Investment Banking Associate no grupo de Corporate Finance para a América Latina — mídia, energia, instituições financeiras e consumo.",
+      "Investment Banking Associate no grupo de Corporate Finance para a América Latina, cobrindo mídia, energia, instituições financeiras e consumo.",
   },
   {
     id: "db2",
     periodo: "2005–2012",
-    titulo: "Deutsche Bank — Vice President (NY) e Director (SP)",
+    titulo: "Deutsche Bank: Vice President em NY, Director em SP",
     texto:
       "Sete anos e meio entre Nova Iorque e São Paulo, cobrindo Power & Utilities e Pharma e executando transações complexas, inclusive cross-border.",
   },
@@ -444,7 +444,7 @@ export const securatoTrajetoria = [
     periodo: "Desde 2009",
     titulo: "Saint Paul Escola de Negócios",
     texto:
-      "Professor convidado de M&A, mercado de capitais, private equity e valuation — e head do SP Institute of Finance. O mapa de conteúdo também registra docência na FIA.",
+      "Professor convidado de M&A, mercado de capitais, private equity e valuation, além de head do SP Institute of Finance. O mapa de conteúdo também registra docência na FIA.",
   },
   {
     id: "spa",
@@ -458,7 +458,7 @@ export const securatoTrajetoria = [
     periodo: "2018",
     titulo: "Investment Banking Boot Camp",
     texto:
-      "Cria o boot camp — a primeira edição, com cinco participantes, voltada à formação interna da SP Advisors. No mesmo período, inicia o PhD em Finanças na USP (2018–2021).",
+      "Cria o boot camp. A primeira edição, com cinco participantes, nasce para a formação interna da SP Advisors. No mesmo período, inicia o PhD em Finanças na USP (2018 a 2021).",
   },
   {
     id: "digio",
@@ -482,7 +482,7 @@ export const securatoTrajetoria = [
     periodo: "2024",
     titulo: "“De cabeça no Mercado Financeiro”",
     texto:
-      "Publica o livro — 6 passos para se tornar um banker — e vende participação minoritária da Saint Paul Escola de Negócios para Exame|BTG.",
+      "Publica o livro 6 passos para se tornar um banker e vende participação minoritária da Saint Paul Escola de Negócios para Exame|BTG.",
   },
   {
     id: "podcast",
@@ -528,8 +528,8 @@ export const securatoIniciativas = [
  * perfil registra 2015 e 2022–2025).
  */
 export const securatoConselhos = [
-  { id: "brasilata", empresa: "Brasilata", desde: "desde 2015", desc: "conselho de administração — embalagens de aço" },
-  { id: "superrico", empresa: "SuperRico", desde: "2022–2025", desc: "conselho de administração — planejamento financeiro" },
+  { id: "brasilata", empresa: "Brasilata", desde: "desde 2015", desc: "conselho de administração, embalagens de aço" },
+  { id: "superrico", empresa: "SuperRico", desde: "2022–2025", desc: "conselho de administração, planejamento financeiro" },
   { id: "cogna", empresa: "Cogna Educação", desde: "2021–2022", desc: "conselho fiscal" },
   { id: "kroton", empresa: "Kroton", desde: "2017–2020", desc: "conselho fiscal" },
   { id: "anbima", empresa: "ANBIMA", desde: "2009–2012", desc: "comitê de Corporate Finance, pelo Deutsche Bank" },
@@ -563,7 +563,7 @@ export const ponte2018 = {
   ano: "2018",
   titulo: "Da experiência nasceu o Bootcamp.",
   texto:
-    "O primeiro Investment Banking Boot Camp começou com cinco participantes, voltado à formação interna da SP Advisors — e virou uma das bases da escola.",
+    "O primeiro Investment Banking Boot Camp começou com cinco participantes, voltado à formação interna da SP Advisors, e virou uma das bases da escola.",
   cta: "Conheça o Investment Banking Boot Camp",
   href: links.bootcamp,
 } as const;
@@ -596,7 +596,7 @@ export const lideranca: Lider[] = [
   {
     id: "arnaldo",
     nome: "Arnaldo Mello",
-    cargo: "Partner — Tabula",
+    cargo: "Partner da Tabula",
     foto: "/images/quem-somos/lideranca-arnaldo-mello.jpg",
   },
   {
@@ -649,35 +649,35 @@ export const professores: Professor[] = [
   {
     id: "marcos-piellusch",
     nome: "Marcos Piellusch",
-    especialidade: "Fundamentos · Matemática Financeira e Contabilidade",
+    especialidade: "Ensina os fundamentos de matemática financeira e contabilidade",
     foto: "/images/quem-somos/especialistas/marcos-piellusch.jpg",
     linkedin: "https://www.linkedin.com/in/marcospiellusch/",
   },
   {
     id: "walter-eclache",
     nome: "Walter Eclache",
-    especialidade: "Matemática Financeira",
+    especialidade: "Professor de matemática financeira",
     foto: "/images/quem-somos/especialistas/walter-eclache.jpg",
     linkedin: "https://www.linkedin.com/in/professor-waltereclache/",
   },
   {
     id: "alexandre-paixao",
     nome: "Alexandre Paixão",
-    especialidade: "Crédito · Tesouraria · Sales & Trading",
+    especialidade: "Crédito, tesouraria e sales & trading",
     foto: "/images/quem-somos/especialistas/alexandre-paixao.jpg",
     linkedin: "https://www.linkedin.com/in/alexandre-paixao/",
   },
   {
     id: "fernando-fegyveres",
     nome: "Fernando Fegyveres",
-    especialidade: "Cases de Crédito",
-    credencial: "Ex-CEO do Banco Voiter",
+    especialidade: "Cases de crédito",
+    credencial: "Foi CEO do Banco Voiter",
     foto: "/images/quem-somos/especialistas/fernando-fegyveres.jpg",
   },
   {
     id: "agostinho-cavalcanti",
     nome: "Agostinho Cavalcanti",
-    especialidade: "Cases de Crédito",
+    especialidade: "Cases de crédito",
   },
   {
     id: "tatiana-tafarello",
@@ -704,7 +704,7 @@ export const securatoMaster = {
   nome: "Prof. Dr. José Roberto Securato",
   credencial: "Doutor em Administração (Finanças) pela FEA/USP",
   texto:
-    "Referência acadêmica do ecossistema educacional da Bankers Academy. Nos programas, assina os módulos de Fundamentos — Matemática Financeira e Contabilidade — e de Mercado Financeiro do Entrada em Investment Banking.",
+    "Referência acadêmica do ecossistema educacional da Bankers Academy. No Entrada em Investment Banking, assina os módulos de fundamentos, com matemática financeira e contabilidade, e o módulo de mercado financeiro.",
   foto: "/images/quem-somos/especialistas/jose-roberto-securato.jpg" as
     | string
     | null,
@@ -789,7 +789,7 @@ export const iniciativas: Iniciativa[] = [
 /** Iniciativas citadas no mapa de conteúdo, ainda sem página própria. */
 export const outrasIniciativas = [
   "Tabula",
-  "CDI — Clube de Investimento",
+  "CDI (Clube de Investimento)",
   "Tino Econômico",
   "Bankers Academy Fênix",
   "Liga das Ligas de Finanças",
@@ -844,7 +844,7 @@ export const galeriaCultura: FotoCultura[] = [
        o `pendente`. */
     id: "valores",
     alt: "Parede do escritório com a frase Excellence precedes success",
-    pendente: "A parede Excellence precedes success — foto a escolher",
+    pendente: "A parede Excellence precedes success, foto a escolher",
   },
   {
     /* A aula-securato.jpg subiu para a seção do fundador (securatoFotoAula);
@@ -857,7 +857,7 @@ export const galeriaCultura: FotoCultura[] = [
   {
     id: "bastidores",
     alt: "Bastidores da Bankers Academy",
-    pendente: "Bastidores — gravação, preparação de aula, dia a dia",
+    pendente: "Bastidores: gravação, preparação de aula, dia a dia",
   },
 ];
 

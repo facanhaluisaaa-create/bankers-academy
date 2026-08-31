@@ -40,7 +40,7 @@ export default function HistoriaPage() {
         <SubHero
           eyebrow="Trajetória"
           titulo="Nossa história"
-          texto="Quase três décadas conectando educação, mercado e propósito — de uma turma de cinco alunos a uma escola inteira."
+          texto="Quase três décadas conectando educação, mercado e propósito: de uma turma de cinco alunos a uma escola inteira."
         />
 
         <section aria-label="Linha do tempo" className="bg-surface-alt">
