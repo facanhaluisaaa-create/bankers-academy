@@ -27,8 +27,9 @@ const btnBase =
 
 export const btnSolid = `${btnBase} bg-ink text-white hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-10px_rgba(0,0,0,0.6)]`;
 export const btnOutline = `${btnBase} border border-ink/30 text-ink hover:-translate-y-0.5 hover:border-ink hover:bg-ink hover:text-white hover:shadow-[0_12px_28px_-10px_rgba(0,0,0,0.4)]`;
-/** Variante para seções de fundo escuro. */
+/** Variantes para seções de fundo escuro. */
 export const btnSolidDark = `${btnBase} bg-brand text-ink hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-10px_rgba(196,239,124,0.45)]`;
+export const btnOutlineDark = `${btnBase} border border-white/30 text-white hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-ink hover:shadow-[0_12px_28px_-10px_rgba(0,0,0,0.5)]`;
 
 /**
  * Linha inteira clicável (lista do ecossistema).

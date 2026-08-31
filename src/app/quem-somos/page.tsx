@@ -9,7 +9,9 @@ import BrandMark from "@/components/ui/BrandMark";
 import HubCards from "./_components/HubCards";
 import {
   btnOutline,
+  btnOutlineDark,
   btnSolid,
+  btnSolidDark,
   eyeBrand,
   eyeDark,
   eyeLight,
@@ -68,43 +70,62 @@ export default function QuemSomosPage() {
       <Header />
 
       <main className="bg-surface text-ink">
-        {/* ═══════════ HERO ═══════════ */}
-        <section className="bg-brand text-ink">
-          <div className={`${shell} pb-16 pt-20 lg:pb-20 lg:pt-28`}>
-            <p className={eyeBrand}>Quem somos</p>
+        {/* ═══════════ HERO — editorial escuro, verde como acento ═══════════
+            O bloco verde chapado saiu a pedido do cliente (31/08): fundo
+            ink, a logo oficial branca como assinatura acima do texto, e o
+            verde restrito ao eyebrow, à segunda linha do título e ao
+            botão principal. A logo enviada pelo cliente está em
+            public/brand/logo-bankers-academy-branca.png, sem retoque. */}
+        <section className="on-dark bg-ink text-white">
+          <div className={`${shell} pb-16 pt-14 lg:pb-20 lg:pt-20`}>
+            {/* Assinatura de marca: proporção original, com respiro */}
+            <Image
+              src="/brand/logo-bankers-academy-branca.png"
+              alt="Bankers Academy"
+              width={1805}
+              height={226}
+              priority
+              className="h-6 w-auto sm:h-8"
+            />
+
+            <p className={`mt-14 ${eyeDark} lg:mt-16`}>Quem somos</p>
             <h1 className="mt-6 max-w-4xl text-balance text-[2.6rem] font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
-              {heroTitulo.map((linha) => (
-                <span key={linha} className="block">
-                  {linha}
-                </span>
-              ))}
+              <span className="block">{heroTitulo[0]}</span>
+              <span className="block text-brand">{heroTitulo[1]}</span>
             </h1>
-            <p className="mt-8 max-w-xl text-pretty text-lg leading-8 text-ink/80 sm:text-xl">
+            <p className="mt-8 max-w-xl text-pretty text-lg leading-8 text-white/70 sm:text-xl">
               {heroTexto}
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               {/* Rota real, mesma aba — antes era href="#conheca-t" */}
-              <Link href={rotas.historia} className={btnSolid}>
+              <Link href={rotas.historia} className={btnSolidDark}>
                 Conheça a escola
               </Link>
-              <Link href={rotas.lideranca} className={btnOutline}>
+              <Link href={rotas.lideranca} className={btnOutlineDark}>
                 Quem está por trás
               </Link>
             </div>
           </div>
 
           {/* Fotografia institucional de ponta a ponta — o cliente indicou
-              o arquivo 0156.jpg para cá; até chegar, fica a equipe.jpg */}
+              o arquivo 0156.jpg para cá; até chegar, fica a equipe.jpg.
+              O véu desce do ink para a foto, como no hero do Boot Camp. */}
           {qsMedia.hero.src ? (
-            <Image
-              src={qsMedia.hero.src}
-              alt={qsMedia.hero.alt}
-              width={2000}
-              height={1333}
-              priority
-              sizes="100vw"
-              className="h-[52vw] max-h-[640px] min-h-[240px] w-full object-cover"
-            />
+            <div className="relative">
+              <Image
+                src={qsMedia.hero.src}
+                alt={qsMedia.hero.alt}
+                width={2000}
+                height={1333}
+                priority
+                sizes="100vw"
+                className="h-[52vw] max-h-[640px] min-h-[240px] w-full object-cover"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-ink to-transparent"
+              />
+            </div>
           ) : null}
         </section>
 
