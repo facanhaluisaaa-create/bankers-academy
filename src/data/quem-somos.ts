@@ -401,68 +401,135 @@ export const securatoDestaques: Credencial[] = [
 ];
 
 /**
- * Trajetória detalhada do fundador — cada linha vem da seção "Sobre o
- * fundador" do mapa de conteúdo. Onde o material não dá ano, a linha
- * não inventa um.
+ * Trajetória detalhada do fundador.
+ *
+ * Fonte: o PDF do perfil do LinkedIn dele, enviado pelo cliente — datas
+ * e cargos como ele mesmo publica. Onde o perfil e o mapa de conteúdo
+ * divergem, vale o perfil (é dele) e o conflito está anotado.
  */
 export const securatoTrajetoria = [
   {
-    id: "professor",
-    periodo: "Desde os anos 2000",
-    titulo: "Professor na FIA e na Saint Paul",
-    texto: "Ensino de finanças em paralelo à carreira no mercado.",
+    id: "inicio",
+    periodo: "1998–2000",
+    titulo: "Início em M&A",
+    texto:
+      "Associate em boutique de M&A, responsável por análises independentes de valuation para os grupos Itaú e Rede.",
   },
   {
-    id: "db",
-    periodo: "Mercado",
+    id: "db1",
+    periodo: "2000–2003",
     titulo: "Deutsche Bank — São Paulo e Nova Iorque",
-    texto: "Atuação em Investment Banking nas duas praças.",
+    texto:
+      "De analyst a associate, executando M&A, mercado de capitais e structured finance.",
   },
   {
     id: "bnp",
-    periodo: "Mercado",
+    periodo: "2003–2005",
     titulo: "BNP Paribas",
-    texto: "Investment Banker, com transações complexas em diversos setores e países — inclusive cross-border.",
+    texto:
+      "Investment Banking Associate no grupo de Corporate Finance para a América Latina — mídia, energia, instituições financeiras e consumo.",
+  },
+  {
+    id: "db2",
+    periodo: "2005–2012",
+    titulo: "Deutsche Bank — Vice President (NY) e Director (SP)",
+    texto:
+      "Sete anos e meio entre Nova Iorque e São Paulo, cobrindo Power & Utilities e Pharma e executando transações complexas, inclusive cross-border.",
+  },
+  {
+    id: "saintpaul",
+    periodo: "Desde 2009",
+    titulo: "Saint Paul Escola de Negócios",
+    texto:
+      "Professor convidado de M&A, mercado de capitais, private equity e valuation — e head do SP Institute of Finance. O mapa de conteúdo também registra docência na FIA.",
   },
   {
     id: "spa",
     periodo: "2013",
     titulo: "SP Advisors e SP Capital Partners",
-    texto: "Funda a assessoria de M&A e a gestora de capital de risco.",
+    texto:
+      "Funda a boutique de M&A e a de venture capital, dedicadas a clientes mid e large-cap no Brasil. Em 2015, funda a Tabula, plataforma de treinamento online.",
   },
   {
     id: "ibbc",
     periodo: "2018",
     titulo: "Investment Banking Boot Camp",
-    texto: "Cria o boot camp — a primeira edição, com cinco participantes, voltada à formação interna da SP Advisors.",
+    texto:
+      "Cria o boot camp — a primeira edição, com cinco participantes, voltada à formação interna da SP Advisors. No mesmo período, inicia o PhD em Finanças na USP (2018–2021).",
   },
   {
+    id: "digio",
+    periodo: "2020–2021",
+    titulo: "CFO interino do digio",
+    texto:
+      "Lidera a reestruturação do departamento financeiro do banco digital controlado por Bradesco e Banco do Brasil via Elopar.",
+  },
+  {
+    // ⚠️ CONFLITO DE FONTES mantido: o LinkedIn dele e a home do site
+    // dizem 2023; o mapa de conteúdo e o /quem-somos no ar dizem 2022.
+    // A página usa 2022 até o cliente bater o martelo.
     id: "ba",
     periodo: "2022",
     titulo: "Bankers Academy",
-    texto: "Funda a escola para aproximar estudantes das demandas reais do mercado.",
+    texto:
+      "Funda a escola para aproximar estudantes das demandas reais do mercado financeiro.",
   },
   {
     id: "livro",
     periodo: "2024",
     titulo: "“De cabeça no Mercado Financeiro”",
-    texto: "Publica o livro — 6 passos para se tornar um banker.",
+    texto:
+      "Publica o livro — 6 passos para se tornar um banker — e vende participação minoritária da Saint Paul Escola de Negócios para Exame|BTG.",
+  },
+  {
+    id: "podcast",
+    periodo: "2025",
+    titulo: "Diário de um Banker",
+    texto:
+      "Cria e apresenta o podcast que revela as histórias por trás das transações, com bankers, executivos C-level, fundadores e investidores.",
   },
 ] as const;
 
-/** Iniciativas educacionais criadas por ele, conforme o mapa de conteúdo. */
+/**
+ * Transações selecionadas — como listadas no perfil dele.
+ */
+export const securatoTransacoes = [
+  "Fusão de US$ 2,9 bi dos ativos renováveis da CPFL com a ERSA, criando a CPFL Renováveis",
+  "Assessoria a Ultrapar, Petrobras e Braskem na aquisição do Grupo Ipiranga",
+  "Follow-on de R$ 3 bi do Banco do Brasil",
+  "Assessoria à Ashmore na aquisição de US$ 2,9 bi dos ativos da Enron International",
+  "IPO de R$ 530 mi da Klabin Segall",
+] as const;
+
+/** Formação, conforme o perfil. */
+export const securatoFormacao = [
+  { id: "phd", curso: "PhD em Finanças", escola: "FEA-USP", periodo: "2018–2021" },
+  { id: "postmba", curso: "PostMBA em Inteligência Artificial", escola: "Saint Paul", periodo: "2024–2025" },
+  { id: "mba", curso: "MBA em Gestão Atuarial e Financeira", escola: "USP", periodo: "1998–1999" },
+  { id: "grad", curso: "Bacharelado em Administração", escola: "FGV", periodo: "1993–1998" },
+] as const;
+
+/** Iniciativas educacionais criadas por ele. */
 export const securatoIniciativas = [
   { id: "ibbc", nome: "Investment Banking Boot Camp", desc: "desde 2018" },
   { id: "yib", nome: "You, She and Black in Banking", desc: "com o J.P. Morgan" },
   { id: "cdi", nome: "CDI", desc: "Clube de Investimento para jovens" },
   { id: "liga", nome: "Liga das Ligas de Finanças", desc: "" },
-  { id: "tabula", nome: "Tabula", desc: "plataforma de treinamento e marketplace educacional" },
+  { id: "tabula", nome: "Tabula", desc: "plataforma de treinamento online, desde 2015" },
+  { id: "podcast", nome: "Diário de um Banker", desc: "podcast, desde 2025" },
 ] as const;
 
-/** Conselhos de que é membro, conforme o mapa de conteúdo. */
+/**
+ * Conselhos e comitês, conforme o perfil dele (datas do LinkedIn; o mapa
+ * de conteúdo dizia Brasilata desde 2014 e SuperRico desde 2023 — o
+ * perfil registra 2015 e 2022–2025).
+ */
 export const securatoConselhos = [
-  { id: "brasilata", empresa: "Brasilata", desde: "2014", desc: "indústria de embalagens de aço" },
-  { id: "superrico", empresa: "Super Rico", desde: "2023", desc: "planejamento financeiro" },
+  { id: "brasilata", empresa: "Brasilata", desde: "desde 2015", desc: "conselho de administração — embalagens de aço" },
+  { id: "superrico", empresa: "SuperRico", desde: "2022–2025", desc: "conselho de administração — planejamento financeiro" },
+  { id: "cogna", empresa: "Cogna Educação", desde: "2021–2022", desc: "conselho fiscal" },
+  { id: "kroton", empresa: "Kroton", desde: "2017–2020", desc: "conselho fiscal" },
+  { id: "anbima", empresa: "ANBIMA", desde: "2009–2012", desc: "comitê de Corporate Finance, pelo Deutsche Bank" },
 ] as const;
 
 /** Mais do que uma trajetória de mercado — os três pilares. */

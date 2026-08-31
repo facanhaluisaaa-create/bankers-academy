@@ -17,6 +17,8 @@ import {
   securatoCargo,
   securatoConselhos,
   securatoDestaques,
+  securatoFormacao,
+  securatoTransacoes,
   securatoFotoRecorte,
   securatoIniciativas,
   securatoNome,
@@ -203,6 +205,47 @@ export default function FundadorPage() {
           </div>
         </section>
 
+        {/* ═══════════ TRANSAÇÕES E FORMAÇÃO ═══════════
+            Direto do perfil publicado por ele — a autoridade em números
+            e nomes que o mercado reconhece. */}
+        <section aria-labelledby="transacoes-t" className="on-dark bg-ink text-white">
+          <div className={`${shell} py-20 lg:py-24`}>
+            <div className="grid gap-14 lg:grid-cols-2 lg:gap-16">
+              <Reveal>
+                <p className={eyeDark}>Transações selecionadas</p>
+                <h2 id="transacoes-t" className="sr-only">
+                  Transações selecionadas e formação
+                </h2>
+                <ul className="mt-8 space-y-4">
+                  {securatoTransacoes.map((t) => (
+                    <li key={t} className="flex gap-3 leading-7 text-white/75">
+                      <span
+                        aria-hidden="true"
+                        className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-brand"
+                      />
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+
+              <Reveal delay={80}>
+                <p className={eyeDark}>Formação</p>
+                <ul className="mt-8 divide-y divide-white/10 border-y border-white/10">
+                  {securatoFormacao.map((f) => (
+                    <li key={f.id} className="flex flex-wrap items-baseline gap-x-3 py-4">
+                      <span className="font-semibold tracking-tight">{f.curso}</span>
+                      <span className="text-sm text-white/60">
+                        {f.escola} · {f.periodo}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
         {/* ═══════════ INICIATIVAS E CONSELHOS ═══════════ */}
         <section aria-labelledby="inic-t" className="border-y border-line bg-surface">
           <div className={`${shell} py-20 lg:py-24`}>
@@ -232,7 +275,7 @@ export default function FundadorPage() {
                       <p className="font-semibold tracking-tight">
                         {c.empresa}
                         <span className="ml-2 text-sm font-normal text-ink/60">
-                          desde {c.desde}
+                          {c.desde}
                         </span>
                       </p>
                       <p className="mt-1 text-sm text-ink/60">{c.desc}</p>

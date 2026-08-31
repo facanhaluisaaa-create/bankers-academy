@@ -35,6 +35,7 @@ import {
   rotas,
   securatoCargo,
   securatoDestaques,
+  securatoFotoRecorte,
   securatoNome,
   securatoResumo,
 } from "@/data/quem-somos";
@@ -107,6 +108,48 @@ export default function QuemSomosPage() {
               className="h-[52vw] max-h-[640px] min-h-[240px] w-full object-cover"
             />
           ) : null}
+        </section>
+
+        {/* ═══════════ FUNDADOR — ATALHO CLICÁVEL, LOGO NO INÍCIO ═══════════
+            Pedido do cliente: já na abertura, um lugar para clicar e
+            saber mais sobre o Securato. O cartão inteiro é o link. */}
+        <section aria-label="Sobre o fundador" className="on-dark bg-ink text-white">
+          <div className={`${shell} pt-10`}>
+            <Link
+              href={rotas.fundador}
+              className="group flex flex-col gap-6 overflow-hidden rounded-3xl border border-white/12 bg-white/[0.04] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-brand/40 hover:bg-white/[0.07] hover:shadow-[0_18px_44px_-18px_rgba(0,0,0,0.7)] active:translate-y-0 sm:flex-row sm:items-center sm:gap-8 sm:p-7"
+            >
+              <Image
+                src={securatoFotoRecorte.src}
+                alt=""
+                width={securatoFotoRecorte.width}
+                height={securatoFotoRecorte.height}
+                sizes="112px"
+                className="h-28 w-28 shrink-0 self-center rounded-2xl bg-white/[0.06] object-cover object-top sm:self-auto"
+              />
+              <span className="min-w-0 flex-1">
+                <span className="block text-xs font-semibold uppercase tracking-[0.3em] text-brand">
+                  Fundador
+                </span>
+                <span className="mt-2 block text-xl font-semibold tracking-tight sm:text-2xl">
+                  {securatoNome}
+                </span>
+                <span className="mt-1 block text-sm leading-snug text-white/60">
+                  PhD em Finanças · +20 anos de mercado · Deutsche Bank e BNP
+                  Paribas · SP Advisors e SP Capital Partners
+                </span>
+              </span>
+              <span className="inline-flex shrink-0 items-center gap-2 text-sm font-bold uppercase tracking-[0.08em] text-brand">
+                Saiba mais sobre ele
+                <span
+                  aria-hidden="true"
+                  className="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </span>
+            </Link>
+          </div>
         </section>
 
         {/* Barra de autoridade */}
