@@ -385,13 +385,37 @@ export default function BootcampPage() {
               {publishableTestimonials.map((t) => (
                 <li key={t.id}>
                   <figure className="flex h-full flex-col rounded-3xl border border-line bg-white p-7">
-                    <blockquote className="flex-1 leading-7 text-ink/80">
-                      <p>{t.quote}</p>
-                    </blockquote>
+                    {t.quote ? (
+                      <blockquote className="flex-1 leading-7 text-ink/80">
+                        <p>“{t.quote}”</p>
+                      </blockquote>
+                    ) : (
+                      /* Card só com link: o post existe mas o LinkedIn não
+                         expõe o texto publicamente — nada de inventar fala. */
+                      <p className="flex-1 leading-7 text-ink/60">
+                        Depoimento publicado no LinkedIn.
+                      </p>
+                    )}
                     <figcaption className="mt-6 border-t border-line pt-5">
                       <p className="font-semibold">{t.name}</p>
-                      {t.edition ? (
-                        <p className="mt-1 text-sm text-brand-deep">{t.edition}</p>
+                      {t.role || t.edition ? (
+                        <p className="mt-1 text-sm text-brand-deep">
+                          {[t.role, t.edition].filter(Boolean).join(" · ")}
+                        </p>
+                      ) : null}
+                      {t.linkedin && t.linkVerified ? (
+                        <a
+                          href={t.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-3 inline-flex items-center gap-1 py-1 text-sm font-semibold text-brand-deep underline decoration-brand-deep/35 decoration-2 underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
+                        >
+                          Ver publicação ↗
+                          <span className="sr-only">
+                            {" "}
+                            de {t.name} no LinkedIn (abre em nova aba)
+                          </span>
+                        </a>
                       ) : null}
                     </figcaption>
                   </figure>

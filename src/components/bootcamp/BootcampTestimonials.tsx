@@ -29,9 +29,15 @@ export default function BootcampTestimonials() {
           {publishableTestimonials.map((t, i) => (
             <Reveal as="li" key={t.id} delay={i * 60} className="block">
               <figure className="flex h-full flex-col rounded-2xl border border-line bg-white p-7">
-                <blockquote className="flex-1 text-pretty text-[15px] leading-relaxed text-ink">
-                  <p>{t.quote}</p>
-                </blockquote>
+                {t.quote ? (
+                  <blockquote className="flex-1 text-pretty text-[15px] leading-relaxed text-ink">
+                    <p>“{t.quote}”</p>
+                  </blockquote>
+                ) : (
+                  <p className="flex-1 text-[15px] leading-relaxed text-ink-muted">
+                    Depoimento publicado no LinkedIn.
+                  </p>
+                )}
                 <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-5">
                   {t.image ? (
                     // eslint-disable-next-line @next/next/no-img-element

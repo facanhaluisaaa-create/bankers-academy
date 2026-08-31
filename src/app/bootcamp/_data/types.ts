@@ -54,9 +54,9 @@ export type IbbcTestimonial = {
   /** Public LinkedIn permalink. See linkVerified before rendering. */
   linkedin?: string;
   /**
-   * The URLs supplied in the asset pack are session-scoped LinkedIn feed
-   * links that only resolve for the original account. Until a public
-   * permalink replaces them, the card renders without a link.
+   * True once the permalink was fetched and confirmed to resolve to the
+   * author's own public post (see data/bootcamp/testimonials.ts for the
+   * provenance of each). Links render only when this is true.
    */
   linkVerified?: boolean;
 };

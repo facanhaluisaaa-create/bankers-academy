@@ -9,27 +9,87 @@ import type { IbbcTestimonial } from "./types";
  * "Curso Intensivo de Férias em IB" and "Workshop de Modelagem
  * Financeira" are deliberately NOT included here.
  *
- * ⚠️ TWO THINGS STILL MISSING — the section stays hidden until fixed:
- *  1. `quote` — the docx contains only links, no authorised text. Paste
- *     the verbatim quote each person published.
- *  2. `linkedin` — the URLs supplied are session-scoped feed links
- *     (…/feed/?highlightedUpdateUrn=…) that resolve only for the account
- *     that received the notification. They 404 for visitors, so they are
- *     recorded in `sourceUrlUnverified` for reference and NOT rendered.
- *     Replace with a public permalink (…/posts/…) and set
- *     linkVerified: true.
+ * PROVENANCE — how each field was obtained:
+ *
+ *  - The client supplied session-scoped feed links
+ *    (…/feed/?highlightedUpdateUrn=urn:li:…&…MENTIONING_YOU…), which only
+ *    resolve for the account that received the notification. The URN was
+ *    extracted from each and rewritten as the canonical public permalink
+ *    https://www.linkedin.com/feed/update/<urn>/ — every one of the five
+ *    was then fetched and confirmed to 307-redirect to the author's own
+ *    public post (the redirect slug carries the author's name), while a
+ *    made-up URN 404s. That check is what linkVerified means.
+ *
+ *  - `quote` is the VERBATIM text of the public post, taken from the
+ *    page's own og:description — nothing was written or paraphrased
+ *    here. Excerpts skip passages with " […] ". Full text at the link.
+ *
+ *  - Rafael Aguirre has no quote: his link resolves to a post on Jose
+ *    Securato's profile that LinkedIn serves behind a login wall, so
+ *    there is no public text to quote. The card renders link-only. The
+ *    client plans to send the testimonial VIDEOS; when they arrive they
+ *    replace/augment these cards.
+ *
+ *  - `edition` only where the author states it ("T15"); no cohort is
+ *    inferred for the others.
  */
 export const ibbcTestimonials: IbbcTestimonial[] = [
-  { id: "ana-luisa-teloken", name: "Ana Luísa Telöken", linkVerified: false },
-  { id: "andre-cavalcante", name: "André Cavalcante", linkVerified: false },
-  { id: "gustavo-campoi", name: "Gustavo Campoi", linkVerified: false },
-  { id: "pedro-henrique-canano", name: "Pedro Henrique Canano", linkVerified: false },
-  { id: "rafael-aguirre", name: "Rafael Aguirre", linkVerified: false },
+  {
+    id: "ana-luisa-teloken",
+    name: "Ana Luísa Telöken",
+    quote:
+      "Tive a oportunidade de participar do Investment Banking Bootcamp intensivo e hands-on da Bankers Academy — uma experiência que, sem dúvida, esteve entre os maiores desafios que já enfrentei e também entre os períodos em que mais evoluí. […] o Bootcamp me desafiou a desenvolver raciocínio analítico, atenção aos detalhes, capacidade de trabalhar sob pressão e, principalmente, a transformar números e análises em uma narrativa de investimento.",
+    role: "Cobriu Water Utilities — valuation da Sabesp",
+    linkedin:
+      "https://www.linkedin.com/feed/update/urn:li:ugcPost:7493378387793735682/",
+    linkVerified: true,
+  },
+  {
+    id: "andre-cavalcante",
+    name: "André Cavalcante",
+    quote:
+      "Concluí o Investment Banking Bootcamp T15 (250h), um programa imersivo e focado em Investment Banking. […] O trabalho foi finalizado com a apresentação das principais conclusões aos monitores, mentor e chairman, consolidando na prática conceitos essenciais de análise financeira, tomada de decisão e aprendizagem na resolução de problemas.",
+    role: "Cobriu Transporte e Logística",
+    edition: "IBBC T15",
+    linkedin:
+      "https://www.linkedin.com/feed/update/urn:li:ugcPost:7492026410119753728/",
+    linkVerified: true,
+  },
+  {
+    id: "gustavo-campoi",
+    name: "Gustavo Campoi",
+    quote:
+      "Durante o programa, cobri o setor de Fintechs, tendo feito uma análise setorial completa, um estudo comparativo de múltiplos, além de um valuation do Nubank, feito a partir do método de Lucros Residuais. Ao fim do programa, tive a felicidade de estar entre os 6 finalistas da edição, realizando uma apresentação final a profissionais do mercado.",
+    role: "Finalista da edição",
+    linkedin:
+      "https://www.linkedin.com/feed/update/urn:li:activity:7492659705790533632/",
+    linkVerified: true,
+  },
+  {
+    id: "pedro-henrique-canano",
+    name: "Pedro Henrique Canano",
+    quote:
+      "Recentemente, concluí o Investment Banking Boot Camp T15 (IBBC), da Bankers Academy. […] Ao final do programa, apresentei o trabalho a profissionais do mercado e tive a satisfação de ser escolhido como vencedor da edição.",
+    role: "Vencedor da edição",
+    edition: "IBBC T15",
+    linkedin:
+      "https://www.linkedin.com/feed/update/urn:li:activity:7492676222007762944/",
+    linkVerified: true,
+  },
+  {
+    id: "rafael-aguirre",
+    name: "Rafael Aguirre",
+    // Sem quote: o post é do perfil do Securato e o LinkedIn o serve
+    // atrás de login — não há texto público para citar. Só o link.
+    linkedin:
+      "https://www.linkedin.com/feed/update/urn:li:activity:7490901588648263680/",
+    linkVerified: true,
+  },
 ];
 
 /**
- * Original (non-public) URLs from the asset pack, kept only so the real
- * posts can be located and replaced with public permalinks.
+ * Original (non-public) URLs from the asset pack, kept only as the
+ * provenance trail for the permalinks above.
  */
 export const ibbcTestimonialSourceUrlsUnverified: Record<string, string> = {
   "ana-luisa-teloken":
@@ -44,7 +104,12 @@ export const ibbcTestimonialSourceUrlsUnverified: Record<string, string> = {
     "https://www.linkedin.com/feed/?highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7490901588648263680",
 };
 
-/** A testimonial is publishable only once it carries a real quote. */
+/**
+ * A testimonial is publishable once it carries a real quote or, at
+ * minimum, a verified public link (link-only cards render compactly).
+ */
 export const publishableTestimonials = ibbcTestimonials.filter(
-  (t) => typeof t.quote === "string" && t.quote.trim().length > 0,
+  (t) =>
+    (typeof t.quote === "string" && t.quote.trim().length > 0) ||
+    (typeof t.linkedin === "string" && t.linkVerified === true),
 );
