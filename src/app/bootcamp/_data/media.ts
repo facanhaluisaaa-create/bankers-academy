@@ -176,13 +176,15 @@ export const bootcampMedia = {
       prontos e SÓ aparecem quando uma pessoa confirmada os preencher —
       nada de card "a confirmar" para o visitante. */
   mentores: {
-    "jose-securato-jr": slot({
+    "jose-securato-jr": {
       slot: "FOTO MENTOR 01",
+      /* Retrato de estúdio enviado pelo cliente (31/08), já em 4:5. */
+      src: "/images/bootcamp/mentor-securato.jpg",
       alt: "Retrato de José Roberto Securato Jr.",
       pendente: "Retrato do Securato Jr.",
       ratio: "aspect-[4/5]",
       ratioLabel: "4:5 retrato",
-    }),
+    },
   } as Record<string, MediaSlot>,
 
   /** [FOTO 10] Fechamento — foto panorâmica de sala de aula do IBBC. */
