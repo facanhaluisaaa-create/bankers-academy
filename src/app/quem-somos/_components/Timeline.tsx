@@ -54,7 +54,7 @@ export default function Timeline({ marcos }: { marcos: Marco[] }) {
               {m.imagem ? (
                 <Image
                   src={m.imagem}
-                  alt=""
+                  alt={m.imagemAlt ?? ""}
                   width={800}
                   height={450}
                   sizes="(max-width: 768px) 90vw, 40vw"

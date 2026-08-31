@@ -25,6 +25,8 @@ export type Marco = {
   texto: string;
   /** Foto do marco. A timeline já suporta; preencher quando chegar. */
   imagem?: string;
+  /** Texto alternativo da foto do marco; sem ele a foto é decorativa. */
+  imagemAlt?: string;
   destaque?: boolean;
   href?: string;
 };
@@ -256,6 +258,9 @@ export const historia: Marco[] = [
     titulo: "Auditório próprio e livro",
     texto:
       "Inauguração de auditório próprio e publicação de “De cabeça no Mercado Financeiro”.",
+    imagem: "/images/quem-somos/marco-2024-livro.jpg",
+    imagemAlt:
+      "JR Securato Jr autografa exemplares de “De cabeça no Mercado Financeiro”",
   },
 ];
 
@@ -281,10 +286,15 @@ export const securatoCredenciais: Credencial[] = [
   { id: "phd", valor: "PhD", rotulo: "em Finanças" },
 ];
 
+/**
+ * Retrato recortado enviado pelo cliente em alta resolução (o original tem
+ * 3648x5472; aqui aparado pelo alpha e reduzido). O recorte anterior,
+ * securato-recorte.png, continua na pasta — nada foi apagado.
+ */
 export const securatoFotoRecorte = {
-  src: "/images/quem-somos/securato-recorte.png",
-  width: 603,
-  height: 1100,
+  src: "/images/quem-somos/securato-em-pe.png",
+  width: 900,
+  height: 1551,
 };
 
 /**
