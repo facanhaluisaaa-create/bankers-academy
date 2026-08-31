@@ -16,20 +16,25 @@ import {
   shell,
 } from "./_components/estilos";
 
+import AssetPlaceholder from "@/components/ui/AssetPlaceholder";
 import {
   autoridade,
+  comunidadeTexto,
+  comunidadeTitulo,
+  ecossistemaPrevia,
   fundadorTitulo,
-  heroFoto,
   heroTexto,
   heroTitulo,
-  links,
   missao,
   pilares,
+  links,
+  ponteHub,
   porqueSubtitulo,
   porqueTitulo,
+  qsMedia,
   rotas,
   securatoCargo,
-  securatoFotoRecorte,
+  securatoDestaques,
   securatoNome,
   securatoResumo,
 } from "@/data/quem-somos";
@@ -89,16 +94,19 @@ export default function QuemSomosPage() {
             </div>
           </div>
 
-          {/* Fotografia institucional de ponta a ponta */}
-          <Image
-            src={heroFoto.src}
-            alt={heroFoto.alt}
-            width={heroFoto.width}
-            height={heroFoto.height}
-            priority
-            sizes="100vw"
-            className="h-[52vw] max-h-[640px] min-h-[240px] w-full object-cover"
-          />
+          {/* Fotografia institucional de ponta a ponta — o cliente indicou
+              o arquivo 0156.jpg para cá; até chegar, fica a equipe.jpg */}
+          {qsMedia.hero.src ? (
+            <Image
+              src={qsMedia.hero.src}
+              alt={qsMedia.hero.alt}
+              width={2000}
+              height={1333}
+              priority
+              sizes="100vw"
+              className="h-[52vw] max-h-[640px] min-h-[240px] w-full object-cover"
+            />
+          ) : null}
         </section>
 
         {/* Barra de autoridade */}
@@ -154,54 +162,59 @@ export default function QuemSomosPage() {
           </div>
         </section>
 
-        {/* ═══════════ SECURATO JR — A AUTORIDADE DA ESCOLA ═══════════
-            Logo depois do porquê, quem: a lógica da página é Bankers
-            Academy → fundador → as portas (história, liderança…). A
-            seção editorial completa vive em ./lideranca. */}
+        {/* ═══════════ FUNDADOR — uma das maiores seções da página ═══════════
+            Bankers Academy → Securato Jr. como principal autoridade →
+            história → liderança. Fotografia grande dele ensinando,
+            destaques confirmados e a trajetória completa em ./lideranca. */}
         <section aria-labelledby="fundador-t" className="on-dark bg-ink text-white">
           <div className={`${shell} py-24 lg:py-28`}>
-            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-              <Reveal className="lg:col-span-5">
-                <div className="relative">
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-x-6 bottom-0 top-16 rounded-full bg-brand/12 blur-3xl"
-                  />
-                  <Image
-                    src={securatoFotoRecorte.src}
-                    alt={`Retrato de ${securatoNome}`}
-                    width={securatoFotoRecorte.width}
-                    height={securatoFotoRecorte.height}
-                    sizes="(max-width: 1024px) 70vw, 32vw"
-                    className="relative mx-auto h-auto w-full max-w-xs"
-                    style={{
-                      maskImage:
-                        "linear-gradient(to bottom, #000 82%, transparent 99%)",
-                      WebkitMaskImage:
-                        "linear-gradient(to bottom, #000 82%, transparent 99%)",
-                    }}
-                  />
-                </div>
-              </Reveal>
+            <Reveal>
+              <p className={eyeDark}>Fundador</p>
+              <h2
+                id="fundador-t"
+                className="mt-5 max-w-4xl text-balance text-3xl font-semibold leading-[1.08] tracking-tight sm:text-5xl"
+              >
+                {fundadorTitulo}
+              </h2>
+              <p className="mt-5 text-lg font-semibold text-brand sm:text-xl">
+                {securatoNome}
+              </p>
+              <p className="mt-1 text-sm text-white/60">{securatoCargo}</p>
+            </Reveal>
 
-              <Reveal delay={100} className="lg:col-span-7">
-                <p className={eyeDark}>Fundador</p>
-                <h2
-                  id="fundador-t"
-                  className="mt-5 max-w-xl text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl"
-                >
-                  {fundadorTitulo}
-                </h2>
-                <p className="mt-5 text-lg font-semibold text-brand">{securatoNome}</p>
-                <p className="mt-1 text-sm text-white/60">{securatoCargo}</p>
-                <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-white/70">
+            {/* A fotografia grande dele ensinando — o cliente indicou
+                SECURATO_aula_melhorada; até chegar, a aula-securato.jpg */}
+            <Reveal>
+              {qsMedia.fundadorAula.src ? (
+                <Image
+                  src={qsMedia.fundadorAula.src}
+                  alt={qsMedia.fundadorAula.alt}
+                  width={1086}
+                  height={1448}
+                  sizes="(max-width: 1024px) 92vw, 1216px"
+                  className="mt-12 max-h-[600px] w-full rounded-3xl object-cover"
+                  style={{ objectPosition: qsMedia.fundadorAula.position ?? "50% 50%" }}
+                />
+              ) : (
+                <AssetPlaceholder
+                  tone="dark"
+                  label={`Securato Jr. ensinando — arquivo ${qsMedia.fundadorAula.arquivoEsperado}`}
+                  ratio="aspect-[21/9]"
+                  className="mt-12 w-full"
+                />
+              )}
+            </Reveal>
+
+            <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-16">
+              <Reveal className="lg:col-span-5">
+                <p className="max-w-xl text-pretty text-lg leading-8 text-white/70">
                   {securatoResumo}
                 </p>
                 <Link
                   href={rotas.lideranca}
-                  className="group mt-8 inline-flex items-center gap-2 py-2 text-sm font-bold uppercase tracking-[0.08em] text-brand underline decoration-brand/40 decoration-2 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
+                  className="group mt-7 inline-flex items-center gap-2 py-2 text-sm font-bold uppercase tracking-[0.08em] text-brand underline decoration-brand/40 decoration-2 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
                 >
-                  Perfil completo e liderança
+                  Conheça a trajetória
                   <span
                     aria-hidden="true"
                     className="inline-block transition-transform duration-200 group-hover:translate-x-1"
@@ -210,12 +223,169 @@ export default function QuemSomosPage() {
                   </span>
                 </Link>
               </Reveal>
+
+              {/* Destaques curtos — credenciais já confirmadas no projeto */}
+              <Reveal delay={100} className="lg:col-span-7">
+                <dl className="grid gap-x-8 gap-y-7 border-t border-white/15 pt-7 sm:grid-cols-2 lg:grid-cols-3">
+                  {securatoDestaques.map((d) => (
+                    <div key={d.id}>
+                      <dt className="sr-only">{d.rotulo}</dt>
+                      <dd>
+                        <span className="block font-semibold tracking-tight text-brand">
+                          {d.valor}
+                        </span>
+                        <span className="mt-1 block text-sm leading-snug text-white/60">
+                          {d.rotulo}
+                        </span>
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </Reveal>
             </div>
+          </div>
+        </section>
+
+        {/* ═══════════ PONTE HISTÓRICA — 2018 ═══════════ */}
+        <section aria-labelledby="ponte-t" className="bg-brand text-ink">
+          <div className={`${shell} py-20 lg:py-24`}>
+            <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+              <Reveal className="lg:col-span-6">
+                <p className={eyeBrand}>{ponteHub.eyebrow}</p>
+                <h2
+                  id="ponte-t"
+                  className="mt-4 max-w-xl text-balance text-3xl font-semibold leading-[1.12] tracking-tight sm:text-4xl"
+                >
+                  {ponteHub.titulo.map((linha) => (
+                    <span key={linha} className="block">
+                      {linha}
+                    </span>
+                  ))}
+                </h2>
+                <p className="mt-5 max-w-xl text-pretty leading-8 text-ink/75">
+                  {ponteHub.texto}
+                </p>
+                <div className="mt-8">
+                  <Link
+                    href={ponteHub.href}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-bold uppercase tracking-[0.08em] text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-10px_rgba(0,0,0,0.6)] active:translate-y-0 active:shadow-none"
+                  >
+                    {ponteHub.cta}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+              </Reveal>
+
+              {/* Fotografia real de aula/treinamento — arquivo indicado
+                  pelo cliente ainda não recebido */}
+              <Reveal delay={80} className="lg:col-span-6">
+                {qsMedia.ponteAula.src ? (
+                  <Image
+                    src={qsMedia.ponteAula.src}
+                    alt={qsMedia.ponteAula.alt}
+                    width={1600}
+                    height={1067}
+                    sizes="(max-width: 1024px) 92vw, 46vw"
+                    className="aspect-[4/3] w-full rounded-3xl object-cover"
+                    style={{ objectPosition: qsMedia.ponteAula.position ?? "50% 50%" }}
+                  />
+                ) : (
+                  <AssetPlaceholder
+                    label={`Aula do Boot Camp — arquivo ${qsMedia.ponteAula.arquivoEsperado}`}
+                    ratio="aspect-[4/3]"
+                    className="w-full"
+                  />
+                )}
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════ COMUNIDADE ═══════════ */}
+        <section aria-labelledby="comunidade-t" className="bg-surface">
+          <div className={`${shell} py-20 lg:py-24`}>
+            <Reveal>
+              <p className={eyeLight}>Comunidade</p>
+              <h2
+                id="comunidade-t"
+                className="mt-4 max-w-3xl text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-5xl"
+              >
+                {comunidadeTitulo.map((linha) => (
+                  <span key={linha} className="block">
+                    {linha}
+                  </span>
+                ))}
+              </h2>
+              <p className="mt-5 max-w-2xl text-pretty text-lg leading-8 text-ink/70">
+                {comunidadeTexto}
+              </p>
+            </Reveal>
+
+            {/* Fotografia grande de turma — o cliente indicou _M3A1784.jpg;
+                até chegar, fica a turma.jpg */}
+            <Reveal>
+              {qsMedia.comunidade.src ? (
+                <Image
+                  src={qsMedia.comunidade.src}
+                  alt={qsMedia.comunidade.alt}
+                  width={2000}
+                  height={1095}
+                  sizes="(max-width: 1024px) 92vw, 1216px"
+                  className="mt-10 max-h-[560px] w-full rounded-3xl object-cover"
+                />
+              ) : (
+                <AssetPlaceholder
+                  label={`Turma/equipe — arquivo ${qsMedia.comunidade.arquivoEsperado}`}
+                  ratio="aspect-[16/9]"
+                  className="mt-10 w-full"
+                />
+              )}
+            </Reveal>
           </div>
         </section>
 
         {/* ═══════════ AS QUATRO PORTAS ═══════════ */}
         <HubCards />
+
+        {/* ═══════════ ECOSSISTEMA (prévia) ═══════════
+            Só alguns nomes confirmados — o catálogo completo, com os
+            links de cada programa, vive em ./ecossistema */}
+        <section aria-labelledby="ecoprev-t" className="border-t border-line bg-surface">
+          <div className={`${shell} py-16 lg:py-20`}>
+            <p className={eyeLight}>Ecossistema</p>
+            <h2
+              id="ecoprev-t"
+              className="mt-4 max-w-2xl text-balance text-2xl font-semibold tracking-tight sm:text-3xl"
+            >
+              Muitas portas. Um mesmo objetivo.
+            </h2>
+            <ul className="mt-8 flex flex-wrap gap-2">
+              {ecossistemaPrevia.map((nome) => (
+                <li
+                  key={nome}
+                  className="rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink/80"
+                >
+                  {nome}
+                </li>
+              ))}
+              <li className="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-ink">
+                e mais
+              </li>
+            </ul>
+            <Link
+              href={rotas.ecossistema}
+              className="group mt-8 inline-flex items-center gap-2 py-2 text-sm font-bold uppercase tracking-[0.08em] text-brand-deep underline decoration-brand-deep/35 decoration-2 underline-offset-4 transition-colors hover:text-ink hover:decoration-ink"
+            >
+              Explore o ecossistema
+              <span
+                aria-hidden="true"
+                className="inline-block transition-transform duration-200 group-hover:translate-x-1"
+              >
+                →
+              </span>
+            </Link>
+          </div>
+        </section>
 
         {/* ═══════════ MISSÃO ═══════════ */}
         <section aria-labelledby="missao-t" className="bg-surface-alt">
@@ -233,7 +403,26 @@ export default function QuemSomosPage() {
 
         {/* ═══════════ CTA FINAL ═══════════ */}
         <section aria-labelledby="cta-t" className="bg-brand text-ink">
-          <div className={`${shell} py-24 text-center lg:py-32`}>
+          {/* Fechamento/cultura — o cliente indicou 0158.jpg para cá */}
+          {qsMedia.cultura.src ? (
+            <Image
+              src={qsMedia.cultura.src}
+              alt={qsMedia.cultura.alt}
+              width={2000}
+              height={1125}
+              sizes="100vw"
+              className="h-[40vw] max-h-[520px] min-h-[220px] w-full object-cover"
+            />
+          ) : (
+            <div className={`${shell} pt-16`}>
+              <AssetPlaceholder
+                label={`Fechamento/cultura — arquivo ${qsMedia.cultura.arquivoEsperado}`}
+                ratio="aspect-[21/9]"
+                className="w-full"
+              />
+            </div>
+          )}
+          <div className={`${shell} py-24 text-center lg:py-28`}>
             <Reveal>
               <h2
                 id="cta-t"

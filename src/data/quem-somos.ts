@@ -180,8 +180,9 @@ export const autoridade: Credencial[] = [
 /* ─────────────────── 2. POR QUE EXISTIMOS ─────────────────── */
 
 export const porqueTitulo =
-  "Existe uma distância entre estudar finanças e trabalhar com finanças.";
-export const porqueSubtitulo = "Nós existimos para diminuir essa distância.";
+  "Existe uma distância entre aprender finanças e viver o mercado.";
+export const porqueSubtitulo =
+  "A Bankers Academy nasceu para diminuir essa distância.";
 
 export const pilares = [
   {
@@ -291,6 +292,85 @@ export const securatoCredenciais: Credencial[] = [
  * 3648x5472; aqui aparado pelo alpha e reduzido). O recorte anterior,
  * securato-recorte.png, continua na pasta — nada foi apagado.
  */
+/* ───────── Slots de imagem do hub Quem Somos ─────────
+   O cliente indicou os arquivos por nome; os que ainda não chegaram ao
+   repositório ficam null e renderizam espaço reservado com o nome
+   esperado. Ao receber cada arquivo: salvar em public/images/quem-somos/
+   e preencher o src. Nada de stock, nada gerado. */
+
+export type SlotFoto = {
+  src: string | null;
+  alt: string;
+  /** Nome do arquivo que o cliente indicou para este lugar. */
+  arquivoEsperado: string;
+  position?: string;
+};
+
+export const qsMedia = {
+  /** Hero — o cliente indicou 0156.jpg; até chegar, fica a equipe.jpg. */
+  hero: {
+    src: "/images/quem-somos/equipe.jpg",
+    alt: "Time da Bankers Academy reunido no escritório",
+    arquivoEsperado: "0156.jpg",
+  } as SlotFoto,
+  /** Fundador — o cliente indicou SECURATO_aula_melhorada; até chegar,
+      fica a aula-securato.jpg (a mesma cena, versão anterior). */
+  fundadorAula: {
+    src: "/images/quem-somos/aula-securato.jpg",
+    alt: "José Roberto Securato Junior dando aula para uma turma na Bankers Academy",
+    arquivoEsperado: "SECURATO_aula_melhorada",
+    position: "50% 38%",
+  } as SlotFoto,
+  /** Ponte 2018 — aula/treinamento; o cliente indicou o arquivo 3e01846c… */
+  ponteAula: {
+    src: null,
+    alt: "Aula do Investment Banking Boot Camp",
+    arquivoEsperado: "3e01846c…",
+  } as SlotFoto,
+  /** Comunidade — o cliente indicou _M3A1784.jpg; até chegar, a turma.jpg. */
+  comunidade: {
+    src: "/images/quem-somos/turma.jpg",
+    alt: "Turma reunida em sala de aula na Bankers Academy",
+    arquivoEsperado: "_M3A1784.jpg",
+  } as SlotFoto,
+  /** Marco do livro em /historia — o cliente indicou 3C39E18F…; hoje está
+      a foto real do autógrafo (marco-2024-livro.jpg), já no marco 2024. */
+  livro: {
+    src: "/images/quem-somos/marco-2024-livro.jpg",
+    alt: "JR Securato Jr autografa exemplares de “De cabeça no Mercado Financeiro”",
+    arquivoEsperado: "3C39E18F…",
+  } as SlotFoto,
+  /** Fechamento/cultura — o cliente indicou 0158.jpg. */
+  cultura: {
+    src: null,
+    alt: "Cultura da Bankers Academy",
+    arquivoEsperado: "0158.jpg",
+  } as SlotFoto,
+};
+
+/** Ponte histórica do hub — headline estendida. */
+export const ponteHub = {
+  eyebrow: "2018",
+  titulo: ["Da experiência nasceu o Bootcamp.", "Do Bootcamp cresceu um ecossistema."],
+  texto:
+    "O primeiro Investment Banking Boot Camp começou com cinco participantes, voltado à formação interna da SP Advisors. Das edições seguintes vieram os demais programas da escola.",
+  cta: "Conheça o Investment Banking Boot Camp",
+  href: links.bootcamp,
+} as const;
+
+/** Comunidade — seção curta do hub. */
+export const comunidadeTitulo = ["O mercado é feito de pessoas.", "E aprender também."] as const;
+export const comunidadeTexto =
+  "Turmas pequenas, entregas em grupo, mentores que voltam edição após edição e uma comunidade de mais de 12 mil pessoas em torno da escola.";
+
+/** Prévia do ecossistema no hub — só nomes confirmados no material. */
+export const ecossistemaPrevia = [
+  "Investment Banking Boot Camp",
+  "You in Banking",
+  "Modelagem Financeira",
+  "Tabula",
+] as const;
+
 /* ───────── Seção editorial do fundador (hub e /lideranca) ───────── */
 
 export const fundadorTitulo = "Experiência de mercado transformada em educação.";
