@@ -1,102 +1,131 @@
 /**
  * Conteúdo da página Quem Somos.
  *
+ * ESCOPO
+ * ──────
+ * Esta página é autônoma. Não importa nada de src/data/bootcamp nem de
+ * qualquer outro projeto: o Investment Banking Boot Camp é desenvolvido
+ * separadamente e aqui aparece só em três lugares — o marco de 2018, um
+ * card no ecossistema e o link do CTA.
+ *
  * PROCEDÊNCIA DOS DADOS
  * ─────────────────────
- * ✅ CONFIRMADO  = publicado hoje em bankersacademy.com.br/quem-somos
- * ⚠️  A CONFIRMAR = fornecido pelo cliente no briefing, mas não consta em
- *                  nenhuma fonte publicada a que temos acesso. Validar com
- *                  a Bankers Academy antes de ir ao ar.
+ * ✅ publicado em bankersacademy.com.br/quem-somos, ou no mapa de conteúdo
+ *    enviado pela Bankers Academy.
+ * ⚠️ `aConfirmar: true` marca o que não consta em nenhuma fonte a que
+ *    temos acesso. Validar antes de ir ao ar.
  */
+
+/* ─────────────────────────── Tipos ─────────────────────────── */
 
 export type Marco = {
   id: string;
   periodo: string;
   titulo: string;
   texto: string;
-  /** Caminho da foto do marco. A timeline já suporta; preencher depois. */
+  /** Foto do marco. A timeline já suporta; preencher quando chegar. */
   imagem?: string;
-  /** Marca visualmente o marco como divisor de águas. */
   destaque?: boolean;
-  /** Rota interna relacionada ao marco. */
   href?: string;
-  periodoAConfirmar?: boolean;
 };
 
-export type Pilar = { id: string; titulo: string; texto: string };
+export type Credencial = {
+  id: string;
+  valor: string;
+  rotulo: string;
+  aConfirmar?: boolean;
+};
 
-export type Credencial = { id: string; valor: string; rotulo: string; aConfirmar?: boolean };
+export type Lider = {
+  id: string;
+  nome: string;
+  cargo: string;
+  foto?: string;
+  linkedin?: string;
+};
 
-export type Programa = {
+export type Professor = {
+  id: string;
+  nome?: string;
+  especialidade?: string;
+  credencial?: string;
+  foto?: string;
+  linkedin?: string;
+};
+
+export type Iniciativa = {
   id: string;
   nome: string;
   descricao: string;
-  href: string;
+  href?: string;
   externo?: boolean;
   destaque?: boolean;
 };
 
-export type Membro = {
+export type FotoCultura = {
   id: string;
-  nome: string;
-  cargo: string;
-  grupo: "lideranca" | "execucao";
-  foto?: string;
-  linkedin?: string;
-  /** Turma do IBBC, quando a pessoa passou pelo boot camp antes de entrar. */
-  ibbcTurma?: number;
-  /** Voltou como mentor de uma edição seguinte. */
-  ibbcMentor?: boolean;
+  src?: string;
+  alt: string;
+  /** Descreve o que a foto precisa mostrar enquanto ela não existe. */
+  pendente?: string;
+  /** Ocupa duas colunas na galeria. */
+  larga?: boolean;
 };
 
-export type Depoimento = {
-  id: string;
-  nome: string;
-  programa?: string;
-  texto?: string;
-  foto?: string;
-  linkedin?: string;
-};
+/* ───────────────────── Links próprios da página ───────────────── */
 
-export type Parceiro = { id: string; nome: string; descricao: string; logo?: string };
+export const links = {
+  bootcamp: "/bootcamp",
+  securatoLinkedin: "https://www.linkedin.com/in/josesecurato/",
+  site: "https://www.bankersacademy.com.br",
+} as const;
 
-/* ────────────────────────── 1. HERO ────────────────────────── */
+/* ─────────────────────────── 1. HERO ───────────────────────── */
 
 export const heroTitulo = ["Do mercado para a sala.", "Da sala para a carreira."];
 
 export const heroTexto =
-  "A Bankers Academy aproxima universitários e jovens profissionais da realidade do mercado financeiro por meio de formação prática, experiência e orientação de carreira.";
+  "Formação prática em mercado financeiro para quem quer entrar preparado.";
 
-/** Barra de autoridade logo abaixo do hero. */
+export const heroFoto = {
+  src: "/images/quem-somos/equipe.jpg",
+  alt: "Time da Bankers Academy reunido no escritório",
+  width: 2000,
+  height: 1333,
+};
+
+/** Números da barra de autoridade. Poucos, grandes, verificáveis. */
 export const autoridade: Credencial[] = [
-  { id: "anos", valor: "+20 anos", rotulo: "de experiência em finanças corporativas" },
-  { id: "ib", valor: "14 anos", rotulo: "em Investment Banking", aConfirmar: true },
-  { id: "ibbc", valor: "Desde 2018", rotulo: "o Investment Banking Boot Camp" },
-  { id: "pratica", valor: "Formação", rotulo: "prática, do primeiro dia" },
+  { id: "anos", valor: "+20", rotulo: "anos de mercado financeiro" },
+  { id: "ib", valor: "14", rotulo: "anos em Investment Banking", aConfirmar: true },
+  { id: "desde", valor: "2018", rotulo: "formando universitários" },
+  { id: "seguidores", valor: "+12 mil", rotulo: "na comunidade" },
 ];
 
 /* ─────────────────── 2. POR QUE EXISTIMOS ─────────────────── */
 
-export const pilares: Pilar[] = [
+export const porqueTitulo =
+  "Existe uma distância entre estudar finanças e trabalhar com finanças.";
+export const porqueSubtitulo = "Nós existimos para diminuir essa distância.";
+
+export const pilares = [
   {
     id: "conhecimento",
-    titulo: "Conhecimento aplicado",
+    palavra: "Conhecimento aplicado",
     texto:
-      "Contabilidade, valuation e modelagem ensinados do jeito que são usados numa mesa de trabalho.",
+      "Contabilidade, valuation e modelagem do jeito que são usados numa mesa de trabalho.",
   },
   {
     id: "experiencia",
-    titulo: "Experiência",
-    texto:
-      "Entregas reais, prazos reais e feedback de quem vive o mercado todo dia.",
+    palavra: "Experiência",
+    texto: "Entregas reais, prazos reais, feedback de quem vive o mercado.",
   },
   {
     id: "carreira",
-    titulo: "Carreira",
-    texto:
-      "Repertório para o processo seletivo e uma rede de pessoas que já atravessou o mesmo caminho.",
+    palavra: "Carreira",
+    texto: "Repertório para o processo seletivo e uma rede que já fez o caminho.",
   },
-];
+] as const;
 
 /* ───────────────────── 3. NOSSA HISTÓRIA ───────────────────── */
 
@@ -106,163 +135,168 @@ export const historia: Marco[] = [
     periodo: "1995–2018",
     titulo: "Trajetória de mercado, ensino e mentoria",
     texto:
-      "JR Securato Jr começa como educador na FIA e na Saint Paul, e conduz treinamentos em bancos como o Deutsche Bank em Nova Iorque. É essa base que vira a metodologia dos programas.",
+      "JR Securato Jr começa como educador na FIA e na Saint Paul, e conduz treinamentos em bancos como o Deutsche Bank em Nova Iorque.",
   },
   {
     id: "ibbc",
     periodo: "2018",
     titulo: "Nasce o Investment Banking Boot Camp",
     texto:
-      "A primeira edição nasce com 5 alunos, voltada à formação interna da SP Advisors. Vira uma das bases da escola — e, mais tarde, a porta de entrada de parte do próprio time.",
+      "A primeira edição começa com 5 alunos, voltada à formação interna da SP Advisors, e vira uma das bases da escola.",
     destaque: true,
-    href: "/bootcamp",
+    href: links.bootcamp,
   },
   {
     id: "site-ib",
     periodo: "2019",
     titulo: "Investment Banking Brasil",
     texto:
-      "Nasce o investmentbanking.com.br, reunindo conteúdos voltados a universitários interessados em Investment Banking.",
+      "Nasce o investmentbanking.com.br, reunindo conteúdos para universitários interessados no setor.",
   },
   {
     id: "digital",
     periodo: "2021",
-    titulo: "Expansão digital e comunidade",
+    titulo: "Comunidade digital",
     texto:
-      "A presença digital se expande e a base salta de 800 para mais de 12 mil seguidores — e passa a mostrar de perto as dores dos universitários brasileiros.",
+      "A base salta de 800 para mais de 12 mil seguidores, e passa a mostrar de perto as dores dos universitários brasileiros.",
   },
   {
     id: "ba",
     periodo: "2022",
     titulo: "Bankers Academy",
     texto:
-      "A escola nasce dedicada a colocar universitários e jovens profissionais no mercado, unindo conteúdo técnico, prática e orientação de carreira.",
+      "Os treinamentos viram uma escola estruturada, dedicada a colocar universitários e jovens profissionais no mercado.",
   },
   {
     id: "yib",
     periodo: "2023",
     titulo: "You in Banking",
     texto:
-      "Com patrocínio do J.P. Morgan, o programa de inclusão de negros e mulheres no mercado financeiro impactou mais de 1.000 pessoas e formou 25 participantes.",
+      "Com patrocínio do J.P. Morgan, o programa de inclusão impactou mais de 1.000 pessoas e formou 25 participantes.",
     destaque: true,
   },
   {
     id: "hoje",
     periodo: "2024 → hoje",
-    titulo: "Expansão do ecossistema",
+    titulo: "Auditório próprio e livro",
     texto:
-      "Inauguração de auditório próprio e publicação do livro “De cabeça no Mercado Financeiro”, com os conteúdos integrados ao site oficial.",
+      "Inauguração de auditório próprio e publicação de “De cabeça no Mercado Financeiro”.",
   },
 ];
 
-/* ────────────────────── 4. SECURATO JR. ────────────────────── */
+/* ───────────────────────── 4. LIDERANÇA ────────────────────── */
 
 export const securatoNome = "José Roberto Securato Junior";
+export const securatoCargo = "Fundador da Bankers Academy";
 
 export const securatoResumo =
-  "Depois de anos executando e liderando transações complexas — M&A, IPOs, private equity, dívida e capital de risco — levou a experiência de mesa para a sala de aula, e fundou a Bankers Academy para encurtar a distância entre a formação dos estudantes e o que o mercado realmente cobra.";
+  "Executou e liderou transações complexas — M&A, IPOs, private equity, dívida e capital de risco — e levou a experiência de mesa para a sala de aula.";
 
 export const securatoCredenciais: Credencial[] = [
   { id: "financas", valor: "+20 anos", rotulo: "em finanças corporativas" },
   { id: "ib", valor: "14 anos", rotulo: "em Investment Banking", aConfirmar: true },
   { id: "db", valor: "Deutsche Bank", rotulo: "São Paulo e Nova Iorque" },
   { id: "bnp", valor: "BNP Paribas", rotulo: "Investment Banking" },
-  { id: "spa", valor: "SP Advisors", rotulo: "M&A — e SP Capital Partners, capital de risco" },
+  { id: "spa", valor: "SP Advisors", rotulo: "e SP Capital Partners — sócio fundador" },
   { id: "professor", valor: "FIA e Saint Paul", rotulo: "professor desde os anos 2000" },
   { id: "phd", valor: "PhD", rotulo: "em Finanças" },
 ];
 
-/** Conselhos de administração, conforme o mapa de conteúdo. */
-export const securatoConselhos = [
-  { nome: "Brasilata", desde: 2014, o_que: "indústria de embalagens de aço" },
-  { nome: "Super Rico", desde: 2023, o_que: "planejamento financeiro" },
-];
-
-export const securatoPonte =
-  "Em 2018, essa combinação de mercado e educação deu origem ao Investment Banking Boot Camp.";
-
-/* ─────────────────────── 5. NOSSO TIME ────────────────────── */
+export const securatoFotoRecorte = {
+  src: "/images/quem-somos/securato-recorte.png",
+  width: 603,
+  height: 1100,
+};
 
 /**
- * Time da Bankers Academy, conforme o mapa de conteúdo do cliente.
+ * Demais lideranças, conforme o mapa de conteúdo da Bankers Academy.
  *
- * `ibbcTurma` foi cruzado com o arquivo oficial de edições anteriores
- * (src/data/bootcamp/alumni.ts): três pessoas do time de execução são
- * ex-campers do próprio boot camp, e uma delas voltou como mentora.
- * Nada aqui é inferido — os dois lados vêm de fonte documentada.
- *
- * `foto` e `linkedin` ficam vazios até chegarem; o card se adapta.
+ * `foto` fica vazio de propósito: há dois retratos de estúdio em
+ * public/images/quem-somos/a-identificar que provavelmente pertencem a
+ * pessoas desta lista, mas ninguém confirmou quem é quem — e identificar
+ * por aparência não é aceitável. Ver o LEIA-ME daquela pasta.
  */
-export const time: Membro[] = [
-  { id: "securato", nome: "JR Securato Jr", cargo: "Founder", grupo: "lideranca", foto: "/images/quem-somos/securato-jr.jpg" },
-  { id: "andrea", nome: "Andrea Securato", cargo: "Co-founder", grupo: "lideranca" },
-  { id: "arnaldo", nome: "Arnaldo Mello", cargo: "Partner (Tabula)", grupo: "lideranca" },
-  { id: "jaqueline", nome: "Jaqueline Sanches", cargo: "Partner", grupo: "lideranca" },
-
-  { id: "giovanna", nome: "Giovanna Giorgio", cargo: "Execution Team", grupo: "execucao", ibbcTurma: 11, ibbcMentor: true },
-  { id: "nayarah", nome: "Nayarah Aiko", cargo: "Execution Team", grupo: "execucao", ibbcTurma: 13 },
-  { id: "sophia", nome: "Sophia Torrezan", cargo: "Execution Team", grupo: "execucao" },
-  { id: "rayara", nome: "Rayara Rodrigues", cargo: "Execution Team", grupo: "execucao" },
-  { id: "anaclara", nome: "Ana Clara Dezorzi", cargo: "Execution Team", grupo: "execucao", ibbcTurma: 11 },
+export const lideranca: Lider[] = [
+  { id: "andrea", nome: "Andrea Securato", cargo: "Co-founder" },
+  { id: "arnaldo", nome: "Arnaldo Mello", cargo: "Partner — Tabula" },
+  { id: "jaqueline", nome: "Jaqueline Sanches", cargo: "Partner" },
 ];
 
-/** Quantos do time entraram pela porta do próprio boot camp. */
-export const timeExCampers = time.filter((m) => m.ibbcTurma !== undefined).length;
+/* ────────────── 5. PROFESSORES & ESPECIALISTAS ────────────── */
 
-/* ──────────────────── 6. APRENDER FAZENDO ─────────────────── */
+/**
+ * Grid preparado, vazio de propósito.
+ *
+ * O acervo traz quatro perfis do LinkedIn (Alexandre Paixão, Marcus
+ * Piellusch, Walter Eclache e Tatiana Tafarello), mas nada confirma
+ * especialidade, credencial — nem que atuem como professores da escola.
+ * Preencher só depois da validação.
+ */
+export const professores: Professor[] = [
+  { id: "prof-1" },
+  { id: "prof-2" },
+  { id: "prof-3" },
+  { id: "prof-4" },
+];
 
-export const aprenderFazendo: Pilar[] = [
+/* ─────────────── 6. COMO ENSINAMOS ─────────────── */
+
+export const comoEnsinamos = [
   {
     id: "modelar",
-    titulo: "Modelar",
-    texto: "Projeções e modelo integrado construídos do zero, na sua planilha.",
+    palavra: "Modelar",
+    texto: "Projeções e modelo integrado construídos do zero.",
+    fotoPendente: "Aluno construindo um modelo financeiro na planilha",
   },
   {
     id: "avaliar",
-    titulo: "Avaliar",
-    texto: "Comparáveis, múltiplos e valuation — com as premissas defendidas.",
+    palavra: "Avaliar",
+    texto: "Comparáveis, múltiplos e valuation com premissas defendidas.",
+    fotoPendente: "Discussão de valuation entre professor e aluno",
   },
   {
     id: "apresentar",
-    titulo: "Apresentar",
+    palavra: "Apresentar",
     texto: "A análise vira material, e o material vira uma defesa de pé.",
+    fotoPendente: "Aluno apresentando para a turma",
   },
   {
     id: "decidir",
-    titulo: "Decidir",
-    texto: "Recomendar um caminho e sustentar o porquê diante de quem pergunta.",
+    palavra: "Decidir",
+    texto: "Recomendar um caminho e sustentar o porquê.",
+    fotoPendente: "Turma em debate na sala de aula",
   },
-];
+] as const;
 
-/* ───────────────── 7. ECOSSISTEMA / PROGRAMAS ─────────────── */
+/* ─────────────── 7. ECOSSISTEMA / INICIATIVAS ─────────────── */
 
-export const programas: Programa[] = [
+export const iniciativas: Iniciativa[] = [
   {
     id: "ibbc",
     nome: "Investment Banking Boot Camp",
     descricao:
-      "5 semanas de imersão, 9 etapas e um Pitchbook final apresentado. A experiência mais completa da escola.",
-    href: "/bootcamp",
+      "Imersão prática em Investment Banking, realizada desde 2018.",
+    href: links.bootcamp,
     destaque: true,
   },
   {
     id: "modelagem",
     nome: "Modelagem Financeira",
-    descricao: "Construção de modelos financeiros aplicados ao mercado.",
+    descricao: "Construção de modelos aplicados ao mercado.",
     href: "https://www.bankersacademy.com.br/modelagemfinanceira",
     externo: true,
   },
   {
     id: "ib",
     nome: "Investment Banking",
-    descricao: "Formação em Investment Banking, do nivelamento ao avançado.",
+    descricao: "Formação em IB, do nivelamento ao avançado.",
     href: "https://www.bankersacademy.com.br/investmentbanking",
     externo: true,
   },
   {
     id: "masterclass",
     nome: "Masterclass M&A",
-    descricao: "Fusões e aquisições na prática de quem executa transações.",
+    descricao: "Fusões e aquisições com quem executa transações.",
     href: "https://www.bankersacademy.com.br/masterclass",
     externo: true,
   },
@@ -277,39 +311,78 @@ export const programas: Programa[] = [
     id: "yib",
     nome: "You in Banking",
     descricao:
-      "Programa de inclusão de negros e mulheres no mercado financeiro através da educação, com patrocínio do J.P. Morgan.",
-    href: "https://www.bankersacademy.com.br/quem-somos",
-    externo: true,
+      "Inclusão de negros e mulheres no mercado financeiro, com o J.P. Morgan.",
   },
 ];
 
-/* ───────────────────── 8. PROVA SOCIAL ────────────────────── */
-
-/**
- * Vazio de propósito. Os cinco depoimentos do IBBC que temos
- * (src/data/bootcamp/testimonials.ts) ainda não têm texto autorizado, e a
- * seção não deve exibir frase inventada. Ao receber os textos, basta
- * preencher aqui — o componente já renderiza.
- */
-export const depoimentos: Depoimento[] = [];
-
-/* ─────────────────────── 9. PARCEIROS ─────────────────────── */
-
-/** `logo` fica vazio até chegarem os arquivos reais. */
-export const parceiros: Parceiro[] = [
-  { id: "you-in-banking", nome: "You in Banking", descricao: "Inclusão no mercado financeiro pela educação." },
-  { id: "tabula", nome: "Tabula", descricao: "Plataforma de treinamento online e marketplace de cursos." },
-  { id: "sp-locus", nome: "SP Locus", descricao: "Formação executiva e desenvolvimento profissional." },
-  { id: "superrico", nome: "SuperRico", descricao: "Educação financeira e investimentos." },
-  { id: "ib-brasil", nome: "Investment Banking Brasil", descricao: "Hub de conteúdos sobre Investment Banking." },
-  { id: "digital-com-sal", nome: "Digital com Sal", descricao: "Comunicação e estratégia digital." },
-  { id: "eolica", nome: "Eólica", descricao: "Projetos educacionais e de carreira." },
-  { id: "oficina-do-livro", nome: "Oficina do Livro", descricao: "Projetos editoriais e de conhecimento aplicado." },
-  { id: "duotalk", nome: "DuoTalk", descricao: "Tecnologia conversacional e atendimento digital." },
-  { id: "tikkanen", nome: "Tikkanen", descricao: "Iniciativas de mercado e desenvolvimento." },
+/** Iniciativas citadas no mapa de conteúdo, ainda sem página própria. */
+export const outrasIniciativas = [
+  "Tabula",
+  "CDI — Clube de Investimento",
+  "Tino Econômico",
+  "Bankers Academy Fênix",
+  "Liga das Ligas de Finanças",
 ];
 
-/* ─────────────────────── Missão e valores ─────────────────── */
+export const parceiros = [
+  "You in Banking",
+  "Tabula",
+  "SP Locus",
+  "SuperRico",
+  "Investment Banking Brasil",
+  "Digital com Sal",
+  "Eólica",
+  "Oficina do Livro",
+  "DuoTalk",
+  "Tikkanen",
+];
+
+/* ─────────────────── 8. EQUIPE & CULTURA ─────────────────── */
+
+/**
+ * Galeria de bastidores. Não identifica ninguém individualmente — de
+ * propósito, e porque identificar por aparência não é aceitável.
+ *
+ * Ao receber o ZIP de fotos, mapear pelo NOME DO ARQUIVO para os `src`
+ * abaixo; os itens sem `src` renderizam como espaço reservado.
+ */
+export const galeriaCultura: FotoCultura[] = [
+  {
+    id: "time-escritorio",
+    src: "/images/quem-somos/time-grupo.jpg",
+    alt: "Parte do time da Bankers Academy na sala de reuniões",
+    larga: true,
+  },
+  {
+    id: "turma",
+    src: "/images/quem-somos/turma.jpg",
+    alt: "Turma reunida em sala de aula",
+  },
+  {
+    id: "valores",
+    src: "/images/quem-somos/valores.jpg",
+    alt: "Parede do escritório com a frase Excellence precedes success",
+  },
+  {
+    id: "evento",
+    alt: "Evento da Bankers Academy",
+    pendente: "Evento, palestra ou aula no auditório",
+  },
+  {
+    id: "bastidores",
+    alt: "Bastidores da Bankers Academy",
+    pendente: "Bastidores — gravação, preparação de aula, dia a dia",
+  },
+];
+
+/** Time de execução, conforme o mapa de conteúdo. */
+export const equipeExecucao = [
+  "Giovanna Giorgio",
+  "Nayarah Aiko",
+  "Sophia Torrezan",
+  "Rayara Rodrigues",
+  "Ana Clara Dezorzi",
+];
 
 export const missao =
   "Transformar qualquer pessoa para maximizar o seu potencial profissional.";
