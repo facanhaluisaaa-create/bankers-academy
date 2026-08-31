@@ -694,9 +694,10 @@ export const professores: Professor[] = [
  * (fiaonline.com.br/professores/jose-roberto-securato — "Doutor em
  * Administração (Finanças) pela FEA/USP"), Entrada em IB da Tabula
  * (módulos Fundamentos e Mercado Financeiro, "Dr. José Securato") e no
- * perfil de conteudista "Securato Master" da Tabula. Foto: NENHUMA
- * fonte oficial traz retrato (Tabula usa avatar padrão; FIA, avatar
- * genérico) — o slot fica reservado até o cliente confirmar uma.
+ * perfil de conteudista "Securato Master" da Tabula. Foto: retrato
+ * enviado e identificado pelo CLIENTE ("Foto do securato pai", 31/08) —
+ * nenhuma fonte oficial online trazia retrato (Tabula usa avatar
+ * padrão; FIA, avatar genérico).
  */
 export const securatoMaster = {
   rotulo: "Securato Master",
@@ -704,7 +705,9 @@ export const securatoMaster = {
   credencial: "Doutor em Administração (Finanças) pela FEA/USP",
   texto:
     "Referência acadêmica do ecossistema educacional da Bankers Academy. Nos programas, assina os módulos de Fundamentos — Matemática Financeira e Contabilidade — e de Mercado Financeiro do Entrada em Investment Banking.",
-  foto: null as string | null,
+  foto: "/images/quem-somos/especialistas/jose-roberto-securato.jpg" as
+    | string
+    | null,
 };
 
 /* ─────────────── 6. COMO ENSINAMOS ─────────────── */
