@@ -62,6 +62,10 @@ export type Iniciativa = {
   href?: string;
   externo?: boolean;
   destaque?: boolean;
+  /** Link direto do carrinho na Tabula (enviado pelo cliente em 01/09).
+      Guardado aqui; ainda não renderizado — a linha leva à página do
+      curso, onde a compra acontece. */
+  carrinho?: string;
 };
 
 export type FotoCultura = {
@@ -741,6 +745,12 @@ export const comoEnsinamos = [
 
 /* ─────────────── 7. ECOSSISTEMA / INICIATIVAS ─────────────── */
 
+/**
+ * Catálogo com os LINKS OFICIAIS enviados pelo cliente em 01/09 — cada
+ * linha leva à página do próprio curso (Tabula ou site da escola), em
+ * nova aba; o Boot Camp segue interno, para /bootcamp. As descrições
+ * curtas vêm do que as próprias páginas dos cursos dizem.
+ */
 export const iniciativas: Iniciativa[] = [
   {
     id: "ibbc",
@@ -751,6 +761,30 @@ export const iniciativas: Iniciativa[] = [
     destaque: true,
   },
   {
+    id: "entrada-ib",
+    nome: "Entrada em IB",
+    descricao: "O primeiro passo da formação em Investment Banking.",
+    href: "https://tabula.com.br/curso/entradaemib",
+    externo: true,
+    carrinho: "https://tabula.com.br/comprar/inserir/11750/finalizar",
+  },
+  {
+    id: "ib-avancado",
+    nome: "Investment Banking Avançado",
+    descricao: "Imersão na rotina e no mindset de um banker de M&A.",
+    href: "https://tabula.com.br/curso/investment-banking-avancado",
+    externo: true,
+    carrinho: "https://tabula.com.br/comprar/inserir/11728/finalizar",
+  },
+  {
+    id: "valuation-plus",
+    nome: "Valuation PLUS",
+    descricao: "Avaliação de empresas, dos conceitos à prática.",
+    href: "https://tabula.com.br/curso/valuationplus",
+    externo: true,
+    carrinho: "https://tabula.com.br/comprar/inserir/11733/finalizar",
+  },
+  {
     id: "modelagem",
     nome: "Modelagem Financeira",
     descricao: "Construção de modelos aplicados ao mercado.",
@@ -758,24 +792,26 @@ export const iniciativas: Iniciativa[] = [
     externo: true,
   },
   {
-    id: "ib",
-    nome: "Investment Banking",
-    descricao: "Formação em IB, do nivelamento ao avançado.",
-    href: "https://www.bankersacademy.com.br/investmentbanking",
+    id: "workshop-modelagem",
+    nome: "Workshop de Modelagem Financeira",
+    descricao: "A modelagem financeira em formato de workshop.",
+    href: "https://tabula.com.br/curso/workshop-de-modelagem-financeira",
     externo: true,
+    carrinho: "https://tabula.com.br/comprar/inserir/11708/finalizar",
+  },
+  {
+    id: "credito",
+    nome: "Introdução ao Crédito com Modelagem Financeira",
+    descricao: "Crédito corporativo, do risco à estruturação de dívida.",
+    href: "https://tabula.com.br/curso/introducao-ao-credito-com-modelagem-financeira",
+    externo: true,
+    carrinho: "https://tabula.com.br/comprar/inserir/11699/finalizar",
   },
   {
     id: "masterclass",
     nome: "Masterclass M&A",
     descricao: "Fusões e aquisições com quem executa transações.",
     href: "https://www.bankersacademy.com.br/masterclass",
-    externo: true,
-  },
-  {
-    id: "credito",
-    nome: "Crédito & DCM",
-    descricao: "Crédito corporativo e mercado de dívida.",
-    href: "https://www.bankersacademy.com.br/credito-dcm",
     externo: true,
   },
   {
