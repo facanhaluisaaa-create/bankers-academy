@@ -78,17 +78,21 @@ export default function QuemSomosPage() {
             public/brand/logo-bankers-academy-branca.png, sem retoque. */}
         <section className="on-dark bg-ink text-white">
           <div className={`${shell} pb-16 pt-14 lg:pb-20 lg:pt-20`}>
-            {/* Assinatura de marca: proporção original, com respiro */}
-            <Image
-              src="/brand/logo-bankers-academy-branca.png"
-              alt="Bankers Academy"
-              width={1805}
-              height={226}
-              priority
-              className="h-6 w-auto sm:h-8"
-            />
-
-            <p className={`mt-14 ${eyeDark} lg:mt-16`}>Quem somos</p>
+            {/* Assinatura de marca: só o símbolo (o header já traz o nome),
+                com o eyebrow maior ao lado dele, como pedido pelo cliente */}
+            <p className="flex items-center gap-4 sm:gap-5">
+              <Image
+                src="/brand/marca-bankers-academy-branca.png"
+                alt=""
+                width={227}
+                height={226}
+                priority
+                className="h-8 w-8 sm:h-10 sm:w-10"
+              />
+              <span className="text-base font-semibold uppercase tracking-[0.3em] text-brand sm:text-xl">
+                Quem somos
+              </span>
+            </p>
             <h1 className="mt-6 max-w-4xl text-balance text-[2.6rem] font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
               <span className="block">{heroTitulo[0]}</span>
               <span className="block text-brand">{heroTitulo[1]}</span>
