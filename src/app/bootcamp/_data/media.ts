@@ -276,8 +276,11 @@ export const experienciaMedia: MediaSlot[] = [
 /* ═══════════════ /bootcamp/jornada ═══════════════ */
 
 /** Foto por etapa da jornada, chaveada pelo id em _data/journey.ts.
-    Etapas sem entrada aqui renderizam só o texto — o layout não exige
-    foto em todas. Arquivos sugeridos: jornada-<id>.jpg */
+    DESLIGADO por decisão do cliente (02/09): a página da Jornada não
+    mostra mais espaço reservado nem foto de preenchimento — as etapas
+    ganharam microelementos gráficos. O registro fica pronto para quando
+    houver fotografias oficiais de etapas específicas. Arquivos
+    sugeridos: jornada-<id>.jpg */
 export const jornadaMedia: Record<string, MediaSlot> = {
   "pre-work": slot({
     slot: "JOR-PREWORK",

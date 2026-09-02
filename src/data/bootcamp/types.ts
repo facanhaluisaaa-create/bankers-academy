@@ -35,6 +35,8 @@ export type IbbcJourneyStage = {
   label: string;
   title: string;
   description: string;
+  /** Nome curto da etapa, para o trilho de progressão. */
+  curto?: string;
 };
 
 export type IbbcOutcome = {

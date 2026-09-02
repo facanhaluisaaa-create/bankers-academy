@@ -5,7 +5,8 @@ import Link from "next/link";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 
-import Certificate from "./_components/Certificate";
+import InteractiveCertificate from "./_components/InteractiveCertificate";
+import { JornadaTrilho } from "./_components/JornadaEtapas";
 import Foto from "./_components/Foto";
 import PlayerDepoimento from "./_components/PlayerDepoimento";
 import { bootcampMedia } from "./_data/media";
@@ -300,6 +301,12 @@ export default function BootcampPage() {
               );
             })()}
 
+            {/* Trilho de progressão: as etapas em uma linha, só número e
+                nome — a percepção de avanço sem repetir a página inteira */}
+            <div className="mt-12">
+              <JornadaTrilho etapas={ibbcJourney} />
+            </div>
+
             <Link href="/bootcamp/jornada" className={`${ctaSetaLight} mt-10`}>
               Conheça a jornada
               <span aria-hidden="true" className={setaClasse}>→</span>
@@ -355,7 +362,10 @@ export default function BootcampPage() {
           </div>
         </section>
 
-        {/* ═══════════ E. CERTIFICADO (prévia) ═══════════ */}
+        {/* ═══════════ E. CERTIFICADO INTERATIVO ═══════════
+            PROCESSO → ENTREGA → CERTIFICADO. O componente é o mesmo de
+            /bootcamp/certificado, sem alteração: o visitante escreve o
+            próprio nome aqui, sem precisar abrir outra página. */}
         <section aria-labelledby="certificado-t" className="on-dark bg-ink py-20 text-white lg:py-24">
           <div className={shell}>
             <div className="mx-auto max-w-2xl text-center">
@@ -364,7 +374,7 @@ export default function BootcampPage() {
                 id="certificado-t"
                 className="mt-4 text-balance text-4xl font-semibold tracking-tight sm:text-5xl"
               >
-                Seu nome pode estar aqui.
+                O resultado também leva o seu nome.
               </h2>
               <p className="mt-6 text-pretty text-lg leading-8 text-white/70">
                 Ao concluir a experiência, você recebe o certificado de{" "}
@@ -372,39 +382,19 @@ export default function BootcampPage() {
               </p>
             </div>
 
-            {/* Prévia estática do diploma. A versão interativa — em que o
-                visitante escreve o próprio nome — vive em
-                /bootcamp/certificado. */}
-            <div className="mx-auto mt-12 max-w-4xl">
-              {/* tabIndex: no celular esta área rola na horizontal e precisa
-                  ser alcançável pelo teclado (WCAG 2.1.1). */}
-              <div
-                tabIndex={0}
-                role="group"
-                aria-label="Prévia do certificado — role para o lado para ver inteiro"
-                className="-mx-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:overflow-visible sm:px-0"
-              >
-                <div className="min-w-[560px] sm:min-w-0">
-                  <Certificate
-                    nameSlot={
-                      <span className="cert-name mx-1 inline-block max-w-[62%] translate-y-[-0.15em] truncate align-baseline font-serif leading-none">
-                        SEU NOME AQUI
-                      </span>
-                    }
-                  />
-                </div>
-              </div>
+            <div className="mx-auto mt-12 max-w-5xl">
+              <InteractiveCertificate />
             </div>
 
-            <div className="mt-10 text-center">
-              <Link href="/bootcamp/certificado" className={ctaSetaDark}>
-                Explore seu certificado
-                <span aria-hidden="true" className={setaClasse}>→</span>
-              </Link>
-              <p className="mx-auto mt-6 max-w-xl text-xs leading-relaxed text-white/55">
+            <div className="mt-8 text-center">
+              <p className="mx-auto max-w-xl text-xs leading-relaxed text-white/55">
                 Prévia ilustrativa. O certificado oficial é concedido após a
                 conclusão do Investment Banking Boot Camp.
               </p>
+              <Link href="/bootcamp/certificado" className={`${ctaSetaDark} mt-6`}>
+                Explore seu certificado
+                <span aria-hidden="true" className={setaClasse}>→</span>
+              </Link>
             </div>
           </div>
         </section>

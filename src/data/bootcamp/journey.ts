@@ -15,6 +15,7 @@ import type { IbbcJourneyStage } from "./types";
 export const ibbcJourney: IbbcJourneyStage[] = [
   {
     id: "pre-work",
+    curto: "Pre-Work",
     label: "Pre-Work",
     title: "Nivelamento antes da largada",
     description:
@@ -22,6 +23,7 @@ export const ibbcJourney: IbbcJourneyStage[] = [
   },
   {
     id: "setor",
+    curto: "Entender o setor",
     label: "Etapa inicial",
     title: "Entender o setor",
     description:
@@ -29,6 +31,7 @@ export const ibbcJourney: IbbcJourneyStage[] = [
   },
   {
     id: "analises",
+    curto: "Análises",
     label: "Análises",
     title: "Análise setorial e das companhias",
     description:
@@ -36,6 +39,7 @@ export const ibbcJourney: IbbcJourneyStage[] = [
   },
   {
     id: "comparables",
+    curto: "Comparáveis",
     label: "Comparables",
     title: "Comparáveis e benchmarking",
     description:
@@ -43,6 +47,7 @@ export const ibbcJourney: IbbcJourneyStage[] = [
   },
   {
     id: "modelagem",
+    curto: "Modelagem",
     label: "Modelagem",
     title: "Modelagem financeira e valuation",
     description:
@@ -50,6 +55,7 @@ export const ibbcJourney: IbbcJourneyStage[] = [
   },
   {
     id: "material",
+    curto: "Construção",
     label: "Construção",
     title: "Construção do material",
     description:
@@ -57,6 +63,7 @@ export const ibbcJourney: IbbcJourneyStage[] = [
   },
   {
     id: "pitchbook",
+    curto: "Pitchbook",
     label: "Pitchbook",
     title: "Pitchbook final",
     description:
@@ -64,6 +71,7 @@ export const ibbcJourney: IbbcJourneyStage[] = [
   },
   {
     id: "apresentacao",
+    curto: "Apresentação final",
     label: "Encerramento",
     title: "Apresentação final e certificado",
     description:

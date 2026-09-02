@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import SubHero from "../_components/SubHero";
-import Foto from "../_components/Foto";
-import { jornadaMedia } from "../_data/media";
-import { btnApply, btnGhostDark, eyebrowLight, shell } from "../_components/estilos";
+import JornadaEtapas from "../_components/JornadaEtapas";
+import InteractiveCertificate from "../_components/InteractiveCertificate";
+import { btnApply, btnGhostDark, eyebrow, eyebrowLight, shell } from "../_components/estilos";
 import { ibbcJourney } from "../_data/journey";
 import { ibbcOutcomes } from "../_data/outcomes";
 import { ibbcFacts, ibbcLinks, BA_WHATSAPP_DISPLAY } from "../_data/config";
@@ -27,15 +27,14 @@ export const metadata: Metadata = {
 };
 
 /**
- * A jornada completa, como progressão vertical: trilho, marcadores e a
- * sensação de avanço até o Pitchbook. O conteúdo é o já confirmado no
- * projeto (_data/journey.ts) — o material oficial confirma 9 etapas mas
- * não publica o nome de cada uma, então as fases descrevem a progressão
- * sem numerar.
+ * A jornada completa, sem fotografia por decisão do cliente (02/09): as
+ * etapas de _data/journey.ts com microelementos gráficos, o fechamento
+ * na apresentação final e, logo abaixo, o certificado interativo — o
+ * MESMO componente da landing e de /bootcamp/certificado, reutilizado
+ * sem alteração. O material oficial confirma 9 etapas mas não publica o
+ * nome de cada uma, então as fases descrevem a progressão.
  */
 export default function JornadaPage() {
-  const ultima = ibbcJourney.length - 1;
-
   return (
     <>
       <Header />
@@ -49,57 +48,47 @@ export default function JornadaPage() {
               <span className="block text-white/55">Uma experiência completa.</span>
             </>
           }
-          texto={`O programa é organizado em ${ibbcFacts.stages} etapas com entregas diárias — do nivelamento que antecede a largada até o Pitchbook apresentado no encerramento.`}
+          texto={`O programa é organizado em ${ibbcFacts.stages} etapas com entregas diárias, do nivelamento que antecede a largada até o Pitchbook apresentado no encerramento.`}
         />
 
-        {/* Progressão */}
+        {/* ═══════════ AS ETAPAS ═══════════ */}
         <section aria-label="Etapas da jornada" className="bg-surface-alt">
           <div className={`${shell} py-20 lg:py-28`}>
-            <ol className="relative">
-              {/* Trilho contínuo atrás dos marcadores */}
-              <div
-                aria-hidden="true"
-                className="absolute bottom-6 left-[11px] top-2 w-px bg-line"
-              />
-              {ibbcJourney.map((stage, i) => (
-                <li key={stage.id} className="relative flex gap-6 pb-12 last:pb-0 sm:gap-8">
-                  <span
-                    aria-hidden="true"
-                    className={`mt-1 block h-[23px] w-[23px] shrink-0 rounded-full border-2 ${
-                      i === ultima
-                        ? "border-brand-deep bg-brand"
-                        : "border-line bg-white"
-                    }`}
-                  />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-deep">
-                      {stage.label}
-                    </p>
-                    <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
-                      {stage.title}
-                    </h2>
-                    <p className="mt-3 max-w-2xl leading-7 text-ink/70">
-                      {stage.description}
-                    </p>
-                    {/* Foto da etapa, quando o slot existir no registro —
-                        etapas sem slot seguem só em texto, sem buraco */}
-                    {jornadaMedia[stage.id] ? (
-                      <Foto
-                        slot={jornadaMedia[stage.id]}
-                        sizes="(max-width: 768px) 90vw, 40vw"
-                        rounded="rounded-2xl"
-                        className="mt-6 max-w-lg"
-                      />
-                    ) : null}
-                  </div>
-                </li>
-              ))}
-            </ol>
+            <JornadaEtapas etapas={ibbcJourney} />
           </div>
         </section>
 
-        {/* O que você constrói — o resultado concreto da jornada */}
-        <section aria-labelledby="constroi-t" className="border-y border-line bg-surface">
+        {/* ═══════════ CERTIFICADO — logo depois da apresentação final ═══════════
+            PROCESSO → ENTREGA → CERTIFICADO. Componente existente, intacto. */}
+        <section aria-labelledby="jor-cert-t" className="on-dark bg-ink py-20 text-white lg:py-24">
+          <div className={shell}>
+            <div className="mx-auto max-w-2xl text-center">
+              <p className={eyebrow}>Certificação IBBC</p>
+              <h2
+                id="jor-cert-t"
+                className="mt-4 text-balance text-4xl font-semibold tracking-tight sm:text-5xl"
+              >
+                O resultado também leva o seu nome.
+              </h2>
+              <p className="mt-6 text-pretty text-lg leading-8 text-white/70">
+                Ao concluir a experiência, você recebe o certificado de{" "}
+                {ibbcFacts.hours} horas de Practical Investment Banking Training.
+              </p>
+            </div>
+
+            <div className="mx-auto mt-12 max-w-5xl">
+              <InteractiveCertificate />
+            </div>
+
+            <p className="mx-auto mt-8 max-w-xl text-center text-xs leading-relaxed text-white/55">
+              Prévia ilustrativa. O certificado oficial é concedido após a
+              conclusão do Investment Banking Boot Camp.
+            </p>
+          </div>
+        </section>
+
+        {/* ═══════════ O QUE VOCÊ CONSTRÓI — lista enxuta, sem caixas ═══════════ */}
+        <section aria-labelledby="constroi-t" className="border-b border-line bg-surface">
           <div className={`${shell} py-20 lg:py-24`}>
             <p className={eyebrowLight}>O que você constrói</p>
 
@@ -108,17 +97,14 @@ export default function JornadaPage() {
               <span className="block text-ink/55">o trabalho na mão.</span>
             </h2>
 
-            <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <dl className="mt-12 grid gap-x-10 gap-y-10 border-t border-line pt-10 sm:grid-cols-2 lg:grid-cols-3">
               {ibbcOutcomes.map((o) => (
-                <li key={o.id}>
-                  <article className="h-full rounded-3xl border border-line bg-white p-6">
-                    <span aria-hidden="true" className="block h-1 w-8 rounded-full bg-brand-deep" />
-                    <h3 className="mt-6 text-lg font-semibold">{o.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-ink/70">{o.description}</p>
-                  </article>
-                </li>
+                <div key={o.id}>
+                  <dt className="text-lg font-semibold tracking-tight">{o.title}</dt>
+                  <dd className="mt-2 text-sm leading-6 text-ink/70">{o.description}</dd>
+                </div>
               ))}
-            </ul>
+            </dl>
           </div>
         </section>
 
