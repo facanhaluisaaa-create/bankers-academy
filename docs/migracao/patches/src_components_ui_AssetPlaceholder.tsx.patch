@@ -1,0 +1,58 @@
+diff --git a/src/components/ui/AssetPlaceholder.tsx b/src/components/ui/AssetPlaceholder.tsx
+index 6f49bd8..1d203b3 100644
+--- a/src/components/ui/AssetPlaceholder.tsx
++++ b/src/components/ui/AssetPlaceholder.tsx
+@@ -10,30 +10,47 @@ export default function AssetPlaceholder({
+   label,
+   className = "",
+   ratio = "aspect-[4/3]",
++  tone = "light",
+ }: {
+   label: string;
+   className?: string;
+   ratio?: string;
++  /** "dark" para uso sobre seções de fundo ink. */
++  tone?: "light" | "dark";
+ }) {
++  const dark = tone === "dark";
+   return (
+     <div
+       role="img"
+       aria-label={`Espaço reservado para fotografia: ${label}`}
+-      className={`relative flex items-center justify-center overflow-hidden rounded-2xl border border-dashed border-ink/25 bg-surface-alt ${ratio} ${className}`}
++      className={`relative flex items-center justify-center overflow-hidden rounded-2xl border border-dashed ${ratio} ${className} ${
++        dark ? "border-white/25 bg-white/[0.03]" : "border-ink/25 bg-surface-alt"
++      }`}
+     >
+       <div
+         aria-hidden="true"
+-        className="absolute inset-0 opacity-[0.06]"
++        className={`absolute inset-0 ${dark ? "opacity-[0.10]" : "opacity-[0.06]"}`}
+         style={{
+-          backgroundImage:
+-            "repeating-linear-gradient(45deg, #000 0 1px, transparent 1px 9px)",
++          backgroundImage: `repeating-linear-gradient(45deg, ${
++            dark ? "#fff" : "#000"
++          } 0 1px, transparent 1px 9px)`,
+         }}
+       />
+       <div className="relative px-5 text-center">
+-        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-ink-muted">
++        <p
++          className={`text-[10px] font-semibold uppercase tracking-[0.2em] ${
++            dark ? "text-white/55" : "text-ink/60"
++          }`}
++        >
+           Foto pendente
+         </p>
+-        <p className="mt-2 text-sm font-medium leading-snug text-ink">{label}</p>
++        <p
++          className={`mt-2 text-sm font-medium leading-snug ${
++            dark ? "text-white/85" : "text-ink"
++          }`}
++        >
++          {label}
++        </p>
+       </div>
+     </div>
+   );

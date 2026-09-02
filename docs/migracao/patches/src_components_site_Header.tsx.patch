@@ -1,0 +1,39 @@
+diff --git a/src/components/site/Header.tsx b/src/components/site/Header.tsx
+index d3d8265..dd2a234 100644
+--- a/src/components/site/Header.tsx
++++ b/src/components/site/Header.tsx
+@@ -5,13 +5,29 @@ import Link from "next/link";
+ import { useEffect, useState } from "react";
+ import Container from "@/components/ui/Container";
+ import Button from "@/components/ui/Button";
+-import { ibbcLinks, IBBC_PATH } from "@/data/bootcamp/config";
++import { ibbcLinks } from "@/data/bootcamp/config";
+ 
++/**
++ * Menu principal do site (desktop e mobile leem deste mesmo array).
++ *
++ * ► PARA O SITE REAL: não substitua o array de lá. Adicione APENAS a linha
++ *   do BOOTCAMP ao menu existente, na posição que fizer sentido:
++ *
++ *     { href: "/programas",  label: "PROGRAMAS" },
++ *     { href: "/bootcamp",   label: "BOOTCAMP" },   // ← só esta linha
++ *     { href: "/agenda",     label: "AGENDA" },
++ *     { href: "/quem-somos", label: "QUEM SOMOS" },
++ *
++ *   O item herda automaticamente fonte, tamanho, espaçamento e o
++ *   comportamento do menu mobile, porque tudo é renderizado pelo mesmo
++ *   map() abaixo — não há estilo próprio para o BOOTCAMP.
++ *
++ * Neste projeto existem apenas a home e a página do Boot Camp, então o
++ * menu lista só o que tem página de verdade. Links mortos seriam pior.
++ */
+ const nav = [
+-  { href: IBBC_PATH, label: "Boot Camp" },
+-  { href: `${IBBC_PATH}#jornada`, label: "Jornada" },
+-  { href: `${IBBC_PATH}#alumni`, label: "Alumni" },
+-  { href: `${IBBC_PATH}#faq`, label: "FAQ" },
++  { href: "/bootcamp", label: "BOOTCAMP" },
++  { href: "/quem-somos", label: "QUEM SOMOS" },
+ ];
+ 
+ export default function Header() {

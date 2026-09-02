@@ -1,0 +1,3648 @@
+{
+  "$schema_note": "Manifesto de migração gerado a partir do estado real do repositório em HEAD. Nada aqui foi preenchido por suposição; onde não foi possível determinar, resolution_status = unresolved.",
+  "generated_at": "2026-09-02",
+  "generated_from": {
+    "repository": "https://github.com/facanhaluisaaa-create/bankers-academy",
+    "branch": "claude/ibbc-page-kzoqyc",
+    "head": "3661e13e0edcfda8565af78c54bcc0dcdfcf7e89",
+    "root_commit": "ee766bbc5a15901e30945ea07608ddeccf038fac",
+    "commit_count": 58,
+    "working_tree_clean": true,
+    "untracked_files": [],
+    "in_sync_with_origin": true
+  },
+  "artifacts": {
+    "quem_somos": {
+      "artifact_name": "Quem Somos",
+      "artifact_published_title": "Quem Somos — Bankers Academy",
+      "artifact_url": "https://claude.ai/code/artifact/621f3077-85ae-4356-9b72-9ca47d41889a",
+      "repository": {
+        "remote": "https://github.com/facanhaluisaaa-create/bankers-academy",
+        "github": "facanhaluisaaa-create/bankers-academy",
+        "note": "scaffold de trabalho, NÃO o repositório oficial"
+      },
+      "branch": "claude/ibbc-page-kzoqyc",
+      "commit": "3661e13e0edcfda8565af78c54bcc0dcdfcf7e89",
+      "base_commit": "ee766bbc5a15901e30945ea07608ddeccf038fac",
+      "first_commit_of_this_artifact": "9d65861 (2026-08-30) feat(quem-somos): recria a página a partir do site publicado",
+      "last_commit_of_this_artifact": "429d9cc (2026-09-02) feat(quem-somos): hero com o símbolo da marca e 'Quem somos' maior",
+      "commits": [
+        "9d65861",
+        "ce48db7",
+        "4f9a0cc",
+        "8c4c317",
+        "854f394",
+        "09e5a68",
+        "b0cfdc3",
+        "25f8c75",
+        "52cc42d",
+        "982b754",
+        "7efa110",
+        "8b26afa",
+        "4979e37",
+        "39b794a",
+        "5ddbd00",
+        "5b651ff",
+        "6849a1f",
+        "025b4ed",
+        "514d32d",
+        "223f0e5",
+        "0ec0738",
+        "7936b8e",
+        "040d523",
+        "a0b1ec2",
+        "bfd7166",
+        "336beb2",
+        "6b0fda5",
+        "2a74a55",
+        "386aabf",
+        "b163b39",
+        "c32f4fb",
+        "65d6f51",
+        "4688097",
+        "9ef5203",
+        "63aba30",
+        "429d9cc"
+      ],
+      "commits_shared_that_also_affect_it": [
+        "8965f12",
+        "79f649b",
+        "bd234e4",
+        "375bef7"
+      ],
+      "routes": [
+        "/quem-somos",
+        "/quem-somos/historia",
+        "/quem-somos/lideranca",
+        "/quem-somos/especialistas",
+        "/quem-somos/ecossistema",
+        "/quem-somos/fundador"
+      ],
+      "routes_confirmed_by": "next build (prerender estático) + src/app/quem-somos/**/page.tsx",
+      "files": [
+        {
+          "path": "src/app/quem-somos/page.tsx",
+          "artifact_origin": "Quem Somos",
+          "role": "route:/quem-somos (hub)",
+          "commits": [
+            "429d9cc",
+            "c32f4fb",
+            "b163b39",
+            "6b0fda5",
+            "336beb2",
+            "bfd7166",
+            "a0b1ec2",
+            "040d523",
+            "7936b8e",
+            "0ec0738",
+            "025b4ed",
+            "5ddbd00",
+            "982b754",
+            "52cc42d",
+            "25f8c75",
+            "b0cfdc3",
+            "09e5a68",
+            "854f394",
+            "8c4c317",
+            "4f9a0cc",
+            "ce48db7",
+            "9d65861"
+          ],
+          "size_bytes": 19449,
+          "created_in": "9d65861",
+          "imports": [
+            "@/components/site/Header",
+            "@/components/site/Footer",
+            "@/components/ui/Reveal",
+            "@/components/ui/BrandMark",
+            "@/components/ui/AssetPlaceholder",
+            "./_components/HubCards",
+            "./_components/estilos",
+            "@/data/quem-somos"
+          ],
+          "sections": [
+            "hero (bg-ink, símbolo marca-bankers-academy-branca.png + 'Quem somos' + h1 2 linhas, botões → /quem-somos/historia e /quem-somos/lideranca, foto equipe.jpg)",
+            "cartão clicável do fundador → /quem-somos/fundador (securato-em-pe.png)",
+            "números (autoridade: +20 / 14 / 2018 / +12 mil)",
+            "porquê (BrandMark + pilares)",
+            "fundador compacto (aula-securato.jpg 4:5 + texto + 'Conheça a trajetória')",
+            "ponte 2018 (bg-brand) → /bootcamp (aula-turma.jpg)",
+            "HubCards (4 portas)",
+            "comunidade (turma.jpg)",
+            "CTA final (cultura-time.jpg) → /quem-somos/ecossistema e /bootcamp"
+          ]
+        },
+        {
+          "path": "src/app/quem-somos/historia/page.tsx",
+          "artifact_origin": "Quem Somos",
+          "role": "route:/quem-somos/historia",
+          "commits": [
+            "65d6f51",
+            "b163b39",
+            "6b0fda5",
+            "025b4ed"
+          ],
+          "size_bytes": 15751,
+          "created_in": "025b4ed",
+          "sections": [
+            "SubHero (bg-brand, volta → /quem-somos)",
+            "convicção",
+            "prólogo 1995–2018 'Mercado × educação'",
+            "2018 (bg-ink) '5'",
+            "2019 + 2021 grid",
+            "2022 (surface-alt)",
+            "2023 You in Banking × J.P. Morgan (bg-ink, só texto)",
+            "2024 com foto marco-2024-livro.jpg",
+            "ponte bg-brand → /bootcamp",
+            "missão",
+            "'A história continua' → /quem-somos/lideranca, /quem-somos/especialistas, /quem-somos"
+          ]
+        },
+        {
+          "path": "src/app/quem-somos/lideranca/page.tsx",
+          "artifact_origin": "Quem Somos",
+          "role": "route:/quem-somos/lideranca",
+          "commits": [
+            "b163b39",
+            "040d523",
+            "0ec0738",
+            "025b4ed"
+          ],
+          "size_bytes": 10993,
+          "created_in": "025b4ed",
+          "sections": [
+            "SubHero",
+            "fundador (bg-ink, aula-securato.jpg) → /quem-somos/fundador",
+            "sócios e liderança (3 retratos + LinkedIn quando houver)",
+            "cultura (galeriaCultura + AssetPlaceholder para slots vazios)",
+            "CTA bg-brand → /quem-somos/especialistas"
+          ]
+        },
+        {
+          "path": "src/app/quem-somos/especialistas/page.tsx",
+          "artifact_origin": "Quem Somos",
+          "role": "route:/quem-somos/especialistas",
+          "commits": [
+            "b163b39",
+            "2a74a55",
+            "025b4ed"
+          ],
+          "size_bytes": 12146,
+          "created_in": "025b4ed",
+          "sections": [
+            "SubHero",
+            "Bloco 1 Securato Jr. (especialistas/jose-securato-jr.jpg) → /quem-somos/fundador",
+            "Bloco 2 Securato Master (bg-ink, especialistas/jose-roberto-securato.jpg)",
+            "Bloco 3 grid 'Quem ensina com a gente' (6 professores; 4 com retrato, 2 com AssetPlaceholder)",
+            "Como ensinamos (bg-ink, 4 AssetPlaceholder)",
+            "CTA bg-brand → /bootcamp"
+          ]
+        },
+        {
+          "path": "src/app/quem-somos/ecossistema/page.tsx",
+          "artifact_origin": "Quem Somos",
+          "role": "route:/quem-somos/ecossistema",
+          "commits": [
+            "b163b39",
+            "025b4ed"
+          ],
+          "size_bytes": 5801,
+          "created_in": "025b4ed",
+          "sections": [
+            "SubHero",
+            "iniciativas (9 linhas clicáveis: Tabula/BA externas em nova aba, IBBC → /bootcamp)",
+            "outras iniciativas + parceiros",
+            "CTA bg-brand → /bootcamp"
+          ]
+        },
+        {
+          "path": "src/app/quem-somos/fundador/page.tsx",
+          "artifact_origin": "Quem Somos",
+          "role": "route:/quem-somos/fundador",
+          "commits": [
+            "63aba30",
+            "9ef5203",
+            "b163b39",
+            "a0b1ec2",
+            "040d523"
+          ],
+          "size_bytes": 14304,
+          "created_in": "040d523",
+          "sections": [
+            "perfil (bg-ink, aula-securato.jpg, securato-em-pe.png, LinkedIn)",
+            "trajetória (lista de marcos + foto do livro max-w-[26rem])",
+            "transações (bg-ink)",
+            "iniciativas + conselhos + formação",
+            "ponte bg-brand → /bootcamp e /quem-somos/lideranca"
+          ]
+        },
+        {
+          "path": "src/app/quem-somos/_components/HubCards.tsx",
+          "artifact_origin": "Quem Somos",
+          "role": "component (server): 4 cards-link do hub",
+          "commits": [
+            "025b4ed"
+          ],
+          "size_bytes": 3309,
+          "created_in": "025b4ed"
+        },
+        {
+          "path": "src/app/quem-somos/_components/SubHero.tsx",
+          "artifact_origin": "Quem Somos",
+          "role": "component (server): abertura bg-brand das internas com link '← Quem somos'",
+          "commits": [
+            "025b4ed"
+          ],
+          "size_bytes": 1559,
+          "created_in": "025b4ed"
+        },
+        {
+          "path": "src/app/quem-somos/_components/estilos.ts",
+          "artifact_origin": "Quem Somos",
+          "role": "classes compartilhadas do hub (shell, eyeDark/eyeLight/eyeBrand, btnSolid/btnOutline/btnSolidDark/btnOutlineDark, linhaClicavel)",
+          "commits": [
+            "c32f4fb",
+            "025b4ed"
+          ],
+          "size_bytes": 2387,
+          "created_in": "025b4ed"
+        },
+        {
+          "path": "src/app/quem-somos/_components/Timeline.tsx",
+          "artifact_origin": "Quem Somos",
+          "role": "component NÃO importado por nenhuma página (código morto desde a reescrita da História em 65d6f51)",
+          "commits": [
+            "223f0e5",
+            "5ddbd00",
+            "ce48db7"
+          ],
+          "size_bytes": 3191,
+          "created_in": "ce48db7",
+          "status": "dead_code_not_imported",
+          "migrate": false
+        },
+        {
+          "path": "src/data/quem-somos.ts",
+          "artifact_origin": "Quem Somos",
+          "role": "TODO o conteúdo do Quem Somos (rotas, links, hubCards, hero, autoridade, pilares, historia[7], securato*, qsMedia, lideranca[3], professores[6], securatoMaster, comoEnsinamos, iniciativas[9], parceiros, galeriaCultura, missao, valores)",
+          "commits": [
+            "4688097",
+            "b163b39",
+            "386aabf",
+            "2a74a55",
+            "bfd7166",
+            "375bef7",
+            "a0b1ec2",
+            "040d523",
+            "7936b8e",
+            "0ec0738",
+            "223f0e5",
+            "514d32d",
+            "025b4ed",
+            "6849a1f",
+            "5b651ff",
+            "39b794a",
+            "4979e37",
+            "8b26afa",
+            "7efa110",
+            "982b754",
+            "52cc42d",
+            "25f8c75",
+            "854f394",
+            "ce48db7",
+            "9d65861"
+          ],
+          "size_bytes": 34457,
+          "created_in": "9d65861"
+        },
+        {
+          "path": "src/components/ui/BrandMark.tsx",
+          "artifact_origin": "Quem Somos",
+          "role": "component: símbolo da marca em SVG (usado só no hub /quem-somos)",
+          "commits": [
+            "4f9a0cc"
+          ],
+          "size_bytes": 1868,
+          "created_in": "4f9a0cc"
+        }
+      ],
+      "files_shared_it_depends_on": [
+        "src/app/globals.css",
+        "src/app/layout.tsx",
+        "src/components/site/Header.tsx",
+        "src/components/site/Footer.tsx",
+        "src/components/ui/Reveal.tsx",
+        "src/components/ui/AssetPlaceholder.tsx",
+        "src/app/sitemap.ts"
+      ],
+      "assets": [
+        {
+          "path": "public/brand/marca-bankers-academy-branca.png",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 2334,
+          "md5": "5576e95e2335a57c7d6f938007b7ddb6",
+          "commits": [
+            "429d9cc"
+          ],
+          "used_by": [
+            "src/app/quem-somos/page.tsx (hero: símbolo ao lado de 'Quem somos')"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            227,
+            226
+          ]
+        },
+        {
+          "path": "public/brand/logo-bankers-academy-branca.png",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 20935,
+          "md5": "87dacee0db655cb526f60d4a6edca193",
+          "commits": [
+            "c32f4fb"
+          ],
+          "used_by": [],
+          "status": "not_rendered (substituída pelo símbolo em 429d9cc; citada só em comentário)",
+          "dimensions_px": [
+            1805,
+            226
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/equipe.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 494931,
+          "md5": "b537331bdf6afc0edc70b2db6c72eb24",
+          "commits": [
+            "8c4c317"
+          ],
+          "used_by": [
+            "qsMedia.hero (hub)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            2000,
+            1333
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/securato-em-pe.png",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 254501,
+          "md5": "6a264cd11ab796ed75946e821b4d8ca2",
+          "commits": [
+            "223f0e5"
+          ],
+          "used_by": [
+            "securatoFotoRecorte (hub cartão do fundador; /fundador)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            900,
+            1551
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/aula-securato.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 355976,
+          "md5": "99090574210af2073d335d7c676f9f6e",
+          "commits": [
+            "514d32d"
+          ],
+          "used_by": [
+            "qsMedia.fundadorAula (hub, /lideranca, /fundador)",
+            "galeriaCultura"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1086,
+            1448
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/aula-turma.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 298732,
+          "md5": "a4b91bc99189ca0bb88b093059437cb6",
+          "commits": [
+            "375bef7"
+          ],
+          "used_by": [
+            "qsMedia.ponteAula (hub, ponte 2018)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1600,
+            1200
+          ],
+          "note": "mesmos bytes de public/images/bootcamp/aula-experiencia.jpg (md5 igual) — cada frente tem a sua cópia"
+        },
+        {
+          "path": "public/images/quem-somos/turma.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 343135,
+          "md5": "102d63ed52022bae07aa0b6ad917163b",
+          "commits": [
+            "8c4c317"
+          ],
+          "used_by": [
+            "qsMedia.comunidade (hub)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            2000,
+            1095
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/cultura-time.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 653214,
+          "md5": "41d31d95e1154368f56d6cde2ffed437",
+          "commits": [
+            "bfd7166"
+          ],
+          "used_by": [
+            "qsMedia.cultura (hub CTA final)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            2200,
+            1455
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/time-grupo.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 174035,
+          "md5": "5384d67194a54436d1de522f21dbe3df",
+          "commits": [
+            "b0cfdc3"
+          ],
+          "used_by": [
+            "galeriaCultura (/lideranca)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1536,
+            842
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/marco-2024-livro.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 339581,
+          "md5": "2661d16856c4a989cf9db5cb5809e247",
+          "commits": [
+            "223f0e5"
+          ],
+          "used_by": [
+            "historia[hoje].imagem (/historia)",
+            "qsMedia.livro (/fundador)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1170,
+            1462
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/lideranca-andrea-securato.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 62620,
+          "md5": "0a69ccfe441b4bd94d1690ba9619938f",
+          "commits": [
+            "39b794a"
+          ],
+          "used_by": [
+            "lideranca (/lideranca)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            600,
+            600
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/lideranca-arnaldo-mello.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 64572,
+          "md5": "5ebc9f4b9d20d3321d514d559c0084d4",
+          "commits": [
+            "7efa110"
+          ],
+          "used_by": [
+            "lideranca (/lideranca)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            800,
+            800
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/lideranca-jaqueline-sanches.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 76702,
+          "md5": "c019555652d69f7b2b8b5edd888badeb",
+          "commits": [
+            "982b754"
+          ],
+          "used_by": [
+            "lideranca (/lideranca)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            800,
+            800
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/especialistas/jose-securato-jr.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 228011,
+          "md5": "08af8c0315a3d0bc868d3aea6eab2321",
+          "commits": [
+            "2a74a55"
+          ],
+          "used_by": [
+            "/especialistas bloco 1"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1200,
+            1500
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/especialistas/jose-roberto-securato.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 98082,
+          "md5": "dcae2ee7bb5b15083dfe54998142ef91",
+          "commits": [
+            "386aabf"
+          ],
+          "used_by": [
+            "securatoMaster.foto (/especialistas)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            800,
+            1000
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/especialistas/marcos-piellusch.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 65745,
+          "md5": "7088c034aef2d4c49ed1af5bdc4f1c94",
+          "commits": [
+            "2a74a55"
+          ],
+          "used_by": [
+            "professores (/especialistas)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            800,
+            1000
+          ],
+          "provenance": "tabula.com.br/conteudista/marcos.piellusch"
+        },
+        {
+          "path": "public/images/quem-somos/especialistas/walter-eclache.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 84614,
+          "md5": "52f77ea96861661c2ca04ddfad8df6c7",
+          "commits": [
+            "2a74a55"
+          ],
+          "used_by": [
+            "professores (/especialistas)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            800,
+            1000
+          ],
+          "provenance": "tabula.com.br/conteudista/walter.eclache"
+        },
+        {
+          "path": "public/images/quem-somos/especialistas/alexandre-paixao.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 97409,
+          "md5": "b107d1d377fe0c7dc62284fba6e4c990",
+          "commits": [
+            "2a74a55"
+          ],
+          "used_by": [
+            "professores (/especialistas)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            800,
+            1000
+          ],
+          "provenance": "tabula.com.br/conteudista/alexandre-paixo"
+        },
+        {
+          "path": "public/images/quem-somos/especialistas/fernando-fegyveres.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 90583,
+          "md5": "4a753e58ecd92b625468f45ffda7a560",
+          "commits": [
+            "2a74a55"
+          ],
+          "used_by": [
+            "professores (/especialistas)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            800,
+            1000
+          ],
+          "provenance": "ead.tabula.com.br/evento-fernando-fegyveres"
+        },
+        {
+          "path": "public/images/quem-somos/securato-jr.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 253537,
+          "md5": "2d5161931305e3a8152ea2fd88c9f285",
+          "commits": [
+            "8c4c317"
+          ],
+          "used_by": [],
+          "status": "unused (retrato antigo do site publicado; mantido por regra 'não apagar assets')",
+          "dimensions_px": [
+            1400,
+            1759
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/securato-recorte.png",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 171416,
+          "md5": "5eff09c5199e501861cef0c9d9dc2209",
+          "commits": [
+            "09e5a68"
+          ],
+          "used_by": [],
+          "status": "unused (recorte antigo; substituído por securato-em-pe.png)",
+          "dimensions_px": [
+            603,
+            1100
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/valores.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 217157,
+          "md5": "b691acd9986041bfaa87379aba469ee9",
+          "commits": [
+            "8c4c317"
+          ],
+          "used_by": [],
+          "status": "unused (reprovada pelo cliente; mantida na pasta)",
+          "dimensions_px": [
+            1800,
+            1279
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/a-identificar/retrato-homem.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 152503,
+          "md5": "f156de148d78d13a77c012abc606fd3c",
+          "commits": [
+            "b0cfdc3"
+          ],
+          "used_by": [],
+          "status": "unused — pessoa NÃO identificada; NÃO publicar",
+          "dimensions_px": [
+            1200,
+            1499
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/a-identificar/retrato-mulher.jpg",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 168931,
+          "md5": "6da261f83e879f25cd1546216cab2c35",
+          "commits": [
+            "b0cfdc3"
+          ],
+          "used_by": [],
+          "status": "unused — pessoa NÃO identificada; NÃO publicar",
+          "dimensions_px": [
+            1137,
+            1536
+          ]
+        },
+        {
+          "path": "public/images/quem-somos/COMO-NOMEAR.txt",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 2539,
+          "md5": "f7fbf9ce496efb4c242ac253820fc0ec",
+          "commits": [
+            "514d32d",
+            "5b651ff",
+            "39b794a",
+            "4979e37",
+            "8b26afa",
+            "79f649b"
+          ],
+          "used_by": [],
+          "status": "documentação (não é servido pela página)"
+        },
+        {
+          "path": "public/images/quem-somos/a-identificar/LEIA-ME.txt",
+          "artifact_origin": "Quem Somos",
+          "size_bytes": 972,
+          "md5": "eb24d860082aae8906d8acf3b126e321",
+          "commits": [
+            "4979e37",
+            "8b26afa",
+            "b0cfdc3"
+          ],
+          "used_by": [],
+          "status": "documentação (não é servido pela página)"
+        }
+      ],
+      "dependencies": [
+        "next (Image, Link, Metadata)",
+        "react",
+        "tailwindcss v4"
+      ],
+      "configuration": [
+        "tsconfig paths @/* (imports @/components/site/*, @/components/ui/*, @/data/quem-somos)",
+        "metadata por página: title, description, alternates.canonical, openGraph (type website, locale pt_BR, siteName)",
+        "sem JSON-LD",
+        "sem env vars"
+      ],
+      "navigation": {
+        "hub→internas": [
+          "/quem-somos/historia",
+          "/quem-somos/lideranca",
+          "/quem-somos/especialistas",
+          "/quem-somos/ecossistema",
+          "/quem-somos/fundador"
+        ],
+        "internas→hub": "SubHero '← Quem somos'",
+        "para_bootcamp": [
+          "hub ponte 2018",
+          "hub CTA final",
+          "/historia ponte",
+          "/especialistas CTA",
+          "/ecossistema CTA e linha IBBC",
+          "/fundador ponte"
+        ],
+        "externos": [
+          "LinkedIn: josesecurato, marcospiellusch, professor-waltereclache, alexandre-paixao, tatiana-tafarello-75058715",
+          "Tabula: entradaemib, investment-banking-avancado, valuationplus, workshop-de-modelagem-financeira, introducao-ao-credito-com-modelagem-financeira",
+          "bankersacademy.com.br/modelagemfinanceira, /masterclass",
+          "carrinhos Tabula guardados em `carrinho` e NÃO renderizados"
+        ]
+      },
+      "styles": {
+        "shared_classes": "src/app/quem-somos/_components/estilos.ts",
+        "tokens_used": [
+          "brand (fundos bg-brand, acentos text-brand em seções escuras)",
+          "brand-deep (eyebrows em fundo claro)",
+          "ink (fundos escuros .on-dark bg-ink)",
+          "line",
+          "surface / surface-alt"
+        ],
+        "section_rhythm": "hero ink → fundador ink → números ink → porquê surface → fundador compacto ink → ponte brand → cards surface-alt → comunidade surface → CTA brand; internas abrem com SubHero bg-brand",
+        "typography": "Mulish via --font-sans",
+        "brand_color_locked": "#C4EF7C",
+        "text_rules": "sem '·' e sem '—' em texto visível (b163b39)"
+      },
+      "content": {
+        "hero": {
+          "kicker": "símbolo (marca-bankers-academy-branca.png 227x226) + 'Quem somos' (uppercase, text-brand)",
+          "h1": [
+            "Do mercado para a sala.",
+            "Da sala para a carreira."
+          ],
+          "texto": "heroTexto em src/data/quem-somos.ts",
+          "botoes": [
+            "→ /quem-somos/historia",
+            "→ /quem-somos/lideranca"
+          ],
+          "foto": "equipe.jpg com véu"
+        },
+        "logo": "Header: /brand/logo-bankers-academy.png (scaffold); hero do hub: só o símbolo (a logo completa foi retirada em 429d9cc a pedido do cliente)",
+        "proposito": "porqueTitulo/porqueSubtitulo + 3 pilares (conhecimento, experiência, carreira); missão em /historia",
+        "jose_securato_jr": {
+          "nome": "José Roberto Securato Junior",
+          "cargo": "Fundador da Bankers Academy",
+          "credenciais": [
+            "+20 anos em finanças corporativas",
+            "14 anos em Investment Banking",
+            "Deutsche Bank (São Paulo e Nova Iorque)",
+            "BNP Paribas",
+            "SP Advisors e SP Capital Partners, desde 2013",
+            "professor FIA e Saint Paul",
+            "PhD em Finanças"
+          ],
+          "pagina": "/quem-somos/fundador (trajetória 1998→, transações, iniciativas, conselhos, formação, pilares)",
+          "linkedin": "https://www.linkedin.com/in/josesecurato/"
+        },
+        "securato_master": {
+          "nome": "Prof. Dr. José Roberto Securato",
+          "rotulo": "Securato Master",
+          "credencial": "Doutor em Administração (Finanças) pela FEA/USP",
+          "foto": "especialistas/jose-roberto-securato.jpg (enviada pelo cliente: 'Foto do securato pai')",
+          "onde": "/quem-somos/especialistas bloco 2 (bg-ink)"
+        },
+        "historia_timeline": [
+          {
+            "id": "jornada",
+            "periodo": "1995–2018"
+          },
+          {
+            "id": "ibbc",
+            "periodo": "2018",
+            "destaque": "5 alunos na primeira turma"
+          },
+          {
+            "id": "site-ib",
+            "periodo": "2019"
+          },
+          {
+            "id": "digital",
+            "periodo": "2021",
+            "nota": "800 → +12 mil; 'Digital com Sal' é parceiro, não nome do marco"
+          },
+          {
+            "id": "ba",
+            "periodo": "2022",
+            "nota": "divergência 2022 × 2023 anotada; NÃO alterada silenciosamente"
+          },
+          {
+            "id": "yib",
+            "periodo": "2023",
+            "nota": "You in Banking × J.P. Morgan, só texto"
+          },
+          {
+            "id": "hoje",
+            "periodo": "2024 → hoje",
+            "foto": "marco-2024-livro.jpg"
+          }
+        ],
+        "lideranca": [
+          {
+            "nome": "Andrea Securato",
+            "cargo": "Co-founder",
+            "foto": true
+          },
+          {
+            "nome": "Arnaldo Mello",
+            "cargo": "Partner da Tabula",
+            "foto": true
+          },
+          {
+            "nome": "Jaqueline Sanches",
+            "cargo": "Partner",
+            "foto": true
+          }
+        ],
+        "professores_especialistas": [
+          {
+            "nome": "Marcos Piellusch",
+            "foto": true,
+            "linkedin": true
+          },
+          {
+            "nome": "Walter Eclache",
+            "foto": true,
+            "linkedin": true
+          },
+          {
+            "nome": "Alexandre Paixão",
+            "foto": true,
+            "linkedin": true
+          },
+          {
+            "nome": "Fernando Fegyveres",
+            "foto": true,
+            "linkedin": false
+          },
+          {
+            "nome": "Agostinho Cavalcanti",
+            "foto": false,
+            "linkedin": false,
+            "slot": "AssetPlaceholder"
+          },
+          {
+            "nome": "Tatiana Tafarello",
+            "foto": false,
+            "linkedin": true,
+            "slot": "AssetPlaceholder"
+          }
+        ],
+        "retratos_rule": "fotos identificadas SÓ pelo nome do arquivo / página oficial de origem, nunca por aparência (COMO-NOMEAR.txt)",
+        "ecossistema": {
+          "iniciativas": [
+            "Investment Banking Boot Camp → /bootcamp",
+            "Entrada em IB (Tabula)",
+            "Investment Banking Avançado (Tabula)",
+            "Valuation PLUS (Tabula)",
+            "Modelagem Financeira (bankersacademy.com.br)",
+            "Workshop de Modelagem Financeira (Tabula)",
+            "Introdução ao Crédito com Modelagem Financeira (Tabula)",
+            "Masterclass M&A (bankersacademy.com.br)",
+            "You in Banking"
+          ],
+          "carrinhos": "5 links tabula.com.br/comprar/inserir/<id>/finalizar guardados no campo carrinho, NÃO renderizados",
+          "outras": [
+            "You, She and Black in Banking (J.P. Morgan)",
+            "CDI",
+            "Liga das Ligas de Finanças",
+            "Tabula",
+            "Diário de um Banker"
+          ]
+        },
+        "cards_hub": [
+          "Nossa história → /quem-somos/historia",
+          "Liderança → /quem-somos/lideranca",
+          "Professores & especialistas → /quem-somos/especialistas",
+          "Ecossistema → /quem-somos/ecossistema"
+        ],
+        "ctas": [
+          "hub: História / Liderança (hero); Conheça a trajetória (fundador); ponte → /bootcamp; final → /quem-somos/ecossistema + /bootcamp",
+          "internas: CTA bg-brand ao fim (→ especialistas, → /bootcamp)"
+        ],
+        "bootcamp_presence_rule": "o Boot Camp aparece no Quem Somos só como marco 2018, card/linha no ecossistema e link de CTA — nunca com seções próprias",
+        "seo_metadata": {
+          "/quem-somos": "Quem Somos | Bankers Academy",
+          "/quem-somos/historia": "Nossa História | Bankers Academy",
+          "/quem-somos/lideranca": "Liderança | Bankers Academy",
+          "/quem-somos/especialistas": "Professores & Especialistas | Bankers Academy",
+          "/quem-somos/ecossistema": "Ecossistema | Bankers Academy",
+          "/quem-somos/fundador": "José Roberto Securato Junior | Bankers Academy",
+          "canonical": "alternates.canonical = a própria rota",
+          "openGraph": "type website, locale pt_BR, siteName Bankers Academy"
+        },
+        "header_changed_for_this_artifact": "sim: 9d65861 acrescentou o item QUEM SOMOS ao array nav do Header do scaffold (única alteração do Header vinda desta frente)"
+      },
+      "responsive_behavior": {
+        "container": "shell = mx-auto max-w-7xl px-6 lg:px-8",
+        "breakpoints_used": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "hero": "h1 2.6rem → sm:6xl → lg:7xl; símbolo h-8/h-10; botões empilham no mobile",
+        "grids": "lg:grid-cols-12 (texto/foto), md:grid-cols-2 (cards, liderança), lg:grid-cols-3 (professores)",
+        "images": "next/image com sizes por slot; foto do livro max-w-[26rem]; cards do hub com fundo de imagem + véu",
+        "header_mobile": "hambúrguer (lg:hidden) abre sheet #menu-mobile",
+        "verified": "375, 390, 768, 1024, 1440 sem scroll horizontal; axe 0 violações (auditoria da sessão em 1440x900 e 375x812)"
+      }
+    },
+    "investment_bootcamp": {
+      "artifact_name": "Investment Bootcamp",
+      "artifact_published_title": "Investment Banking Boot Camp",
+      "artifact_url": "https://claude.ai/code/artifact/0eb0676a-9918-4af2-8ce1-1293bb2de696",
+      "repository": {
+        "remote": "https://github.com/facanhaluisaaa-create/bankers-academy",
+        "github": "facanhaluisaaa-create/bankers-academy",
+        "note": "scaffold de trabalho, NÃO o repositório oficial"
+      },
+      "branch": "claude/ibbc-page-kzoqyc",
+      "commit": "3661e13e0edcfda8565af78c54bcc0dcdfcf7e89",
+      "base_commit": "ee766bbc5a15901e30945ea07608ddeccf038fac",
+      "first_commit_of_this_artifact": "ee766bb (2026-08-29) root — v1 em /programas/...; a versão que o artifact mostra começa em 5b89b86 (drop-in em src/app/bootcamp) e vira hub em 7019de3",
+      "last_commit_of_this_artifact": "3661e13 (2026-09-02) feat(bootcamp): jornada editorial sem placeholders e certificado interativo logo abaixo",
+      "commits": [
+        "ee766bb",
+        "f92e774",
+        "5b89b86",
+        "dfe1a22",
+        "d09ede0",
+        "f0d8cc8",
+        "39ab0d7",
+        "db109ec",
+        "f6170d4",
+        "6bfe0c9",
+        "7019de3",
+        "56317a0",
+        "60a4c42",
+        "64b2ad6",
+        "2f331f5",
+        "57010f6",
+        "52881ca",
+        "3661e13"
+      ],
+      "commits_shared_that_also_affect_it": [
+        "8965f12",
+        "79f649b",
+        "bd234e4",
+        "375bef7"
+      ],
+      "routes": [
+        "/bootcamp",
+        "/bootcamp/experiencia",
+        "/bootcamp/jornada",
+        "/bootcamp/certificado",
+        "/bootcamp/alumni",
+        "/bootcamp/edicoes",
+        "/bootcamp/mentores"
+      ],
+      "routes_confirmed_by": "next build (prerender estático) + src/app/bootcamp/**/page.tsx",
+      "routes_legacy_not_in_artifact": [
+        "/programas/investment-banking-bootcamp"
+      ],
+      "files": [
+        {
+          "path": "src/app/bootcamp/page.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "route:/bootcamp (landing)",
+          "commits": [
+            "3661e13",
+            "2f331f5",
+            "60a4c42",
+            "56317a0",
+            "7019de3",
+            "6bfe0c9",
+            "db109ec",
+            "39ab0d7",
+            "f0d8cc8",
+            "dfe1a22",
+            "5b89b86",
+            "ee766bb"
+          ],
+          "size_bytes": 38695,
+          "created_in": "ee766bb (redirect) → reescrito em 5b89b86",
+          "imports": [
+            "@/components/site/Header",
+            "@/components/site/Footer",
+            "./_components/InteractiveCertificate",
+            "./_components/JornadaEtapas (JornadaTrilho)",
+            "./_components/Foto",
+            "./_components/PlayerDepoimento",
+            "./_components/estilos",
+            "./_data/*"
+          ],
+          "sections": [
+            "A hero (bg-ink, aula-hero.jpg 21:9, CTAs WhatsApp + /bootcamp/experiencia, JSON-LD Course/FAQPage/BreadcrumbList)",
+            "resumo em texto (sr-only h2, GEO)",
+            "B experiência (surface-alt, aula-experiencia.jpg, 4 frentes ANALISAR/MODELAR/AVALIAR/APRESENTAR) → /bootcamp/experiencia",
+            "C jornada (tríptico 03A/03B/03C + JornadaTrilho 8 etapas) → /bootcamp/jornada",
+            "'O que você constrói' (8 outcomes + vencedores-edicao8.jpg 1:1 com legenda)",
+            "E certificado (bg-ink): eyebrow 'Certificação IBBC', h2 'O resultado também leva o seu nome.', <InteractiveCertificate/>, disclaimer, → /bootcamp/certificado",
+            "F prova social (bg-ink): PlayerDepoimento (Ana Luísa) + 3 reforços verbatim → /bootcamp/alumni",
+            "F2 alumni (turma-bootcamp.jpg enquanto alumniDestaque vazio) → /bootcamp/alumni",
+            "G 'Desde 2018' (palestra.jpg teaser) → /bootcamp/edicoes",
+            "H mentores (mentor-securato.jpg) → /bootcamp/mentores",
+            "FAQ (11 perguntas, <details>)",
+            "CTA final (bg-ink, aula-panoramica.jpg, WhatsApp + Tabula + número)"
+          ]
+        },
+        {
+          "path": "src/app/bootcamp/experiencia/page.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "route:/bootcamp/experiencia",
+          "commits": [
+            "52881ca",
+            "57010f6",
+            "56317a0",
+            "7019de3"
+          ],
+          "size_bytes": 7598,
+          "created_in": "7019de3",
+          "sections": [
+            "SubHero (bg-ink, '← Voltar para o Bootcamp')",
+            "arco ANALISAR→MODELAR→AVALIAR→APRESENTAR em linhas alternadas (EXP-02 exp-modelagem.jpg, EXP-04 exp-apresentacao.jpg; EXP-01/EXP-03 placeholders <Foto>)",
+            "ritmo (entregas diárias)",
+            "CTA (WhatsApp + Tabula + número)"
+          ]
+        },
+        {
+          "path": "src/app/bootcamp/jornada/page.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "route:/bootcamp/jornada",
+          "commits": [
+            "3661e13",
+            "52881ca",
+            "56317a0",
+            "7019de3"
+          ],
+          "size_bytes": 6621,
+          "created_in": "7019de3",
+          "sections": [
+            "SubHero",
+            "<JornadaEtapas etapas={ibbcJourney}/> (8 etapas, sem foto)",
+            "certificado (bg-ink) com <InteractiveCertificate/> + disclaimer",
+            "'O que você constrói' (<dl>)",
+            "CTA (WhatsApp + Tabula + número)"
+          ]
+        },
+        {
+          "path": "src/app/bootcamp/certificado/page.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "route:/bootcamp/certificado",
+          "commits": [
+            "52881ca",
+            "7019de3"
+          ],
+          "size_bytes": 4846,
+          "created_in": "7019de3",
+          "sections": [
+            "SubHero 'Imagine seu nome aqui.'",
+            "<InteractiveCertificate/> (max-w-5xl) + disclaimer",
+            "4 métricas",
+            "CTA (WhatsApp + Tabula + número)"
+          ]
+        },
+        {
+          "path": "src/app/bootcamp/alumni/page.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "route:/bootcamp/alumni",
+          "commits": [
+            "60a4c42",
+            "7019de3"
+          ],
+          "size_bytes": 5219,
+          "created_in": "7019de3",
+          "sections": [
+            "SubHero",
+            "<AlumniBrowser/> (135 campers, filtro por ano, +12 por clique)",
+            "Depoimentos (5 completos, links verificados)"
+          ]
+        },
+        {
+          "path": "src/app/bootcamp/edicoes/page.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "route:/bootcamp/edicoes",
+          "commits": [
+            "56317a0",
+            "7019de3"
+          ],
+          "size_bytes": 4972,
+          "created_in": "7019de3",
+          "sections": [
+            "SubHero",
+            "lista de 16 edições (T1 Jul/2018 → T16 Jan/2027; mentores creditados; galeria só se edicoesMedia tiver entrada — hoje vazia)"
+          ]
+        },
+        {
+          "path": "src/app/bootcamp/mentores/page.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "route:/bootcamp/mentores",
+          "commits": [
+            "56317a0",
+            "7019de3"
+          ],
+          "size_bytes": 4590,
+          "created_in": "7019de3",
+          "sections": [
+            "SubHero",
+            "mentores confirmados (1: Securato Jr., mentor-securato.jpg 4:5)"
+          ]
+        },
+        {
+          "path": "src/app/bootcamp/_components/InteractiveCertificate.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "component (client): certificado interativo — ver artifacts.investment_bootcamp.certificate",
+          "commits": [
+            "39ab0d7"
+          ],
+          "size_bytes": 6754,
+          "created_in": "39ab0d7"
+        },
+        {
+          "path": "src/app/bootcamp/_components/Certificate.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "component (server): reprodução estática do diploma em HTML/SVG, cores literais, recebe nameSlot",
+          "commits": [
+            "39ab0d7",
+            "5b89b86"
+          ],
+          "size_bytes": 7669,
+          "created_in": "5b89b86"
+        },
+        {
+          "path": "src/app/bootcamp/_components/JornadaEtapas.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "component (server): etapas com microelementos (Chips, Sequencia, TabelaAbstrata, BlocosModelo, PaginasPitchbook, RailFinal) + export JornadaTrilho",
+          "commits": [
+            "3661e13"
+          ],
+          "size_bytes": 9372,
+          "created_in": "3661e13"
+        },
+        {
+          "path": "src/app/bootcamp/_components/PlayerDepoimento.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "component (client): poster → <video controls autoPlay playsInline> com <source webm> + <source mp4>",
+          "commits": [
+            "60a4c42"
+          ],
+          "size_bytes": 3064,
+          "created_in": "60a4c42"
+        },
+        {
+          "path": "src/app/bootcamp/_components/Foto.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "component (server): renderiza MediaSlot (next/image fill) ou placeholder 'foto pendente'",
+          "commits": [
+            "60a4c42",
+            "56317a0"
+          ],
+          "size_bytes": 2979,
+          "created_in": "56317a0"
+        },
+        {
+          "path": "src/app/bootcamp/_components/AlumniBrowser.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "component (client): filtro por ano + paginação local",
+          "commits": [
+            "56317a0",
+            "f0d8cc8",
+            "5b89b86"
+          ],
+          "size_bytes": 5574,
+          "created_in": "5b89b86"
+        },
+        {
+          "path": "src/app/bootcamp/_components/SubHero.tsx",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "component (server): abertura bg-ink das internas com '← Voltar para o Bootcamp'",
+          "commits": [
+            "7019de3"
+          ],
+          "size_bytes": 1570,
+          "created_in": "7019de3"
+        },
+        {
+          "path": "src/app/bootcamp/_components/estilos.ts",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "classes compartilhadas (shell, eyebrow/eyebrowLight, btnApply, btnGhostDark, ctaSetaLight/Dark, setaClasse)",
+          "commits": [
+            "7019de3"
+          ],
+          "size_bytes": 1930,
+          "created_in": "7019de3"
+        },
+        {
+          "path": "src/app/bootcamp/_data/config.ts",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "WhatsApp +55 11 99007-0784, ibbcLinks (apply, coursePage Tabula, previousEditions, securatoLinkedin), IBBC_PATH (legado), ibbcFacts 5/9/250/2018",
+          "commits": [
+            "5b89b86"
+          ],
+          "size_bytes": 1533,
+          "created_in": "5b89b86",
+          "identical_to": "src/data/bootcamp/config.ts"
+        },
+        {
+          "path": "src/app/bootcamp/_data/media.ts",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "registro central de imagens/vídeo (bootcampMedia, experienciaMedia, jornadaMedia [desligado], edicoesMedia)",
+          "commits": [
+            "3661e13",
+            "57010f6",
+            "2f331f5",
+            "64b2ad6",
+            "60a4c42",
+            "375bef7",
+            "56317a0"
+          ],
+          "size_bytes": 13112,
+          "created_in": "56317a0"
+        },
+        {
+          "path": "src/app/bootcamp/_data/journey.ts",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "8 etapas (id, curto, label, title, description)",
+          "commits": [
+            "3661e13",
+            "5b89b86"
+          ],
+          "size_bytes": 2899,
+          "created_in": "5b89b86",
+          "identical_to": "src/data/bootcamp/journey.ts"
+        },
+        {
+          "path": "src/app/bootcamp/_data/testimonials.ts",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "5 depoimentos IBBC verbatim, links verificados, 3 com pull",
+          "commits": [
+            "60a4c42",
+            "f6170d4",
+            "db109ec",
+            "5b89b86"
+          ],
+          "size_bytes": 7000,
+          "created_in": "5b89b86",
+          "identical_to": "src/data/bootcamp/testimonials.ts"
+        },
+        {
+          "path": "src/app/bootcamp/_data/alumni.ts",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "135 campers (nome, turma, ano, term, setor, mentor)",
+          "commits": [
+            "5b89b86"
+          ],
+          "size_bytes": 16981,
+          "created_in": "5b89b86",
+          "identical_to": "src/data/bootcamp/alumni.ts"
+        },
+        {
+          "path": "src/app/bootcamp/_data/editions.ts",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "16 edições",
+          "commits": [
+            "5b89b86"
+          ],
+          "size_bytes": 1845,
+          "created_in": "5b89b86",
+          "identical_to": "src/data/bootcamp/editions.ts"
+        },
+        {
+          "path": "src/app/bootcamp/_data/faq.ts",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "11 perguntas",
+          "commits": [
+            "5b89b86"
+          ],
+          "size_bytes": 3573,
+          "created_in": "5b89b86",
+          "identical_to": "src/data/bootcamp/faq.ts"
+        },
+        {
+          "path": "src/app/bootcamp/_data/mentors.ts",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "1 mentor confirmado",
+          "commits": [
+            "5b89b86"
+          ],
+          "size_bytes": 1007,
+          "created_in": "5b89b86",
+          "identical_to": "src/data/bootcamp/mentors.ts"
+        },
+        {
+          "path": "src/app/bootcamp/_data/outcomes.ts",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "8 outcomes",
+          "commits": [
+            "5b89b86"
+          ],
+          "size_bytes": 1642,
+          "created_in": "5b89b86",
+          "identical_to": "src/data/bootcamp/outcomes.ts"
+        },
+        {
+          "path": "src/app/bootcamp/_data/types.ts",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "tipos (IbbcAlumni, IbbcEdition, IbbcJourneyStage{curto?}, IbbcOutcome, IbbcTestimonial{pull?}, IbbcFaqItem, IbbcMentor)",
+          "commits": [
+            "3661e13",
+            "60a4c42",
+            "db109ec",
+            "5b89b86"
+          ],
+          "size_bytes": 2087,
+          "created_in": "5b89b86",
+          "identical_to": "src/data/bootcamp/types.ts"
+        },
+        {
+          "path": "PORTAR-IBBC.md",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "guia de port escrito antes do hub /bootcamp; PARCIALMENTE DESATUALIZADO (ainda descreve /bootcamp como redirect 308 e a rota canônica /programas/...)",
+          "commits": [
+            "79f649b",
+            "f0d8cc8",
+            "d09ede0",
+            "5b89b86",
+            "f92e774"
+          ],
+          "size_bytes": 7024,
+          "created_in": "f92e774",
+          "migrate": false
+        },
+        {
+          "path": "CONTEUDO-PENDENTE-IBBC.md",
+          "artifact_origin": "Investment Bootcamp",
+          "role": "lista de conteúdo pendente escrita no root commit; parcialmente desatualizada (várias fotos e depoimentos já chegaram)",
+          "commits": [
+            "ee766bb"
+          ],
+          "size_bytes": 4287,
+          "created_in": "ee766bb",
+          "migrate": false
+        }
+      ],
+      "files_shared_it_depends_on": [
+        "src/app/globals.css (tokens + bloco .cert-*)",
+        "src/app/layout.tsx (Mulish)",
+        "src/components/site/Header.tsx",
+        "src/components/site/Footer.tsx",
+        "src/app/sitemap.ts"
+      ],
+      "assets": [
+        {
+          "path": "public/images/bootcamp/certificado-gravura-touro-urso.png",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 91326,
+          "md5": "14244e9fd091d4fc1602457a6d606fc6",
+          "commits": [
+            "ee766bb"
+          ],
+          "used_by": [
+            "Certificate.tsx (<img>)",
+            "legado CertificateArtwork.tsx"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            764,
+            317
+          ],
+          "note": "gravura extraída da foto do diploma físico; PNG transparente; não regerável"
+        },
+        {
+          "path": "public/images/bootcamp/certificado-ibbc-referencia.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 284396,
+          "md5": "31bc93da4582ba4ea222d7e468036ca3",
+          "commits": [
+            "ee766bb"
+          ],
+          "used_by": [],
+          "status": "unused (foto de referência do diploma físico; fonte da gravura; não publicar)",
+          "dimensions_px": [
+            1200,
+            1600
+          ]
+        },
+        {
+          "path": "public/images/bootcamp/aula-hero.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 226537,
+          "md5": "e484375337f3bb246a0449e304114266",
+          "commits": [
+            "375bef7"
+          ],
+          "used_by": [
+            "bootcampMedia.hero"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1600,
+            900
+          ]
+        },
+        {
+          "path": "public/images/bootcamp/aula-experiencia.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 298732,
+          "md5": "a4b91bc99189ca0bb88b093059437cb6",
+          "commits": [
+            "375bef7"
+          ],
+          "used_by": [
+            "bootcampMedia.experiencia"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1600,
+            1200
+          ]
+        },
+        {
+          "path": "public/images/bootcamp/aula-inicio.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 358257,
+          "md5": "6c8e75bd0682e50c1be596eaf66cd9cc",
+          "commits": [
+            "375bef7"
+          ],
+          "used_by": [
+            "bootcampMedia.jornada.inicio"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1200,
+            1600
+          ]
+        },
+        {
+          "path": "public/images/bootcamp/aula-trabalho.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 154024,
+          "md5": "117a02c89be3933033e872b628316442",
+          "commits": [
+            "2f331f5"
+          ],
+          "used_by": [
+            "bootcampMedia.jornada.desenvolvimento"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1110,
+            790
+          ]
+        },
+        {
+          "path": "public/images/bootcamp/aula-apresentacao.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 366926,
+          "md5": "94d49946089b0fdbd1a30e6b07926719",
+          "commits": [
+            "375bef7"
+          ],
+          "used_by": [
+            "bootcampMedia.jornada.apresentacao"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1200,
+            1600
+          ]
+        },
+        {
+          "path": "public/images/bootcamp/vencedores-edicao8.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 165435,
+          "md5": "907a757ea6c481166cb9a831cdcdef06",
+          "commits": [
+            "2f331f5"
+          ],
+          "used_by": [
+            "bootcampMedia.resultado (1:1)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1034,
+            1034
+          ],
+          "legend": "Ganhadores da 8ª edição do Investment Banking Boot Camp."
+        },
+        {
+          "path": "public/images/bootcamp/turma-bootcamp.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 201387,
+          "md5": "3a75727fd1b53a03a9f2ebe5baf34b50",
+          "commits": [
+            "2f331f5"
+          ],
+          "used_by": [
+            "bootcampMedia.alumniTurma"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1114,
+            804
+          ]
+        },
+        {
+          "path": "public/images/bootcamp/palestra.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 107195,
+          "md5": "d7a21531fe6a978407cd0f1dbfedaf93",
+          "commits": [
+            "2f331f5"
+          ],
+          "used_by": [
+            "bootcampMedia.edicoesTeaser"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            999,
+            447
+          ],
+          "legend": "Palestra durante o boot camp."
+        },
+        {
+          "path": "public/images/bootcamp/mentor-securato.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 219946,
+          "md5": "f43a353780af2a24de9daae835ed4b7b",
+          "commits": [
+            "64b2ad6"
+          ],
+          "used_by": [
+            "bootcampMedia.mentores['jose-securato-jr'] (landing + /mentores)"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1200,
+            1500
+          ]
+        },
+        {
+          "path": "public/images/bootcamp/aula-panoramica.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 135708,
+          "md5": "501d646ac5ff91da3ba565e036d1e483",
+          "commits": [
+            "375bef7"
+          ],
+          "used_by": [
+            "bootcampMedia.ctaFinal"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1600,
+            519
+          ]
+        },
+        {
+          "path": "public/images/bootcamp/depoimento-ana-luisa-poster.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 108286,
+          "md5": "2b6a38242330615552ef79d444ba9a44",
+          "commits": [
+            "60a4c42"
+          ],
+          "used_by": [
+            "bootcampMedia.videoDepoimento.poster"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            720,
+            1280
+          ]
+        },
+        {
+          "path": "public/images/bootcamp/exp-modelagem.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 175545,
+          "md5": "754fdc686136336e0826469881affc5d",
+          "commits": [
+            "57010f6"
+          ],
+          "used_by": [
+            "experienciaMedia[EXP-02]"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1121,
+            921
+          ]
+        },
+        {
+          "path": "public/images/bootcamp/exp-apresentacao.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 115302,
+          "md5": "167519d33d50cd3ea46a074557bc7b32",
+          "commits": [
+            "57010f6"
+          ],
+          "used_by": [
+            "experienciaMedia[EXP-04]"
+          ],
+          "status": "rendered",
+          "dimensions_px": [
+            1056,
+            1074
+          ]
+        },
+        {
+          "path": "public/images/bootcamp/reservas/grupo-campers.jpg",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 183208,
+          "md5": "c3a8f46fe6930bc0479b08746378e192",
+          "commits": [
+            "57010f6"
+          ],
+          "used_by": [],
+          "status": "reserved_not_rendered (foto posada guardada para uso futuro)",
+          "dimensions_px": [
+            1043,
+            1182
+          ]
+        },
+        {
+          "path": "public/videos/bootcamp/depoimento-ana-luisa.mp4",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 2495626,
+          "md5": "7a942b4f6539f1624610c084f4557490",
+          "commits": [
+            "60a4c42"
+          ],
+          "used_by": [
+            "bootcampMedia.videoDepoimento.src"
+          ],
+          "status": "rendered",
+          "duration_seconds": 12.47,
+          "note": "cortado antes da cartela promocional de pre-work; legendas abertas embutidas"
+        },
+        {
+          "path": "public/videos/bootcamp/depoimento-ana-luisa.webm",
+          "artifact_origin": "Investment Bootcamp",
+          "size_bytes": 2120328,
+          "md5": "c06b63e563802f6ef45bba7cf8f786ae",
+          "commits": [
+            "60a4c42"
+          ],
+          "used_by": [
+            "bootcampMedia.videoDepoimento.srcWebm"
+          ],
+          "status": "rendered",
+          "codec": "VP9"
+        }
+      ],
+      "dependencies": [
+        "next (Image, Link, Metadata)",
+        "react (useState/useEffect/useRef/useId/useMemo)",
+        "tailwindcss v4",
+        "nenhuma lib de vídeo/PDF/estado"
+      ],
+      "configuration": [
+        "tsconfig paths @/* (só para @/components/site/Header e Footer; todo o resto é import relativo dentro de src/app/bootcamp)",
+        "metadata por página (title, description, canonical, openGraph)",
+        "JSON-LD na landing: Course, FAQPage, BreadcrumbList (dados só do material oficial)",
+        "sem env vars",
+        "sem next.config específico"
+      ],
+      "navigation": {
+        "landing→internas": [
+          "/bootcamp/experiencia (hero + seção B)",
+          "/bootcamp/jornada",
+          "/bootcamp/certificado",
+          "/bootcamp/alumni (prova social + alumni)",
+          "/bootcamp/edicoes",
+          "/bootcamp/mentores"
+        ],
+        "internas→landing": "SubHero '← Voltar para o Bootcamp'",
+        "para_quem_somos": "nenhum link direto (só pelo menu)",
+        "conversao": [
+          "WhatsApp wa.me/5511990070784 com mensagem pré-preenchida (hero, seção 'participar', CTA final, internas)",
+          "Tabula https://tabula.com.br/curso/destaque/investmentbankingbootcamp (CTA final, /experiencia, /jornada, /certificado)",
+          "número +55 11 99007-0784 exibido em texto"
+        ],
+        "externos": [
+          "5 permalinks públicos de posts do LinkedIn (depoimentos, linkVerified: true)",
+          "LinkedIn do Securato no JSON-LD"
+        ]
+      },
+      "styles": {
+        "shared_classes": "src/app/bootcamp/_components/estilos.ts",
+        "tokens_used": [
+          "brand (eyebrows e acentos em seções escuras, bg-brand em BlocosModelo/valuation)",
+          "brand-soft (btnApply)",
+          "brand-deep (eyebrows e CTAs em fundo claro)",
+          "ink",
+          "line",
+          "surface / surface-alt",
+          "cert-* (definidos; componentes usam hex literal)"
+        ],
+        "section_rhythm": "hero ink → resumo surface → experiência surface-alt → jornada surface → constrói surface-alt → certificado ink → prova social ink → alumni surface → desde 2018 surface → mentores surface-alt → FAQ surface → CTA ink; internas abrem com SubHero bg-ink",
+        "global_css_specific": "bloco .cert-* em globals.css",
+        "text_rules": "ainda há alguns '·' em textos do Bootcamp (ex.: credencial do vídeo 'Turma 15 do IBBC · Water Utilities', 'Turma X · Jan 2026'); limpeza oferecida ao cliente, não pedida"
+      },
+      "content": {
+        "hero": {
+          "h1": "título em src/app/bootcamp/page.tsx",
+          "foto": "aula-hero.jpg 16:9 / 21:9 (position 50% 42%)",
+          "highlights": [
+            "5 semanas de imersão",
+            "9 etapas práticas",
+            "1 Pitchbook final",
+            "250h de treinamento certificadas"
+          ],
+          "ctas": [
+            "Quero participar → WhatsApp",
+            "Conheça a experiência → /bootcamp/experiencia"
+          ]
+        },
+        "experiencia": {
+          "frentes": [
+            "01 ANALISAR",
+            "02 MODELAR",
+            "03 AVALIAR",
+            "04 APRESENTAR"
+          ],
+          "pagina": "/bootcamp/experiencia (linhas alternadas; EXP-02 e EXP-04 com foto; EXP-01/03 placeholders)"
+        },
+        "ritmo": "seção 'ritmo' em /bootcamp/experiencia: entregas diárias com revisão de mentores da SP Advisors",
+        "jornada": {
+          "etapas": [
+            "01 Pre-Work",
+            "02 Entender o setor",
+            "03 Análises",
+            "04 Comparáveis",
+            "05 Modelagem",
+            "06 Construção",
+            "07 Pitchbook",
+            "08 Apresentação final"
+          ],
+          "landing": "tríptico 03A/03B/03C + JornadaTrilho (números + nomes curtos) → /bootcamp/jornada",
+          "pagina": "JornadaEtapas: microelementos por etapa (chips; Setor→Players→Drivers; Releases→Demonstrações→Dados→Tese; tabela abstrata Peers/Múltiplos/Benchmarking; Projeções→Modelo integrado→Valuation; Gráficos→Exhibits→Narrativa; 6 páginas do Pitchbook com legenda 'Representação da entrega final, não um documento real.'; Constrói→Organiza→Apresenta→Defende o Pitchbook)",
+          "fotos": "nenhuma (placeholders JOR-* removidos em 3661e13; jornadaMedia mantido desligado)"
+        },
+        "pitchbook": "aparece como etapa 07, como microelemento PaginasPitchbook e como outcome 'Pitchbook final'",
+        "certificado": "ver bloco certificate",
+        "prova_social": {
+          "headline": "Quem viveu, conta melhor.",
+          "video": {
+            "nome": "Ana Luísa Telöken",
+            "credencial": "Turma 15 do IBBC · Water Utilities (gravada na cartela do próprio vídeo)",
+            "duracao": "12 s (cortado antes da cartela promocional; nada de '120h de pre-work')",
+            "frase": "Uma experiência para colocar conhecimento em prática e vivenciar a dinâmica real de um banker."
+          },
+          "reforcos_escritos": [
+            "Gustavo Campoi (pull verbatim)",
+            "Pedro Henrique Canano (pull verbatim)",
+            "Rafael Aguirre (pull verbatim)"
+          ],
+          "cta": "CONHEÇA NOSSOS ALUMNI → /bootcamp/alumni"
+        },
+        "depoimentos": {
+          "total": 5,
+          "nomes": [
+            "Ana Luísa Telöken",
+            "André Cavalcante",
+            "Gustavo Campoi",
+            "Pedro Henrique Canano",
+            "Rafael Aguirre"
+          ],
+          "regra": "quote verbatim do post público; linkVerified true em todos; só IBBC",
+          "completos_em": "/bootcamp/alumni"
+        },
+        "alumni": {
+          "total": 135,
+          "campos_confirmados": [
+            "nome",
+            "turma",
+            "ano",
+            "term",
+            "setor coberto",
+            "mentor (voltou como mentor)"
+          ],
+          "campos_vazios_ocultos": [
+            "currentCompany",
+            "currentRole",
+            "linkedin",
+            "image",
+            "finalist",
+            "winner"
+          ],
+          "landing": "turma-bootcamp.jpg enquanto alumniDestaque estiver vazio",
+          "pagina": "/bootcamp/alumni com AlumniBrowser (filtro por ano, +12 por vez)"
+        },
+        "edicoes": {
+          "total": 16,
+          "primeira": "T1 Jul 2018",
+          "futuras": [
+            "T15 Jul 2026",
+            "T16 Jan 2027"
+          ],
+          "mentores_por_edicao": "creditados como no arquivo oficial",
+          "landing": "'Desde 2018' com palestra.jpg (teaser) → /bootcamp/edicoes",
+          "fotos_por_edicao": "nenhuma (edicoesMedia vazio; collage 08A–C vazia)",
+          "link_arquivo_oficial": "ibbcLinks.previousEditions definido em config.ts; usado só pelo componente legado, NÃO pelas páginas /bootcamp* atuais"
+        },
+        "mentores": {
+          "confirmados": [
+            {
+              "nome": "José Roberto Securato Jr.",
+              "papel": "Idealizador e condutor do Investment Banking Boot Camp",
+              "foto": "mentor-securato.jpg 4:5",
+              "linkedin": "https://www.linkedin.com/in/josesecurato/"
+            }
+          ],
+          "nao_incluidos": "outros professores (Paixão, Piellusch, Eclache, Tafarello) sem vínculo confirmado com o IBBC — não entram",
+          "pagina": "/bootcamp/mentores"
+        },
+        "professores": "não há seção de professores no Bootcamp; só mentores (ver acima)",
+        "faq": {
+          "total": 11,
+          "render": "<details> nativo na landing",
+          "nao_publicado": [
+            "valor",
+            "datas exatas",
+            "bolsas",
+            "pré-requisitos formais"
+          ]
+        },
+        "cta_final": {
+          "h2": "na seção cta-t da landing",
+          "acoes": [
+            "WhatsApp (mensagem pré-preenchida)",
+            "Inscrição pela Tabula (nova aba)",
+            "número +55 11 99007-0784 em texto"
+          ],
+          "foto": "aula-panoramica.jpg"
+        },
+        "menu_item": "BOOTCAMP → /bootcamp (dfe1a22 + d09ede0); documentado como 'uma linha a mais' no menu oficial",
+        "seo_metadata": {
+          "/bootcamp": "Investment Banking Boot Camp | Bankers Academy (+ JSON-LD Course/FAQPage/BreadcrumbList)",
+          "/bootcamp/experiencia": "A Experiência | Investment Banking Boot Camp",
+          "/bootcamp/jornada": "A Jornada | Investment Banking Boot Camp",
+          "/bootcamp/certificado": "Seu Certificado | Investment Banking Boot Camp",
+          "/bootcamp/alumni": "Alumni | Investment Banking Boot Camp",
+          "/bootcamp/edicoes": "Edições | Investment Banking Boot Camp",
+          "/bootcamp/mentores": "Mentores | Investment Banking Boot Camp",
+          "canonical": "a própria rota",
+          "openGraph": "type website, locale pt_BR, siteName Bankers Academy"
+        },
+        "fotos_rule": "sem banco de imagens, sem IA, sem pessoa não confirmada; uma foto = uma função; legendas só com o que o cliente confirmou"
+      },
+      "responsive_behavior": {
+        "container": "shell = mx-auto max-w-7xl px-6 lg:px-8",
+        "hero": "h1 5xl → sm:6xl → lg:7xl; foto 16:9 no mobile e 21:9 em lg",
+        "jornada": "JornadaEtapas alterna texto/microelemento em lg:grid-cols-12 (col-7/col-5), empilha abaixo; JornadaTrilho grid-cols-2 → sm:grid-cols-4; PaginasPitchbook grid-cols-3 → sm:6 → lg:3",
+        "certificado": "rolagem horizontal abaixo de sm (min-w 560px) com aviso; fluido acima",
+        "prova_social": "vídeo 9:16 em coluna; grid lg:grid-rows-[auto_1fr] para os cards",
+        "alumni": "md:grid-cols-2 lg:grid-cols-3",
+        "header_mobile": "hambúrguer + sheet",
+        "verified": "375, 390, 768, 1024, 1440 sem scroll horizontal; axe 0 violações; nome curto e longo no certificado em 390 e 1440"
+      },
+      "certificate": {
+        "status": "EXISTE E FUNCIONA — documentado como está, não recriado",
+        "files": {
+          "interactive": "src/app/bootcamp/_components/InteractiveCertificate.tsx",
+          "static_artwork": "src/app/bootcamp/_components/Certificate.tsx",
+          "css": "src/app/globals.css (bloco 'Prévia interativa do certificado': .cert-name-btn, .cert-name, .cert-name--filled, .cert-name--swap, @keyframes cert-swap, .cert-panel, @keyframes panel-in, reduced-motion)",
+          "asset": "public/images/bootcamp/certificado-gravura-touro-urso.png (764x317, via <img> com eslint-disable no-img-element)",
+          "tokens_defined_but_unused_by_current_components": [
+            "--color-cert-paper",
+            "--color-cert-paper-edge",
+            "--color-cert-ink",
+            "--color-cert-rule (só o legado CertificateArtwork.tsx os usa; Certificate.tsx usa hex literal)"
+          ]
+        },
+        "components": {
+          "InteractiveCertificate": {
+            "type": "client component ('use client')",
+            "default_export": true,
+            "props": {},
+            "renders": "<Certificate nameSlot={<button .cert-name-btn>…</button>} /> + dica + painel"
+          },
+          "Certificate": {
+            "type": "server component",
+            "props": {
+              "nameSlot?": "ReactNode (quando ausente renderiza uma linha em branco)"
+            },
+            "exports": [
+              "default Certificate",
+              "CERT_INK",
+              "CERT_RULE"
+            ],
+            "content_literal": [
+              "borda guilhoché em SVG (pattern ibbc-rosette + mask ibbc-band)",
+              "cartelas 'Class No.' e '250 hours'",
+              "banner 'Investment Banking Boot Camp'",
+              "parágrafos literais do diploma ('This certifies that … is the owner of 250 hours of Practical Investment Banking Training…', 'In witness whereof…')",
+              "linha 'This __ day of __ , A.D. __'",
+              "selo em relevo (EmbossedSeal SVG)",
+              "assinatura 'Jose Securato / Bankers Academy'"
+            ],
+            "colors_literal": {
+              "paper": "#f4efe1",
+              "paper_edge": "#e8e0cb",
+              "ink": "#4a4a38",
+              "rule": "#8a8b6d"
+            },
+            "container": "containerType: inline-size; aspectRatio 1.32/1; fontes clamp(...cqw...)"
+          }
+        },
+        "imports": {
+          "InteractiveCertificate": [
+            "react: useEffect, useId, useRef, useState",
+            "./Certificate"
+          ],
+          "Certificate": [
+            "react: ReactNode"
+          ]
+        },
+        "state": {
+          "name": "string (nome confirmado; vazio = 'SEU NOME AQUI')",
+          "open": "boolean (painel)",
+          "draft": "string (valor do input)",
+          "swap": "number (reinicia a animação cert-swap via key)",
+          "refs": [
+            "triggerRef (botão do nome)",
+            "inputRef",
+            "dialogRef"
+          ],
+          "ids": [
+            "useId() para título e dica",
+            "input com id fixo 'ibbc-nome'"
+          ],
+          "MAX_NAME": 48,
+          "persistence": "NENHUMA: só useState em memória; sem fetch, sem localStorage/sessionStorage/cookies, sem PDF, sem número de certificado, sem e-mail, sem login"
+        },
+        "interaction": [
+          "clique no botão 'SEU NOME AQUI' (ou na dica 'Clique para personalizar' / 'Trocar o nome') abre o painel com o nome atual",
+          "input: maxLength 48, autoComplete off, spellCheck false, placeholder 'Luísa Façanha'",
+          "Enter confirma; botão 'Visualizar no certificado' desabilitado enquanto vazio; 'Cancelar' fecha",
+          "confirmar: colapsa espaços, trim, corta em 48, aplica ao certificado com animação cert-swap e devolve o foco ao gatilho",
+          "mousedown fora do painel fecha",
+          "Escape fecha e devolve o foco"
+        ],
+        "name_field": {
+          "label": "Nome completo",
+          "id": "ibbc-nome",
+          "note": "id fixo: se DUAS instâncias fossem renderizadas na MESMA página haveria id duplicado; hoje cada página tem uma instância (/bootcamp, /bootcamp/jornada, /bootcamp/certificado)"
+        },
+        "modal_panel": {
+          "overlay": "fixed inset-0 z-50 bg-black/60 backdrop-blur-sm; items-end no mobile, items-center ≥sm",
+          "dialog": "role=dialog aria-modal=true aria-labelledby={titleId}; .cert-panel (animação panel-in); bg-white max-w-md rounded-2xl",
+          "title": "Como seu nome apareceria no certificado?",
+          "footnote": "O nome fica só no seu navegador, enquanto você estiver nesta página. Nada é enviado ou guardado.",
+          "focus": "foco inicial no input (select), ciclo de Tab preso ao painel, retorno ao gatilho ao fechar"
+        },
+        "disclaimer_exact_text": "Prévia ilustrativa. O certificado oficial é concedido após a conclusão do Investment Banking Boot Camp.",
+        "disclaimer_rendered_by": [
+          "src/app/bootcamp/page.tsx (seção E)",
+          "src/app/bootcamp/jornada/page.tsx",
+          "src/app/bootcamp/certificado/page.tsx"
+        ],
+        "responsiveness": {
+          "mobile_<sm": "wrapper -mx-5 overflow-x-auto com min-w-[560px] no certificado (rola na horizontal) + texto 'Arraste o certificado para o lado para vê-lo inteiro' (sm:hidden)",
+          "sm+": "largura fluida até o max-w-5xl do container da seção; tipografia escala por container query (cqw)",
+          "tested": "390 e 1440 com nome curto e nome longo (48 chars) — o nome usa truncate dentro de max-w-[62%]"
+        },
+        "accessibility": [
+          "gatilho é <button> real com aria-describedby apontando para a dica",
+          "dialog com role/aria-modal/aria-labelledby",
+          "Escape, focus trap, retorno de foco",
+          "gravura com alt descritivo",
+          "texto do diploma é HTML real (selecionável, lido por leitor de tela)",
+          ".cert-panel :focus-visible usa outline ink (painel claro dentro de seção escura)",
+          "prefers-reduced-motion desliga cert-swap e panel-in"
+        ],
+        "styles": {
+          "tailwind_classes": "no próprio componente (fixed/inset/z-50/rounded-full/bg-brand-soft etc.)",
+          "global_css_required": "bloco .cert-* em globals.css — SEM ele o nome não recebe fonte/cor/animação"
+        },
+        "position_in_landing": {
+          "section": "E — logo depois de 'O que você constrói' e antes da prova social",
+          "eyebrow": "Certificação IBBC",
+          "h2": "O resultado também leva o seu nome.",
+          "wrapper": "mx-auto mt-12 max-w-5xl",
+          "cta_after": "'Explore seu certificado' → /bootcamp/certificado"
+        },
+        "also_rendered_at": [
+          "/bootcamp/jornada (logo após JornadaEtapas)",
+          "/bootcamp/certificado (protagonista da página)"
+        ],
+        "dependencies": [
+          "react (hooks) — nenhuma lib externa",
+          "Tailwind v4 com os tokens brand-soft, ink, line, white/…",
+          "globals.css bloco .cert-*",
+          "public/images/bootcamp/certificado-gravura-touro-urso.png"
+        ]
+      }
+    }
+  },
+  "shared_between_artifacts": {
+    "same_branch": true,
+    "same_head_commit": true,
+    "statement": "Os dois artifacts vivem na MESMA branch (claude/ibbc-page-kzoqyc) e no MESMO commit HEAD (3661e13). Os commits são intercalados no tempo; a separação é por arquivo/pasta (src/app/quem-somos + src/data/quem-somos.ts × src/app/bootcamp) e por commit (classificação acima). Não existem duas branches nem dois conjuntos de commits independentes.",
+    "files": [
+      {
+        "path": "src/app/globals.css",
+        "artifact_origin": "shared_between_both",
+        "role": "tokens @theme (brand #c4ef7c, brand-soft, brand-deep #5d792e, ink, line, surfaces, cert-*), base, :focus-visible, .on-dark, .reveal, reduced-motion, bloco .cert-* do certificado",
+        "commits": [
+          "79f649b",
+          "8965f12",
+          "39ab0d7",
+          "f0d8cc8",
+          "ee766bb"
+        ],
+        "size_bytes": 4627,
+        "created_in": "ee766bb",
+        "changes_by": {
+          "Investment Bootcamp": [
+            "f0d8cc8 tokens do site no ar + Mulish",
+            "39ab0d7 bloco .cert-name-btn/.cert-name/.cert-panel + keyframes"
+          ],
+          "shared": [
+            "8965f12 --color-brand → #c4ef7c, --color-brand-deep → #5d792e",
+            "79f649b comentário 🔒 fechado pelo cliente"
+          ],
+          "Quem Somos": [
+            "nenhuma edição direta; consome os mesmos tokens"
+          ]
+        }
+      },
+      {
+        "path": "src/app/layout.tsx",
+        "artifact_origin": "shared_between_both",
+        "role": "RootLayout: fonte Mulish (next/font/google, var --font-mulish), metadataBase https://www.bankersacademy.com.br, title template '%s | Bankers Academy', lang pt-BR; NÃO injeta Header/Footer (cada página inclui os seus)",
+        "commits": [
+          "f0d8cc8",
+          "ee766bb"
+        ],
+        "size_bytes": 818,
+        "created_in": "ee766bb",
+        "changes_by": {
+          "Investment Bootcamp": [
+            "f0d8cc8 Poppins → Mulish (pesos 400/600/700/800/900)"
+          ],
+          "Quem Somos": [
+            "nenhuma"
+          ]
+        }
+      },
+      {
+        "path": "src/components/site/Header.tsx",
+        "artifact_origin": "shared_between_both",
+        "role": "Header do scaffold (client): logo, nav [BOOTCAMP, QUEM SOMOS], botão 'Quero participar' (WhatsApp), menu mobile com aria-controls=menu-mobile",
+        "commits": [
+          "9d65861",
+          "d09ede0",
+          "dfe1a22",
+          "ee766bb"
+        ],
+        "size_bytes": 4781,
+        "created_in": "ee766bb",
+        "changes_by": {
+          "Investment Bootcamp": [
+            "dfe1a22 + d09ede0: item { href: '/bootcamp', label: 'BOOTCAMP' }"
+          ],
+          "Quem Somos": [
+            "9d65861: item { href: '/quem-somos', label: 'QUEM SOMOS' }"
+          ]
+        }
+      },
+      {
+        "path": "src/components/site/Footer.tsx",
+        "artifact_origin": "shared_between_both",
+        "role": "Footer do scaffold; sem alteração desde o root; importa @/data/bootcamp/config",
+        "commits": [
+          "ee766bb"
+        ],
+        "size_bytes": 3128,
+        "created_in": "ee766bb",
+        "changes_by": {
+          "Investment Bootcamp": [],
+          "Quem Somos": []
+        }
+      },
+      {
+        "path": "src/app/sitemap.ts",
+        "artifact_origin": "shared_between_both",
+        "role": "sitemap estático",
+        "commits": [
+          "040d523",
+          "7019de3",
+          "025b4ed",
+          "ee766bb"
+        ],
+        "size_bytes": 1542,
+        "created_in": "ee766bb",
+        "changes_by": {
+          "Investment Bootcamp": [
+            "7019de3: 7 URLs /bootcamp*"
+          ],
+          "Quem Somos": [
+            "025b4ed + 040d523: 6 URLs /quem-somos*"
+          ]
+        },
+        "note": "mantém a URL legada /programas/investment-banking-bootcamp (IBBC_PATH)"
+      },
+      {
+        "path": "src/app/robots.ts",
+        "artifact_origin": "shared_between_both",
+        "role": "robots: allow /, sitemap https://www.bankersacademy.com.br/sitemap.xml; sem alteração",
+        "commits": [
+          "ee766bb"
+        ],
+        "size_bytes": 226,
+        "created_in": "ee766bb"
+      },
+      {
+        "path": "src/components/ui/Reveal.tsx",
+        "artifact_origin": "shared_between_both",
+        "role": "component (client) fade-in por IntersectionObserver; criado no scaffold, hoje usado SÓ pelas páginas do Quem Somos (o /bootcamp atual não usa)",
+        "commits": [
+          "ee766bb"
+        ],
+        "size_bytes": 1470,
+        "created_in": "ee766bb",
+        "used_by_now": [
+          "Quem Somos"
+        ]
+      },
+      {
+        "path": "src/components/ui/AssetPlaceholder.tsx",
+        "artifact_origin": "shared_between_both",
+        "role": "placeholder 'Foto pendente'; criado no scaffold, prop tone adicionada pelo Quem Somos (ce48db7); hoje usado SÓ pelo Quem Somos (o /bootcamp usa <Foto>)",
+        "commits": [
+          "ce48db7",
+          "ee766bb"
+        ],
+        "size_bytes": 1718,
+        "created_in": "ee766bb",
+        "used_by_now": [
+          "Quem Somos"
+        ]
+      },
+      {
+        "path": "src/components/ui/Container.tsx",
+        "artifact_origin": "shared_between_both",
+        "role": "wrapper max-w-6xl; usado só por Header/Footer/home/legado",
+        "commits": [
+          "ee766bb"
+        ],
+        "size_bytes": 349,
+        "created_in": "ee766bb"
+      },
+      {
+        "path": "src/components/ui/Button.tsx",
+        "artifact_origin": "shared_between_both",
+        "role": "botão primário/secondary/ghost; usado só por Header/Footer/home/legado; f0d8cc8 trocou bg-brand por bg-brand-soft",
+        "commits": [
+          "f0d8cc8",
+          "ee766bb"
+        ],
+        "size_bytes": 1543,
+        "created_in": "ee766bb"
+      },
+      {
+        "path": "src/data/bootcamp/config.ts",
+        "artifact_origin": "shared_between_both",
+        "role": "cópia idêntica de src/app/bootcamp/_data/config.ts; importada pelo Header, Footer, home e sitemap do scaffold",
+        "commits": [
+          "ee766bb"
+        ],
+        "size_bytes": 1533,
+        "created_in": "ee766bb",
+        "identical_to": "src/app/bootcamp/_data/config.ts"
+      },
+      {
+        "path": "package.json",
+        "artifact_origin": "shared_between_both",
+        "role": "scaffold: next ^16.3.3, react 19.1.1, react-dom 19.1.1, tailwindcss ^4.1.13, @tailwindcss/postcss ^4.1.13, typescript ^5.9.2, eslint ^9.35.0, eslint-config-next ^16.3.3; scripts dev/build/start/lint/typecheck",
+        "commits": [
+          "ee766bb"
+        ],
+        "size_bytes": 605,
+        "created_in": "ee766bb"
+      },
+      {
+        "path": "package-lock.json",
+        "artifact_origin": "shared_between_both",
+        "role": "lock: next 16.3.3, react 19.1.1, tailwindcss 4.3.3, typescript 5.9.3",
+        "commits": [
+          "ee766bb"
+        ],
+        "size_bytes": 235897,
+        "created_in": "ee766bb"
+      },
+      {
+        "path": "tsconfig.json",
+        "artifact_origin": "shared_between_both",
+        "role": "strict, moduleResolution bundler, paths '@/*' → './src/*'",
+        "commits": [
+          "ee766bb"
+        ],
+        "size_bytes": 702,
+        "created_in": "ee766bb"
+      },
+      {
+        "path": "next.config.ts",
+        "artifact_origin": "shared_between_both",
+        "role": "reactStrictMode: true; images.formats [avif, webp]; SEM redirects/rewrites",
+        "commits": [
+          "ee766bb"
+        ],
+        "size_bytes": 190,
+        "created_in": "ee766bb"
+      },
+      {
+        "path": "postcss.config.mjs",
+        "artifact_origin": "shared_between_both",
+        "role": "plugins: ['@tailwindcss/postcss']",
+        "commits": [
+          "ee766bb"
+        ],
+        "size_bytes": 81,
+        "created_in": "ee766bb"
+      },
+      {
+        "path": "eslint.config.mjs",
+        "artifact_origin": "shared_between_both",
+        "role": "eslint-config-next + ignores",
+        "commits": [
+          "ee766bb"
+        ],
+        "size_bytes": 196,
+        "created_in": "ee766bb"
+      },
+      {
+        "path": ".gitignore",
+        "artifact_origin": "shared_between_both",
+        "role": "scaffold",
+        "commits": [
+          "ee766bb"
+        ],
+        "size_bytes": 116,
+        "created_in": "ee766bb"
+      },
+      {
+        "path": "CLAUDE.md",
+        "artifact_origin": "shared_between_both",
+        "role": "regras de trabalho das duas frentes (cor fechada, separação, limites)",
+        "commits": [
+          "bd234e4",
+          "ee766bb"
+        ],
+        "size_bytes": 2108,
+        "created_in": "ee766bb",
+        "migrate": false
+      },
+      {
+        "path": "AGENTS.md",
+        "artifact_origin": "shared_between_both",
+        "role": "aviso gerado pelo next dev",
+        "commits": [
+          "ee766bb"
+        ],
+        "size_bytes": 678,
+        "created_in": "ee766bb",
+        "migrate": false
+      },
+      {
+        "path": "README.md",
+        "artifact_origin": "shared_between_both",
+        "role": "README do scaffold; desatualizado (diz que /bootcamp redireciona)",
+        "commits": [
+          "f92e774",
+          "ee766bb"
+        ],
+        "size_bytes": 1510,
+        "created_in": "ee766bb",
+        "migrate": false
+      }
+    ],
+    "assets": [
+      {
+        "path": "public/brand/logo-bankers-academy.png",
+        "artifact_origin": "shared_between_both",
+        "size_bytes": 32433,
+        "md5": "d628ae5a553f2b4d35697e39c63d5b2d",
+        "commits": [
+          "ee766bb"
+        ],
+        "used_by": [
+          "Header.tsx"
+        ],
+        "status": "rendered (scaffold)",
+        "dimensions_px": [
+          1920,
+          342
+        ]
+      },
+      {
+        "path": "public/brand/logo-bankers-academy-mark.png",
+        "artifact_origin": "shared_between_both",
+        "size_bytes": 31342,
+        "md5": "5c039076d05776459b90de22f7b83802",
+        "commits": [
+          "ee766bb"
+        ],
+        "used_by": [
+          "Footer.tsx"
+        ],
+        "status": "rendered (scaffold)",
+        "dimensions_px": [
+          1920,
+          342
+        ]
+      },
+      {
+        "path": "public/brand/logo-sp-advisors.png",
+        "artifact_origin": "shared_between_both",
+        "size_bytes": 112971,
+        "md5": "52f3850c683aeb6dc8f527733f7cc574",
+        "commits": [
+          "ee766bb"
+        ],
+        "used_by": [],
+        "status": "unused (scaffold)",
+        "dimensions_px": [
+          1200,
+          1200
+        ]
+      }
+    ],
+    "commits_touching_both_or_global": [
+      {
+        "short": "8965f12",
+        "sha": "8965f12067c52f372d0f760db0302d6efd20e59a",
+        "date": "2026-08-31",
+        "subject": "Adota #C4EF7C como o verde da marca",
+        "classification": "shared_between_both",
+        "note": "Adota #C4EF7C como verde da marca (globals.css) — decisão do cliente que vale para as duas frentes"
+      },
+      {
+        "short": "79f649b",
+        "sha": "79f649b0e340d4ded3366d41e865545919cd5a45",
+        "date": "2026-08-31",
+        "subject": "Fecha #C4EF7C como cor definitiva e documenta a nomeação das fotos",
+        "classification": "shared_between_both",
+        "note": "Fecha #C4EF7C (globals.css, PORTAR-IBBC.md) e cria COMO-NOMEAR.txt"
+      },
+      {
+        "short": "bd234e4",
+        "sha": "bd234e42826df973ad4d4af34ef7bd139b0ff9ca",
+        "date": "2026-08-31",
+        "subject": "Registra a separação permanente entre as duas frentes",
+        "classification": "shared_between_both",
+        "note": "CLAUDE.md: registra a separação permanente das duas frentes"
+      },
+      {
+        "short": "375bef7",
+        "sha": "375bef7de9a3b433499fd73566235e303b58ca7e",
+        "date": "2026-08-31",
+        "subject": "Coloca as cinco fotos de aula do IBBC nos slots que as esperavam",
+        "classification": "shared_between_both",
+        "note": "Cinco fotos de aula do IBBC: preenche slots do Boot Camp E a ponte 2018 do Quem Somos (aula-turma.jpg = aula-experiencia.jpg)"
+      }
+    ],
+    "cross_front_commit": "375bef7 alterou src/app/bootcamp/_data/media.ts E src/data/quem-somos.ts (mesma foto de aula usada na ponte 2018 do hub e no slot de experiência da landing)"
+  },
+  "commits_all": [
+    {
+      "short": "ee766bb",
+      "sha": "ee766bbc5a15901e30945ea07608ddeccf038fac",
+      "date": "2026-08-29",
+      "subject": "feat(ibbc): página do Investment Banking Boot Camp",
+      "classification": "scaffold+bootcamp_v1",
+      "note": "Root: scaffold Next.js + primeira versão do Boot Camp em /programas/investment-banking-bootcamp (hoje superada por /bootcamp)"
+    },
+    {
+      "short": "f92e774",
+      "sha": "f92e77489978e02dfabceefbc0cd4a64cdef83bb",
+      "date": "2026-08-30",
+      "subject": "docs(ibbc): guia para portar a página ao site real",
+      "classification": "Investment Bootcamp",
+      "note": "docs: PORTAR-IBBC.md"
+    },
+    {
+      "short": "5b89b86",
+      "sha": "5b89b86a30386b43149b7b9b426ac8186e5b4c8a",
+      "date": "2026-08-30",
+      "subject": "feat(ibbc): versão drop-in da página para o site real",
+      "classification": "Investment Bootcamp",
+      "note": "Versão drop-in em src/app/bootcamp (_data/_components)"
+    },
+    {
+      "short": "dfe1a22",
+      "sha": "dfe1a227cd4fdc5430a5112d60964083e3997fc3",
+      "date": "2026-08-30",
+      "subject": "feat(menu): item BOOTCAMP no menu principal apontando para /bootcamp",
+      "classification": "Investment Bootcamp",
+      "note": "Item BOOTCAMP no Header (arquivo compartilhado)"
+    },
+    {
+      "short": "d09ede0",
+      "sha": "d09ede0896bb5ace45ea8f54c67bbd7c187d442d",
+      "date": "2026-08-30",
+      "subject": "fix(menu): BOOTCAMP como adição ao menu, sem remover itens",
+      "classification": "Investment Bootcamp",
+      "note": "Header: BOOTCAMP como adição, sem remover itens (arquivo compartilhado)"
+    },
+    {
+      "short": "f0d8cc8",
+      "sha": "f0d8cc896e535c5b568aed06decea00364747399",
+      "date": "2026-08-30",
+      "subject": "fix(identidade): adota a paleta e a tipografia do site no ar",
+      "classification": "Investment Bootcamp",
+      "note": "Identidade: tokens do site no ar em globals.css, Mulish em layout.tsx, Button (arquivos compartilhados)"
+    },
+    {
+      "short": "39ab0d7",
+      "sha": "39ab0d7ef175f11150976e9153c174002c26e025",
+      "date": "2026-08-30",
+      "subject": "feat(certificado): prévia interativa do diploma na página do Boot Camp",
+      "classification": "Investment Bootcamp",
+      "note": "Certificado interativo + bloco .cert-* em globals.css (arquivo compartilhado)"
+    },
+    {
+      "short": "9d65861",
+      "sha": "9d658610d345df5fbf9b316c14cadfbc7dc57f7c",
+      "date": "2026-08-30",
+      "subject": "feat(quem-somos): recria a página a partir do site publicado",
+      "classification": "Quem Somos",
+      "note": "Recria /quem-somos; acrescenta QUEM SOMOS ao Header (arquivo compartilhado)"
+    },
+    {
+      "short": "ce48db7",
+      "sha": "ce48db72e336958779a8185d8c868627241a5d9d",
+      "date": "2026-08-30",
+      "subject": "feat(quem-somos): reformula a página para autoridade e conversão",
+      "classification": "Quem Somos",
+      "note": "Reformula /quem-somos; AssetPlaceholder ganha prop tone (arquivo compartilhado)"
+    },
+    {
+      "short": "4f9a0cc",
+      "sha": "4f9a0ccbcee96c886b97a7f6eec93b5d23ba70dc",
+      "date": "2026-08-30",
+      "subject": "feat(marca): símbolo da Bankers Academy em SVG",
+      "classification": "Quem Somos",
+      "note": "BrandMark.tsx (símbolo em SVG)"
+    },
+    {
+      "short": "8c4c317",
+      "sha": "8c4c3174ff4bb86b2ab9ff80c3ae8334bd81edd6",
+      "date": "2026-08-30",
+      "subject": "feat(quem-somos): fotos reais no hero, fundador, valores e prova social",
+      "classification": "Quem Somos",
+      "note": "Fotos reais no Quem Somos"
+    },
+    {
+      "short": "854f394",
+      "sha": "854f3946cdc390784026eca4de2ea40e01ea3dfe",
+      "date": "2026-08-30",
+      "subject": "feat(quem-somos): time real e fatos do mapa de conteúdo",
+      "classification": "Quem Somos",
+      "note": "Time real e fatos do mapa de conteúdo"
+    },
+    {
+      "short": "09e5a68",
+      "sha": "09e5a68dcaebb59020f474d11c5eeb502f78e1ba",
+      "date": "2026-08-30",
+      "subject": "feat(quem-somos): retrato recortado do fundador flutuando sobre o ink",
+      "classification": "Quem Somos",
+      "note": "Retrato recortado do fundador"
+    },
+    {
+      "short": "b0cfdc3",
+      "sha": "b0cfdc30c486a30f1d271261694415a3e35724d9",
+      "date": "2026-08-31",
+      "subject": "feat(quem-somos): foto de grupo abre a seção do time",
+      "classification": "Quem Somos",
+      "note": "Foto de grupo; pasta a-identificar/"
+    },
+    {
+      "short": "25f8c75",
+      "sha": "25f8c75210ac32e2b33e63b1abc430ecef28c751",
+      "date": "2026-08-31",
+      "subject": "refactor(quem-somos): reorganiza em nove seções e desacopla do Boot Camp",
+      "classification": "Quem Somos",
+      "note": "Reorganiza em nove seções e desacopla do Boot Camp"
+    },
+    {
+      "short": "52cc42d",
+      "sha": "52cc42df2befdea0b5288f8a1ea54050d4060e2a",
+      "date": "2026-08-31",
+      "subject": "fix(quem-somos): confirma credenciais e adota os chips do site",
+      "classification": "Quem Somos",
+      "note": "Confirma credenciais"
+    },
+    {
+      "short": "8965f12",
+      "sha": "8965f12067c52f372d0f760db0302d6efd20e59a",
+      "date": "2026-08-31",
+      "subject": "Adota #C4EF7C como o verde da marca",
+      "classification": "shared_between_both",
+      "note": "Adota #C4EF7C como verde da marca (globals.css) — decisão do cliente que vale para as duas frentes"
+    },
+    {
+      "short": "79f649b",
+      "sha": "79f649b0e340d4ded3366d41e865545919cd5a45",
+      "date": "2026-08-31",
+      "subject": "Fecha #C4EF7C como cor definitiva e documenta a nomeação das fotos",
+      "classification": "shared_between_both",
+      "note": "Fecha #C4EF7C (globals.css, PORTAR-IBBC.md) e cria COMO-NOMEAR.txt"
+    },
+    {
+      "short": "bd234e4",
+      "sha": "bd234e42826df973ad4d4af34ef7bd139b0ff9ca",
+      "date": "2026-08-31",
+      "subject": "Registra a separação permanente entre as duas frentes",
+      "classification": "shared_between_both",
+      "note": "CLAUDE.md: registra a separação permanente das duas frentes"
+    },
+    {
+      "short": "982b754",
+      "sha": "982b7540a38d30c4b2895aaaed68f114fe284591",
+      "date": "2026-08-31",
+      "subject": "Coloca o retrato da Jaqueline Sanches em Sócios e liderança",
+      "classification": "Quem Somos",
+      "note": "Retrato Jaqueline Sanches"
+    },
+    {
+      "short": "7efa110",
+      "sha": "7efa110247bed072f47f85bdcecf551f898ec892",
+      "date": "2026-08-31",
+      "subject": "Coloca o retrato do Arnaldo Mello em Sócios e liderança",
+      "classification": "Quem Somos",
+      "note": "Retrato Arnaldo Mello"
+    },
+    {
+      "short": "8b26afa",
+      "sha": "8b26afa358c630f63117ae1efd2b56fe993e5820",
+      "date": "2026-08-31",
+      "subject": "Tira Andrea Securato da liderança até haver confirmação",
+      "classification": "Quem Somos",
+      "note": "Remove Andrea Securato até confirmação"
+    },
+    {
+      "short": "4979e37",
+      "sha": "4979e370d92b1d19892744c0eb4b75a671c1c3ad",
+      "date": "2026-08-31",
+      "subject": "Devolve Andrea Securato à liderança, confirmada pelo cliente",
+      "classification": "Quem Somos",
+      "note": "Devolve Andrea Securato (confirmada pelo cliente)"
+    },
+    {
+      "short": "39b794a",
+      "sha": "39b794a3e6c1fc75eb31a22c1d2d0105c30d73f1",
+      "date": "2026-08-31",
+      "subject": "Coloca o retrato da Andrea Securato: liderança completa",
+      "classification": "Quem Somos",
+      "note": "Retrato Andrea Securato"
+    },
+    {
+      "short": "5ddbd00",
+      "sha": "5ddbd00e89b1ca3553a01c67d195fdd52a5e6a41",
+      "date": "2026-08-31",
+      "subject": "Faz o que é clicável reagir ao clique",
+      "classification": "Quem Somos",
+      "note": "Estados de hover/clique"
+    },
+    {
+      "short": "5b651ff",
+      "sha": "5b651ff55e7c3df2635d95efe991bb3e9f222a75",
+      "date": "2026-08-31",
+      "subject": "Tira da galeria de cultura a foto reprovada pelo cliente",
+      "classification": "Quem Somos",
+      "note": "Tira foto reprovada da galeria"
+    },
+    {
+      "short": "6849a1f",
+      "sha": "6849a1fa513e639b83eea26992c121776d3fa72e",
+      "date": "2026-08-31",
+      "subject": "Troca de lugar a turma e o time na sala de reuniões",
+      "classification": "Quem Somos",
+      "note": "Troca fotos da galeria"
+    },
+    {
+      "short": "025b4ed",
+      "sha": "025b4ed0ef49cfa1917c67c1cc614b00becdeba5",
+      "date": "2026-08-31",
+      "subject": "Transforma o Quem Somos em página-hub com quatro páginas internas",
+      "classification": "Quem Somos",
+      "note": "Hub + 4 páginas internas; entradas no sitemap (arquivo compartilhado)"
+    },
+    {
+      "short": "514d32d",
+      "sha": "514d32d541de217afccaef55ce09761b8e4e7f3d",
+      "date": "2026-08-31",
+      "subject": "Coloca a foto do Securato dando aula na galeria de cultura",
+      "classification": "Quem Somos",
+      "note": "Foto do Securato dando aula"
+    },
+    {
+      "short": "223f0e5",
+      "sha": "223f0e555b4f1dbed1fd85620b8ea6396334eb0b",
+      "date": "2026-08-31",
+      "subject": "Fotos novas do fundador: retrato em pé e autógrafo do livro",
+      "classification": "Quem Somos",
+      "note": "Retrato em pé e foto do livro"
+    },
+    {
+      "short": "db109ec",
+      "sha": "db109ec6b991c5ac925da972281e6a1699ba5416",
+      "date": "2026-08-31",
+      "subject": "Publica os depoimentos do IBBC com citações literais e links verificados",
+      "classification": "Investment Bootcamp",
+      "note": "Depoimentos verbatim com links verificados (também no espelho src/data/bootcamp)"
+    },
+    {
+      "short": "f6170d4",
+      "sha": "f6170d4e2b299b523ff0fb9c02f8defca571c002",
+      "date": "2026-08-31",
+      "subject": "Completa o card do Rafael Aguirre com o post do próprio perfil",
+      "classification": "Investment Bootcamp",
+      "note": "Card do Rafael Aguirre"
+    },
+    {
+      "short": "6bfe0c9",
+      "sha": "6bfe0c9aeca097a73c38b23e91fa7c19c76cfab2",
+      "date": "2026-08-31",
+      "subject": "Dois caminhos na seção de participação: equipe e inscrição na Tabula",
+      "classification": "Investment Bootcamp",
+      "note": "Dois caminhos: equipe e inscrição na Tabula"
+    },
+    {
+      "short": "7019de3",
+      "sha": "7019de319fed9c06ea0fd835e635213ed010ada0",
+      "date": "2026-08-31",
+      "subject": "Transforma o Bootcamp em landing + hub com rotas reais",
+      "classification": "Investment Bootcamp",
+      "note": "Landing + hub com rotas reais; entradas no sitemap (arquivo compartilhado)"
+    },
+    {
+      "short": "56317a0",
+      "sha": "56317a01589a1c355565e02651ef2a2b0c2c4dc8",
+      "date": "2026-08-31",
+      "subject": "Arquitetura de imagens do Boot Camp: registro central + slots elegantes",
+      "classification": "Investment Bootcamp",
+      "note": "Registro central de imagens (_data/media.ts) + <Foto>"
+    },
+    {
+      "short": "0ec0738",
+      "sha": "0ec0738aa0d6e4b873c3c11c9aceab6972613e44",
+      "date": "2026-08-31",
+      "subject": "Dá ao fundador a grande seção editorial do Quem Somos",
+      "classification": "Quem Somos",
+      "note": "Seção editorial do fundador"
+    },
+    {
+      "short": "7936b8e",
+      "sha": "7936b8e98b19f2194245c6fdbcc1b554cc8a611e",
+      "date": "2026-08-31",
+      "subject": "Refinamento estratégico do hub Quem Somos",
+      "classification": "Quem Somos",
+      "note": "Refinamento do hub"
+    },
+    {
+      "short": "040d523",
+      "sha": "040d523f4e80f884f6779a435aeeb80bdc39b0ac",
+      "date": "2026-08-31",
+      "subject": "Cria a página dedicada do fundador: /quem-somos/fundador",
+      "classification": "Quem Somos",
+      "note": "Página /quem-somos/fundador; sitemap (arquivo compartilhado)"
+    },
+    {
+      "short": "a0b1ec2",
+      "sha": "a0b1ec2ce0e3b7ccdc8298bd535f791e1a92af51",
+      "date": "2026-08-31",
+      "subject": "Cartão clicável do fundador no topo do hub + perfil enriquecido",
+      "classification": "Quem Somos",
+      "note": "Cartão clicável do fundador"
+    },
+    {
+      "short": "375bef7",
+      "sha": "375bef7de9a3b433499fd73566235e303b58ca7e",
+      "date": "2026-08-31",
+      "subject": "Coloca as cinco fotos de aula do IBBC nos slots que as esperavam",
+      "classification": "shared_between_both",
+      "note": "Cinco fotos de aula do IBBC: preenche slots do Boot Camp E a ponte 2018 do Quem Somos (aula-turma.jpg = aula-experiencia.jpg)"
+    },
+    {
+      "short": "bfd7166",
+      "sha": "bfd71663fd981c2a79a7c524694e6b69667bda70",
+      "date": "2026-08-31",
+      "subject": "feat(quem-somos): foto do time (0158) fecha o hub como editorial de comunidade",
+      "classification": "Quem Somos",
+      "note": "Foto do time (0158) no fechamento do hub"
+    },
+    {
+      "short": "60a4c42",
+      "sha": "60a4c42cac44c7b6a0a1c52e1cd64cd8e9af3356",
+      "date": "2026-08-31",
+      "subject": "feat(bootcamp): prova social com o vídeo da Ana Luísa entre certificado e alumni",
+      "classification": "Investment Bootcamp",
+      "note": "Prova social com vídeo da Ana Luísa; PlayerDepoimento"
+    },
+    {
+      "short": "64b2ad6",
+      "sha": "64b2ad69bf86a5bed92f3db807c3dbed1adc9db6",
+      "date": "2026-08-31",
+      "subject": "feat(bootcamp): retrato do Securato Jr. no slot de mentor",
+      "classification": "Investment Bootcamp",
+      "note": "Retrato do Securato Jr. no slot de mentor"
+    },
+    {
+      "short": "2f331f5",
+      "sha": "2f331f55da86b7c2bda1e80b399e5a06841adbba",
+      "date": "2026-08-31",
+      "subject": "feat(bootcamp): quatro fotos reais preenchem os últimos slots da landing",
+      "classification": "Investment Bootcamp",
+      "note": "Quatro fotos reais na landing"
+    },
+    {
+      "short": "57010f6",
+      "sha": "57010f65d8a293bd53154a45684e858eac445723",
+      "date": "2026-08-31",
+      "subject": "feat(bootcamp): arco da experiência vira narrativa editorial com duas fotos reais",
+      "classification": "Investment Bootcamp",
+      "note": "Arco da experiência com duas fotos reais"
+    },
+    {
+      "short": "52881ca",
+      "sha": "52881ca473f20d2b7c02fee872e7894a804b6254",
+      "date": "2026-08-31",
+      "subject": "feat(bootcamp): inscrição pela Tabula em todas as seções de conversão",
+      "classification": "Investment Bootcamp",
+      "note": "Inscrição pela Tabula em todas as conversões"
+    },
+    {
+      "short": "336beb2",
+      "sha": "336beb25f6fe41b0c2cb0c8b41041dea37c14927",
+      "date": "2026-08-31",
+      "subject": "fix(quem-somos): última âncora do hub vira rota real",
+      "classification": "Quem Somos",
+      "note": "Última âncora vira rota real"
+    },
+    {
+      "short": "6b0fda5",
+      "sha": "6b0fda5667557baa5e0ee2dc97c7d68af3c11b8c",
+      "date": "2026-08-31",
+      "subject": "refactor(quem-somos): hub enxuto — rolagem só com o essencial",
+      "classification": "Quem Somos",
+      "note": "Hub enxuto"
+    },
+    {
+      "short": "2a74a55",
+      "sha": "2a74a55782d4f01ae530ae42867de56a25705a85",
+      "date": "2026-08-31",
+      "subject": "feat(quem-somos): especialistas com retratos oficiais e hierarquia editorial",
+      "classification": "Quem Somos",
+      "note": "Especialistas com retratos oficiais"
+    },
+    {
+      "short": "386aabf",
+      "sha": "386aabfda2b976105f603fea0c5f3fbc082f92ff",
+      "date": "2026-08-31",
+      "subject": "feat(quem-somos): retrato do Securato Master no bloco de especialistas",
+      "classification": "Quem Somos",
+      "note": "Retrato do Securato Master"
+    },
+    {
+      "short": "b163b39",
+      "sha": "b163b39762ec61328c073568804fc2ebd679e90c",
+      "date": "2026-08-31",
+      "subject": "style(quem-somos): descrições humanizadas, sem separadores de máquina",
+      "classification": "Quem Somos",
+      "note": "Descrições humanizadas"
+    },
+    {
+      "short": "c32f4fb",
+      "sha": "c32f4fb6a4ff241c7565b5b5d3289c806f86636f",
+      "date": "2026-08-31",
+      "subject": "feat(quem-somos): hero editorial escuro com a logo oficial; verde vira acento",
+      "classification": "Quem Somos",
+      "note": "Hero escuro com logo oficial; estilos btnOutlineDark"
+    },
+    {
+      "short": "65d6f51",
+      "sha": "65d6f511db27bb81af5fb169c04dac30b29c9229",
+      "date": "2026-08-31",
+      "subject": "feat(quem-somos): a História vira narrativa editorial",
+      "classification": "Quem Somos",
+      "note": "História editorial"
+    },
+    {
+      "short": "4688097",
+      "sha": "4688097b811aa9dc1eb621ffc0ba30bd4403b2f6",
+      "date": "2026-09-01",
+      "subject": "feat(quem-somos): ecossistema aponta para os links oficiais dos cursos",
+      "classification": "Quem Somos",
+      "note": "Ecossistema com links oficiais"
+    },
+    {
+      "short": "9ef5203",
+      "sha": "9ef52033f3b369f2636fbd5b779ba9d1bac19716",
+      "date": "2026-09-02",
+      "subject": "fix(quem-somos): foto do livro menor e com respiro na trajetória do fundador",
+      "classification": "Quem Somos",
+      "note": "Foto do livro menor"
+    },
+    {
+      "short": "63aba30",
+      "sha": "63aba30bbbf2a00de96cff2680436eb9eeeefc16",
+      "date": "2026-09-02",
+      "subject": "fix(quem-somos): foto do livro um pouco mais larga na trajetória do fundador",
+      "classification": "Quem Somos",
+      "note": "Foto do livro mais larga"
+    },
+    {
+      "short": "429d9cc",
+      "sha": "429d9cc6db158f554946ffe2601a3b0198ccc055",
+      "date": "2026-09-02",
+      "subject": "feat(quem-somos): hero com o símbolo da marca e 'Quem somos' maior",
+      "classification": "Quem Somos",
+      "note": "Hero com símbolo + 'Quem somos' maior"
+    },
+    {
+      "short": "3661e13",
+      "sha": "3661e13e0edcfda8565af78c54bcc0dcdfcf7e89",
+      "date": "2026-09-02",
+      "subject": "feat(bootcamp): jornada editorial sem placeholders e certificado interativo logo abaixo",
+      "classification": "Investment Bootcamp",
+      "note": "Jornada editorial sem placeholders; certificado logo abaixo; JornadaEtapas.tsx (também atualiza o espelho src/data/bootcamp)"
+    }
+  ],
+  "cross_artifact_conflicts": [
+    {
+      "file": "src/components/site/Header.tsx",
+      "used_by": [
+        "Quem Somos",
+        "Investment Bootcamp"
+      ],
+      "changes_from_quem_somos": "9d65861 acrescentou { href: '/quem-somos', label: 'QUEM SOMOS' } ao array nav",
+      "changes_from_investment_bootcamp": "dfe1a22 + d09ede0 acrescentaram { href: '/bootcamp', label: 'BOOTCAMP' } ao array nav e documentaram que no site real é UMA linha a mais, sem substituir o menu",
+      "compatible": true,
+      "conflict_risk": "baixo: os dois itens coexistem no mesmo array; risco real é o site oficial já ter 'QUEM SOMOS' apontando para outra rota ou para uma página antiga",
+      "recommended_combined_result": "No Header OFICIAL: manter o menu existente; garantir o item QUEM SOMOS → /quem-somos (rota nova substitui a página antiga) e ADICIONAR uma linha { href: '/bootcamp', label: 'BOOTCAMP' } na posição desejada. Não portar o Header do scaffold."
+    },
+    {
+      "file": "src/app/globals.css",
+      "used_by": [
+        "Quem Somos",
+        "Investment Bootcamp"
+      ],
+      "changes_from_quem_somos": "nenhuma edição direta; a frente consome brand, brand-deep, ink, line, surface*, .reveal, .on-dark, :focus-visible",
+      "changes_from_investment_bootcamp": "f0d8cc8 (tokens do site no ar + fontes) e 39ab0d7 (bloco .cert-*); 8965f12/79f649b fixaram #C4EF7C (decisão do cliente durante o trabalho, vale para as duas)",
+      "compatible": true,
+      "conflict_risk": "médio SE o site oficial já tiver seu próprio globals.css/tokens: nomes de token (--color-brand, --color-ink, --color-line, --color-surface-alt, --color-brand-deep, --color-brand-soft, --font-sans) precisam existir com esses nomes, porque as classes Tailwind das páginas (bg-brand, text-brand-deep, border-line, bg-surface-alt…) dependem deles",
+      "recommended_combined_result": "Levar o arquivo atual INTEIRO (bloco @theme + base + focus + .reveal + reduced-motion + bloco .cert-*). Se o site oficial já tiver @theme, MESCLAR: adicionar os tokens que faltarem com exatamente estes valores (brand #c4ef7c 🔒, brand-soft #c4ef7c, brand-deep #5d792e, ink oklch(20% 0.005 260), line oklch(92% 0.01 255), surface #fff, surface-alt #f6f7f5, surface-soft #fafafa, cert-*) e anexar as regras .reveal/.on-dark/.cert-*."
+    },
+    {
+      "file": "src/app/layout.tsx",
+      "used_by": [
+        "Quem Somos",
+        "Investment Bootcamp"
+      ],
+      "changes_from_quem_somos": "nenhuma",
+      "changes_from_investment_bootcamp": "f0d8cc8: Poppins → Mulish (next/font/google) expondo a var --font-mulish que o @theme usa em --font-sans/--font-display",
+      "compatible": true,
+      "conflict_risk": "baixo: o layout oficial deve apenas expor a fonte Mulish como --font-mulish (ou --font-sans já Mulish). Atenção: as páginas dos dois artifacts incluem <Header/> e <Footer/> por conta própria — se o layout oficial já os injeta, REMOVER essas duas linhas em cada uma das 13 páginas para não duplicar",
+      "recommended_combined_result": "Layout oficial com Mulish (pesos 400/600/700/800/900) em --font-mulish, lang pt-BR, metadataBase do domínio oficial. Header/Footer: ou pelo layout (e retirar dos 13 page.tsx) ou por página (como hoje) — nunca os dois."
+    },
+    {
+      "file": "src/app/sitemap.ts",
+      "used_by": [
+        "Quem Somos",
+        "Investment Bootcamp"
+      ],
+      "changes_from_quem_somos": "025b4ed + 040d523: 6 URLs /quem-somos*",
+      "changes_from_investment_bootcamp": "7019de3: 7 URLs /bootcamp*",
+      "compatible": true,
+      "conflict_risk": "baixo; o arquivo também lista a URL legada IBBC_PATH (/programas/investment-banking-bootcamp) que NÃO deve ir",
+      "recommended_combined_result": "Sitemap oficial + 13 URLs (7 /bootcamp*, 6 /quem-somos*) com o domínio oficial; sem a entrada IBBC_PATH."
+    },
+    {
+      "file": "src/components/ui/AssetPlaceholder.tsx",
+      "used_by": [
+        "Quem Somos"
+      ],
+      "changes_from_quem_somos": "ce48db7: prop tone ('light' | 'dark') e cores por tom",
+      "changes_from_investment_bootcamp": "criado no scaffold (ee766bb); o /bootcamp atual NÃO o usa (usa _components/Foto.tsx)",
+      "compatible": true,
+      "conflict_risk": "nenhum",
+      "recommended_combined_result": "Levar a versão atual (com tone) junto do Quem Somos, em src/components/ui/AssetPlaceholder.tsx (alias @/components/ui/AssetPlaceholder)."
+    },
+    {
+      "file": "src/components/ui/Reveal.tsx",
+      "used_by": [
+        "Quem Somos"
+      ],
+      "changes_from_quem_somos": "nenhuma (só consumo)",
+      "changes_from_investment_bootcamp": "criado no scaffold (ee766bb); o /bootcamp atual NÃO o usa",
+      "compatible": true,
+      "conflict_risk": "nenhum; depende da regra .reveal em globals.css",
+      "recommended_combined_result": "Levar como está junto do Quem Somos + regra .reveal/.reveal[data-visible] no CSS global."
+    },
+    {
+      "file": "src/components/ui/BrandMark.tsx",
+      "used_by": [
+        "Quem Somos"
+      ],
+      "changes_from_quem_somos": "criado em 4f9a0cc",
+      "changes_from_investment_bootcamp": "nenhuma",
+      "compatible": true,
+      "conflict_risk": "nenhum",
+      "recommended_combined_result": "Levar junto do Quem Somos (usa var(--color-brand) e var(--color-ink))."
+    },
+    {
+      "file": "src/data/bootcamp/config.ts (+ src/components/site/Footer.tsx, src/components/ui/Button.tsx, Container.tsx)",
+      "used_by": [
+        "scaffold Header/Footer/home"
+      ],
+      "changes_from_quem_somos": "nenhuma",
+      "changes_from_investment_bootcamp": "config.ts é cópia idêntica de src/app/bootcamp/_data/config.ts; Button mudou em f0d8cc8",
+      "compatible": true,
+      "conflict_risk": "só existe se o Header/Footer do scaffold forem portados — não devem ser",
+      "recommended_combined_result": "Não portar. Se o botão 'Quero participar' do Header for desejado no site oficial, apontar para ibbcLinks.apply de src/app/bootcamp/_data/config.ts."
+    },
+    {
+      "file": "public/images/quem-somos/aula-turma.jpg ↔ public/images/bootcamp/aula-experiencia.jpg",
+      "used_by": [
+        "Quem Somos",
+        "Investment Bootcamp"
+      ],
+      "changes_from_quem_somos": "375bef7 copiou a foto para a ponte 2018 do hub",
+      "changes_from_investment_bootcamp": "375bef7 colocou a mesma foto no slot 'experiência' da landing",
+      "compatible": true,
+      "conflict_risk": "nenhum (mesmos bytes, md5 a4b91bc99189ca0bb88b093059437cb6); duplicação deliberada para manter as frentes independentes",
+      "recommended_combined_result": "Levar as duas cópias como estão (cada front referencia o seu caminho)."
+    },
+    {
+      "file": "CLAUDE.md / README.md / PORTAR-IBBC.md",
+      "used_by": [
+        "repositório de trabalho"
+      ],
+      "changes_from_quem_somos": "bd234e4 (regras das duas frentes), 79f649b",
+      "changes_from_investment_bootcamp": "f92e774, 5b89b86, d09ede0, f0d8cc8",
+      "compatible": true,
+      "conflict_risk": "documentação parcialmente desatualizada (README e PORTAR ainda descrevem /bootcamp como redirect)",
+      "recommended_combined_result": "Não migrar; este manifesto substitui os dois guias."
+    }
+  ],
+  "unclassified_changes": [
+    {
+      "file": "src/app/page.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Home provisória do scaffold ('Página inicial provisória')",
+      "reason_for_doubt": "Não faz parte de nenhum dos dois artifacts; existe só porque o repositório estava vazio",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/app/programas/investment-banking-bootcamp/page.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Versão 1 da página do Boot Camp (root commit), montada com src/components/bootcamp/*",
+      "reason_for_doubt": "Foi o ponto de partida do trabalho do Bootcamp, mas NÃO é o que o artifact 'Investment Bootcamp' mostra (a prévia cobre só /bootcamp e as seis internas). Superada por src/app/bootcamp/page.tsx",
+      "recommended_action": "NÃO migrar (a menos que o site oficial queira também a rota /programas/investment-banking-bootcamp; nesse caso a decisão é do cliente)",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/bootcamp/AlumniCard.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente da versão 1 do Boot Camp (legado)",
+      "reason_for_doubt": "Só importado por src/app/programas/investment-banking-bootcamp/page.tsx; o /bootcamp atual usa src/app/bootcamp/_components",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/bootcamp/BootcampAlumni.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente da versão 1 do Boot Camp (legado)",
+      "reason_for_doubt": "Só importado por src/app/programas/investment-banking-bootcamp/page.tsx; o /bootcamp atual usa src/app/bootcamp/_components",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/bootcamp/BootcampCertificate.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente da versão 1 do Boot Camp (legado)",
+      "reason_for_doubt": "Só importado por src/app/programas/investment-banking-bootcamp/page.tsx; o /bootcamp atual usa src/app/bootcamp/_components",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/bootcamp/BootcampCta.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente da versão 1 do Boot Camp (legado)",
+      "reason_for_doubt": "Só importado por src/app/programas/investment-banking-bootcamp/page.tsx; o /bootcamp atual usa src/app/bootcamp/_components",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "6bfe0c9",
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/bootcamp/BootcampEditions.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente da versão 1 do Boot Camp (legado)",
+      "reason_for_doubt": "Só importado por src/app/programas/investment-banking-bootcamp/page.tsx; o /bootcamp atual usa src/app/bootcamp/_components",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/bootcamp/BootcampExperience.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente da versão 1 do Boot Camp (legado)",
+      "reason_for_doubt": "Só importado por src/app/programas/investment-banking-bootcamp/page.tsx; o /bootcamp atual usa src/app/bootcamp/_components",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/bootcamp/BootcampFaq.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente da versão 1 do Boot Camp (legado)",
+      "reason_for_doubt": "Só importado por src/app/programas/investment-banking-bootcamp/page.tsx; o /bootcamp atual usa src/app/bootcamp/_components",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/bootcamp/BootcampHero.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente da versão 1 do Boot Camp (legado)",
+      "reason_for_doubt": "Só importado por src/app/programas/investment-banking-bootcamp/page.tsx; o /bootcamp atual usa src/app/bootcamp/_components",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/bootcamp/BootcampJourney.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente da versão 1 do Boot Camp (legado)",
+      "reason_for_doubt": "Só importado por src/app/programas/investment-banking-bootcamp/page.tsx; o /bootcamp atual usa src/app/bootcamp/_components",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/bootcamp/BootcampMentors.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente da versão 1 do Boot Camp (legado)",
+      "reason_for_doubt": "Só importado por src/app/programas/investment-banking-bootcamp/page.tsx; o /bootcamp atual usa src/app/bootcamp/_components",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/bootcamp/BootcampOutcomes.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente da versão 1 do Boot Camp (legado)",
+      "reason_for_doubt": "Só importado por src/app/programas/investment-banking-bootcamp/page.tsx; o /bootcamp atual usa src/app/bootcamp/_components",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/bootcamp/BootcampTestimonials.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente da versão 1 do Boot Camp (legado)",
+      "reason_for_doubt": "Só importado por src/app/programas/investment-banking-bootcamp/page.tsx; o /bootcamp atual usa src/app/bootcamp/_components",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "db109ec",
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/bootcamp/CertificateArtwork.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente da versão 1 do Boot Camp (legado)",
+      "reason_for_doubt": "Só importado por src/app/programas/investment-banking-bootcamp/page.tsx; o /bootcamp atual usa src/app/bootcamp/_components",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/data/bootcamp/alumni.ts",
+      "artifact_origin_claimed": "none",
+      "description": "Espelho legado de src/app/bootcamp/_data (conteúdo idêntico byte a byte)",
+      "reason_for_doubt": "Duplicata mantida em sincronia (db109ec, 60a4c42, 3661e13) só para a página legada e para o scaffold; a fonte de verdade do artifact é src/app/bootcamp/_data",
+      "recommended_action": "NÃO migrar como arquivo separado; no site oficial use apenas src/app/bootcamp/_data",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/data/bootcamp/editions.ts",
+      "artifact_origin_claimed": "none",
+      "description": "Espelho legado de src/app/bootcamp/_data (conteúdo idêntico byte a byte)",
+      "reason_for_doubt": "Duplicata mantida em sincronia (db109ec, 60a4c42, 3661e13) só para a página legada e para o scaffold; a fonte de verdade do artifact é src/app/bootcamp/_data",
+      "recommended_action": "NÃO migrar como arquivo separado; no site oficial use apenas src/app/bootcamp/_data",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/data/bootcamp/faq.ts",
+      "artifact_origin_claimed": "none",
+      "description": "Espelho legado de src/app/bootcamp/_data (conteúdo idêntico byte a byte)",
+      "reason_for_doubt": "Duplicata mantida em sincronia (db109ec, 60a4c42, 3661e13) só para a página legada e para o scaffold; a fonte de verdade do artifact é src/app/bootcamp/_data",
+      "recommended_action": "NÃO migrar como arquivo separado; no site oficial use apenas src/app/bootcamp/_data",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/data/bootcamp/journey.ts",
+      "artifact_origin_claimed": "none",
+      "description": "Espelho legado de src/app/bootcamp/_data (conteúdo idêntico byte a byte)",
+      "reason_for_doubt": "Duplicata mantida em sincronia (db109ec, 60a4c42, 3661e13) só para a página legada e para o scaffold; a fonte de verdade do artifact é src/app/bootcamp/_data",
+      "recommended_action": "NÃO migrar como arquivo separado; no site oficial use apenas src/app/bootcamp/_data",
+      "commits": [
+        "3661e13",
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/data/bootcamp/mentors.ts",
+      "artifact_origin_claimed": "none",
+      "description": "Espelho legado de src/app/bootcamp/_data (conteúdo idêntico byte a byte)",
+      "reason_for_doubt": "Duplicata mantida em sincronia (db109ec, 60a4c42, 3661e13) só para a página legada e para o scaffold; a fonte de verdade do artifact é src/app/bootcamp/_data",
+      "recommended_action": "NÃO migrar como arquivo separado; no site oficial use apenas src/app/bootcamp/_data",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/data/bootcamp/outcomes.ts",
+      "artifact_origin_claimed": "none",
+      "description": "Espelho legado de src/app/bootcamp/_data (conteúdo idêntico byte a byte)",
+      "reason_for_doubt": "Duplicata mantida em sincronia (db109ec, 60a4c42, 3661e13) só para a página legada e para o scaffold; a fonte de verdade do artifact é src/app/bootcamp/_data",
+      "recommended_action": "NÃO migrar como arquivo separado; no site oficial use apenas src/app/bootcamp/_data",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/data/bootcamp/testimonials.ts",
+      "artifact_origin_claimed": "none",
+      "description": "Espelho legado de src/app/bootcamp/_data (conteúdo idêntico byte a byte)",
+      "reason_for_doubt": "Duplicata mantida em sincronia (db109ec, 60a4c42, 3661e13) só para a página legada e para o scaffold; a fonte de verdade do artifact é src/app/bootcamp/_data",
+      "recommended_action": "NÃO migrar como arquivo separado; no site oficial use apenas src/app/bootcamp/_data",
+      "commits": [
+        "60a4c42",
+        "f6170d4",
+        "db109ec",
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/data/bootcamp/types.ts",
+      "artifact_origin_claimed": "none",
+      "description": "Espelho legado de src/app/bootcamp/_data (conteúdo idêntico byte a byte)",
+      "reason_for_doubt": "Duplicata mantida em sincronia (db109ec, 60a4c42, 3661e13) só para a página legada e para o scaffold; a fonte de verdade do artifact é src/app/bootcamp/_data",
+      "recommended_action": "NÃO migrar como arquivo separado; no site oficial use apenas src/app/bootcamp/_data",
+      "commits": [
+        "3661e13",
+        "60a4c42",
+        "db109ec",
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/components/ui/SectionHeading.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Primitivo do scaffold",
+      "reason_for_doubt": "Usado só pelos componentes legados src/components/bootcamp/*",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "src/app/quem-somos/_components/Timeline.tsx",
+      "artifact_origin_claimed": "none",
+      "description": "Componente de linha do tempo do Quem Somos",
+      "reason_for_doubt": "Origem demonstrável (Quem Somos), mas NÃO é importado por nenhuma página desde 65d6f51 (a História virou narrativa); está fora do que o artifact renderiza",
+      "recommended_action": "NÃO migrar (código morto)",
+      "commits": [
+        "223f0e5",
+        "5ddbd00",
+        "ce48db7"
+      ]
+    },
+    {
+      "file": "public/brand/logo-sp-advisors.png",
+      "artifact_origin_claimed": "none",
+      "description": "Logo da SP Advisors",
+      "reason_for_doubt": "Veio no root commit; nenhuma página o renderiza",
+      "recommended_action": "NÃO migrar",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "public/images/quem-somos/a-identificar/",
+      "artifact_origin_claimed": "none",
+      "description": "Dois retratos sem identificação confirmada + LEIA-ME",
+      "reason_for_doubt": "Pessoas não identificadas; regra do projeto proíbe identificar por aparência",
+      "recommended_action": "NÃO publicar no site oficial; manter fora de public/",
+      "commits": [
+        "4979e37",
+        "8b26afa",
+        "b0cfdc3"
+      ]
+    },
+    {
+      "file": "public/images/bootcamp/certificado-ibbc-referencia.jpg",
+      "artifact_origin_claimed": "none",
+      "description": "Foto do diploma físico usada como referência para a gravura",
+      "reason_for_doubt": "Não é renderizada; é material-fonte",
+      "recommended_action": "NÃO publicar; guardar como referência",
+      "commits": [
+        "ee766bb"
+      ]
+    },
+    {
+      "file": "classe CSS text-ink-muted (Header.tsx, src/app/page.tsx, SectionHeading.tsx, src/components/bootcamp/*)",
+      "artifact_origin_claimed": "none",
+      "description": "Classe que referencia o token --color-ink-muted, removido em f0d8cc8; o Tailwind v4 não gera regra para ela (confirmado no CSS compilado)",
+      "reason_for_doubt": "Efeito latente: os links do menu do Header herdam a cor do texto (ink) em vez de um cinza. Não afeta as páginas dos dois artifacts",
+      "recommended_action": "Ignorar no site oficial (o Header oficial é outro); se o Header do scaffold for reaproveitado, trocar por text-ink/60",
+      "commits": []
+    }
+  ],
+  "unresolved": {
+    "official_repository": {
+      "resolution_status": "unresolved",
+      "reason": "Este repositório (facanhaluisaaa-create/bankers-academy) é um SCAFFOLD criado no root commit porque estava vazio (README e PORTAR-IBBC.md dizem isso). O 'site real' é citado em PORTAR-IBBC.md como leticia011/Bankers-Academy, mas esse repositório NÃO foi acessado nem verificado nesta sessão (fora do escopo de acesso). Framework, estrutura de pastas, layout, Header e Footer do site oficial são desconhecidos aqui."
+    },
+    "main_branch": {
+      "resolution_status": "unresolved",
+      "reason": "Não existe branch main/master neste repositório: git ls-remote lista apenas refs/heads/claude/ibbc-page-kzoqyc, e o HEAD remoto aponta para ela. Não há merge-base a calcular; a 'base' de tudo é o root commit ee766bb."
+    },
+    "artifact_names": {
+      "resolution_status": "resolved_with_note",
+      "note": "Os títulos publicados são 'Quem Somos — Bankers Academy' (https://claude.ai/code/artifact/621f3077-85ae-4356-9b72-9ca47d41889a) e 'Investment Banking Boot Camp' (https://claude.ai/code/artifact/0eb0676a-9918-4af2-8ce1-1293bb2de696). O cliente se refere a eles como 'Quem Somos' e 'Investment Bootcamp'; são os únicos dois artifacts da conta e correspondem um a um."
+    },
+    "how_artifacts_relate_to_the_code": {
+      "resolution_status": "resolved",
+      "note": "Os artifacts são composições HTML estáticas geradas a partir do build desta branch (snapshot das rotas + CSS + um roteador JS de prévia). Não têm código-fonte próprio: o código-fonte de cada artifact é o conjunto de arquivos listado aqui. Os dois foram gerados do MESMO commit HEAD (3661e13) em 2026-09-02."
+    },
+    "content_pending_client_decision": [
+      "Quem Somos: ano da marca 2022 × 2023 (marco 'ba' mantido em 2022 com a divergência anotada em src/data/quem-somos.ts)",
+      "Quem Somos: fotos oficiais de Agostinho Cavalcanti e Tatiana Tafarello (slots com AssetPlaceholder)",
+      "Quem Somos: arquivos indicados pelo cliente ainda não recebidos (0156.jpg, SECURATO_aula_melhorada, 3e01846c…, _M3A1784.jpg, 3C39E18F…) — campo arquivoEsperado em qsMedia",
+      "Bootcamp: EXP-01 e EXP-03 (placeholders), alumniDestaque vazio, collage 08A–C vazia, edicoesMedia vazia",
+      "Bootcamp: nomes oficiais das 9 etapas (a jornada mostra 8 fases de progressão)"
+    ]
+  },
+  "final_combined_state": {
+    "target": "repositório OFICIAL da Bankers Academy (fora deste repositório; ver unresolved.official_repository)",
+    "routes_final": [
+      "/quem-somos",
+      "/quem-somos/historia",
+      "/quem-somos/lideranca",
+      "/quem-somos/especialistas",
+      "/quem-somos/ecossistema",
+      "/quem-somos/fundador",
+      "/bootcamp",
+      "/bootcamp/experiencia",
+      "/bootcamp/jornada",
+      "/bootcamp/certificado",
+      "/bootcamp/alumni",
+      "/bootcamp/edicoes",
+      "/bootcamp/mentores"
+    ],
+    "routes_NOT_to_create": [
+      "/",
+      "/programas/investment-banking-bootcamp"
+    ],
+    "files_final": [
+      "src/app/quem-somos/page.tsx",
+      "src/app/quem-somos/historia/page.tsx",
+      "src/app/quem-somos/lideranca/page.tsx",
+      "src/app/quem-somos/especialistas/page.tsx",
+      "src/app/quem-somos/ecossistema/page.tsx",
+      "src/app/quem-somos/fundador/page.tsx",
+      "src/app/quem-somos/_components/HubCards.tsx",
+      "src/app/quem-somos/_components/SubHero.tsx",
+      "src/app/quem-somos/_components/estilos.ts",
+      "src/data/quem-somos.ts",
+      "src/components/ui/BrandMark.tsx",
+      "src/app/bootcamp/page.tsx",
+      "src/app/bootcamp/experiencia/page.tsx",
+      "src/app/bootcamp/jornada/page.tsx",
+      "src/app/bootcamp/certificado/page.tsx",
+      "src/app/bootcamp/alumni/page.tsx",
+      "src/app/bootcamp/edicoes/page.tsx",
+      "src/app/bootcamp/mentores/page.tsx",
+      "src/app/bootcamp/_components/InteractiveCertificate.tsx",
+      "src/app/bootcamp/_components/Certificate.tsx",
+      "src/app/bootcamp/_components/JornadaEtapas.tsx",
+      "src/app/bootcamp/_components/PlayerDepoimento.tsx",
+      "src/app/bootcamp/_components/Foto.tsx",
+      "src/app/bootcamp/_components/AlumniBrowser.tsx",
+      "src/app/bootcamp/_components/SubHero.tsx",
+      "src/app/bootcamp/_components/estilos.ts",
+      "src/app/bootcamp/_data/config.ts",
+      "src/app/bootcamp/_data/media.ts",
+      "src/app/bootcamp/_data/journey.ts",
+      "src/app/bootcamp/_data/testimonials.ts",
+      "src/app/bootcamp/_data/alumni.ts",
+      "src/app/bootcamp/_data/editions.ts",
+      "src/app/bootcamp/_data/faq.ts",
+      "src/app/bootcamp/_data/mentors.ts",
+      "src/app/bootcamp/_data/outcomes.ts",
+      "src/app/bootcamp/_data/types.ts",
+      "src/components/ui/Reveal.tsx",
+      "src/components/ui/AssetPlaceholder.tsx"
+    ],
+    "assets_final": [
+      "public/brand/marca-bankers-academy-branca.png",
+      "public/images/quem-somos/equipe.jpg",
+      "public/images/quem-somos/securato-em-pe.png",
+      "public/images/quem-somos/aula-securato.jpg",
+      "public/images/quem-somos/aula-turma.jpg",
+      "public/images/quem-somos/turma.jpg",
+      "public/images/quem-somos/cultura-time.jpg",
+      "public/images/quem-somos/time-grupo.jpg",
+      "public/images/quem-somos/marco-2024-livro.jpg",
+      "public/images/quem-somos/lideranca-andrea-securato.jpg",
+      "public/images/quem-somos/lideranca-arnaldo-mello.jpg",
+      "public/images/quem-somos/lideranca-jaqueline-sanches.jpg",
+      "public/images/quem-somos/especialistas/jose-securato-jr.jpg",
+      "public/images/quem-somos/especialistas/jose-roberto-securato.jpg",
+      "public/images/quem-somos/especialistas/marcos-piellusch.jpg",
+      "public/images/quem-somos/especialistas/walter-eclache.jpg",
+      "public/images/quem-somos/especialistas/alexandre-paixao.jpg",
+      "public/images/quem-somos/especialistas/fernando-fegyveres.jpg",
+      "public/images/bootcamp/certificado-gravura-touro-urso.png",
+      "public/images/bootcamp/aula-hero.jpg",
+      "public/images/bootcamp/aula-experiencia.jpg",
+      "public/images/bootcamp/aula-inicio.jpg",
+      "public/images/bootcamp/aula-trabalho.jpg",
+      "public/images/bootcamp/aula-apresentacao.jpg",
+      "public/images/bootcamp/vencedores-edicao8.jpg",
+      "public/images/bootcamp/turma-bootcamp.jpg",
+      "public/images/bootcamp/palestra.jpg",
+      "public/images/bootcamp/mentor-securato.jpg",
+      "public/images/bootcamp/aula-panoramica.jpg",
+      "public/images/bootcamp/depoimento-ana-luisa-poster.jpg",
+      "public/images/bootcamp/exp-modelagem.jpg",
+      "public/images/bootcamp/exp-apresentacao.jpg",
+      "public/videos/bootcamp/depoimento-ana-luisa.mp4",
+      "public/videos/bootcamp/depoimento-ana-luisa.webm"
+    ],
+    "assets_to_keep_out_of_public": [
+      "public/images/quem-somos/a-identificar/*",
+      "public/images/bootcamp/certificado-ibbc-referencia.jpg",
+      "public/images/bootcamp/reservas/grupo-campers.jpg",
+      "public/images/quem-somos/securato-jr.jpg",
+      "public/images/quem-somos/securato-recorte.png",
+      "public/images/quem-somos/valores.jpg",
+      "public/brand/logo-bankers-academy-branca.png",
+      "public/brand/logo-sp-advisors.png"
+    ],
+    "header_final": {
+      "change": "UMA linha a mais no array do menu oficial: { href: '/bootcamp', label: 'BOOTCAMP' }; o item QUEM SOMOS existente passa a apontar para /quem-somos",
+      "do_not": "não substituir o array do menu oficial; não portar src/components/site/Header.tsx do scaffold; não criar estilo próprio para o item",
+      "verified_behaviour_in_scaffold": "item visível no menu desktop (lg) e dentro do menu sanduíche no mobile; clique navega para /bootcamp"
+    },
+    "navigation_final": {
+      "internal_links_rule": "todo link interno é <Link href='/rota'> na mesma aba; nenhum href='#…', nenhum scrollIntoView, nenhuma navegação por hash nas 13 páginas (verificado por grep)",
+      "external_links_rule": "todo link externo (LinkedIn, Tabula, WhatsApp, bankersacademy.com.br) usa target='_blank' rel='noopener noreferrer'",
+      "quem_somos": {
+        "hub→internas": [
+          "/quem-somos/historia",
+          "/quem-somos/lideranca",
+          "/quem-somos/especialistas",
+          "/quem-somos/ecossistema",
+          "/quem-somos/fundador"
+        ],
+        "internas→hub": "SubHero '← Quem somos'",
+        "para_bootcamp": [
+          "hub ponte 2018",
+          "hub CTA final",
+          "/historia ponte",
+          "/especialistas CTA",
+          "/ecossistema CTA e linha IBBC",
+          "/fundador ponte"
+        ],
+        "externos": [
+          "LinkedIn: josesecurato, marcospiellusch, professor-waltereclache, alexandre-paixao, tatiana-tafarello-75058715",
+          "Tabula: entradaemib, investment-banking-avancado, valuationplus, workshop-de-modelagem-financeira, introducao-ao-credito-com-modelagem-financeira",
+          "bankersacademy.com.br/modelagemfinanceira, /masterclass",
+          "carrinhos Tabula guardados em `carrinho` e NÃO renderizados"
+        ]
+      },
+      "bootcamp": {
+        "landing→internas": [
+          "/bootcamp/experiencia (hero + seção B)",
+          "/bootcamp/jornada",
+          "/bootcamp/certificado",
+          "/bootcamp/alumni (prova social + alumni)",
+          "/bootcamp/edicoes",
+          "/bootcamp/mentores"
+        ],
+        "internas→landing": "SubHero '← Voltar para o Bootcamp'",
+        "para_quem_somos": "nenhum link direto (só pelo menu)",
+        "conversao": [
+          "WhatsApp wa.me/5511990070784 com mensagem pré-preenchida (hero, seção 'participar', CTA final, internas)",
+          "Tabula https://tabula.com.br/curso/destaque/investmentbankingbootcamp (CTA final, /experiencia, /jornada, /certificado)",
+          "número +55 11 99007-0784 exibido em texto"
+        ],
+        "externos": [
+          "5 permalinks públicos de posts do LinkedIn (depoimentos, linkVerified: true)",
+          "LinkedIn do Securato no JSON-LD"
+        ]
+      }
+    },
+    "global_css_required": {
+      "file": "src/app/globals.css (versão atual, íntegra)",
+      "tokens": {
+        "--color-brand": "#c4ef7c 🔒 FECHADO",
+        "--color-brand-soft": "#c4ef7c",
+        "--color-brand-deep": "#5d792e",
+        "--color-spa": "#118336",
+        "--color-ink": "oklch(20% 0.005 260)",
+        "--color-foreground": "oklch(16% 0.01 260)",
+        "--color-line": "oklch(92% 0.01 255)",
+        "--color-surface": "#ffffff",
+        "--color-surface-alt": "#f6f7f5",
+        "--color-surface-soft": "#fafafa",
+        "--color-cert-paper": "#f4efe1",
+        "--color-cert-paper-edge": "#e8e0cb",
+        "--color-cert-ink": "#4a4a38",
+        "--color-cert-rule": "#8a8b6d",
+        "--font-sans": "var(--font-mulish), 'Inter', ui-sans-serif, system-ui, sans-serif",
+        "--font-display": "idem",
+        "--font-serif": "'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif"
+      },
+      "rules": [
+        "html scroll-behavior smooth",
+        "body bg surface / color ink / font-sans / overflow-x hidden",
+        ":focus-visible outline ink; .on-dark :focus-visible outline brand",
+        ".reveal + .reveal[data-visible='true'] (Quem Somos)",
+        "@media prefers-reduced-motion",
+        "bloco .cert-* (Bootcamp)"
+      ],
+      "forbidden": [
+        "#6fdf11",
+        "#c4ef78",
+        "#437e12",
+        "#5c7433",
+        "qualquer variante derivada do verde"
+      ]
+    },
+    "dependencies_final": {
+      "runtime": {
+        "next": "^16.3.3 (lock 16.3.3) — App Router, next/image, next/link, next/font/google",
+        "react": "19.1.1",
+        "react-dom": "19.1.1"
+      },
+      "dev": {
+        "tailwindcss": "^4.1.13 (lock 4.3.3) com @tailwindcss/postcss",
+        "typescript": "^5.9.2",
+        "eslint": "^9.35.0",
+        "eslint-config-next": "^16.3.3",
+        "@types/node": "^22.18.1",
+        "@types/react": "^19.1.13",
+        "@types/react-dom": "^19.1.9"
+      },
+      "no_extra_libs": true,
+      "note": "nenhuma dependência nova foi adicionada em nenhum dos 58 commits (package.json e package-lock.json só existem no root commit)"
+    },
+    "configuration_final": {
+      "tsconfig": "paths { '@/*': ['./src/*'] } — obrigatório (Quem Somos importa @/components/site/*, @/components/ui/*, @/data/quem-somos; Bootcamp importa @/components/site/Header e Footer)",
+      "postcss": "plugins: ['@tailwindcss/postcss']",
+      "next.config": "nada obrigatório (images.formats avif/webp é opcional; não há redirects)",
+      "layout": "Mulish via next/font/google exposta como --font-mulish; lang pt-BR; metadataBase com o domínio oficial",
+      "env_vars": "nenhuma",
+      "vercel_domain": "não alterar (fora do escopo)"
+    },
+    "application_order": [
+      "0. Ler este manifesto e o .md; confirmar o repositório oficial e onde ficam layout/Header/Footer",
+      "1. Tokens e CSS global: mesclar src/app/globals.css (patch patches/src_app_globals.css.patch ou arquivo inteiro) e a fonte Mulish no layout",
+      "2. Primitivos compartilhados: src/components/ui/Reveal.tsx, AssetPlaceholder.tsx, BrandMark.tsx (alias @/components/ui)",
+      "3. Assets: public/brand/marca-bankers-academy-branca.png, public/images/quem-somos/** (só os 'rendered'), public/images/bootcamp/** (só os 'rendered'), public/videos/bootcamp/**",
+      "4. Quem Somos: src/data/quem-somos.ts + src/app/quem-somos/** (sem Timeline.tsx)",
+      "5. Investment Bootcamp: src/app/bootcamp/** (_data, _components, page.tsx e 6 internas)",
+      "6. Header oficial: +1 linha BOOTCAMP; QUEM SOMOS → /quem-somos. Sitemap: +13 URLs",
+      "7. Se o layout oficial injeta Header/Footer: remover <Header/>/<Footer/> e seus imports das 13 páginas",
+      "8. Validações (abaixo)"
+    ],
+    "conflicts_resolved_conceptually": [
+      "Header: união dos dois itens no menu oficial (1 linha nova + 1 rota atualizada)",
+      "globals.css: um único arquivo com tokens (BC) + verde fechado (cliente) + .reveal (QS) + .cert-* (BC)",
+      "sitemap: união das 13 URLs, sem a legada",
+      "AssetPlaceholder/Reveal: versão atual (já contém o que o QS precisa; o BC não os usa)",
+      "config.ts duplicado: fonte única em src/app/bootcamp/_data/config.ts",
+      "foto aula-turma/aula-experiencia: duas cópias, uma por frente"
+    ],
+    "validations": [
+      "npm run lint → 0 erros",
+      "npm run typecheck → 0 erros",
+      "npm run build → as 13 rotas prerenderizadas como estáticas (○)",
+      "grep -rn 'href=\"#' src/app/quem-somos src/app/bootcamp → nenhum resultado",
+      "grep -rn 'scrollIntoView' src/app/quem-somos src/app/bootcamp → nenhum resultado",
+      "grep -rni '6fdf11\\|c4ef78\\|437e12' src → nenhum resultado; grep -i 'c4ef7c' src/app/globals.css → presente",
+      "axe-core (wcag2a, wcag2aa, wcag21aa, wcag22aa) → 0 violações nas 13 rotas em 1440x900 e 375x812",
+      "sem scroll horizontal em 375 / 390 / 768 / 1024 / 1440 nas 13 rotas",
+      "exatamente um <h1> por rota",
+      "certificado: clicar 'SEU NOME AQUI' abre o painel; Enter aplica; Escape fecha; nenhuma requisição de rede e nada em localStorage/sessionStorage/cookies após interagir",
+      "vídeo: poster carrega sem baixar o mp4; após o clique o <video> toca (webm em Chromium, mp4 em Safari)",
+      "menu: BOOTCAMP e QUEM SOMOS visíveis no desktop e no menu mobile; clique navega",
+      "links externos: todos com target=_blank e rel=noopener noreferrer",
+      "textos visíveis do Quem Somos sem '·' nem '—' (grep nas 6 páginas + data)"
+    ]
+  },
+  "patches": {
+    "location": "docs/migracao/patches/",
+    "base": "diff do root commit ee766bb (scaffold) → HEAD 3661e13, por arquivo compartilhado; os arquivos NOVOS (src/app/quem-somos/**, src/data/quem-somos.ts, src/app/bootcamp/**, assets) não têm patch: copiam-se inteiros da branch",
+    "files": [
+      "src_app_globals.css.patch",
+      "src_app_layout.tsx.patch",
+      "src_components_site_Header.tsx.patch",
+      "src_app_sitemap.ts.patch",
+      "src_components_ui_AssetPlaceholder.tsx.patch",
+      "src_components_ui_Button.tsx.patch"
+    ],
+    "how_to_get_whole_files": "git -C <clone> show 3661e13:<path> > <path>  (ou git archive 3661e13 src/app/quem-somos src/data/quem-somos.ts src/app/bootcamp public/images/quem-somos public/images/bootcamp public/videos/bootcamp public/brand/marca-bankers-academy-branca.png src/components/ui/Reveal.tsx src/components/ui/AssetPlaceholder.tsx src/components/ui/BrandMark.tsx src/app/globals.css | tar -x -C <destino>)"
+  }
+}

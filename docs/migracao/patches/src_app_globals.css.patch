@@ -1,0 +1,150 @@
+diff --git a/src/app/globals.css b/src/app/globals.css
+index 1fbc7fc..2ce0219 100644
+--- a/src/app/globals.css
++++ b/src/app/globals.css
+@@ -2,39 +2,48 @@
+ 
+ /* ============================================================
+    BANKERS ACADEMY — DESIGN TOKENS
+-   Single source of truth for the visual system.
+-   Colours sampled directly from the official logo files in
+-   /public/brand (lime #c4ef78 + black) and from the SP Advisors
+-   mark (#118336). Change values here, not in components.
++   Extraídos do site no ar (bankersacademy.com.br), não escolhidos
++   por aqui. Fonte: /assets/styles-*.css do próprio site.
++
++     --ink        oklch(20% .005 260)   → #151618
++     --border     oklch(92% .01 255)    → #e0e5eb
++     lima         #C4EF7C               (verde da marca — escolha do cliente)
++     superfícies  #F6F7F5 · #fafafa · #fff
++     tipografia   Mulish
++
++   Altere aqui, nunca no componente.
+    ============================================================ */
+ @theme {
+-  /* Brand ------------------------------------------------- */
+-  --color-brand: #c4ef78;          /* Bankers Academy lime */
+-  --color-brand-strong: #a5dc47;   /* hover / pressed */
+-  --color-brand-deep: #5c7433;     /* AA on white (5.2:1) and on surface-alt (4.8:1) */
+-  --color-spa: #118336;            /* SP Advisors green */
+-  --color-spa-deep: #0d5a30;
+-
+-  /* Neutrals ---------------------------------------------- */
+-  --color-ink: #0a0a0a;            /* primary text / dark sections */
+-  --color-ink-soft: #1a1a1a;
+-  --color-ink-muted: #52525b;
+-  --color-line: #e5e5e5;
++  /* Marca -------------------------------------------------- */
++  /* 🔒 FECHADO PELO CLIENTE — não altere #C4EF7C. Ele pediu exatamente
++     essa cor e esse estilo visual; nada de substituir ou "ajustar".
++
++     #C4EF7C é o verde da marca: 13,78:1 com o ink, em texto e em fundo.
++     Sobre branco ele dá 1,31:1 — ilegível —, por isso todo texto verde em
++     seção clara usa brand-deep, o mesmo matiz 82° escurecido até 4,95:1. */
++  --color-brand: #c4ef7c;
++  --color-brand-soft: #c4ef7c;     /* fundo do botão primário (= brand) */
++  --color-brand-deep: #5d792e;     /* mesmo matiz 82°, AA em fundo claro */
++  --color-spa: #118336;            /* verde SP Advisors */
++
++  /* Neutros ------------------------------------------------ */
++  --color-ink: oklch(20% 0.005 260);
++  --color-foreground: oklch(16% 0.01 260);
++  --color-line: oklch(92% 0.01 255);
+   --color-surface: #ffffff;
+   --color-surface-alt: #f6f7f5;
++  --color-surface-soft: #fafafa;
+ 
+-  /* Certificate palette (from the real diploma) ----------- */
++  /* Certificado — paleta do diploma físico, não do site ----- */
+   --color-cert-paper: #f4efe1;
+   --color-cert-paper-edge: #e8e0cb;
+   --color-cert-ink: #4a4a38;
+   --color-cert-rule: #8a8b6d;
+ 
+-  /* Type -------------------------------------------------- */
+-  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
++  /* Tipografia --------------------------------------------- */
++  --font-sans: var(--font-mulish), "Inter", ui-sans-serif, system-ui, sans-serif;
++  --font-display: var(--font-mulish), "Inter", ui-sans-serif, system-ui, sans-serif;
+   --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+-
+-  /* Layout ------------------------------------------------ */
+-  --spacing-section: 5.5rem;
+ }
+ 
+ /* Base ---------------------------------------------------- */
+@@ -48,11 +57,10 @@ body {
+   color: var(--color-ink);
+   font-family: var(--font-sans);
+   -webkit-font-smoothing: antialiased;
+-  /* Guard against any single element forcing a horizontal scrollbar */
+   overflow-x: hidden;
+ }
+ 
+-/* Visible, on-brand focus ring for keyboard users only ----- */
++/* Foco visível apenas para teclado -------------------------- */
+ :focus-visible {
+   outline: 2px solid var(--color-ink);
+   outline-offset: 3px;
+@@ -63,7 +71,7 @@ body {
+   outline-color: var(--color-brand);
+ }
+ 
+-/* Reveal-on-scroll ---------------------------------------- */
++/* Reveal ao rolar ------------------------------------------ */
+ .reveal {
+   opacity: 0;
+   transform: translateY(18px);
+@@ -78,14 +86,47 @@ body {
+ 
+ @media (prefers-reduced-motion: reduce) {
+   html { scroll-behavior: auto; }
+-  .reveal {
+-    opacity: 1;
+-    transform: none;
+-    transition: none;
+-  }
++  .reveal { opacity: 1; transform: none; transition: none; }
+   *, *::before, *::after {
+     animation-duration: 0.01ms !important;
+     animation-iteration-count: 1 !important;
+     transition-duration: 0.01ms !important;
+   }
+ }
++
++/* ============================================================
++   Prévia interativa do certificado (/bootcamp)
++   Cores literais do diploma físico — não seguem o tema do site.
++   ============================================================ */
++.cert-name-btn {
++  border-bottom: 1px solid #4a4a38;
++}
++.cert-name {
++  font-size: clamp(0.34rem, 2.5cqw, 1.8rem);
++  letter-spacing: 0.06em;
++  text-transform: uppercase;
++  color: #8a8b6d;
++  transition: color 0.2s ease;
++}
++.cert-name--filled { color: #4a4a38; }
++.cert-name-btn:hover .cert-name,
++.cert-name-btn:focus-visible .cert-name { color: #4a4a38; }
++
++.cert-name--swap { animation: cert-swap 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
++@keyframes cert-swap {
++  from { opacity: 0; transform: translateY(0.25em); }
++  to   { opacity: 1; transform: none; }
++}
++
++.cert-panel { animation: panel-in 0.28s cubic-bezier(0.22, 1, 0.36, 1); }
++/* O painel é uma superfície clara dentro de uma seção escura: o anel de
++   foco volta ao ink, em vez de herdar o verde do contexto escuro. */
++.cert-panel :focus-visible { outline-color: var(--color-ink); }
++@keyframes panel-in {
++  from { opacity: 0; transform: translateY(10px) scale(0.985); }
++  to   { opacity: 1; transform: none; }
++}
++
++@media (prefers-reduced-motion: reduce) {
++  .cert-name--swap, .cert-panel { animation: none; }
++}
