@@ -194,7 +194,7 @@ export default function FundadorPage() {
                           width={1170}
                           height={1462}
                           sizes="(max-width: 768px) 80vw, 360px"
-                          className="mb-4 mt-5 w-full max-w-[20rem] rounded-2xl"
+                          className="mb-4 mt-5 w-full max-w-[26rem] rounded-2xl"
                         />
                       ) : null}
                     </div>
